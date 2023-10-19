@@ -42,7 +42,6 @@ export default async function Home() {
     <main>
       <Header />
       {posts.map((post: Post, i: number) => {
-        console.log(post)
         return (
           <div key={i}>
             <div>{post.node.title}</div>
