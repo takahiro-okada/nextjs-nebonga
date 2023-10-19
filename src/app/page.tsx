@@ -39,7 +39,7 @@ export default function Home() {
       }
     }`
 
-    fetch('http://wp.nebonga.com/graphql', {
+    fetch('https://wp.nebonga.com/graphql', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
