@@ -1,8 +1,12 @@
-import { ApolloClient, InMemoryCache } from '@apollo/client';
+import { ApolloClient, HttpLink, InMemoryCache } from '@apollo/client'
 
-const apolloClient = new ApolloClient({
-  uri: process.env.NEXT_PUBLIC_GRAPHQL_URL || ' https://hirokawasaki-works.com/graphql',
-  cache: new InMemoryCache(),
-});
+const GRAPHQL_ENDPOINT = process.env.NEXT_PUBLIC_GRAPHQL_URL || 'https://hirokawasaki-works.com/graphql'
 
-export default apolloClient;
+export const { getClient } = registerApolloClient(() => {
+  return new ApolloClient({
+    cache: new InMemoryCache(),
+    link: new HttpLink({
+      uri: NEXT_PUBLIC_GRAPHQL_URL,
+    }),
+  })
+})
