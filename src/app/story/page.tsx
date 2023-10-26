@@ -1,28 +1,22 @@
 'use client'
-import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import Header from './Header'
+import Header from '../Header'
+import { useState, useEffect } from 'react'
 
 type Post = {
   node: {
     title: string
     slug: string
-    featuredImage: {
-      node: {
-        sourceUrl: string
-        altText: string
-      }
-    }
   }
 }
 
-export default function Home() {
+export default function PostList() {
   const [posts, setPosts] = useState<Post[] | null>(null)
 
   useEffect(() => {
     const query = `
       {
-        posts(first: 3) {
+        posts {
           edges {
             node {
               title
@@ -53,18 +47,15 @@ export default function Home() {
     <main>
       <Header />
 
-      <div className='grid grid-cols-3 gap-4 mt-24'>
+      <h1>記事一覧</h1>
+      <ul>
         {posts &&
           posts.map((post) => (
-            <div key={post.node.slug}>
+            <li key={post.node.slug}>
               <Link href={`/story/${post.node.slug}`}>{post.node.title}</Link>
-            </div>
+            </li>
           ))}
-      </div>
-
-      <div className='mt-6'>
-        <Link href='/story/'>記事一覧ページへ</Link>
-      </div>
+      </ul>
     </main>
   )
 }
