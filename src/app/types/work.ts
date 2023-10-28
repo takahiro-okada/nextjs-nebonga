@@ -1,4 +1,4 @@
-interface Work {
+type Work = {
   title: string
   slug: string
   content: string
