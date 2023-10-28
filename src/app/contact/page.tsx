@@ -8,7 +8,7 @@ export default function Contact() {
       <form
         name='contact'
         method='POST'
-        action='/thanks.html'
+        action='/thanks'
         className='w-full max-w-md'
         netlify-honeypot='bot-field'
         data-netlify='true'
