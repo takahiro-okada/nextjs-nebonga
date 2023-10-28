@@ -5,7 +5,7 @@ export default function Contact() {
     <main className='p-6 bg-gray-100 min-h-screen flex flex-col items-center justify-center'>
       <h1 className='text-3xl mb-6 font-bold text-gray-800'>Contact</h1>
 
-      <form name='contact' method='POST' data-netlify='true' className='w-full max-w-md'>
+      <form name='contact' method='POST' data-netlify='true' className='w-full max-w-md' netlify>
         <div className='mb-4'>
           <label htmlFor='name' className='block text-gray-700 text-sm font-bold mb-2'>
             お名前（必須）
