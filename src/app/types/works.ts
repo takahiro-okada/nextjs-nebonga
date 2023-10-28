@@ -1,4 +1,4 @@
-interface Work {
+type Work = {
   node: {
     title: string
     slug: string
