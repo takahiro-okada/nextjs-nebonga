@@ -44,8 +44,6 @@ export default function PostList() {
 
   return (
     <main>
-      <Header />
-
       <h1>記事一覧</h1>
       <ul>
         {posts &&
