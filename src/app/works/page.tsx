@@ -1,7 +1,8 @@
 'use client'
-import { useState, useEffect } from 'react'
-import Link from 'next/link'
 import Image from 'next/image'
+import Link from 'next/link'
+import { useEffect, useState } from 'react'
+
 import type Work from '../types/works'
 
 export default function Works() {
@@ -33,11 +34,11 @@ export default function Works() {
     `
 
     fetch('https://wp.nebonga.com/graphql', {
-      method: 'POST',
+      body: JSON.stringify({ query }),
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ query }),
+      method: 'POST',
     })
       .then((res) => res.json())
       .then((json) => {
@@ -63,7 +64,7 @@ export default function Works() {
                   alt={work.node.featuredImage.node.altText}
                   width={work.node.featuredImage.node.mediaDetails.width}
                   height={work.node.featuredImage.node.mediaDetails.height}
-                  className='w-full h-full object-cover'
+                  className='h-full w-full object-cover'
                 />
                 <h3>{work.node.title}</h3>
               </div>

@@ -1,7 +1,8 @@
 'use client'
-import { useState, useEffect } from 'react'
-import type Work from '../../types/work'
+import { useEffect, useState } from 'react'
+
 import { fetchWork } from '../../api/fetchWorkDetail'
+import type Work from '../../types/work'
 
 export default function WorkDetail() {
   const [work, setWork] = useState<Work | null>(null)

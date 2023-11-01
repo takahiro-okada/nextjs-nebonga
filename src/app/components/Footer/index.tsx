@@ -1,14 +1,12 @@
-import Image from 'next/image'
-
 export default function Footer() {
   return (
-    <footer className='bg-white mt-5'>
-      <div className='w-full max-w-screen-xl mx-auto'>
+    <footer className='mt-5 bg-white'>
+      <div className='mx-auto w-full max-w-screen-xl'>
         <div className='sm:flex sm:items-center sm:justify-between'>
-          <a href='https://flowbite.com/' className='flex items-center mb-4 sm:mb-0'>
-            <span className='self-center text-2xl font-semibold whitespace-nowrap'>NeBonga</span>
+          <a href='https://flowbite.com/' className='mb-4 flex items-center sm:mb-0'>
+            <span className='self-center whitespace-nowrap text-2xl font-semibold'>NeBonga</span>
           </a>
-          <ul className='flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400'>
+          <ul className='mb-6 flex flex-wrap items-center text-sm font-medium text-gray-500 dark:text-gray-400 sm:mb-0'>
             <li>
               <a href='#' className='mr-4 hover:underline md:mr-6 '>
                 About
@@ -31,7 +29,7 @@ export default function Footer() {
             </li>
           </ul>
         </div>
-        <span className='block text-sm text-gray-500 sm:text-center dark:text-gray-400'>
+        <span className='block text-sm text-gray-500 dark:text-gray-400 sm:text-center'>
           © 2023{' '}
           <a href='https://flowbite.com/' className='hover:underline'>
             NeBonga

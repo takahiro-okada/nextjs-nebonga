@@ -13,11 +13,11 @@ const fetchWork = async (slug: string) => {
   }
 
   const res = await fetch('https://wp.nebonga.com/graphql', {
-    method: 'POST',
+    body: JSON.stringify({ query, variables }),
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ query, variables }),
+    method: 'POST',
   })
 
   const json = await res.json()
