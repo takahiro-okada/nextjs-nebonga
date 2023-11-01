@@ -1,6 +1,5 @@
-import Link from 'next/link'
-import MainVisual from './components/MainVisual'
 import CardImage from './components/CardImage'
+import MainVisual from './components/MainVisual'
 
 export default function Home() {
   return (

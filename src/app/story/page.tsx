@@ -1,16 +1,14 @@
 'use client'
+import Image from 'next/image'
 import Link from 'next/link'
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
-type Post = {
-  node: {
-    title: string
-    slug: string
-  }
-}
+import PageMainVisual from '../components/PageMainVIsual'
+import SideNav from '../components/SideNav'
+import Story from '../types/story'
 
 export default function PostList() {
-  const [posts, setPosts] = useState<Post[] | null>(null)
+  const [posts, setPosts] = useState<Story[] | null>(null)
 
   useEffect(() => {
     const query = `
@@ -18,8 +16,20 @@ export default function PostList() {
         posts {
           edges {
             node {
+              id
+              content
               title
               slug
+              featuredImage {
+                node {
+                  mediaDetails {
+                    width
+                    height
+                  }
+                  sourceUrl
+                  altText
+                }
+              }
             }
           }
         }
@@ -27,11 +37,11 @@ export default function PostList() {
     `
 
     fetch('https://wp.nebonga.com/graphql', {
-      method: 'POST',
+      body: JSON.stringify({ query }),
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ query }),
+      method: 'POST',
     })
       .then((res) => res.json())
       .then((json) => {
@@ -44,15 +54,32 @@ export default function PostList() {
 
   return (
     <main>
-      <h1>記事一覧</h1>
-      <ul>
-        {posts &&
-          posts.map((post) => (
-            <li key={post.node.slug}>
-              <Link href={`/story/${post.node.slug}`}>{post.node.title}</Link>
-            </li>
-          ))}
-      </ul>
+      <PageMainVisual title='Story' bgImage='/images/bg-sample.jpg' />
+      <div className='mt-8 grid grid-cols-3 gap-4'>
+        <div className='col-span-2'>
+          <div className='grid grid-cols-2 gap-4'>
+            {posts &&
+              posts.map((post) => (
+                <div key={post.node.slug} className='overflow-hidden rounded shadow-md'>
+                  <Image
+                    src={post.node.featuredImage?.node?.sourceUrl || '/images/image-placeholder.png'}
+                    alt={post.node.featuredImage?.node?.altText || 'Default Image'}
+                    layout='fill'
+                    className='absolute left-0 top-0 h-full w-full object-cover'
+                  />
+                  <div className='px-6 py-4'>
+                    <Link href={`/story/${post.node.slug}`} className='mb-2 text-xl font-bold'>
+                      {post.node.title}
+                    </Link>
+                  </div>
+                </div>
+              ))}
+          </div>
+        </div>
+        <div className='col-span-1'>
+          <SideNav />
+        </div>
+      </div>
     </main>
   )
 }

@@ -12,6 +12,7 @@ export default function Works() {
       works {
         edges {
           node {
+            id
             content
             title
             slug
@@ -22,6 +23,7 @@ export default function Works() {
                   height
                 }
                 sourceUrl
+                altText
               }
             }
           }
@@ -54,7 +56,7 @@ export default function Works() {
         <h2>制作したもの</h2>
         <div className='grid grid-cols-3 gap-3'>
           {works?.map((work) => (
-            <Link href={`/works/${work.node.slug}`} key={work.node.slug}>
+            <Link href={`/works/${work.node.slug}`} key={work.node.id}>
               <div>
                 <Image
                   src={work.node.featuredImage.node.sourceUrl}

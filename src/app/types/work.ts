@@ -1,17 +1,18 @@
 type Work = {
+  id: number
   title: string
-  slug: string
   content: string
   featuredImage: {
     node: {
-      sourceUrl: string
       altText: string
       mediaDetails: {
-        width: number
         height: number
+        width: number
       }
+      sourceUrl: string
     }
   }
+  slug: string
 }
 
 export default Work

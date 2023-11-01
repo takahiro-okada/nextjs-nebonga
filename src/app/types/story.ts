@@ -1,4 +1,4 @@
-type Work = {
+type Story = {
   node: {
     id: number
     title: string
@@ -16,5 +16,4 @@ type Work = {
     slug: string
   }
 }
-
-export default Work
+export default Story

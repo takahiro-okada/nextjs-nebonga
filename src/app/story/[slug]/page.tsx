@@ -1,43 +1,37 @@
-// app/story/[slug].tsx
 'use client'
-import { useRouter } from 'next/navigation'
 import { useState, useEffect } from 'react'
+import Story from '../../types/story'
+import { fetchStoryDetail } from '../../api/fetchStoryDetail'
 
-export default function Page({ params }: { params: { slug: string } }) {
-  const router = useRouter()
-  const [post, setPost] = useState<any>(null)
+export default function StoryDetail({ params }: { params: { slug: string } }) {
+  const [story, setStory] = useState<Story | null>(null)
+  const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
-    const query = `
-      {
-        postBy(slug: "${params.slug}") {
-          title
-          content
-        }
-      }
-    `
+    const slugArray = location.pathname.split('/story/')
+    if (slugArray.length !== 2) {
+      setError('Invalid URL format.')
+      return
+    }
 
-    fetch('https://wp.nebonga.com/graphql', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ query }),
-    })
-      .then((res) => res.json())
-      .then((json) => {
-        setPost(json.data.postBy)
+    const slug = decodeURIComponent(slugArray[1])
+
+    fetchStoryDetail(slug)
+      .then((story) => {
+        setStory(story)
       })
-      .catch((error) => {
-        console.error('エラー:', error)
+      .catch((err) => {
+        setError(err.message)
       })
-  }, [params.slug])
+  }, [])
+
+  if (error) {
+    return <div>Error: {error}</div>
+  }
 
   return (
     <main>
-      <h1 className=''>{post?.title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: post?.content }} />
-      <button onClick={() => router.push('/story')}>戻る</button>
+      <h1>{story?.title}</h1>
     </main>
   )
 }

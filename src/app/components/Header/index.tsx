@@ -9,8 +9,8 @@ export default function Header() {
   }
 
   return (
-    <header className='w-full bg-white text-black relative shadow-sm font-mono py-3' role='banner'>
-      <div className='px-4 lg:px-8 flex items-center justify-between'>
+    <header className='w-full bg-white text-black relative py-3' role='banner'>
+      <div className='flex items-center justify-between'>
         <h1>
           <a href='/' className='font-semibold text-xl tracking-tight'>
             NeBonga
@@ -46,7 +46,7 @@ export default function Header() {
               </li>
             </ul>
           </nav>
-          <button onClick={handleMenuOpen} type='button' className='lg:hidden z-10 space-y-2'>
+          <button onClick={handleMenuOpen} type='button' className='lg:hidden z-50 space-y-2'>
             <div
               className={
                 openMenu
@@ -73,8 +73,8 @@ export default function Header() {
           <nav
             className={
               openMenu
-                ? 'text-left fixed bg-slate-50 right-0 top-0 w-8/12 h-screen flex flex-col justify-start pt-8 px-3 transition-transform transform translate-x-0 ease-linear duration-300'
-                : 'text-left fixed bg-slate-50 right-0 top-0 w-8/12 h-screen flex flex-col justify-start pt-8 px-3 transition-transform transform translate-x-full ease-linear duration-300'
+                ? 'z-30 text-left fixed bg-zinc-400 right-0 top-0 w-8/12 h-screen flex flex-col justify-start pt-8 px-3 transition-transform transform translate-x-0 ease-linear duration-300'
+                : 'z-30 text-left fixed bg-zinc-400 right-0 top-0 w-8/12 h-screen flex flex-col justify-start pt-8 px-3 transition-transform transform translate-x-full ease-linear duration-300'
             }
           >
             <ul>
