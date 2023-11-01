@@ -1,7 +1,8 @@
 'use client'
-import { useState, useEffect } from 'react'
-import Story from '../../types/story'
+import { useEffect, useState } from 'react'
+
 import { fetchStoryDetail } from '../../api/fetchStoryDetail'
+import Story from '../../types/story'
 
 export default function StoryDetail({ params }: { params: { slug: string } }) {
   const [story, setStory] = useState<Story | null>(null)
@@ -31,7 +32,7 @@ export default function StoryDetail({ params }: { params: { slug: string } }) {
 
   return (
     <main>
-      <h1>{story?.title}</h1>
+      <h1>{story?.node.title}</h1>
     </main>
   )
 }
