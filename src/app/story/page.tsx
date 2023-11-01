@@ -60,12 +60,12 @@ export default function PostList() {
           <div className='grid grid-cols-2 gap-4'>
             {posts &&
               posts.map((post) => (
-                <div key={post.node.slug} className='overflow-hidden rounded shadow-md'>
+                <div key={post.node.slug} className='relative overflow-hidden rounded shadow-md'>
                   <Image
                     src={post.node.featuredImage?.node?.sourceUrl || '/images/image-placeholder.png'}
                     alt={post.node.featuredImage?.node?.altText || 'Default Image'}
-                    layout='fill'
-                    className='absolute left-0 top-0 h-full w-full object-cover'
+                    width={post.node.featuredImage?.node?.mediaDetails?.width || 640}
+                    height={post.node.featuredImage?.node?.mediaDetails?.height || 480}
                   />
                   <div className='px-6 py-4'>
                     <Link href={`/story/${post.node.slug}`} className='mb-2 text-xl font-bold'>
