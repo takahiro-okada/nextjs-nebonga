@@ -4,6 +4,8 @@ import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
 import type Work from '../../types/works'
+import { Button } from '..'
+import { SectionTitle } from '../SectionTitle'
 
 export default function CardImage() {
   const [works, setWorks] = useState<Work[] | null>(null)
@@ -50,23 +52,23 @@ export default function CardImage() {
   }, [])
 
   return (
-    <section className='mt-32'>
-      <h2 className='text-xl sm:text-2xl md:text-3xl'>制作したもの</h2>
+    <section className='mx-auto mt-32 max-w-3xl px-3'>
+      <SectionTitle title='制作したもの' subtitle='Projects' />
       <div className='mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3'>
         {works?.map((work) => (
           <Link key={work.node.id} href={`/works/${work.node.slug}`}>
-            <div className='relative'>
+            <div className='relative rounded-xl'>
               <Image
                 src={work.node.featuredImage.node.sourceUrl}
                 alt={work.node.featuredImage.node.altText}
                 width={work.node.featuredImage.node.mediaDetails.width}
                 height={work.node.featuredImage.node.mediaDetails.height}
-                className='h-full w-full object-cover'
+                className='h-full w-full rounded-xl  object-cover'
               />
-              <div className='absolute left-0 top-0  h-full w-full bg-black opacity-50'></div>
-              <div className='absolute left-0 top-0 flex h-full w-full items-center justify-center'>
+              <div className='absolute left-0 top-0  h-full w-full rounded-xl bg-black opacity-50'></div>
+              <div className='absolute left-0 top-0 flex h-full w-full items-end justify-center p-2'>
                 <div className='text-center text-white'>
-                  <h3 className='text-xl sm:text-2xl md:text-3xl'>{work.node.title}</h3>
+                  <h3 className='text-sm md:text-lg'>{work.node.title}</h3>
                 </div>
               </div>
             </div>
@@ -74,10 +76,8 @@ export default function CardImage() {
         ))}
       </div>
 
-      <div className='mt-6'>
-        <Link href='/story/' className='text-xl sm:text-2xl md:text-3xl'>
-          記事一覧ページへ
-        </Link>
+      <div className='mt-6 text-center'>
+        <Button href='/works'>もっと見る</Button>
       </div>
     </section>
   )

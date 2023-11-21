@@ -3,6 +3,9 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
+import PageMainVisual from '../components/PageMainVIsual'
+import { SectionTitle } from '../components/SectionTitle'
+import SideNav from '../components/SideNav'
 import type Work from '../types/works'
 
 export default function Works() {
@@ -51,25 +54,34 @@ export default function Works() {
 
   return (
     <main>
-      <h1>Work</h1>
+      <PageMainVisual title='Works' bgImage='/images/bg-sample.jpg' />
 
-      <section>
-        <h2>制作したもの</h2>
-        <div className='grid grid-cols-3 gap-3'>
-          {works?.map((work) => (
-            <Link href={`/works/${work.node.slug}`} key={work.node.id}>
-              <div>
-                <Image
-                  src={work.node.featuredImage.node.sourceUrl}
-                  alt={work.node.featuredImage.node.altText}
-                  width={work.node.featuredImage.node.mediaDetails.width}
-                  height={work.node.featuredImage.node.mediaDetails.height}
-                  className='h-full w-full object-cover'
-                />
-                <h3>{work.node.title}</h3>
-              </div>
-            </Link>
-          ))}
+      <section className='mt-16'>
+        <SectionTitle title='Works' subtitle='制作実績' />
+        <div className='mt-8 grid grid-cols-3 gap-4'>
+          <div className='col-span-2'>
+            <div className='grid grid-cols-2 gap-4'>
+              {works &&
+                works.map((work) => (
+                  <div key={work.node.slug} className='relative overflow-hidden rounded shadow-md'>
+                    <Image
+                      src={work.node.featuredImage?.node?.sourceUrl || '/images/image-placeholder.png'}
+                      alt={work.node.featuredImage?.node?.altText || 'Default Image'}
+                      width={work.node.featuredImage?.node?.mediaDetails?.width || 640}
+                      height={work.node.featuredImage?.node?.mediaDetails?.height || 480}
+                    />
+                    <div className='px-6 py-4'>
+                      <Link href={`/story/${work.node.slug}`} className='mb-2 text-xl font-bold'>
+                        {work.node.title}
+                      </Link>
+                    </div>
+                  </div>
+                ))}
+            </div>
+          </div>
+          <div className='col-span-1'>
+            <SideNav />
+          </div>
         </div>
       </section>
     </main>

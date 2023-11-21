@@ -5,6 +5,8 @@ import { Inter } from 'next/font/google'
 
 import Footer from '../app/components/Footer/'
 import Header from '../app/components/Header/'
+import { BreadCrumb } from './components/BreadCrum'
+import TypekitLoader from './util/TypekitLoader'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -15,13 +17,13 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang='ja'>
-      <body className={inter.className}>
-        <div className='container mx-auto px-4'>
-          <Header />
-          {children}
-          <Footer />
-        </div>
+    <html lang='ja' className='font-yuGothic'>
+      <TypekitLoader />
+      <body className='font-yuGothic'>
+        <Header />
+        <BreadCrumb />
+        {children}
+        <Footer />
       </body>
     </html>
   )

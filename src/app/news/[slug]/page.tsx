@@ -4,16 +4,16 @@ import { useEffect, useState } from 'react'
 import PageMainVisual from '@/app/components/PageMainVIsual'
 import { SectionTitle } from '@/app/components/SectionTitle'
 import SideNav from '@/app/components/SideNav'
+import News from '@/app/types/news'
 
-import { fetchWork } from '../../api/fetchWorkDetail'
-import type Work from '../../types/work'
+import { fetchNews } from '../../api/fetchNewsDetail'
 
-export default function WorkDetail() {
-  const [work, setWork] = useState<Work | null>(null)
+export default function StoryDetail({ params }: { params: { slug: string } }) {
+  const [news, setNews] = useState<News | null>(null)
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
-    const slugArray = location.pathname.split('/works/')
+    const slugArray = location.pathname.split('/news/')
     if (slugArray.length !== 2) {
       setError('Invalid URL format.')
       return
@@ -21,9 +21,9 @@ export default function WorkDetail() {
 
     const slug = decodeURIComponent(slugArray[1])
 
-    fetchWork(slug)
-      .then((work) => {
-        setWork(work)
+    fetchNews(slug)
+      .then((story) => {
+        setNews(story)
       })
       .catch((err) => {
         setError(err.message)
@@ -36,18 +36,18 @@ export default function WorkDetail() {
 
   return (
     <main>
-      <PageMainVisual title='Works' bgImage='/images/bg-sample.jpg' />
+      <PageMainVisual title='News' bgImage='/images/bg-sample.jpg' />
 
       <section>
-        <SectionTitle title='Works' subtitle='制作実績' />
+        <SectionTitle title='ニュース' subtitle='News' />
 
         <div className='mt-8 grid grid-cols-3 gap-4'>
           <div className='col-span-2'>
             <div className='grid grid-cols-2 gap-4'>
-              {work && (
+              {news && (
                 <div>
-                  <h3>{work.title}</h3>
-                  <div dangerouslySetInnerHTML={{ __html: work.content }} />
+                  <h3>{news.title}</h3>
+                  <div dangerouslySetInnerHTML={{ __html: news.content }} />
                 </div>
               )}
             </div>
