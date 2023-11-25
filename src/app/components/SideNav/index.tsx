@@ -70,9 +70,7 @@ export default function SideNav() {
       <ul className='space-y-4'>
         {categories ? (
           categories.map(
-            (category) =>
-              // トップレベルカテゴリ（子カテゴリを持つカテゴリ）のみを表示
-              category.children && category.children.edges.length > 0 && renderCategory(category),
+            (category) => category.children && category.children.edges.length > 0 && renderCategory(category),
           )
         ) : (
           <p>Loading categories...</p>

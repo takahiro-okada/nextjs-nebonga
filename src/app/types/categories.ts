@@ -1,7 +1,5 @@
 type Categories = {
   id: number
   name: string
-  slug: string
+  uri: string
 }
-
-export default Categories
