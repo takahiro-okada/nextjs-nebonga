@@ -52,9 +52,9 @@ export default function CardImage() {
   }, [])
 
   return (
-    <section className='mx-auto mt-32 max-w-3xl px-3'>
+    <section className='container mx-auto mt-16 px-3'>
       <SectionTitle title='制作したもの' subtitle='Projects' />
-      <div className='mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3'>
+      <div className='mt-6 grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3'>
         {works?.map((work) => (
           <Link key={work.node.id} href={`/works/${work.node.slug}`}>
             <div className='relative rounded-xl'>
