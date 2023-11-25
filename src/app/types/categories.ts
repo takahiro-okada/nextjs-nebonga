@@ -3,3 +3,5 @@ type Categories = {
   name: string
   uri: string
 }
+
+export default Categories
