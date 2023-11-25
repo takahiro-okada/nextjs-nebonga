@@ -5,7 +5,6 @@ import { Inter } from 'next/font/google'
 
 import Footer from '../app/components/Footer/'
 import Header from '../app/components/Header/'
-import { BreadCrumb } from './components/BreadCrum'
 import TypekitLoader from './util/TypekitLoader'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -21,7 +20,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <TypekitLoader />
       <body className='font-yuGothic'>
         <Header />
-        <BreadCrumb />
         {children}
         <Footer />
       </body>
