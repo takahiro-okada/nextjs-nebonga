@@ -1,5 +1,6 @@
 'use client'
 import Image from 'next/image'
+import Link from 'next/link'
 import { useState } from 'react'
 
 export default function Header() {
@@ -10,8 +11,8 @@ export default function Header() {
   }
 
   return (
-    <header className='relative mx-3 max-w-3xl bg-white py-3 text-black' role='banner'>
-      <div className='relative flex items-center justify-center'>
+    <header className='absolute w-full py-3' role='banner'>
+      <div className='container relative  mx-auto flex items-center justify-center px-3  md:justify-between'>
         <h1>
           <a href='/' className='text-xl font-semibold tracking-tight'>
             <Image
@@ -23,36 +24,36 @@ export default function Header() {
             />
           </a>
         </h1>
+        <nav className='hidden lg:flex'>
+          <ul className='space-x-4 lg:flex'>
+            <li>
+              <Link href='/about' className='mx-4 text-white hover:underline lg:mx-6'>
+                About
+              </Link>
+            </li>
+            <li>
+              <Link href='/works' className='mx-4 text-white hover:underline lg:mx-6'>
+                Works
+              </Link>
+            </li>
+            <li>
+              <Link href='/story' className='mx-4 text-white hover:underline lg:mx-6'>
+                Story
+              </Link>
+            </li>
+            <li>
+              <Link href='/price' className='mx-4 text-white hover:underline lg:mx-6'>
+                Price
+              </Link>
+            </li>
+            <li>
+              <Link href='/contact' className='mx-4 text-white hover:underline lg:mx-6'>
+                Contact
+              </Link>
+            </li>
+          </ul>
+        </nav>
         <div className='absolute right-0 flex items-center'>
-          <nav className='hidden lg:flex'>
-            <ul className='space-x-4 lg:flex'>
-              <li>
-                <a href='/about' className='mx-4 text-black hover:underline lg:mx-6'>
-                  About
-                </a>
-              </li>
-              <li>
-                <a href='/works' className='mx-4 text-black hover:underline lg:mx-6'>
-                  Works
-                </a>
-              </li>
-              <li>
-                <a href='/story' className='mx-4 text-black hover:underline lg:mx-6'>
-                  Story
-                </a>
-              </li>
-              <li>
-                <a href='/price' className='mx-4 text-black hover:underline lg:mx-6'>
-                  Price
-                </a>
-              </li>
-              <li>
-                <a href='/contact' className='mx-4 text-black hover:underline lg:mx-6'>
-                  Contact
-                </a>
-              </li>
-            </ul>
-          </nav>
           <button onClick={handleMenuOpen} type='button' className='z-50 space-y-2 lg:hidden'>
             <div
               className={
@@ -86,7 +87,7 @@ export default function Header() {
           >
             <ul>
               <li className='mb-4'>
-                <a href='/about' className='text-black hover:underline'>
+                <a href='/about' className='text-white hover:underline'>
                   About
                 </a>
               </li>
