@@ -3,8 +3,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
-import PageMainVisual from '../components/PageMainVIsual'
-import { SectionTitle } from '../components/SectionTitle'
 import SideNav from '../components/SideNav'
 import type Work from '../types/works'
 
@@ -12,24 +10,13 @@ export default function Works() {
   const [works, setWorks] = useState<Work[] | null>(null)
 
   useEffect(() => {
-    const query = `query AllWorks {
-      works {
+    const query = `query GetWorks {
+      posts {
         edges {
           node {
             id
-            content
             title
             slug
-            featuredImage {
-              node {
-                mediaDetails {
-                  width
-                  height
-                }
-                sourceUrl
-                altText
-              }
-            }
           }
         }
       }
@@ -45,7 +32,7 @@ export default function Works() {
     })
       .then((res) => res.json())
       .then((json) => {
-        setWorks(json.data.works.edges)
+        setWorks(json.data.posts.edges)
       })
       .catch((error) => {
         console.error('エラー:', error)
@@ -54,16 +41,15 @@ export default function Works() {
 
   return (
     <main>
-      <PageMainVisual title='Works' bgImage='/images/bg-sample.jpg' />
-
-      <section className='mt-16'>
-        <SectionTitle title='Works' subtitle='制作実績' />
-        <div className='mt-8 grid grid-cols-3 gap-4'>
-          <div className='col-span-2'>
-            <div className='grid grid-cols-2 gap-4'>
+      <div className='container relative mx-auto px-3'>
+        <section>
+          <h2 className='text-5xl'>Works</h2>
+          <p className='mt-3'>NeBongaのお仕事の一部をご紹介します</p>
+          <div className='mt-8 grid grid-cols-1 gap-4 md:grid-cols-3'>
+            <ul className='grid grid-cols-1 gap-4 md:grid-cols-2'>
               {works &&
                 works.map((work) => (
-                  <div key={work.node.slug} className='relative overflow-hidden rounded shadow-md'>
+                  <li className='relative overflow-hidden rounded shadow-md' key={work.node.id}>
                     <Image
                       src={work.node.featuredImage?.node?.sourceUrl || '/images/image-placeholder.png'}
                       alt={work.node.featuredImage?.node?.altText || 'Default Image'}
@@ -71,19 +57,19 @@ export default function Works() {
                       height={work.node.featuredImage?.node?.mediaDetails?.height || 480}
                     />
                     <div className='px-6 py-4'>
-                      <Link href={`/story/${work.node.slug}`} className='mb-2 text-xl font-bold'>
-                        {work.node.title}
+                      <Link className='mb-2 text-xl font-bold' href={`/story/${work.node.slug}`}>
+                        {work.node.title} : {work.node.id}
                       </Link>
                     </div>
-                  </div>
+                  </li>
                 ))}
+            </ul>
+            <div className='w-full'>
+              <SideNav />
             </div>
           </div>
-          <div className='col-span-1'>
-            <SideNav />
-          </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </main>
   )
 }
