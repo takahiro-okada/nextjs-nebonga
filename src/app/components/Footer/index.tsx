@@ -1,41 +1,59 @@
+import Image from 'next/image'
+import Link from 'next/link'
+
 export default function Footer() {
   return (
     <footer className='mt-5 bg-white'>
-      <div className='mx-auto w-full max-w-screen-xl'>
+      <div className='container mx-auto px-3'>
         <div className='sm:flex sm:items-center sm:justify-between'>
-          <a href='https://flowbite.com/' className='mb-4 flex items-center sm:mb-0'>
-            <span className='self-center whitespace-nowrap text-2xl font-semibold'>NeBonga</span>
-          </a>
-          <ul className='mb-6 flex flex-wrap items-center text-sm font-medium text-gray-500 dark:text-gray-400 sm:mb-0'>
+          <ul className='mb-6 flex flex-wrap items-center justify-center text-sm font-medium sm:mb-0'>
             <li>
-              <a href='#' className='mr-4 hover:underline md:mr-6 '>
+              <Link className='px-3 py-2' href='/about'>
                 About
-              </a>
+              </Link>
             </li>
             <li>
-              <a href='#' className='mr-4 hover:underline md:mr-6'>
-                Privacy Policy
-              </a>
+              <Link className='px-3 py-2' href='/works'>
+                Works
+              </Link>
             </li>
             <li>
-              <a href='#' className='mr-4 hover:underline md:mr-6 '>
-                Licensing
-              </a>
+              <Link className='px-3 py-2' href='/story'>
+                Story
+              </Link>
             </li>
             <li>
-              <a href='#' className='hover:underline'>
+              <Link className='px-3 py-2' href='/price'>
+                Price
+              </Link>
+            </li>
+            <li>
+              <Link className='px-3 py-2' href='/contact'>
                 Contact
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
-        <span className='block text-sm text-gray-500 dark:text-gray-400 sm:text-center'>
-          © 2023{' '}
-          <a href='https://flowbite.com/' className='hover:underline'>
-            NeBonga
+        <div className='flex justify-center'>
+          <a href='/' className='text-xl font-semibold tracking-tight'>
+            <Image
+              src='/logo.png'
+              alt='NeBonga'
+              width={100}
+              height={100}
+              className='h-full w-16 rounded-xl  object-cover'
+            />
           </a>
-          . All Rights Reserved.
-        </span>
+        </div>
+        <div className='mt-3 flex justify-center'>
+          <span className='block text-sm text-gray-500 dark:text-gray-400 sm:text-center'>
+            © 2023{' '}
+            <a href='https://flowbite.com/' className='hover:underline'>
+              NeBonga
+            </a>
+            . All Rights Reserved.
+          </span>
+        </div>
       </div>
     </footer>
   )
