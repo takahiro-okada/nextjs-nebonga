@@ -2,6 +2,7 @@ type Work = {
   id: number
   title: string
   content: string
+  date: string
   featuredImage: {
     node: {
       altText: string

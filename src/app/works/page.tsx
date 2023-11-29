@@ -1,22 +1,31 @@
 'use client'
-import Image from 'next/image'
+import NextImage from 'next/image'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
 import SideNav from '../components/SideNav'
-import type Work from '../types/works'
+import formatDate from '../util/formatDate'
 
 export default function Works() {
-  const [works, setWorks] = useState<Work[] | null>(null)
+  const [works, setWorks] = useState<Works[] | null>(null)
 
   useEffect(() => {
     const query = `query GetWorks {
-      posts {
-        edges {
-          node {
-            id
-            title
-            slug
+      works {
+        nodes {
+          date
+          slug
+          title
+          categories {
+            nodes {
+              name
+            }
+          }
+          featuredImage {
+            node {
+              altText
+              sourceUrl
+            }
           }
         }
       }
@@ -32,12 +41,15 @@ export default function Works() {
     })
       .then((res) => res.json())
       .then((json) => {
-        setWorks(json.data.posts.edges)
+        setWorks(json.data.works.nodes)
       })
       .catch((error) => {
         console.error('エラー:', error)
       })
   }, [])
+
+  console.log('works')
+  console.log(works)
 
   return (
     <main>
@@ -45,26 +57,37 @@ export default function Works() {
         <section>
           <h2 className='text-5xl'>Works</h2>
           <p className='mt-3'>NeBongaのお仕事の一部をご紹介します</p>
-          <div className='mt-8 grid grid-cols-1 gap-4 md:grid-cols-3'>
-            <ul className='grid grid-cols-1 gap-4 md:grid-cols-2'>
-              {works &&
-                works.map((work) => (
-                  <li className='relative overflow-hidden rounded shadow-md' key={work.node.id}>
-                    <Image
-                      src={work.node.featuredImage?.node?.sourceUrl || '/images/image-placeholder.png'}
-                      alt={work.node.featuredImage?.node?.altText || 'Default Image'}
-                      width={work.node.featuredImage?.node?.mediaDetails?.width || 640}
-                      height={work.node.featuredImage?.node?.mediaDetails?.height || 480}
-                    />
-                    <div className='px-6 py-4'>
-                      <Link className='mb-2 text-xl font-bold' href={`/story/${work.node.slug}`}>
-                        {work.node.title} : {work.node.id}
-                      </Link>
-                    </div>
+          <div className='mt-8 md:flex'>
+            <div className='flex-auto'>
+              <ul className='gap-6 md:grid md:grid-cols-2'>
+                {works?.map((work) => (
+                  <li key={work.slug}>
+                    <Link href={`/works/${work.slug}`}>
+                      <div className='relative aspect-video h-auto w-full'>
+                        <NextImage
+                          src={work.featuredImage?.node?.sourceUrl || '/images/image-placeholder.png'}
+                          alt={work.featuredImage?.node?.altText}
+                          className='rounded-md object-cover'
+                          layout='fill'
+                        />
+                      </div>
+                      <div className='mt-2'>
+                        <p className='text-sm text-gray-500'>{formatDate(work.date)}</p>
+                        <h3 className='mt-2 text-xl font-semibold'>{work.title}</h3>
+                        <p className='mt-2 text-sm text-gray-500'>
+                          {work.categories.nodes.map((category) => (
+                            <span key={category.name} className='inline-block rounded-md bg-slate-200 p-2 px-3 text-xs'>
+                              {category.name}
+                            </span>
+                          ))}
+                        </p>
+                      </div>
+                    </Link>
                   </li>
                 ))}
-            </ul>
-            <div className='w-full'>
+              </ul>
+            </div>
+            <div className='md:ml-8 md:w-full md:max-w-xs md:flex-auto'>
               <SideNav />
             </div>
           </div>

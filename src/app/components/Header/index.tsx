@@ -1,6 +1,7 @@
 'use client'
 import Image from 'next/image'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { useState } from 'react'
 
 export default function Header() {
@@ -10,8 +11,14 @@ export default function Header() {
     setOpenMenu(!openMenu)
   }
 
+  //topページを判定
+
+  const path = usePathname()
+  const isTop = path === '/'
+  console.log(isTop)
+
   return (
-    <header className='absolute w-full py-3' role='banner'>
+    <header className={`${isTop ? 'absolute z-10 text-white' : 'relative'} w-full py-3`}>
       <div className='container relative  mx-auto flex items-center justify-center px-3  md:justify-between'>
         <h1>
           <a href='/' className='text-xl font-semibold tracking-tight'>
@@ -27,27 +34,27 @@ export default function Header() {
         <nav className='hidden lg:flex'>
           <ul className='space-x-4 lg:flex'>
             <li>
-              <Link href='/about' className='mx-4 text-white hover:underline lg:mx-6'>
+              <Link href='/about' className='mx-4 hover:underline lg:mx-6'>
                 About
               </Link>
             </li>
             <li>
-              <Link href='/works' className='mx-4 text-white hover:underline lg:mx-6'>
+              <Link href='/works' className='mx-4 hover:underline lg:mx-6'>
                 Works
               </Link>
             </li>
             <li>
-              <Link href='/story' className='mx-4 text-white hover:underline lg:mx-6'>
+              <Link href='/story' className='mx-4 hover:underline lg:mx-6'>
                 Story
               </Link>
             </li>
             <li>
-              <Link href='/price' className='mx-4 text-white hover:underline lg:mx-6'>
+              <Link href='/price' className='mx-4 hover:underline lg:mx-6'>
                 Price
               </Link>
             </li>
             <li>
-              <Link href='/contact' className='mx-4 text-white hover:underline lg:mx-6'>
+              <Link href='/contact' className='mx-4 hover:underline lg:mx-6'>
                 Contact
               </Link>
             </li>

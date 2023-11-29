@@ -1,32 +1,32 @@
 'use client'
-import Image from 'next/image'
+import NextImage from 'next/image'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
-import type Work from '../../types/works'
+import Works from '@/app/types/works'
+
 import { Button } from '..'
 import { SectionTitle } from '../SectionTitle'
 
 export default function CardImage() {
-  const [works, setWorks] = useState<Work[] | null>(null)
+  const [works, setWorks] = useState<Works[] | null>(null)
 
   useEffect(() => {
-    const query = `query AllWorks {
-      works {
-        edges {
-          node {
-            title
-            slug
-            id
-            featuredImage {
-              node {
-                altText
-                sourceUrl
-                mediaDetails {
-                  height
-                  width
-                }
-              }
+    const query = `query GetWorks {
+      works(first: 6) {
+        nodes {
+          date
+          slug
+          title
+          categories {
+            nodes {
+              name
+            }
+          }
+          featuredImage {
+            node {
+              altText
+              sourceUrl
             }
           }
         }
@@ -44,7 +44,7 @@ export default function CardImage() {
       .then((res) => res.json())
       .then((json) => {
         console.log(json)
-        setWorks(json.data.works.edges)
+        setWorks(json.data.works.nodes)
       })
       .catch((error) => {
         console.error('エラー:', error)
@@ -54,28 +54,25 @@ export default function CardImage() {
   return (
     <section className='container mx-auto mt-16 px-3'>
       <SectionTitle title='制作したもの' subtitle='Projects' />
-      <div className='mt-6 grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3'>
-        {works?.map((work) => (
-          <Link key={work.node.id} href={`/works/${work.node.slug}`}>
-            <div className='relative rounded-xl'>
-              <Image
-                src={work.node.featuredImage.node.sourceUrl}
-                alt={work.node.featuredImage.node.altText}
-                width={work.node.featuredImage.node.mediaDetails.width}
-                height={work.node.featuredImage.node.mediaDetails.height}
-                className='h-full w-full rounded-xl  object-cover'
-              />
-              <div className='absolute left-0 top-0  h-full w-full rounded-xl bg-black opacity-50'></div>
-              <div className='absolute left-0 top-0 flex h-full w-full items-end justify-center p-2'>
-                <div className='text-center text-white'>
-                  <h3 className='text-sm md:text-lg'>{work.node.title}</h3>
+      <div className='mt-8'>
+        <ul className='gap-6 md:grid md:grid-cols-3'>
+          {works?.map((work) => (
+            <li key={work.slug}>
+              <Link href={`/works/${work.slug}`}>
+                <div className='relative aspect-video h-auto w-full'>
+                  <NextImage
+                    src={work.featuredImage?.node?.sourceUrl || '/images/image-placeholder.png'}
+                    alt={work.featuredImage?.node?.altText}
+                    className='rounded-md object-cover'
+                    layout='fill'
+                  />
                 </div>
-              </div>
-            </div>
-          </Link>
-        ))}
+                <h3 className='mt-2 text-xl font-semibold'>{work.title}</h3>
+              </Link>
+            </li>
+          ))}
+        </ul>
       </div>
-
       <div className='mt-6 text-center'>
         <Button href='/works'>もっと見る</Button>
       </div>

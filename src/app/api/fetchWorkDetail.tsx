@@ -4,6 +4,14 @@ const fetchWork = async (slug: string) => {
       work(id: $slug, idType: SLUG) {
         title
         content
+        slug
+        date
+        featuredImage {
+          node {
+            altText
+            sourceUrl
+          }
+        }
       }
     }
   `

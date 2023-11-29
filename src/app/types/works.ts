@@ -1,8 +1,9 @@
-type Work = {
+type Works = {
   node: {
     id: number
     title: string
     content: string
+    date: string
     featuredImage: {
       node: {
         altText: string
@@ -17,4 +18,4 @@ type Work = {
   }
 }
 
-export default Work
+export default Works

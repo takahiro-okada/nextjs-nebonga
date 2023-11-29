@@ -1,9 +1,8 @@
 'use client'
+import NextImage from 'next/image'
 import { useEffect, useState } from 'react'
 
-import PageMainVisual from '@/app/components/PageMainVIsual'
-import { SectionTitle } from '@/app/components/SectionTitle'
-import SideNav from '@/app/components/SideNav'
+import formatDate from '@/app/util/formatDate'
 
 import { fetchWork } from '../../api/fetchWorkDetail'
 import type Work from '../../types/work'
@@ -36,26 +35,56 @@ export default function WorkDetail() {
 
   return (
     <main>
-      <PageMainVisual title='Works' bgImage='/images/bg-sample.jpg' />
-
       <section>
-        <SectionTitle title='Works' subtitle='制作実績' />
-
-        <div className='mt-8 grid grid-cols-3 gap-4'>
-          <div className='col-span-2'>
-            <div className='grid grid-cols-2 gap-4'>
-              {work && (
-                <div>
-                  <h3>{work.title}</h3>
-                  <div dangerouslySetInnerHTML={{ __html: work.content }} />
-                </div>
-              )}
+        <article className='container prose mx-auto px-3 lg:prose-xl'>
+          {work && (
+            <div>
+              <div className='relative aspect-video h-auto w-full'>
+                <NextImage
+                  src={work.featuredImage?.node?.sourceUrl || '/images/image-placeholder.png'}
+                  alt={work.featuredImage?.node?.altText}
+                  className='rounded-md object-cover'
+                  layout='fill'
+                />
+              </div>
+              <div className='mt-3 text-xs'>{formatDate(work.date)}</div>
+              <h1 className='mt-4 text-3xl'>{work.title}</h1>
+              <div dangerouslySetInnerHTML={{ __html: work.content }} />
+            </div>
+          )}
+          {/* LINEからお問い合わせとお問い合わせというボタンを作成 */}
+          <div className='mt-8 rounded-xl bg-slate-300 p-7'>
+            <p>まずはお気軽にお問い合わせください</p>
+            <div className='grid grid-cols-2 gap-5 text-center'>
+              <a href='https://lin.ee/6iXVJ5l' className='rounded-full bg-yellow-400 px-4 py-2 font-bold text-white'>
+                LINEからお問い合わせ
+              </a>
+              <a href='https://lin.ee/6iXVJ5l' className='rounded-full bg-yellow-400 px-4 py-2 font-bold text-white'>
+                お問い合わせ
+              </a>
             </div>
           </div>
-          <div className='col-span-1'>
-            <SideNav />
+
+          {/* 前の記事と次の記事のリンクを作成 */}
+          <div className='mt-8 grid grid-cols-2 gap-4'>
+            <div className='h-28 bg-slate-300 px-4 py-2 text-left'>
+              <a href='#' className=''>
+                <date className='text-xs'>2023.10.11</date>
+                <p className='text-xs'>
+                  ここには投稿のタイトルが入りますここには投稿のタイトルが入りますここには投稿のタイトルが入ります
+                </p>
+              </a>
+            </div>
+            <div className='h-28 bg-slate-300 px-4 py-2 text-right'>
+              <a href='#' className=''>
+                <date className='text-xs'>2023.10.11</date>
+                <p className='text-xs'>
+                  ここには投稿のタイトルが入りますここには投稿のタイトルが入りますここには投稿のタイトルが入ります
+                </p>
+              </a>
+            </div>
           </div>
-        </div>
+        </article>
       </section>
     </main>
   )

@@ -17,7 +17,7 @@ interface Categories {
   id: string // JSONデータに基づいて、idは文字列である必要があります
   name: string
   children: Children
-  uri: string
+  slug: string
 }
 
 export default Categories

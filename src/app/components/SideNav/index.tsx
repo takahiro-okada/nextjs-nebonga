@@ -12,13 +12,13 @@ export default function SideNav() {
           node {
             id
             name
-            uri
+            slug
             children {
               edges {
                 node {
                   id
                   name
-                  uri
+                  slug
                 }
               }
             }
@@ -37,7 +37,6 @@ export default function SideNav() {
       .then((res) => res.json())
       .then((json) => {
         const extractedCategories = json.data.categories.edges.map((edge: any) => edge.node)
-        console.log(extractedCategories)
         setCategories(extractedCategories)
       })
       .catch((error) => {
@@ -47,15 +46,15 @@ export default function SideNav() {
 
   const renderCategory = (category: Categories) => (
     <li key={category.id}>
-      <a href={category.uri} className='hover:underline'>
+      <a href={`categories/${category.slug}`} className='inline-block w-full border-b-2 py-2 hover:underline'>
         {category.name}
       </a>
       {category.children && category.children.edges.length > 0 && (
-        <ul className='pl-4'>
+        <ul className=''>
           {category.children.edges.map((edge: any) => (
             <li key={edge.node.id}>
-              <a href={edge.node.uri} className='hover:underline'>
-                {edge.node.name}
+              <a href={edge.node.slug} className='inline-block w-full border-b-2 py-2 pl-4 hover:underline'>
+                - {edge.node.name}
               </a>
             </li>
           ))}
