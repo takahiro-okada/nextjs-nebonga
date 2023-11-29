@@ -69,7 +69,7 @@ export default function WorkDetail() {
           <div className='mt-8 grid grid-cols-2 gap-4'>
             <div className='h-28 bg-slate-300 px-4 py-2 text-left'>
               <a href='#' className=''>
-                <date className='text-xs'>2023.10.11</date>
+                <div className='text-xs'>2023.10.11</div>
                 <p className='text-xs'>
                   ここには投稿のタイトルが入りますここには投稿のタイトルが入りますここには投稿のタイトルが入ります
                 </p>
@@ -77,7 +77,7 @@ export default function WorkDetail() {
             </div>
             <div className='h-28 bg-slate-300 px-4 py-2 text-right'>
               <a href='#' className=''>
-                <date className='text-xs'>2023.10.11</date>
+                <div className='text-xs'>2023.10.11</div>
                 <p className='text-xs'>
                   ここには投稿のタイトルが入りますここには投稿のタイトルが入りますここには投稿のタイトルが入ります
                 </p>
