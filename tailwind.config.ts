@@ -16,7 +16,7 @@ const config: Config = {
       backgroundImage: {
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'here-patter': 'url(/images/bg-sample.jpg)',
+        'mv-video': 'url(/images/sample-10s.mp4)',
       },
       keyframes: {
         scaleInCenter: {
@@ -27,6 +27,9 @@ const config: Config = {
           '0%': { borderRadius: '0%', opacity: '1', transform: 'scale(1)' },
           '100%': { borderRadius: '50%', opacity: '0', transform: 'scale(0)' },
         },
+      },
+      margin: {
+        'view-full': '0 calc(50% - 50vw)',
       },
     },
     fontFamily: {
