@@ -20,7 +20,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <TypekitLoader />
       <body className='font-yuGothic'>
         <Header />
-        {children}
+        <div className='container mx-auto px-3'>{children}</div>
         <Footer />
       </body>
     </html>

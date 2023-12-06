@@ -15,7 +15,6 @@ export default function Header() {
 
   const path = usePathname()
   const isTop = path === '/'
-  console.log(isTop)
 
   return (
     <header className={`${isTop ? 'absolute z-10 text-white' : 'relative'} w-full py-3`}>

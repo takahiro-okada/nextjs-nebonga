@@ -53,7 +53,10 @@ export default function SideNav() {
         <ul className=''>
           {category.children.edges.map((edge: any) => (
             <li key={edge.node.id}>
-              <a href={edge.node.slug} className='inline-block w-full border-b-2 py-2 pl-4 hover:underline'>
+              <a
+                href={`categories/${category.slug}/${edge.node.slug}`}
+                className='inline-block w-full border-b-2 py-2 pl-4 hover:underline'
+              >
                 - {edge.node.name}
               </a>
             </li>

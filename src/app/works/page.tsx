@@ -1,8 +1,9 @@
 'use client'
-import NextImage from 'next/image'
+import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
+import PageTitle from '../components/PageTItle'
 import SideNav from '../components/SideNav'
 import formatDate from '../util/formatDate'
 
@@ -55,8 +56,7 @@ export default function Works() {
     <main>
       <div className='container relative mx-auto px-3'>
         <section>
-          <h2 className='text-5xl'>Works</h2>
-          <p className='mt-3'>NeBongaのお仕事の一部をご紹介します</p>
+          <PageTitle title='制作実績' subtitle='Works' />
           <div className='mt-8 md:flex'>
             <div className='flex-auto'>
               <ul className='gap-6 md:grid md:grid-cols-2'>
@@ -64,11 +64,12 @@ export default function Works() {
                   <li key={work.slug}>
                     <Link href={`/works/${work.slug}`}>
                       <div className='relative aspect-video h-auto w-full'>
-                        <NextImage
+                        <Image
                           src={work.featuredImage?.node?.sourceUrl || '/images/image-placeholder.png'}
                           alt={work.featuredImage?.node?.altText}
                           className='rounded-md object-cover'
-                          layout='fill'
+                          width={640}
+                          height={396}
                         />
                       </div>
                       <div className='mt-2'>

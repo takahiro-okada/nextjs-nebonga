@@ -17,21 +17,21 @@ export default function Contact() {
         >
           <input type='hidden' name='bot-field' />
 
-          <div className='form-item mb-4'>
-            <span className='form-item-name mb-2 block text-sm font-bold text-gray-700'>お名前</span>
-            <div className='form-item-body'>
+          <div className='mb-4'>
+            <span className='mb-2 block text-sm font-bold text-gray-700'>お名前</span>
+            <div className=''>
               <input
                 type='text'
                 name='name'
-                className='m-form-text focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow focus:outline-none'
+                className='w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow'
                 required
               />
             </div>
           </div>
 
-          <div className='form-item mb-4'>
-            <span className='form-item-name mb-2 block text-sm font-bold text-gray-700'>個人 / 法人</span>
-            <div className='form-item-body flex space-x-4'>
+          <div className='mb-4'>
+            <span className='mb-2 block text-sm font-bold text-gray-700'>個人 / 法人</span>
+            <div className=' flex space-x-4'>
               <label className='flex items-center'>
                 <input type='radio' name='customer-type' value='個人' className='mr-2' required />
                 個人
@@ -43,9 +43,9 @@ export default function Contact() {
             </div>
           </div>
 
-          <div className='form-item mb-4'>
-            <span className='form-item-name mb-2 block text-sm font-bold text-gray-700'>ご依頼内容</span>
-            <div className='form-item-body flex flex-col space-y-2'>
+          <div className='mb-4'>
+            <span className='mb-2 block text-sm font-bold text-gray-700'>ご依頼内容</span>
+            <div className=' flex flex-col space-y-2'>
               <label className='flex items-center'>
                 <input type='checkbox' name='service-menu[]' value='ウェブサイト制作' className='mr-2' />
                 ウェブサイト制作
@@ -61,13 +61,10 @@ export default function Contact() {
             </div>
           </div>
 
-          <div className='form-item mb-4'>
-            <span className='form-item-name mb-2 block text-sm font-bold text-gray-700'>ご希望納期</span>
-            <div className='form-item-body'>
-              <select
-                name='schedule[]'
-                className='focus:shadow-outline w-full rounded border px-3 py-2 leading-tight text-gray-700 focus:outline-none'
-              >
+          <div className='mb-4'>
+            <span className='mb-2 block text-sm font-bold text-gray-700'>ご希望納期</span>
+            <div className=''>
+              <select name='schedule[]' className='w-full rounded border px-3 py-2 leading-tight text-gray-700'>
                 <option value='' disabled selected>
                   選択してください
                 </option>
@@ -79,12 +76,12 @@ export default function Contact() {
             </div>
           </div>
 
-          <div className='form-item mb-4'>
-            <span className='form-item-name mb-2 block text-sm font-bold text-gray-700'>メッセージ</span>
-            <div className='form-item-body'>
+          <div className='mb-4'>
+            <span className='mb-2 block text-sm font-bold text-gray-700'>メッセージ</span>
+            <div className=''>
               <textarea
                 name='message'
-                className='m-form-textarea focus:shadow-outline h-32 w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow focus:outline-none'
+                className='h-32 w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow'
                 required
               ></textarea>
             </div>
@@ -98,7 +95,7 @@ export default function Contact() {
             <input
               type='submit'
               value='送信'
-              className='m-btn focus:shadow-outline cursor-pointer rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700 focus:outline-none'
+              className='m-btn cursor-pointer rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700'
             />
           </div>
         </form>

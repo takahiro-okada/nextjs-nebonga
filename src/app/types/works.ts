@@ -1,4 +1,6 @@
 type Works = {
+  title: string
+  featuredImage: any
   node: {
     id: number
     title: string
@@ -16,6 +18,7 @@ type Works = {
     }
     slug: string
   }
+  slug: string
 }
 
 export default Works

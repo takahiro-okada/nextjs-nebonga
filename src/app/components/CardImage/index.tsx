@@ -1,5 +1,5 @@
 'use client'
-import NextImage from 'next/image'
+import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
@@ -43,7 +43,6 @@ export default function CardImage() {
     })
       .then((res) => res.json())
       .then((json) => {
-        console.log(json)
         setWorks(json.data.works.nodes)
       })
       .catch((error) => {
@@ -57,23 +56,25 @@ export default function CardImage() {
       <div className='mt-8'>
         <ul className='gap-6 md:grid md:grid-cols-3'>
           {works?.map((work) => (
-            <li key={work.slug}>
+            <li key={work.slug} className='group'>
               <Link href={`/works/${work.slug}`}>
-                <div className='relative aspect-video h-auto w-full'>
-                  <NextImage
+                <div className='relative aspect-video h-auto w-full overflow-hidden'>
+                  <div className='absolute left-0 top-0 z-10 h-full w-full rounded-xl bg-black opacity-30'></div>
+                  <Image
                     src={work.featuredImage?.node?.sourceUrl || '/images/image-placeholder.png'}
-                    alt={work.featuredImage?.node?.altText}
-                    className='rounded-md object-cover'
-                    layout='fill'
+                    alt={work.featuredImage?.node?.altText || ''}
+                    width={640}
+                    height={300}
+                    className='rounded-md object-cover transition-transform duration-300 group-hover:scale-110'
                   />
+                  <h3 className='absolute bottom-0 z-10 mt-2 px-5 py-4 font-semibold text-white'>{work.title}</h3>
                 </div>
-                <h3 className='mt-2 text-xl font-semibold'>{work.title}</h3>
               </Link>
             </li>
           ))}
         </ul>
       </div>
-      <div className='mt-6 text-center'>
+      <div className='mt-14 text-center'>
         <Button href='/works'>もっと見る</Button>
       </div>
     </section>
