@@ -3,13 +3,14 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
+import Works from '@/app/types/works'
 import GET_WORKS from '@/graphql/getWorksQuery'
 
 import PageTitle from '../components/PageTItle'
 import SideNav from '../components/SideNav'
 import formatDate from '../util/formatDate'
 
-export default function Works() {
+export default function Page() {
   const [works, setWorks] = useState<Works[] | null>(null)
 
   useEffect(() => {
