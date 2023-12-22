@@ -1,19 +1,27 @@
 'use client'
 import Image from 'next/image'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
 
-import GET_WORKS from '@/graphql/getWorksQuery'
+import PageTitle from '@/app/components/PageTItle'
+import SideNav from '@/app/components/SideNav'
+import Works from '@/app/types/works'
+import formatDate from '@/app/util/formatDate'
+import getFilteredWorksQuery from '@/graphql/getFilteredWorksQuery'
 
-import PageTitle from '../components/PageTItle'
-import SideNav from '../components/SideNav'
-import formatDate from '../util/formatDate'
-
-export default function Works() {
+export default function WorksCategoryPage() {
   const [works, setWorks] = useState<Works[] | null>(null)
+  const pathname = usePathname()
 
   useEffect(() => {
-    const query = GET_WORKS
+    const pathSegments = pathname.split('/').filter(Boolean)
+    const categorySlug = pathSegments[1]
+    const subCategorySlug = pathSegments[2]
+
+    console.log(categorySlug, subCategorySlug)
+
+    const query = getFilteredWorksQuery(categorySlug, subCategorySlug)
 
     fetch('https://wp.nebonga.com/graphql', {
       body: JSON.stringify({ query }),
@@ -40,12 +48,12 @@ export default function Works() {
             <div className='flex-auto'>
               <ul className='gap-6 md:grid md:grid-cols-2'>
                 {works?.map((work) => (
-                  <li key={work.slug}>
+                  <li key={work.id}>
                     <Link href={`/works/${work.slug}`}>
                       <div className='relative aspect-video h-auto w-full'>
                         <Image
                           src={work.featuredImage?.node?.sourceUrl || '/images/image-placeholder.png'}
-                          alt={work.featuredImage?.node?.altText}
+                          alt={work.featuredImage?.node?.altText || ''}
                           className='rounded-md object-cover'
                           width={640}
                           height={396}

@@ -1,4 +1,5 @@
 type Works = {
+  id: number
   title: string
   featuredImage: any
   node: {

@@ -6,13 +6,15 @@ import MainVisual from './components/MainVisual'
 export default function Home() {
   return (
     <main>
-      <MainVisual />
+      <div>
+        <MainVisual />
 
-      <CardImage />
+        <CardImage />
 
-      <FeaturedAbout />
+        <FeaturedAbout />
 
-      <ClientList />
+        <ClientList />
+      </div>
     </main>
   )
 }

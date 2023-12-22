@@ -1,6 +1,4 @@
-import { gql } from '@apollo/client'
-
-export const GET_POSTS = gql`
+export const GET_POSTS = `
   query GetPosts {
     posts {
       edges {
@@ -14,6 +12,29 @@ export const GET_POSTS = gql`
               title
               link
             }
+          }
+        }
+      }
+    }
+  }
+`
+
+export const GET_WORKS = `
+  query GET_WORKS {
+    works {
+      nodes {
+        date
+        slug
+        title
+        categories {
+          nodes {
+            name
+          }
+        }
+        featuredImage {
+          node {
+            altText
+            sourceUrl
           }
         }
       }

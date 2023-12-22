@@ -3,8 +3,8 @@ import Link from 'next/link'
 
 export default function Footer() {
   return (
-    <footer className='mt-5 bg-white'>
-      <div className='container mx-auto px-3'>
+    <footer className='mt-10 bg-gray pt-10'>
+      <div className='mx-auto max-w-1140 px-3'>
         <div className='sm:flex sm:items-center sm:justify-between'>
           <ul className='mb-6 flex flex-wrap items-center justify-center text-sm font-medium sm:mb-0'>
             <li>

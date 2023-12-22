@@ -5,17 +5,16 @@ import { SliderImages } from '../components/SliderImages'
 export default function About() {
   return (
     <main>
-      <section>
-        <div className='relative h-96 max-w-full'>
-          <Image src='/images/bg-sample.jpg' className='max-w-full' alt='TODO:altを入れる' layout='fill' />
+      <section className='mx-auto max-w-1140 px-3'>
+        <div className='mt-20'>
+          <h1 className='text-4xl font-extrabold'>
+            映像を通して､
+            <br />
+            世界を良くする
+          </h1>
+          <p className='mt-6'>Making the world a better place through images</p>
         </div>
-        <div className='relative z-10 mx-4 -mt-10 max-w-3xl rounded-xl bg-white p-10 px-4 shadow-lg'>
-          <h2 className='text-center text-4xl'>NeBongについて</h2>
-          <p className='mt-3 text-center'>About Us</p>
-          <h3 className='mt-5 text-center text-2xl'>
-            <span className='inline-block'>映像を通して､</span>
-            <span className='inline-block'>世界をよくする</span>
-          </h3>
+        <div className=''>
           <p className='mt-8'>
             映像を通して､世界をよくする｡映像を通して､世界をよくする｡映像を通して､世界をよくする｡映像を通して､世界をよくする｡映像を通して､世界をよくする｡映像を通して､世界をよくする｡映像を通して､世界をよくする｡映像を通して､世界をよくする｡映像を通して､世界をよくする｡映像を通して､世界をよくする｡映像を通して､世界をよくする｡映像を通して､世界をよくする｡映像を通して､世界をよくする｡映像を通して､世界をよくする｡映像を通して､世界をよくする｡
           </p>
@@ -35,30 +34,43 @@ export default function About() {
       </section>
 
       <section className='mx-4 mt-12'>
-        <Image src='/images/bg-sample.jpg' className='max-w-full' alt='TODO:altを入れる' layout='fill' />
-        <h2 className='text-2xl'>川崎 芳勲</h2>
-        <p>Yoshimasa Kawasaki</p>
-        <p className='mt-6'>
-          映像を通して､世界をよくする｡映像を通して､世界をよくする｡映像を通して､世界をよくする｡
-          <br />
-          映像を通して､世界をよくする｡映像を通して､世界をよくする｡映像を通して､世界をよくする｡
-          <br />
-          <br />
-          映像を通して､世界をよくする｡映像を通して､世界をよくする｡
-          <br />
-          映像を通して､世界をよくする｡映像を通して､世界をよくする｡映像を通して､世界をよくする｡
-          <br />
-          映像を通して､世界をよくする｡映像を通して､世界をよくする｡映像を通して､世界をよくする｡映像を通して､世界をよくする｡
-        </p>
-        <p className='mt-6'>
-          Making the world a better place through images.Making the world a better place through images.Making the world
-          a better place through images.Making the world a better place through images. Making the world a better place
-          through images.Making the world a better place through images.Making the world a better place through images.
-          <br />
-          Making the world a better place through images.Making the world a better place through images.Making the world
-          a better place through images. Making the world a better place through images.Making the world a better place
-          through images.
-        </p>
+        <div className=''>
+          <div className=''>
+            <h2 className='text-2xl'>川崎 芳勲</h2>
+            <p>Yoshimasa Kawasaki</p>
+            <p className='mt-6'>
+              映像を通して､世界をよくする｡映像を通して､世界をよくする｡映像を通して､世界をよくする｡
+              <br />
+              映像を通して､世界をよくする｡映像を通して､世界をよくする｡映像を通して､世界をよくする｡
+              <br />
+              <br />
+              映像を通して､世界をよくする｡映像を通して､世界をよくする｡
+              <br />
+              映像を通して､世界をよくする｡映像を通して､世界をよくする｡映像を通して､世界をよくする｡
+              <br />
+              映像を通して､世界をよくする｡映像を通して､世界をよくする｡映像を通して､世界をよくする｡映像を通して､世界をよくする｡
+            </p>
+            <p className='mt-6'>
+              Making the world a better place through images.Making the world a better place through images.Making the
+              world a better place through images.Making the world a better place through images. Making the world a
+              better place through images.Making the world a better place through images.Making the world a better place
+              through images.
+              <br />
+              Making the world a better place through images.Making the world a better place through images.Making the
+              world a better place through images. Making the world a better place through images.Making the world a
+              better place through images.
+            </p>
+          </div>
+          <div className='mt-6'>
+            <Image
+              src='/images/image-hiro.jpg'
+              alt='NeBonga'
+              width={640}
+              height={480}
+              className='h-full w-full  object-cover'
+            />
+          </div>
+        </div>
       </section>
     </main>
   )

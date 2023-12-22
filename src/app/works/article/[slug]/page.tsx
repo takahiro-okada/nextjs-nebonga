@@ -4,15 +4,15 @@ import { useEffect, useState } from 'react'
 
 import formatDate from '@/app/util/formatDate'
 
-import { fetchWork } from '../../api/fetchWorkDetail'
-import type Work from '../../types/work'
+import { fetchWork } from '../../../api/fetchWorkDetail'
+import type Work from '../../../types/work'
 
 export default function WorkDetail() {
   const [work, setWork] = useState<Work | null>(null)
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
-    const slugArray = location.pathname.split('/works/')
+    const slugArray = location.pathname.split('/works/article/')
     if (slugArray.length !== 2) {
       setError('Invalid URL format.')
       return

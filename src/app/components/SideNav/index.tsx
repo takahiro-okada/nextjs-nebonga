@@ -46,7 +46,7 @@ export default function SideNav() {
 
   const renderCategory = (category: Categories) => (
     <li key={category.id}>
-      <a href={`categories/${category.slug}`} className='inline-block w-full border-b-2 py-2 hover:underline'>
+      <a href={`/works/${category.slug}`} className='inline-block w-full border-b-2 py-2 hover:underline'>
         {category.name}
       </a>
       {category.children && category.children.edges.length > 0 && (
@@ -54,7 +54,7 @@ export default function SideNav() {
           {category.children.edges.map((edge: any) => (
             <li key={edge.node.id}>
               <a
-                href={`categories/${category.slug}/${edge.node.slug}`}
+                href={`/works/${category.slug}/${edge.node.slug}`}
                 className='inline-block w-full border-b-2 py-2 pl-4 hover:underline'
               >
                 - {edge.node.name}

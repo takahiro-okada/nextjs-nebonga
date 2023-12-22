@@ -13,6 +13,9 @@ const config: Config = {
         scaleInCenter: 'scaleInCenter 0.5s ease-in-out forwards',
         scaleOutCenter: 'scaleOutCenter 0.5s ease-in-out forwards',
       },
+      backgroundColor: {
+        gray: '#F8F8F8;',
+      },
       backgroundImage: {
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
@@ -30,6 +33,9 @@ const config: Config = {
       },
       margin: {
         'view-full': '0 calc(50% - 50vw)',
+      },
+      maxWidth: {
+        '1140': '1140px',
       },
     },
     fontFamily: {

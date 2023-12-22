@@ -6,7 +6,7 @@ type Props = {
 
 export function Button({ children, className, href }: Props) {
   return (
-    <a className={`inline-block rounded-full border-2 border-gray-400 bg-white px-10 py-2`} href={href}>
+    <a className={`inline-block w-full max-w-xs rounded-full border-2 bg-black px-10 py-3 text-white`} href={href}>
       {children}
     </a>
   )
