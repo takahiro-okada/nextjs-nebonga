@@ -1,6 +1,12 @@
 type Works = {
   id: number
   title: string
+  categories: {
+    nodes: {
+      name: string
+    }[]
+  }
+  date: string
   featuredImage: any
   node: {
     id: number

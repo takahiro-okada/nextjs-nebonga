@@ -19,8 +19,6 @@ export default function WorksCategoryPage() {
     const categorySlug = pathSegments[1]
     const subCategorySlug = pathSegments[2]
 
-    console.log(categorySlug, subCategorySlug)
-
     const query = getFilteredWorksQuery(categorySlug, subCategorySlug)
 
     fetch('https://wp.nebonga.com/graphql', {
