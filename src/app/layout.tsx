@@ -1,10 +1,7 @@
-'use client'
 import './globals.css'
 
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import { useRouter } from 'next/router'
-import { useEffect } from 'react'
 
 import Footer from '../app/components/Footer/'
 import Header from '../app/components/Header/'
@@ -18,17 +15,6 @@ export const metadata: Metadata = {
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const router = useRouter()
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const currentUrl = window.location.href
-      if (currentUrl === 'https://nebonga.com/') {
-        router.push('https://hirokawasaki-works.com/')
-      }
-    }
-  }, [router])
-
   return (
     <html lang='ja' className='font-yuGothic'>
       <TypekitLoader />

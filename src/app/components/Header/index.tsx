@@ -1,10 +1,21 @@
 'use client'
 import Image from 'next/image'
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
-import { useState } from 'react'
+import { usePathname, useRouter } from 'next/navigation'
+import { useEffect, useState } from 'react'
 
 export default function Header() {
+  const router = useRouter()
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const currentUrl = window.location.href
+      if (currentUrl === 'https://nebonga.com/') {
+        router.push('https://hirokawasaki-works.com/')
+      }
+    }
+  }, [router])
+
   const [openMenu, setOpenMenu] = useState(false)
 
   const handleMenuOpen = () => {
@@ -64,22 +75,22 @@ export default function Header() {
             <div
               className={
                 openMenu
-                  ? 'h-0.5 w-8 translate-y-2.5 rotate-45 bg-gray-600 transition duration-500 ease-in-out'
-                  : 'h-0.5 w-8 bg-gray-600 transition duration-500 ease-in-out'
+                  ? 'bg-gray-600 h-0.5 w-8 translate-y-2.5 rotate-45 transition duration-500 ease-in-out'
+                  : 'bg-gray-600 h-0.5 w-8 transition duration-500 ease-in-out'
               }
             />
             <div
               className={
                 openMenu
                   ? 'opacity-0 transition duration-500 ease-in-out'
-                  : 'h-0.5 w-8 bg-gray-600 transition duration-500 ease-in-out'
+                  : 'bg-gray-600 h-0.5 w-8 transition duration-500 ease-in-out'
               }
             />
             <div
               className={
                 openMenu
-                  ? 'h-0.5 w-8 -rotate-45 bg-gray-600 transition duration-500 ease-in-out'
-                  : 'h-0.5 w-8 bg-gray-600 transition duration-500 ease-in-out'
+                  ? 'bg-gray-600 h-0.5 w-8 -rotate-45 transition duration-500 ease-in-out'
+                  : 'bg-gray-600 h-0.5 w-8 transition duration-500 ease-in-out'
               }
             />
           </button>
