@@ -1,21 +1,10 @@
 'use client'
 import Image from 'next/image'
 import Link from 'next/link'
-import { usePathname, useRouter } from 'next/navigation'
-import { useEffect, useState } from 'react'
+import { usePathname } from 'next/navigation'
+import { useState } from 'react'
 
 export default function Header() {
-  const router = useRouter()
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const currentUrl = window.location.href
-      if (currentUrl === 'https://nebonga.com/') {
-        router.push('https://hirokawasaki-works.com/')
-      }
-    }
-  }, [router])
-
   const [openMenu, setOpenMenu] = useState(false)
 
   const handleMenuOpen = () => {
@@ -23,7 +12,6 @@ export default function Header() {
   }
 
   //topページを判定
-
   const path = usePathname()
   const isTop = path === '/'
 
