@@ -1,36 +1,14 @@
 'use client'
-import Image from 'next/image'
-import Link from 'next/link'
-import { useEffect, useState } from 'react'
 
-import Works from '@/app/types/works'
 import GET_WORKS from '@/graphql/getWorksQuery'
 
+import ContentList from '../components/ContentList'
+import useFetchData from '../components/hooks/useFetchData'
 import PageTitle from '../components/PageTItle'
 import SideNav from '../components/SideNav'
-import formatDate from '../util/formatDate'
 
 export default function Page() {
-  const [works, setWorks] = useState<Works[] | null>(null)
-
-  useEffect(() => {
-    const query = GET_WORKS
-
-    fetch('https://wp.nebonga.com/graphql', {
-      body: JSON.stringify({ query }),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      method: 'POST',
-    })
-      .then((res) => res.json())
-      .then((json) => {
-        setWorks(json.data.works.nodes)
-      })
-      .catch((error) => {
-        console.error('エラー:', error)
-      })
-  }, [])
+  const { data, error, isLoading } = useFetchData(GET_WORKS, 'https://wp.nebonga.com/graphql')
 
   return (
     <main>
@@ -39,34 +17,7 @@ export default function Page() {
           <PageTitle title='制作実績' subtitle='Works' />
           <div className='mt-8 md:flex'>
             <div className='flex-auto'>
-              <ul className='gap-6 md:grid md:grid-cols-2'>
-                {works?.map((work) => (
-                  <li key={work.slug}>
-                    <Link href={`/works/${work.slug}`}>
-                      <div className='relative aspect-video h-auto w-full'>
-                        <Image
-                          src={work.featuredImage?.node?.sourceUrl || '/images/image-placeholder.png'}
-                          alt={work.featuredImage?.node?.altText}
-                          className='rounded-md object-cover'
-                          width={640}
-                          height={396}
-                        />
-                      </div>
-                      <div className='mt-2'>
-                        <p className='text-sm text-gray-500'>{formatDate(work.date)}</p>
-                        <h3 className='mt-2 text-xl font-semibold'>{work.title}</h3>
-                        <p className='mt-2 text-sm text-gray-500'>
-                          {work.categories.nodes.map((category) => (
-                            <span key={category.name} className='inline-block rounded-md bg-slate-200 p-2 px-3 text-xs'>
-                              {category.name}
-                            </span>
-                          ))}
-                        </p>
-                      </div>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+              <ContentList items={data?.works.nodes} basePath='works' />
             </div>
             <div className='md:ml-8 md:w-full md:max-w-xs md:flex-auto'>
               <SideNav />

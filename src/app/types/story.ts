@@ -28,4 +28,10 @@ type Stories = {
   slug: string
 }
 
+interface StoriesResponse {
+  posts: {
+    nodes: Stories[]
+  }
+}
+
 export default Stories
