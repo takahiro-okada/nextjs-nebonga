@@ -1,8 +1,18 @@
-type Story = {
+type Stories = {
+  id: number
+  title: string
+  categories: {
+    nodes: {
+      name: string
+    }[]
+  }
+  date: string
+  featuredImage: any
   node: {
     id: number
     title: string
     content: string
+    date: string
     featuredImage: {
       node: {
         altText: string
@@ -15,5 +25,7 @@ type Story = {
     }
     slug: string
   }
+  slug: string
 }
-export default Story
+
+export default Stories
