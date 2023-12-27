@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
-import PageMainVisual from '../components/PageMainVIsual'
+import PageTitle from '../components/PageTItle'
 import SideNav from '../components/SideNav'
 import Story from '../types/story'
 
@@ -54,7 +54,7 @@ export default function PostList() {
 
   return (
     <main>
-      <PageMainVisual title='Story' bgImage='/images/bg-sample.jpg' />
+      <PageTitle title='コラム' subtitle='Story' />
       <div className='mt-8 grid grid-cols-3 gap-4'>
         <div className='col-span-2'>
           <div className='grid grid-cols-2 gap-4'>
