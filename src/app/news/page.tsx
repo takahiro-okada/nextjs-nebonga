@@ -2,7 +2,9 @@
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
-import PageMainVisual from '../components/PageMainVIsual'
+import GET_NEWS from '@/graphql/getNewsQuery'
+
+import PageTitle from '../components/PageTItle'
 import SideNav from '../components/SideNav'
 import formatDate from '../util/formatDate'
 
@@ -10,30 +12,7 @@ export default function NewsList() {
   const [news, setNews] = useState<any[] | null>(null)
 
   useEffect(() => {
-    const query = `query AllNews {
-      newsList {
-        edges {
-          node {
-            id
-            content
-            title
-            slug
-            date
-            featuredImage {
-              node {
-                mediaDetails {
-                  width
-                  height
-                }
-                sourceUrl
-                altText
-              }
-            }
-          }
-        }
-      }
-    }
-    `
+    const query = GET_NEWS
 
     fetch('https://wp.nebonga.com/graphql', {
       body: JSON.stringify({ query }),
@@ -53,22 +32,28 @@ export default function NewsList() {
 
   return (
     <main>
-      <PageMainVisual title='Story' bgImage='/images/bg-sample.jpg' />
-      <div className='mt-8 grid grid-cols-3 gap-4'>
-        <section className='col-span-2'>
-          {news &&
-            news.map((newsItem) => (
-              <article key={newsItem.node.id} className='mb-4 bg-white p-4'>
-                <Link href={`/news/${newsItem.node.slug}`} className='flex align-middle'>
-                  <time dateTime={newsItem.node.date}>{formatDate(newsItem.node.date)}</time>
-                  <div>Category</div>
-                  <h3 className='text-xl'>{newsItem.node.title}</h3>
-                </Link>
-              </article>
-            ))}
-        </section>
-        <div className='col-span-1'>
-          <SideNav />
+      <div className='container relative mx-auto px-3'>
+        <PageTitle title='ニュース' subtitle='News' />
+        <div className='mt-8 md:flex'>
+          <div className='flex-auto'>
+            {news &&
+              news.map((newsItem) => (
+                <article key={newsItem.node.id} className='mb-4 border-b-2 bg-white p-4 py-2'>
+                  <Link href={`/news/${newsItem.node.slug}`} className='md:flex md:items-start md:align-middle'>
+                    <div className='flex'>
+                      <time dateTime={newsItem.node.date}>{formatDate(newsItem.node.date)}</time>
+                      <div className='ml-4'>
+                        <span className='inline-block rounded-md bg-slate-200 p-2 px-3 text-xs'>Category</span>
+                      </div>
+                    </div>
+                    <h3 className='mt-4 text-xl md:ml-4 md:mt-0'>{newsItem.node.title}</h3>
+                  </Link>
+                </article>
+              ))}
+          </div>
+          <div className='md:ml-8 md:w-full md:max-w-xs md:flex-auto'>
+            <SideNav />
+          </div>
         </div>
       </div>
     </main>
