@@ -5,9 +5,9 @@ import Link from 'next/link'
 import formatDate from '../../util/formatDate'
 
 interface ContentListProps {
-  basePath: string // ここは適切な型に置き換えてください
+  basePath: string
   items: any[]
-  type: string // このプロパティが問題を引き起こしている可能性があります
+  type: string
 }
 
 export default function ContentList({ basePath, items, type }: ContentListProps) {
@@ -29,7 +29,7 @@ export default function ContentList({ basePath, items, type }: ContentListProps)
               <p className='text-sm text-gray-500'>{formatDate(item.date)}</p>
               <h3 className='mt-2 text-xl font-semibold'>{item.title}</h3>
               <p className='mt-2 text-sm text-gray-500'>
-                {item.categories.nodes.map((category) => (
+                {item.categories.nodes.map((category: any) => (
                   <span key={category.name} className='inline-block rounded-md bg-slate-200 p-2 px-3 text-xs'>
                     {category.name}
                   </span>
