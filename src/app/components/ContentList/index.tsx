@@ -2,11 +2,13 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
+import Stories from '@/app/types/story'
+
 import formatDate from '../../util/formatDate'
 
 interface ContentListProps {
   basePath: string
-  items: any[]
+  items: Stories[]
   type: string
 }
 

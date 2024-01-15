@@ -18,7 +18,7 @@ export default function Page() {
           <PageTitle title='制作実績' subtitle='Works' />
           <div className='mt-8 md:flex'>
             <div className='flex-auto'>
-              <ContentList items={data?.posts.nodes} basePath='works' type='story' />
+              <ContentList items={data?.posts.nodes || []} basePath='works' type='story' />
             </div>
             <div className='md:ml-8 md:w-full md:max-w-xs md:flex-auto'>
               <SideNav />
