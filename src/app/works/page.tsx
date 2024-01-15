@@ -2,7 +2,6 @@
 
 import GET_WORKS from '@/graphql/getWorksQuery'
 
-import ContentList from '../components/ContentList'
 import useFetchData from '../components/hooks/useFetchData'
 import PageTitle from '../components/PageTItle'
 import SideNav from '../components/SideNav'
@@ -16,9 +15,7 @@ export default function Page() {
         <section>
           <PageTitle title='制作実績' subtitle='Works' />
           <div className='mt-8 md:flex'>
-            <div className='flex-auto'>
-              <ContentList items={data?.works.nodes} basePath='works' />
-            </div>
+            <div className='flex-auto'>{/* <ContentList items={data?.works.nodes} basePath='works' /> */}</div>
             <div className='md:ml-8 md:w-full md:max-w-xs md:flex-auto'>
               <SideNav />
             </div>
