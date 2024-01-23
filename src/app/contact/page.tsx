@@ -4,15 +4,15 @@ import axios from 'axios'
 import { useForm } from 'react-hook-form'
 
 export default function ContactForm() {
-  const { register, handleSubmit } = useForm()
+  const { handleSubmit, register } = useForm() // 'register' and 'handleSubmit' are swapped
 
   const onSubmit = (data: any) => {
     data['form-name'] = 'contact'
     const params = new URLSearchParams(data)
     axios({
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      data: params.toString(),
+      data: params.toString(), // 'data' moved up
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, // 'headers' moved down
+      method: 'POST', // 'method' moved down
       url: '/',
     })
       .then(() => {
