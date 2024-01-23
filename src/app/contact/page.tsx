@@ -1,42 +1,36 @@
 'use client'
 
-import PageMainVisual from '../components/PageMainVIsual'
+import axios from 'axios'
+import { useForm } from 'react-hook-form'
 
-export default function Contact() {
+export default function ContactForm() {
+  const { register, handleSubmit } = useForm()
+
+  const onSubmit = (data: any) => {
+    data['form-name'] = 'contact'
+    const params = new URLSearchParams(data)
+    axios({
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      data: params.toString(),
+      url: '/',
+    })
+      .then(() => {
+        window.location.href = '/thanks'
+      })
+      .catch((error) => {
+        console.error('Submission failed:', error)
+      })
+  }
+
   return (
-    <>
-      <PageMainVisual title='Contact' bgImage='/images/bg-sample.jpg' />
-      <main className='flex min-h-screen flex-col items-center justify-center bg-gray-100 p-6'>
-        <form name='contact' method='POST' data-netlify='true'>
-          <p>
-            <label>
-              Your Name: <input type='text' name='name' />
-            </label>
-          </p>
-          <p>
-            <label>
-              Your Email: <input type='email' name='email' />
-            </label>
-          </p>
-          <p>
-            <label>
-              Your Role:{' '}
-              <select name='role[]' multiple>
-                <option value='leader'>Leader</option>
-                <option value='follower'>Follower</option>
-              </select>
-            </label>
-          </p>
-          <p>
-            <label>
-              Message: <textarea name='message'></textarea>
-            </label>
-          </p>
-          <p>
-            <button type='submit'>Send</button>
-          </p>
-        </form>
-      </main>
-    </>
+    <form onSubmit={handleSubmit(onSubmit)} data-netlify='true' data-netlify-honeypot='bot-field'>
+      <input type='hidden' {...register('form-name')} value='contact' />
+      <input type='hidden' {...register('bot-field')} />
+      <input type='text' placeholder='Your Name' {...register('name')} required />
+      <input type='email' placeholder='Your Email' {...register('email')} required />
+      <textarea placeholder='Your Message' {...register('message')} required />
+      <button type='submit'>Submit</button>
+    </form>
   )
 }
