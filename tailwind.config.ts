@@ -14,12 +14,20 @@ const config: Config = {
         scaleOutCenter: 'scaleOutCenter 0.5s ease-in-out forwards',
       },
       backgroundColor: {
-        gray: '#F8F8F8;',
+        gray: '#F5F6F7;',
       },
       backgroundImage: {
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'mv-video': 'url(/images/sample-10s.mp4)',
+      },
+      aspectRatio: {
+        16: '16',
+        9: '9',
+        4: '4',
+        3: '3',
+        2: '2',
+        1: '1',
       },
       keyframes: {
         scaleInCenter: {
@@ -50,6 +58,7 @@ const config: Config = {
         'Meiryo',
         'sans-serif',
       ],
+      Montserrat: ['Montserrat', 'sans-serif'],
     },
   },
 }
