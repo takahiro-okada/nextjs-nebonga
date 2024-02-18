@@ -13,7 +13,6 @@ export default function Header() {
     setOpenMenu(!openMenu)
   }
 
-  //topページを判定
   const path = usePathname()
   const isTop = path === '/'
 

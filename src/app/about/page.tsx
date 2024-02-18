@@ -1,6 +1,7 @@
 import Image from 'next/image'
 
 import { SliderImages } from '../components/SliderImages'
+import { montserrat } from '@/app/util/fonts'
 
 export default function About() {
   return (
@@ -8,24 +9,18 @@ export default function About() {
       <section className='mx-auto max-w-1140 px-3'>
         <div className='md:flex'>
           <div className='mt-20 md:w-1/2'>
-            <h1 className='text-4xl font-extrabold md:text-6xl'>
-              映像を通して､
-              <br />
-              世界を良くする
-            </h1>
-            <p className='mt-6'>Making the world a better place through images</p>
+            <h1 className={`${montserrat.className} text-5xl font-extrabold md:text-7xl`}>Passion on the border</h1>
+            <p className='mt-6 text-lg'>境界線上の葛藤</p>
           </div>
           <div className='md:w-1/2'>
             <p className='mt-8'>
-              映像を通して､世界をよくする｡映像を通して､世界をよくする｡映像を通して､世界をよくする｡映像を通して､世界をよくする｡映像を通して､世界をよくする｡映像を通して､世界をよくする｡映像を通して､世界をよくする｡映像を通して､世界をよくする｡映像を通して､世界をよくする｡映像を通して､世界をよくする｡映像を通して､世界をよくする｡映像を通して､世界をよくする｡映像を通して､世界をよくする｡映像を通して､世界をよくする｡映像を通して､世界をよくする｡
+              志を持つすべての企業、人の取り組みをビジュアルコンテンツでサポート致します。
+              人は葛藤しながらも、それでも情熱を絶やすことなく、前に進む。
+              その奮闘と熱意の証を残すお手伝いをさせていただきます。
             </p>
             <p className='mt-8'>
-              Making the world a better place through images.Making the world a better place through images.Making the
-              world a better place through images.Making the world a better place through images.Making the world a
-              better place through images.Making the world a better place through images.Making the world a better place
-              through imagesMaking the world a better place through images.Making the world a better place through
-              images.Making the world a better place through images.Making the world a better place through
-              images.Making the world a better place through images.
+              Our mission is to make better world with people who has passion. We are focusing on not only achieving
+              goals with clients but also knowing subconscious through creating.
             </p>
           </div>
         </div>
