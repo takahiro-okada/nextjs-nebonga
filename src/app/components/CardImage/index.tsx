@@ -7,6 +7,7 @@ import Works from '@/app/types/works'
 
 import { Button } from '../Button'
 import { SectionTitle } from '../SectionTitle'
+import CommonContainer from '../CommonContainer'
 
 export default function CardImage() {
   const [works, setWorks] = useState<Works[] | null>(null)
@@ -52,7 +53,7 @@ export default function CardImage() {
 
   return (
     <section className='bg-gray pb-40 pt-8'>
-      <div className='mx-auto max-w-1140 px-6'>
+      <CommonContainer>
         <SectionTitle title='Works' subtitle='制作実績' />
         <div className='mt-8'>
           <ul className='grid gap-6 md:grid-cols-3'>
@@ -78,7 +79,7 @@ export default function CardImage() {
         <div className='mt-14 text-center'>
           <Button href='/works'>view more</Button>
         </div>
-      </div>
+      </CommonContainer>
     </section>
   )
 }

@@ -7,6 +7,7 @@ import GET_NEWS from '@/graphql/getNewsQuery'
 import PageTitle from '../components/PageTItle'
 import SideNav from '../components/SideNav'
 import formatDate from '../util/formatDate'
+import CommonContainer from '../components/CommonContainer'
 
 export default function NewsList() {
   const [news, setNews] = useState<any[] | null>(null)
@@ -32,7 +33,7 @@ export default function NewsList() {
 
   return (
     <main>
-      <div className='container relative mx-auto px-3'>
+      <CommonContainer>
         <PageTitle title='ニュース' subtitle='News' />
         <div className='mt-8 md:flex'>
           <div className='flex-auto'>
@@ -55,7 +56,7 @@ export default function NewsList() {
             <SideNav />
           </div>
         </div>
-      </div>
+      </CommonContainer>
     </main>
   )
 }

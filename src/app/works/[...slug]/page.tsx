@@ -9,6 +9,7 @@ import SideNav from '@/app/components/SideNav'
 import Works from '@/app/types/works'
 import formatDate from '@/app/util/formatDate'
 import getFilteredWorksQuery from '@/graphql/getFilteredWorksQuery'
+import CommonContainer from '@/app/components/CommonContainer'
 
 export default function WorksCategoryPage() {
   const [works, setWorks] = useState<Works[] | null>(null)
@@ -39,8 +40,8 @@ export default function WorksCategoryPage() {
 
   return (
     <main>
-      <div className='container relative mx-auto px-3'>
-        <section>
+      <section>
+        <CommonContainer>
           <PageTitle title='制作実績' subtitle='Works' />
           <div className='mt-8 md:flex'>
             <div className='flex-auto'>
@@ -77,8 +78,8 @@ export default function WorksCategoryPage() {
               <SideNav />
             </div>
           </div>
-        </section>
-      </div>
+        </CommonContainer>
+      </section>
     </main>
   )
 }

@@ -1,11 +1,12 @@
 import { Button } from '../Button'
+import CommonContainer from '../CommonContainer'
 import { SectionTitle } from '../SectionTitle'
 
 export default function Cta() {
   return (
     <>
       <section className='mt-24'>
-        <div className='container relative mx-auto px-3'>
+        <CommonContainer>
           <div className='border-2 border-[EDEFF1] px-8 py-10  lg:px-20 lg:flex lg:justify-between lg:items-center'>
             <div className=''>
               <SectionTitle title='Contact' subtitle='お問い合わせ' />
@@ -24,7 +25,7 @@ export default function Cta() {
               </div>
             </div>
           </div>
-        </div>
+        </CommonContainer>
       </section>
     </>
   )

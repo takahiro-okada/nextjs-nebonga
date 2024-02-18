@@ -7,13 +7,14 @@ import useFetchData from '../components/hooks/useFetchData'
 import PageTitle from '../components/PageTItle'
 import SideNav from '../components/SideNav'
 import { StoriesResponse } from '../types/storiesResponse'
+import CommonContainer from '../components/CommonContainer'
 
 export default function Page() {
   const { data, error, isLoading } = useFetchData<StoriesResponse>(GET_STORIES, 'https://wp.nebonga.com/graphql')
 
   return (
     <main>
-      <div className='container relative mx-auto px-3'>
+      <CommonContainer>
         <section>
           <PageTitle title='制作実績' subtitle='Works' />
           <div className='mt-8 md:flex'>
@@ -25,7 +26,7 @@ export default function Page() {
             </div>
           </div>
         </section>
-      </div>
+      </CommonContainer>
     </main>
   )
 }
