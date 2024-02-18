@@ -51,18 +51,18 @@ export default function CardImage() {
   }, [])
 
   return (
-    <section className='bg-gray pb-40 pt-10'>
-      <div className='mx-auto max-w-1140 px-3'>
-        <SectionTitle title='制作したもの' subtitle='Projects' />
+    <section className='bg-gray pb-40 pt-8'>
+      <div className='mx-auto max-w-1140 px-6'>
+        <SectionTitle title='Works' subtitle='制作実績' />
         <div className='mt-8'>
           <ul className='grid gap-6 md:grid-cols-3'>
             {works?.map((work) => (
               <li key={work.slug} className='group'>
                 <Link href={`/works/article/${work.slug}`}>
-                  <div className='relative aspect-video h-auto w-full overflow-hidden rounded-md'>
+                  <div className='relative aspect-[3/2] h-auto w-full overflow-hidden rounded-md hoge'>
                     <div className='absolute left-0 top-0 z-10 h-full w-full bg-black opacity-30'></div>
                     <Image
-                      src={work.featuredImage?.node?.sourceUrl || '/images/image-placeholder.png'}
+                      src={work.featuredImage?.node?.sourceUrl || '/images/image-placeholder.jpg'}
                       alt={work.featuredImage?.node?.altText || ''}
                       width={640}
                       height={300}

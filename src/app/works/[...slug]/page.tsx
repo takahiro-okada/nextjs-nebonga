@@ -50,7 +50,7 @@ export default function WorksCategoryPage() {
                     <Link href={`/works/${work.slug}`}>
                       <div className='relative aspect-video h-auto w-full'>
                         <Image
-                          src={work.featuredImage?.node?.sourceUrl || '/images/image-placeholder.png'}
+                          src={work.featuredImage?.node?.sourceUrl || '/images/image-placeholder.jpg'}
                           alt={work.featuredImage?.node?.altText || ''}
                           className='rounded-md object-cover'
                           width={640}

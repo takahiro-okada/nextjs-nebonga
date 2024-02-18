@@ -20,7 +20,7 @@ export default function ContentList({ basePath, items, type }: ContentListProps)
           <Link href={`/${basePath}/article/${item.slug}`}>
             <div className='relative aspect-video h-auto w-full'>
               <Image
-                src={item.featuredImage?.node?.sourceUrl || '/images/image-placeholder.png'}
+                src={item.featuredImage?.node?.sourceUrl || '/images/image-placeholder.jpg'}
                 alt={item.featuredImage?.node?.altText}
                 className='rounded-md object-cover'
                 width={640}

@@ -1,35 +1,42 @@
 import Image from 'next/image'
+import { montserrat } from '../../util/fonts'
+import { Button } from '../Button'
 
 export function FeaturedAbout() {
   return (
-    <section className='-mt-16 md:-mt-16'>
+    <section className='-mt-12 md:-mt-16'>
       <div className=''>
         <div className='relative mx-auto max-w-1140 px-3'>
-          <h2 className='absolute -left-3 w-fit translate-x-0 rotate-90 tracking-widest md:text-3xl'>About us</h2>
+          <h2 className='absolute top-8 text-lg -left-5 w-fit translate-x-0 rotate-90 tracking-widest md:text-3xl after:absolute after:border-t-2 after:border-black after:inline-block after:w-16 after:ml-6 after:top-1/2 md:after:w-32'>
+            About us
+          </h2>
         </div>
-        <div className='gap-10 md:flex md:flex-row-reverse'>
+        <div className='md:flex md:flex-row-reverse'>
           <div className='relative ml-auto w-3/4 md:ml-0 md:w-1/2'>
             <Image
-              src='/images/bg-sample.jpg'
+              src='/images/top-about_01.jpg'
               alt='featured-about'
               objectFit='cover'
-              width={640}
-              height={480}
-              className='max-h-96 w-full object-cover'
+              width={757}
+              height={505}
+              className='max-h-[505px] w-full object-cover'
             />
           </div>
-          <div className='mx-5 -mt-6 flex flex-col items-start justify-center bg-white bg-none p-8 md:m-0 md:ml-20 md:w-1/2 md:max-w-md md:justify-end md:bg-inherit'>
-            <h3 className='mt-3 text-xl'>”先導する”ブランディング</h3>
-            <p className='text-sm'>Lead your brand</p>
+          <div className='relative mx-5 -mt-6 flex flex-col items-start justify-center z-10 bg-white bg-none p-8 md:m-0  md:-mr-16 md:mt-40 md:w-1/2 md:max-w-[575px] md:justify-end md:bg-white'>
+            <h3 className={`text-2xl text-bold  ${montserrat.className}`}>Beyond the Border</h3>
+            <p className='text-sm mt-1'>境界を越えて</p>
 
-            <p className='mt-4 text-xs'>
-              写真や映像で人の魅力を引き出し、ストーリーを伝えます。撮影に入るまでの対話を大切にすることを心がけ、「半歩先を歩く黒子」を常に目指しています。
-            </p>
-            <p className='mt-4 text-xs'>
-              I capture the essence and charm of individuals through photos and videos, conveying their stories. I
-              always prioritize meaningful dialogue before any shoot, and constantly strive to be the unseen guide,
-              always a step ahead.
-            </p>
+            <div className='mt-8'>
+              <p className='text-[14px] tracking-wider leading-relaxed'>
+                世の中にはいろんな境界が存在しています。目には見える境界、見えない境界。越えたくても越えられない境界。「昨日には存在しなかった境界の向こう側」へと踏み出すきっかけを映像や写真を通じて生み出してきます。そして、その過程を「半歩前を歩く黒子」として先導させて頂きます。あなたが境界を越える。それを見た別の誰かが境界を越えてゆく。私たちは、その循環を真摯に生み出し続けていきます。
+              </p>
+              <p className={`mt-4 text-[14px] tracking-wider leading-relaxed ${montserrat.className}`}>
+                There are many borders in this world. Visible one, invisible one and that they want to cross but
+                can't.We create an opportunity to step "beyond the border that didn't exist yesterday" through creating.
+                And we will lead the process as "stagehand walking half a step ahead".You cross a border. Someone else
+                sees it and crosses the boundary.We will continue to earnestly create that cycle.
+              </p>
+            </div>
           </div>
         </div>
 
@@ -37,28 +44,46 @@ export function FeaturedAbout() {
           <div className='gap-8 md:flex'>
             <div className='relative mr-auto w-3/4 md:mr-0 md:w-1/2'>
               <Image
-                src='/images/bg-sample.jpg'
+                src='/images/top-about_02.jpg'
                 alt='featured-about'
                 objectFit='cover'
                 width={640}
                 height={480}
-                className='max-h-96 w-full object-cover'
+                className='max-h-[505px] w-full object-cover'
               />
             </div>
-            <div className='mx-5 -mt-6 flex flex-col items-start justify-center bg-white bg-none p-8 md:m-0 md:w-1/2 md:max-w-md md:justify-end md:bg-inherit'>
-              <h3 className='mt-3 text-xl'>”先導する”ブランディング</h3>
-              <p className='text-sm'>Lead your brand</p>
+            <div className='relative mx-5 -mt-6 flex flex-col items-start justify-center z-10 bg-white bg-none p-8 md:max-w-[575px] md:m-0  md:-ml-16 md:mt-40 md:w-1/2 md:justify-end md:bg-white'>
+              <h3 className={`text-2xl text-bold  ${montserrat.className}`}>Extracting the one and only story</h3>
+              <p className='text-sm mt-1'>唯一無二のストーリーを抽出する</p>
 
-              <p className='mt-4 text-xs'>
-                写真や映像で人の魅力を引き出し、ストーリーを伝えます。撮影に入るまでの対話を大切にすることを心がけ、「半歩先を歩く黒子」を常に目指しています。
-              </p>
-              <p className='mt-4 text-xs'>
-                I capture the essence and charm of individuals through photos and videos, conveying their stories. I
-                always prioritize meaningful dialogue before any shoot, and constantly strive to be the unseen guide,
-                always a step ahead.
-              </p>
+              <div className='mt-8'>
+                <p className='text-[14px] tracking-wider leading-relaxed'>
+                  企業のSDGsへの取り組みなど、そこには具体的な数字などでは可視化できない人間の熱い想いや葛藤が存在します。
+                  <br />
+                  その想いを、化石を発掘するが如く丁寧に掘り起こし、対話を通じて映像の中に編み込んでいきます。
+                  <br />
+                  この過程にこそ映像制作の魅力は存在しています。 <br />
+                  唯一無二のストーリーをぜひ一緒にカタチにさせてください。
+                </p>
+                <p className={`mt-4 text-[14px] tracking-wider leading-relaxed ${montserrat.className}`}>
+                  In the SDGs initiatives of companies, there exist passionate feelings and conflicts that cannot be
+                  visualized in concrete numbers.
+                  <br />
+                  These thoughts are carefully unearthed as if excavating fossils, and then woven into the images
+                  through dialogue.
+                  <br />
+                  It is in this process that the appeal of video production lies.
+                  <br />
+                  We look forward to working with you to make the one and only your story.
+                </p>
+              </div>
             </div>
           </div>
+        </div>
+        <div className='text-center mt-7'>
+          <Button href='/about' className='mt-14 md:mt-24 mx-auto'>
+            View more
+          </Button>
         </div>
       </div>
     </section>
