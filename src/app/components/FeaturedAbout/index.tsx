@@ -4,15 +4,15 @@ import { Button } from '../Button'
 
 export function FeaturedAbout() {
   return (
-    <section className='-mt-12 md:-mt-16'>
+    <section className='-mt-12 lg:-mt-16'>
       <div className=''>
         <div className='relative mx-auto max-w-1140 px-3'>
-          <h2 className='absolute top-8 text-lg -left-5 w-fit translate-x-0 rotate-90 tracking-widest md:text-3xl after:absolute after:border-t-2 after:border-black after:inline-block after:w-16 after:ml-6 after:top-1/2 md:after:w-32'>
+          <h2 className='absolute top-8 text-lg -left-5 w-fit translate-x-0 rotate-90 tracking-widest lg:text-3xl after:absolute after:border-t-2 after:border-black after:inline-block after:w-16 after:ml-6 after:top-1/2 lg:after:w-32'>
             About us
           </h2>
         </div>
-        <div className='md:flex md:flex-row-reverse'>
-          <div className='relative ml-auto w-3/4 md:ml-0 md:w-1/2'>
+        <div className='lg:flex lg:flex-row-reverse'>
+          <div className='relative ml-auto w-3/4 lg:ml-0 lg:w-1/2'>
             <Image
               src='/images/top-about_01.jpg'
               alt='featured-about'
@@ -22,7 +22,7 @@ export function FeaturedAbout() {
               className='max-h-[505px] w-full object-cover'
             />
           </div>
-          <div className='relative mx-5 -mt-6 flex flex-col items-start justify-center z-10 bg-white bg-none p-8 md:m-0  md:-mr-16 md:mt-40 md:w-1/2 md:max-w-[575px] md:justify-end md:bg-white'>
+          <div className='relative mx-5 -mt-6 flex flex-col items-start justify-center z-10 bg-white bg-none p-8 lg:m-0  lg:-mr-16 lg:mt-28 lg:w-1/2 lg:max-w-[575px] lg:justify-end lg:bg-white'>
             <h3 className={`text-2xl text-bold  ${montserrat.className}`}>Beyond the Border</h3>
             <p className='text-sm mt-1'>境界を越えて</p>
 
@@ -40,19 +40,19 @@ export function FeaturedAbout() {
           </div>
         </div>
 
-        <div className='mt-16 md:mt-32'>
-          <div className='gap-8 md:flex'>
-            <div className='relative mr-auto w-3/4 md:mr-0 md:w-1/2'>
+        <div className='mt-16 lg:mt-32'>
+          <div className='gap-8 lg:flex lg:items-start'>
+            <div className='relative mr-auto w-3/4 lg:mr-0 lg:w-1/2 lg:mt-28'>
               <Image
                 src='/images/top-about_02.jpg'
                 alt='featured-about'
                 objectFit='cover'
-                width={640}
-                height={480}
+                width={757}
+                height={505}
                 className='max-h-[505px] w-full object-cover'
               />
             </div>
-            <div className='relative mx-5 -mt-6 flex flex-col items-start justify-center z-10 bg-white bg-none p-8 md:max-w-[575px] md:m-0  md:-ml-16 md:mt-40 md:w-1/2 md:justify-end md:bg-white'>
+            <div className='relative mx-5 -mt-6 flex flex-col items-start justify-center z-10 bg-white bg-none p-8 lg:max-w-[575px] lg:m-0  lg:-ml-16 lg:w-1/2 lg:justify-start lg:bg-white'>
               <h3 className={`text-2xl text-bold  ${montserrat.className}`}>Extracting the one and only story</h3>
               <p className='text-sm mt-1'>唯一無二のストーリーを抽出する</p>
 
@@ -81,7 +81,7 @@ export function FeaturedAbout() {
           </div>
         </div>
         <div className='text-center mt-7'>
-          <Button href='/about' className='mt-14 md:mt-24 mx-auto'>
+          <Button href='/about' className='mt-14 lg:mt-24 mx-auto'>
             View more
           </Button>
         </div>
