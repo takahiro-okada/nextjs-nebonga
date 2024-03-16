@@ -4,10 +4,10 @@ type Props = {
   href?: string
 }
 
-export function Button({ children, buttonColor, href }: Props) {
+export function Button({ children, buttonColor = 'bg-black', href }: Props) {
   return (
     <a
-      className={`whitespace-nowrap inline-block w-full max-w-xs rounded-full text-center bg-black px-10 py-3 text-white ${buttonColor}`}
+      className={`whitespace-nowrap inline-block w-full max-w-xs rounded-full text-center px-10 py-3 text-white ${buttonColor}`}
       href={href}
     >
       {children}
