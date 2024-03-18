@@ -1,7 +1,7 @@
 import Image from 'next/image'
 
 import { SliderImages } from '../components/SliderImages'
-import { montserrat } from '@/app/util/fonts'
+import { montserrat } from '../components/util/fonts'
 
 export default function About() {
   return (
@@ -65,7 +65,7 @@ export default function About() {
                 alt='NeBonga'
                 width={640}
                 height={480}
-                className='h-full w-full  object-cover'
+                className='size-full object-cover'
               />
             </div>
           </div>
@@ -104,7 +104,7 @@ export default function About() {
                   alt='NeBonga'
                   width={640}
                   height={480}
-                  className='h-full w-full  object-cover'
+                  className='size-full object-cover'
                 />
               </div>
             </div>
@@ -116,7 +116,7 @@ export default function About() {
         <div className='mx-auto max-w-1140 px-3'>
           <div className='flex gap-10'>
             <div className='mt-6 p-16 md:mt-0 md:w-1/2'>
-              <Image src='/logo.png' alt='NeBonga' width={640} height={640} className='h-full w-full  object-cover' />
+              <Image src='/logo.png' alt='NeBonga' width={640} height={640} className='size-full object-cover' />
             </div>
             <div className='mt-6 md:w-1/2'>
               <h2 className='text-2xl'>ロゴに込められた思い</h2>

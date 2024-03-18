@@ -2,9 +2,8 @@ import './globals.css'
 
 import type { Metadata } from 'next'
 
-import Footer from '../app/components/Footer/'
-import Header from '../app/components/Header/'
-import TypekitLoader from './util/TypekitLoader'
+import Footer from './components/Footer'
+import Header from './components/Header'
 
 export const metadata: Metadata = {
   title: 'NeBonga | Documentary Filmmaking',
@@ -14,7 +13,6 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang='ja' className='font-yuGothic'>
-      <TypekitLoader />
       <body className='font-yuGothic'>
         <Header />
         <div>{children}</div>

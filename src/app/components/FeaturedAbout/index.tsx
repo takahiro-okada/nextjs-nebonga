@@ -1,13 +1,14 @@
 import Image from 'next/image'
-import { montserrat } from '../../util/fonts'
-import { Button } from '../Button'
 
-export function FeaturedAbout() {
+import { Button } from '../Button'
+import { montserrat } from '../util/fonts'
+
+export default function FeaturedAbout() {
   return (
     <section className='-mt-12 lg:-mt-16'>
       <div className=''>
         <div className='relative mx-auto max-w-1140 px-3'>
-          <h2 className='absolute top-8 text-lg -left-5 w-fit translate-x-0 rotate-90 tracking-widest lg:text-3xl after:absolute after:border-t-2 after:border-black after:inline-block after:w-16 after:ml-6 after:top-1/2 lg:after:w-32'>
+          <h2 className='absolute -left-5 top-8 w-fit translate-x-0 rotate-90 text-lg tracking-widest after:absolute after:top-1/2 after:ml-6 after:inline-block after:w-16 after:border-t-2 after:border-black lg:text-3xl lg:after:w-32'>
             About us
           </h2>
         </div>
@@ -22,27 +23,22 @@ export function FeaturedAbout() {
               className='max-h-[505px] w-full object-cover'
             />
           </div>
-          <div className='relative mx-5 -mt-6 flex flex-col items-start justify-center z-10 bg-white bg-none p-8 lg:m-0  lg:-mr-16 lg:mt-28 lg:w-1/2 lg:max-w-[575px] lg:justify-end lg:bg-white'>
-            <h3 className={`text-2xl text-bold  ${montserrat.className}`}>Beyond the Border</h3>
-            <p className='text-sm mt-1'>境界を越えて</p>
+          <div className='relative z-10 mx-5 -mt-6 flex flex-col items-start justify-center bg-white bg-none p-8 lg:m-0  lg:-mr-16 lg:mt-28 lg:w-1/2 lg:max-w-[575px] lg:justify-end lg:bg-white'>
+            <h3 className={`text-2xl ${montserrat.className}`}>Beyond the Border</h3>
+            <p className='mt-1 text-sm'>境界を越えて</p>
 
             <div className='mt-8'>
-              <p className='text-[14px] tracking-wider leading-relaxed'>
+              <p className='text-[14px] leading-relaxed tracking-wider'>
                 世の中にはいろんな境界が存在しています。目には見える境界、見えない境界。越えたくても越えられない境界。「昨日には存在しなかった境界の向こう側」へと踏み出すきっかけを映像や写真を通じて生み出してきます。そして、その過程を「半歩前を歩く黒子」として先導させて頂きます。あなたが境界を越える。それを見た別の誰かが境界を越えてゆく。私たちは、その循環を真摯に生み出し続けていきます。
               </p>
-              <p className={`mt-4 text-[14px] tracking-wider leading-relaxed ${montserrat.className}`}>
-                There are many borders in this world. Visible one, invisible one and that they want to cross but
-                can't.We create an opportunity to step "beyond the border that didn't exist yesterday" through creating.
-                And we will lead the process as "stagehand walking half a step ahead".You cross a border. Someone else
-                sees it and crosses the boundary.We will continue to earnestly create that cycle.
-              </p>
+              <p className={`mt-4 text-[14px] leading-relaxed tracking-wider ${montserrat.className}`}>hogehoge</p>
             </div>
           </div>
         </div>
 
         <div className='mt-16 lg:mt-32'>
           <div className='gap-8 lg:flex lg:items-start'>
-            <div className='relative mr-auto w-3/4 lg:mr-0 lg:w-1/2 lg:mt-28'>
+            <div className='relative mr-auto w-3/4 lg:mr-0 lg:mt-28 lg:w-1/2'>
               <Image
                 src='/images/top-about_02.jpg'
                 alt='featured-about'
@@ -52,12 +48,12 @@ export function FeaturedAbout() {
                 className='max-h-[505px] w-full object-cover'
               />
             </div>
-            <div className='relative mx-5 -mt-6 flex flex-col items-start justify-center z-10 bg-white bg-none p-8 lg:max-w-[575px] lg:m-0  lg:-ml-16 lg:w-1/2 lg:justify-start lg:bg-white'>
-              <h3 className={`text-2xl text-bold  ${montserrat.className}`}>Extracting the one and only story</h3>
-              <p className='text-sm mt-1'>唯一無二のストーリーを抽出する</p>
+            <div className='relative z-10 mx-5 -mt-6 flex flex-col items-start justify-center bg-white bg-none p-8 lg:m-0 lg:-ml-16  lg:w-1/2 lg:max-w-[575px] lg:justify-start lg:bg-white'>
+              <h3 className={`text-2xl  ${montserrat.className}`}>Extracting the one and only story</h3>
+              <p className='mt-1 text-sm'>唯一無二のストーリーを抽出する</p>
 
               <div className='mt-8'>
-                <p className='text-[14px] tracking-wider leading-relaxed'>
+                <p className='text-[14px] leading-relaxed tracking-wider'>
                   企業のSDGsへの取り組みなど、そこには具体的な数字などでは可視化できない人間の熱い想いや葛藤が存在します。
                   <br />
                   その想いを、化石を発掘するが如く丁寧に掘り起こし、対話を通じて映像の中に編み込んでいきます。
@@ -65,7 +61,7 @@ export function FeaturedAbout() {
                   この過程にこそ映像制作の魅力は存在しています。 <br />
                   唯一無二のストーリーをぜひ一緒にカタチにさせてください。
                 </p>
-                <p className={`mt-4 text-[14px] tracking-wider leading-relaxed ${montserrat.className}`}>
+                <p className={`mt-4 text-[14px] leading-relaxed tracking-wider ${montserrat.className}`}>
                   In the SDGs initiatives of companies, there exist passionate feelings and conflicts that cannot be
                   visualized in concrete numbers.
                   <br />
@@ -80,10 +76,8 @@ export function FeaturedAbout() {
             </div>
           </div>
         </div>
-        <div className='text-center mt-7'>
-          <Button href='/about' className='mt-14 lg:mt-24 mx-auto'>
-            View more
-          </Button>
+        <div className='mx-auto mt-14 text-center lg:mt-24'>
+          <Button href='/about'>View more</Button>
         </div>
       </div>
     </section>

@@ -1,12 +1,11 @@
 'use client'
 import { useEffect, useState } from 'react'
 
-import PageMainVisual from '@/app/components/PageMainVIsual'
-import { SectionTitle } from '@/app/components/SectionTitle'
-import SideNav from '@/app/components/SideNav'
-import News from '@/app/types/news'
-
 import { fetchNews } from '../../api/fetchNewsDetail'
+import PageMainVisual from '../../components/PageMainVIsual'
+import { SectionTitle } from '../../components/SectionTitle'
+import SideNav from '../../components/SideNav'
+import News from '../../types/news'
 
 export default function StoryDetail({ params }: { params: { slug: string } }) {
   const [news, setNews] = useState<News | null>(null)
@@ -53,7 +52,7 @@ export default function StoryDetail({ params }: { params: { slug: string } }) {
             </div>
           </div>
           <div className='col-span-1'>
-            <SideNav />
+            <SideNav linkPrefix='news' categoryKey='newsCategories' />
           </div>
         </div>
       </section>

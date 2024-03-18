@@ -1,11 +1,12 @@
 'use client'
-import getAllCategories from '@/lib/queries/getAllCategories'
 import { useEffect, useState } from 'react'
+
+import getAllCategories from '@/lib/queries/getAllCategories'
 import { Category } from '@/lib/types'
 
 type SideNavProps = {
-  linkPrefix: string
   categoryKey: string
+  linkPrefix: string
 }
 
 const createHierarchy = (categories: Category[]) => {
@@ -28,7 +29,7 @@ const createHierarchy = (categories: Category[]) => {
   return topLevelCategories
 }
 
-export default function SideNav({ linkPrefix, categoryKey }: SideNavProps) {
+export default function SideNav({ categoryKey, linkPrefix }: SideNavProps) {
   const [categories, setCategories] = useState<(Category & { children: Category[] })[]>([])
 
   useEffect(() => {
@@ -48,7 +49,7 @@ export default function SideNav({ linkPrefix, categoryKey }: SideNavProps) {
       <li key={category.slug}>
         <a
           href={`/${linkPrefix}/${category.slug}`}
-          className='inline-block w-full border-b-[1px] p-3 hover:bg-gray hover:rounded-md transition-all duration-700 ease-out'
+          className='inline-block w-full border-b-DEFAULT p-3 transition-all duration-700 ease-out hover:rounded-md hover:bg-gray'
         >
           {category.name}
         </a>
@@ -58,7 +59,7 @@ export default function SideNav({ linkPrefix, categoryKey }: SideNavProps) {
               <li key={child.slug}>
                 <a
                   href={`/${linkPrefix}/${child.slug}`}
-                  className='inline-block w-full border-b-[1px] py-3 pl-8 hover:bg-gray hover:rounded-md transition-all duration-700 ease-out'
+                  className='inline-block w-full border-b-DEFAULT py-3 pl-8 transition-all duration-700 ease-out hover:rounded-md hover:bg-gray'
                 >
                   - {child.name}
                 </a>
@@ -77,7 +78,7 @@ export default function SideNav({ linkPrefix, categoryKey }: SideNavProps) {
         <li>
           <a
             href={`/${linkPrefix}`}
-            className='inline-block w-full border-b-[1px] p-3 hover:bg-gray hover:rounded-md transition-all duration-700 ease-out'
+            className='inline-block w-full border-b-DEFAULT p-3 transition-all duration-700 ease-out hover:rounded-md hover:bg-gray'
           >
             ALL
           </a>

@@ -1,4 +1,4 @@
-import { montserrat } from '@/app/util/fonts'
+import { montserrat } from '../util/fonts'
 
 type Props = {
   title: string
@@ -10,7 +10,7 @@ export function SectionTitle({ title, subtitle }: Props) {
     <section>
       <div className='relative'>
         <h2
-          className={`${montserrat.className} text-2xl md:text-4xl relative w-fit after:absolute after:border-t-2 after:border-black after:inline-block after:w-36 after:ml-6 after:top-1/2`}
+          className={`${montserrat.className} relative w-fit text-2xl after:absolute after:top-1/2 after:ml-6 after:inline-block after:w-36 after:border-t-2 after:border-black md:text-4xl`}
         >
           {title}
         </h2>

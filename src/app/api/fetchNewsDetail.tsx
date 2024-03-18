@@ -1,6 +1,6 @@
 const fetchNews = async (slug: string) => {
   const query = `
-    query AllNews($slug: ID!) {
+    query newsList($slug: ID!) {
       news(id: $slug, idType: SLUG) {
         title
         content

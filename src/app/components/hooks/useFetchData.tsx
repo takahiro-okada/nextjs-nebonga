@@ -7,7 +7,6 @@ export default function useFetchData<T>(
   const [data, setData] = useState<T | null>(null)
   const [isLoading, setLoading] = useState(true)
   const [error, setError] = useState(null)
-
   useEffect(() => {
     fetch(url, {
       body: JSON.stringify({ query }),

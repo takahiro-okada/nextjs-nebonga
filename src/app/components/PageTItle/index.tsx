@@ -1,3 +1,5 @@
+import { montserrat } from '../util/fonts'
+
 type Props = {
   title: string
   subtitle: string
@@ -6,8 +8,8 @@ type Props = {
 export default function PageTitle({ title, subtitle }: Props) {
   return (
     <div className='mt-10'>
-      <h2 className='text-5xl'>{title}</h2>
-      <p className='mt-3'>{subtitle}</p>
+      <h2 className={`text-center text-4xl font-bold md:text-6xl ${montserrat.className}`}>{title}</h2>
+      <p className='mt-3 text-center'>{subtitle}</p>
     </div>
   )
 }

@@ -3,8 +3,9 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
+
 import HamburgerButton from '../HamburgerButton'
-import { montserrat } from '@/app/util/fonts'
+import { montserrat } from '../util/fonts'
 
 export default function Header() {
   const [openMenu, setOpenMenu] = useState(false)
@@ -48,6 +49,11 @@ export default function Header() {
               </Link>
             </li>
             <li>
+              <Link href='/news' className={`mx-4 hover:underline lg:mx-6 ${montserrat.className}`}>
+                News
+              </Link>
+            </li>
+            <li>
               <Link href='/price' className={`mx-4 hover:underline lg:mx-6 ${montserrat.className}`}>
                 Price
               </Link>
@@ -55,7 +61,7 @@ export default function Header() {
             <li>
               <Link
                 href='/contact'
-                className={`mx-4 lg:mx-6 border-white border-[1px] py-1 px-4 rounded-full border-solid  ${montserrat.className}`}
+                className={`mx-4 rounded-full border-DEFAULT border-solid border-white px-4 py-1 lg:mx-6  ${montserrat.className}`}
               >
                 Contact
               </Link>

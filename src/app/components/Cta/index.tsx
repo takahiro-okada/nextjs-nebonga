@@ -7,7 +7,7 @@ export default function Cta() {
     <>
       <section className='mt-24'>
         <CommonContainer>
-          <div className='border-2 border-[EDEFF1] px-8 py-10  lg:px-20 lg:flex lg:justify-between lg:items-center'>
+          <div className='border-2 border-[EDEFF1] px-8 py-10  lg:flex lg:items-center lg:justify-between lg:px-20'>
             <div className=''>
               <SectionTitle title='Contact' subtitle='お問い合わせ' />
               <p className='mt-8'>
@@ -17,7 +17,7 @@ export default function Cta() {
               </p>
             </div>
             <div className='mt-6'>
-              <div className='flex gap-6 flex-col md:flex-row'>
+              <div className='flex flex-col gap-6 md:flex-row'>
                 <Button href='/contact'>フォームからお問い合わせ</Button>
                 <Button href='/contact' buttonColor='bg-[#00B900]'>
                   LINEからお問い合わせ
