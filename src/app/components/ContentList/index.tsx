@@ -32,13 +32,14 @@ interface ContentListProps {
 }
 
 export default function ContentList({ basePath, categoryKey, items }: ContentListProps) {
+  console.log(items)
   return (
     <>
       <ul className='gap-x-8 gap-y-16 md:grid md:grid-cols-2'>
         {items?.map((item) => {
           return (
             <li key={item.slug}>
-              <Link href={`/${basePath}/article/${item.slug}`}>
+              <Link href={`/${basePath}/${item.slug}/`}>
                 <div className='relative aspect-video h-auto w-full'>
                   <Image
                     src={item.featuredImage?.node?.sourceUrl || '/images/image-placeholder.jpg'}

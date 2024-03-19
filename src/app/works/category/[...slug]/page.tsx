@@ -7,8 +7,7 @@ import PageTitle from '../../../components/PageTItle'
 import SideNav from '../../../components/SideNav'
 
 export default async function CategoryArchive({ params }: { params: any }) {
-  const story = await getCategoryBySlug(params.slug)
-
+  const works = await getCategoryBySlug(params.slug, 10, 'works')
   return (
     <main>
       <CommonContainer>
@@ -16,7 +15,7 @@ export default async function CategoryArchive({ params }: { params: any }) {
           <PageTitle title='Works' subtitle='感じたことなどを綴ります' />
           <div className='mt-8 md:flex'>
             <div className='flex-auto'>
-              <ContentList items={story} basePath='works' categoryKey='worksCategories' />
+              <ContentList items={works} basePath='works' categoryKey='worksCategories' />
             </div>
             <div className='md:ml-8 md:w-full md:max-w-xs md:flex-auto'>
               <SideNav linkPrefix='works' categoryKey='worksCategories' />

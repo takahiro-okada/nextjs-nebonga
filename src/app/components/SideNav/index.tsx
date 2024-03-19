@@ -31,11 +31,9 @@ const createHierarchy = (categories: Category[]) => {
 
 export default function SideNav({ categoryKey, linkPrefix }: SideNavProps) {
   const [categories, setCategories] = useState<(Category & { children: Category[] })[]>([])
-
   useEffect(() => {
     const fetchData = async () => {
       const result: Category[] = await getAllCategories(categoryKey)
-      console.log(result, 'result')
       if (result) {
         const hierarchy = createHierarchy(result)
         setCategories(hierarchy)
@@ -48,7 +46,8 @@ export default function SideNav({ categoryKey, linkPrefix }: SideNavProps) {
     <>
       <li key={category.slug}>
         <a
-          href={`/${linkPrefix}/${category.slug}`}
+          key={category.slug}
+          href={`/${linkPrefix}/category/${category.slug}/`}
           className='inline-block w-full border-b-DEFAULT p-3 transition-all duration-700 ease-out hover:rounded-md hover:bg-gray'
         >
           {category.name}
@@ -58,7 +57,8 @@ export default function SideNav({ categoryKey, linkPrefix }: SideNavProps) {
             {category.children.map((child) => (
               <li key={child.slug}>
                 <a
-                  href={`/${linkPrefix}/${child.slug}`}
+                  key={child.slug}
+                  href={`/${linkPrefix}/category/${category.slug}/${child.slug}`}
                   className='inline-block w-full border-b-DEFAULT py-3 pl-8 transition-all duration-700 ease-out hover:rounded-md hover:bg-gray'
                 >
                   - {child.name}
@@ -77,7 +77,8 @@ export default function SideNav({ categoryKey, linkPrefix }: SideNavProps) {
       <ul>
         <li>
           <a
-            href={`/${linkPrefix}`}
+            key={'all'}
+            href={`/${linkPrefix}/`}
             className='inline-block w-full border-b-DEFAULT p-3 transition-all duration-700 ease-out hover:rounded-md hover:bg-gray'
           >
             ALL
