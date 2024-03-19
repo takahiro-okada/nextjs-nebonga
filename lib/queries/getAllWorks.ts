@@ -1,9 +1,9 @@
 import { fetchGraphQL } from '../functions'
 import { Post } from '../types'
 
-export default async function getAllWorks() {
-  const query = `query GetAllWorks {
-    works(where: {status: PUBLISH}) {
+export default async function getAllWorks(limit: number = 10) {
+  const query = `query GetAllWorks($limit: Int) {
+    works(where: {status: PUBLISH}, first: $limit) {
       nodes {
         databaseId
         date
@@ -23,6 +23,6 @@ export default async function getAllWorks() {
       }
     }
   }`
-  const response = await fetchGraphQL(query)
+  const response = await fetchGraphQL(query, { limit })
   return response.data.works.nodes as Post[]
 }

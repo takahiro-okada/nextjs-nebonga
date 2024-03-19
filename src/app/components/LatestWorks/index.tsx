@@ -10,7 +10,7 @@ import CommonContainer from '../CommonContainer'
 import { SectionTitle } from '../SectionTitle'
 
 export default async function LatestWorks() {
-  const works = await getAllWorks()
+  const works = await getAllWorks(6)
 
   return (
     <section className='bg-gray pb-40 pt-8'>
