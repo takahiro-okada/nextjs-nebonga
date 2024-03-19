@@ -14,12 +14,13 @@ export interface Post {
     }
   }
   categories?: {
-    nodes: [
-      {
-        name: string
-        databaseId: string
-      },
-    ]
+    nodes: Category[] // Category型に一致させる
+  }
+  worksCategories?: {
+    nodes: Category[]
+  }
+  newsCategories?: {
+    nodes: Category[]
   }
   content: string
   databaseId: string
@@ -48,6 +49,7 @@ export interface Post {
 export interface Category {
   id: string
   name: string
+  databaseId: string
   parent?: {
     node: {
       name: string
