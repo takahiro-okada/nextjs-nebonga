@@ -64,7 +64,7 @@ function RenderPostList({
 }: {
   title: string
   basePath: string
-  categoryKey: string
+  categoryKey: 'categories' | 'worksCategories' | 'newsCategories'
   posts: Post[]
   subtitle: string
 }) {
@@ -92,7 +92,7 @@ function RenderNewsList({
 }: {
   title: string
   basePath: string
-  categoryKey: string
+  categoryKey: 'categories' | 'worksCategories' | 'newsCategories'
   posts: Post[]
   subtitle: string
 }) {
@@ -142,7 +142,7 @@ export default async function Archive({ params }: { params: { slug: string } }) 
                 title={context}
                 subtitle={subtitle}
                 basePath={basePath}
-                categoryKey={categoryKey}
+                categoryKey={categoryKey as 'categories' | 'worksCategories' | 'newsCategories'}
               />
             ) : (
               <p>No stories found.</p>
@@ -162,7 +162,7 @@ export default async function Archive({ params }: { params: { slug: string } }) 
                 title={context}
                 subtitle={subtitle}
                 basePath={basePath}
-                categoryKey={categoryKey}
+                categoryKey={categoryKey as 'categories' | 'worksCategories' | 'newsCategories'}
               />
             ) : (
               <p>No stories found.</p>
