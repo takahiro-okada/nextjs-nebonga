@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "lint --fix && prettier --write \"**/*.{js,jsx,ts,tsx,json,css,scss,md}\" && next dev",
+    "dev": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,scss,md}\" && next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
