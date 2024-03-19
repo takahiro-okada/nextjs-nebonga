@@ -13,7 +13,7 @@ export interface Post {
       }
     }
   }
-  categories: {
+  categories?: {
     nodes: [
       {
         name: string
@@ -21,16 +21,19 @@ export interface Post {
       },
     ]
   }
-  commentCount: number
   content: string
   databaseId: string
   date: string
   excerpt: string
   featuredImage: FeaturedImage
   modified: string
-  seo: {
-    title: string
-    metaDesc: string
+  newsCategories?: {
+    nodes: [
+      {
+        name: string
+        databaseId: string
+      },
+    ]
   }
   slug: string
   tags: {
@@ -42,8 +45,6 @@ export interface Post {
     ]
   }
 }
-
-// 調査中
 export interface Category {
   id: string
   name: string

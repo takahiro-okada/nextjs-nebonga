@@ -10,6 +10,11 @@ export default async function getAllStories() {
         modified
         title
         slug
+        categories {
+          nodes {
+            name
+          }
+        }
         featuredImage {
           node {
             altText

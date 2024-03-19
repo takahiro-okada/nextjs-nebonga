@@ -10,6 +10,11 @@ export default async function getAllNews() {
         modified
         title
         slug
+        newsCategories {
+          nodes {
+            name
+          }
+        }
         featuredImage {
           node {
             altText

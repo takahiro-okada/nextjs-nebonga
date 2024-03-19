@@ -7,7 +7,7 @@ export default async function getAllCategories(categoryName: string) {
       nodes {
         id
         name
-        slug         
+        slug   
         parent {
           node {
             name
@@ -18,6 +18,5 @@ export default async function getAllCategories(categoryName: string) {
     }
   }`
   const response = await fetchGraphQL(query)
-  console.log(response)
   return response.data[categoryName].nodes as Category[]
 }

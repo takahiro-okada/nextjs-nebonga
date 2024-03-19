@@ -1,55 +1,10 @@
 'use client'
-import { useEffect, useState } from 'react'
-
-import { Post } from '@/lib/types'
-import { fetchWork } from '@/src/app/api/fetchWorkDetail'
-
-export default function WorkDetail() {
-  const [work, setPost] = useState<Post | null>(null)
-  const [error, setError] = useState<string | null>(null)
-
-  useEffect(() => {
-    const slugArray = location.pathname.split('/works/article/')
-    if (slugArray.length !== 2) {
-      setError('Invalid URL format.')
-      return
-    }
-
-    const slug = decodeURIComponent(slugArray[1])
-
-    fetchWork(slug)
-      .then((work) => {
-        setPost(work)
-      })
-      .catch((err) => {
-        setError(err.message)
-      })
-  }, [])
-
-  if (error) {
-    return <div>Error: {error}</div>
-  }
-
+export default function PostDetail() {
   return (
     <main>
       <section>
-        {/* <article className='container prose mx-auto px-3 lg:prose-xl'>
-          {work && (
-            <div>
-              <div className='relative aspect-video h-auto w-full'>
-                <NextImage
-                  src={work.featuredImage?.node?.sourceUrl || '/images/image-placeholder.jpg'}
-                  alt={work.featuredImage?.node?.altText}
-                  className='rounded-md object-cover'
-                  layout='fill'
-                />
-              </div>
-              <div className='mt-3 text-xs'>{formatDate(work.date)}</div>
-              <h1 className='mt-4 text-3xl'>{work.title}</h1>
-              <div dangerouslySetInnerHTML={{ __html: work.content }} />
-            </div>
-          )}
-
+        <h1>hoge</h1>
+        <article className='container prose mx-auto px-3 lg:prose-xl'>
           <div className='mt-8 rounded-xl bg-slate-300 p-7'>
             <p>まずはお気軽にお問い合わせください</p>
             <div className='grid grid-cols-2 gap-5 text-center'>
@@ -80,7 +35,7 @@ export default function WorkDetail() {
               </a>
             </div>
           </div>
-        </article> */}
+        </article>
       </section>
     </main>
   )

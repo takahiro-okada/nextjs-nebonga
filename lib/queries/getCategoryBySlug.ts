@@ -3,45 +3,116 @@ import { fetchGraphQL } from '../functions'
 /**
  * Fetch a category archive by slug.
  */
-export default async function getCategoryBySlug(slug: [string, string] | string, limit = 10) {
+export default async function getCategoryBySlug(slug: [string, string] | string, limit = 10, category = 'story') {
   const slugs = Array.isArray(slug) ? slug : [slug]
-  let categoryQuery = ''
+  const lastSlug = slugs.length > 0 ? slugs[slugs.length - 1] : ''
 
-  if (slugs.length > 0) {
-    categoryQuery += `categoryName: "${slugs[0]}"`
-  }
+  let query = ''
 
-  if (slugs.length > 1) {
-    // 子カテゴリーのスラッグを使用してフィルタリングするためのクエリパラメータを追加
-    categoryQuery += categoryQuery ? `, ` : ''
-    categoryQuery += `categoryIn: ["${slugs.slice(1).join('", "')}"]` // 複数の子カテゴリーに対応
-  }
-
-  const query = `
-  query getCategoryBySlug {
-    posts(where: { ${categoryQuery} }, first: ${limit}) {
-      nodes {
-        date
-        slug
-        title
-        id
-        categories {
+  if (category === 'story') {
+    query = `
+      query getCategoryBySlug {
+        posts(where: { categoryName: "${lastSlug}" }, first: ${limit}) {
           nodes {
-            name
+            date
+            slug
+            title
+            id
+            categories {
+              nodes {
+                name
+              }
+            }
+            featuredImage {
+              node {
+                altText
+                sourceUrl
+              }
+            }
           }
         }
-        featuredImage {
-          node {
-            altText
-            sourceUrl
+      }`
+  } else if (category === 'works') {
+    query = `
+      query getCategoryBySlug {
+        works(where: {
+          taxQuery: {
+            taxArray: [
+              {
+                terms: ["${lastSlug}"],
+                taxonomy: WORKSCATEGORY,
+                operator: IN,
+                field: SLUG
+              }
+            ]
+          }
+        }) {
+          nodes {
+            date
+            slug
+            title
+            id
+            worksCategories {
+              nodes {
+                name
+              }
+            }
+            featuredImage {
+              node {
+                altText
+                sourceUrl
+              }
+            }
           }
         }
-      }
-    }
-  }`
+      }`
+  } else if (category === 'news') {
+    query = `
+      query getCategoryBySlug {
+        newslist(where: {
+          taxQuery: {
+            taxArray: [
+              {
+                terms: ["${lastSlug}"],
+                taxonomy: NEWSCATEGORY,
+                operator: IN,
+                field: SLUG
+              }
+            ]
+          }
+        }) {
+          nodes {
+            date
+            slug
+            title
+            id
+            newsCategories {
+              nodes {
+                name
+              }
+            }
+            featuredImage {
+              node {
+                altText
+                sourceUrl
+              }
+            }
+          }
+        }
+      }`
+  }
 
+  console.log(query)
   const variables = {}
 
   const response = await fetchGraphQL(query, variables)
-  return response.data.posts.nodes
+  // カテゴリに応じて正しいデータを返すように変更
+  if (category === 'story') {
+    return response.data.posts.nodes
+  } else if (category === 'works') {
+    return response.data.works.nodes
+  } else if (category === 'news') {
+    console.log(response.data)
+    return response.data.newslist.nodes
+  }
 }

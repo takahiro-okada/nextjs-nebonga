@@ -10,6 +10,11 @@ export default async function getAllWorks(limit: number = 10) {
         modified
         title
         slug
+        worksCategories {
+          nodes {
+            name
+          }
+        }
         featuredImage {
           node {
             altText

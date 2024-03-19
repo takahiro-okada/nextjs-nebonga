@@ -25,9 +25,9 @@ async function fetchData(slug: string) {
 
   if (slug === 'works') {
     return {
-      basePath: 'work',
+      basePath: 'works',
       categoryKey: 'worksCategories',
-      context: 'Story',
+      context: 'Works',
       posts: await getAllWorks(),
       subtitle: '感じたことなどを綴ります',
     }
@@ -131,13 +131,11 @@ export default async function Archive({ params }: { params: { slug: string } }) 
   const slug = Array.isArray(slugArray) ? slugArray[0] : slugArray // slugが配列ならその最初の要素を取得、そうでなければslugをそのまま使う
   const data = await fetchData(slug)
   const { basePath, categoryKey, context, error, posts, subtitle } = data
-
   if (slug == 'story' || slug == 'works') {
     return (
       <main>
         <CommonContainer>
           <section>
-            {/* Conditional rendering based on posts */}
             {posts && posts.length > 0 ? (
               <RenderPostList
                 posts={posts}
@@ -158,7 +156,6 @@ export default async function Archive({ params }: { params: { slug: string } }) 
       <main>
         <CommonContainer>
           <section>
-            {/* Conditional rendering based on posts */}
             {posts && posts.length > 0 ? (
               <RenderNewsList
                 posts={posts}
