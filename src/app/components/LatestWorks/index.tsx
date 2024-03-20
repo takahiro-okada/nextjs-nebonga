@@ -20,8 +20,8 @@ export default async function LatestWorks() {
           <ul className='grid gap-6 md:grid-cols-3'>
             {works.map((work: Post) => (
               <li key={work.slug} className='group'>
-                <Link href={`/works/article/${work.slug}`}>
-                  <div className='relative aspect-[3/2] h-auto w-full overflow-hidden rounded-md'>
+                <Link href={`/works/${work.slug}/`}>
+                  <div className='relative aspect-video h-auto w-full overflow-hidden rounded-md'>
                     <div className='absolute left-0 top-0 z-10 size-full bg-black opacity-30'></div>
                     <Image
                       src={work.featuredImage?.node?.sourceUrl || '/images/image-placeholder.jpg'}
