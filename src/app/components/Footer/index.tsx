@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
+import SnsIcons from '../SnsIcons'
 import { montserrat } from '../util/fonts'
 
 export default function Footer() {
@@ -56,52 +57,7 @@ export default function Footer() {
         </div>
         <div className='mt-10 md:mt-16 md:flex md:items-center md:justify-between'>
           <div className=''>
-            <ul className='flex justify-center gap-4'>
-              <li>
-                <a href='/'>
-                  <Image
-                    src='/images/icon-youtube-black.svg'
-                    alt='Youtube'
-                    width={33}
-                    height={33}
-                    className='h-full w-8 rounded-xl'
-                  />
-                </a>
-              </li>
-              <li>
-                <a href='/'>
-                  <Image
-                    src='/images/icon-instagram-black.svg'
-                    alt='Instagram'
-                    width={33}
-                    height={33}
-                    className='h-full w-8 rounded-xl'
-                  />
-                </a>
-              </li>
-              <li>
-                <a href='/'>
-                  <Image
-                    src='/images/icon-x-black.svg'
-                    alt='x'
-                    width={33}
-                    height={33}
-                    className='h-full w-8 rounded-xl'
-                  />
-                </a>
-              </li>
-              <li>
-                <a href='/'>
-                  <Image
-                    src='/images/icon-facebook-black.svg'
-                    alt='Facebook'
-                    width={33}
-                    height={33}
-                    className='h-full w-8 rounded-xl'
-                  />
-                </a>
-              </li>
-            </ul>
+            <SnsIcons />
           </div>
           <div className='mt-3 flex justify-center'>
             <span className='sm:text-center'>©NeBonga</span>

@@ -25,12 +25,12 @@ export default async function CategoryArchive({ params }: { params: any }) {
                       href={`/news/${news.slug}`}
                       className='inline-block py-3 md:flex md:items-start md:align-middle'
                     >
-                      <div className='flex content-center'>
+                      <div className='flex content-center min-w-44'>
                         <time className='inline-block' dateTime={news.date}>
                           {formatDate(news.date)}
                         </time>
                         <div className='ml-4'>
-                          <span className='inline-block rounded-md bg-[#eee] p-2 px-3 text-xs'>
+                          <span className='inline-block rounded-md bg-[#EDEDED]  p-2 px-3 text-xs'>
                             {news.newsCategories?.nodes[0].name}
                           </span>
                         </div>

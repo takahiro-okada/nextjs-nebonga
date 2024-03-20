@@ -12,12 +12,12 @@ export default async function CategoryArchive({ params }: { params: any }) {
     <main>
       <CommonContainer>
         <section>
-          <PageTitle title='Works' subtitle='感じたことなどを綴ります' />
+          <PageTitle title='Works' subtitle='NeBongaのお仕事の一部をご紹介します' />
           <div className='mt-8 md:flex'>
             <div className='flex-auto'>
               <ContentList items={works} basePath='works' categoryKey='worksCategories' />
             </div>
-            <div className='md:ml-8 md:w-full md:max-w-xs md:flex-auto'>
+            <div className='mt-16 md:mt-0 md:ml-8 md:w-full md:max-w-xs md:flex-auto'>
               <SideNav linkPrefix='works' categoryKey='worksCategories' />
             </div>
           </div>

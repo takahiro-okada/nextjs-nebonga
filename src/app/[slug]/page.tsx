@@ -29,7 +29,7 @@ async function fetchData(slug: string) {
       categoryKey: 'worksCategories',
       context: 'Works',
       posts: await getAllWorks(),
-      subtitle: '感じたことなどを綴ります',
+      subtitle: 'NeBongaのお仕事の一部をご紹介します',
     }
   }
 
@@ -75,7 +75,7 @@ function RenderPostList({
         <div className='flex-auto'>
           <ContentList items={posts} basePath={basePath} categoryKey={categoryKey} />
         </div>
-        <div className='md:ml-8 md:w-full md:max-w-xs md:flex-auto'>
+        <div className='mt-16 md:mt-0 md:ml-8 md:w-full md:max-w-xs md:flex-auto'>
           <SideNav linkPrefix={basePath} categoryKey={categoryKey} />
         </div>
       </div>
@@ -110,7 +110,7 @@ function RenderNewsList({
                       {formatDate(post.date)}
                     </time>
                     <div className='ml-4'>
-                      <span className='inline-block rounded-md bg-[#eee] p-2 px-3 text-xs'>Category</span>
+                      <span className='inline-block rounded-md bg-[#EDEDED] p-2 px-3 text-xs'>Category</span>
                     </div>
                   </div>
                   <h3 className='mt-2 md:ml-8 md:mt-0'>{post.title}</h3>
