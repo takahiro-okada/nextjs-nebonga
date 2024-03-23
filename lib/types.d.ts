@@ -16,12 +16,6 @@ export interface Post {
   categories?: {
     nodes: Category[] // Category型に一致させる
   }
-  worksCategories?: {
-    nodes: Category[]
-  }
-  newsCategories?: {
-    nodes: Category[]
-  }
   content: string
   databaseId: string
   date: string
@@ -29,12 +23,25 @@ export interface Post {
   featuredImage: FeaturedImage
   modified: string
   newsCategories?: {
+    nodes: Category[]
+  }
+  newsCategories?: {
     nodes: [
       {
         name: string
         databaseId: string
       },
     ]
+  }
+  nextPost?: {
+    title: string
+    slug: url
+    uri: string
+  }
+  previousPost?: {
+    title: string
+    slug: url
+    uri: string
   }
   slug: string
   tags: {
@@ -44,6 +51,9 @@ export interface Post {
         databaseId: string
       },
     ]
+  }
+  worksCategories?: {
+    nodes: Category[]
   }
 }
 export interface Category {

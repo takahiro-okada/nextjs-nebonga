@@ -12,7 +12,15 @@ export default async function getAllStories() {
         slug
         categories {
           nodes {
+            id
             name
+            slug   
+            parent {
+              node {
+                name
+                slug
+              }
+            }
           }
         }
         featuredImage {

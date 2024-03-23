@@ -75,7 +75,7 @@ function RenderPostList({
         <div className='flex-auto'>
           <ContentList items={posts} basePath={basePath} categoryKey={categoryKey} />
         </div>
-        <div className='mt-16 md:mt-0 md:ml-8 md:w-full md:max-w-xs md:flex-auto'>
+        <div className='mt-16 md:ml-8 md:mt-0 md:w-full md:max-w-xs md:flex-auto'>
           <SideNav linkPrefix={basePath} categoryKey={categoryKey} />
         </div>
       </div>

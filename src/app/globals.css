@@ -2,6 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  input {
+    @apply rounded px-4 py-2;
+    @apply text-zinc-900;
+    @apply bg-zinc-200 dark:bg-zinc-200;
+  }
+
+  textarea {
+    @apply rounded px-4 py-2;
+    @apply text-zinc-900;
+    @apply bg-zinc-200 dark:bg-zinc-200;
+  }
+
+  button,
+  .button,
+  [type='submit'] {
+    @apply rounded px-4 py-3 leading-tight no-underline;
+    @apply bg-zinc-200 text-zinc-900 dark:bg-zinc-400;
+    @apply hover:bg-zinc-300 dark:hover:bg-zinc-500;
+  }
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;

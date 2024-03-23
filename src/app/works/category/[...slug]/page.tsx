@@ -1,4 +1,3 @@
-'use client'
 import getCategoryBySlug from '@/lib/queries/getCategoryBySlug'
 
 import CommonContainer from '../../../components/CommonContainer'
@@ -17,7 +16,7 @@ export default async function CategoryArchive({ params }: { params: any }) {
             <div className='flex-auto'>
               <ContentList items={works} basePath='works' categoryKey='worksCategories' />
             </div>
-            <div className='mt-16 md:mt-0 md:ml-8 md:w-full md:max-w-xs md:flex-auto'>
+            <div className='mt-16 md:ml-8 md:mt-0 md:w-full md:max-w-xs md:flex-auto'>
               <SideNav linkPrefix='works' categoryKey='worksCategories' />
             </div>
           </div>

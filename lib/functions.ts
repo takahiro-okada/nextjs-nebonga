@@ -52,7 +52,6 @@ export async function fetchGraphQL<T = any>(
     }
 
     const data = await response.json()
-
     if (data.errors) {
       data.errors.forEach((error: any) => {
         console.error('Error message:', error.message)
