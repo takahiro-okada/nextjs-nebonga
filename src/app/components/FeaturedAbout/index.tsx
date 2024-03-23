@@ -1,7 +1,6 @@
 import Image from 'next/image'
 
 import { Button } from '../Button'
-import { montserrat } from '../util/fonts'
 
 export default function FeaturedAbout() {
   return (
@@ -24,14 +23,14 @@ export default function FeaturedAbout() {
             />
           </div>
           <div className='relative z-10 mx-5 -mt-6 flex flex-col items-start justify-center bg-white bg-none p-8 lg:m-0  lg:-mr-16 lg:mt-28 lg:w-1/2 lg:max-w-[575px] lg:justify-end lg:bg-white'>
-            <h3 className={`text-2xl ${montserrat.className}`}>Beyond the Border</h3>
+            <h3 className='font-Montserrat text-2xl'>Beyond the Border</h3>
             <p className='mt-1 text-sm'>境界を越えて</p>
 
             <div className='mt-8'>
               <p className='text-[14px] leading-relaxed tracking-wider'>
                 世の中にはいろんな境界が存在しています。目には見える境界、見えない境界。越えたくても越えられない境界。「昨日には存在しなかった境界の向こう側」へと踏み出すきっかけを映像や写真を通じて生み出してきます。そして、その過程を「半歩前を歩く黒子」として先導させて頂きます。あなたが境界を越える。それを見た別の誰かが境界を越えてゆく。私たちは、その循環を真摯に生み出し続けていきます。
               </p>
-              <p className={`mt-4 text-[14px] leading-relaxed tracking-wider ${montserrat.className}`}>hogehoge</p>
+              <p className='mt-4 font-Montserrat text-[14px] leading-relaxed tracking-wider'>hogehoge</p>
             </div>
           </div>
         </div>
@@ -49,7 +48,7 @@ export default function FeaturedAbout() {
               />
             </div>
             <div className='relative z-10 mx-5 -mt-6 flex flex-col items-start justify-center bg-white bg-none p-8 lg:m-0 lg:-ml-16  lg:w-1/2 lg:max-w-[575px] lg:justify-start lg:bg-white'>
-              <h3 className={`text-2xl  ${montserrat.className}`}>Extracting the one and only story</h3>
+              <h3 className='font-Montserrat text-2xl'>Extracting the one and only story</h3>
               <p className='mt-1 text-sm'>唯一無二のストーリーを抽出する</p>
 
               <div className='mt-8'>
@@ -61,7 +60,7 @@ export default function FeaturedAbout() {
                   この過程にこそ映像制作の魅力は存在しています。 <br />
                   唯一無二のストーリーをぜひ一緒にカタチにさせてください。
                 </p>
-                <p className={`mt-4 text-[14px] leading-relaxed tracking-wider ${montserrat.className}`}>
+                <p className='mt-4 font-Montserrat text-[14px] leading-relaxed tracking-wider'>
                   In the SDGs initiatives of companies, there exist passionate feelings and conflicts that cannot be
                   visualized in concrete numbers.
                   <br />

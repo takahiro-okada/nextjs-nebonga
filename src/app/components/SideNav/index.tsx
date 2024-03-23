@@ -1,11 +1,10 @@
 'use client'
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useEffect, useState } from 'react'
 
 import getAllCategories from '@/lib/queries/getAllCategories'
 import { Category } from '@/lib/types'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
-import { montserrat } from '@/src/app/components/util/fonts'
 
 type SideNavProps = {
   categoryKey: string
@@ -51,7 +50,7 @@ export default function SideNav({ categoryKey, linkPrefix }: SideNavProps) {
         <a
           key={category.slug}
           href={`/${linkPrefix}/category/${category.slug}/`}
-          className={`${montserrat} inline-block w-full font-bold border-b-DEFAULT p-3 transition-all duration-700 ease-out hover:rounded-md hover:bg-gray`}
+          className='inline-block w-full border-b-DEFAULT p-3 font-bold transition-all duration-700 ease-out hover:rounded-md hover:bg-gray'
         >
           {category.name}
         </a>
@@ -76,13 +75,13 @@ export default function SideNav({ categoryKey, linkPrefix }: SideNavProps) {
   )
 
   return (
-    <aside className='w-full bg-[#F5F6F7] py-5 px-5'>
+    <aside className='w-full bg-[#F5F6F7] p-5'>
       <ul>
         <li>
           <a
             key={'all'}
             href={`/${linkPrefix}/`}
-            className={`${montserrat} inline-block font-bold w-full border-b-DEFAULT p-3 transition-all duration-700 ease-out hover:rounded-md hover:bg-gray`}
+            className='inline-block w-full border-b-DEFAULT p-3 font-Montserrat font-bold transition-all duration-700 ease-out hover:rounded-md hover:bg-gray'
           >
             ALL
           </a>

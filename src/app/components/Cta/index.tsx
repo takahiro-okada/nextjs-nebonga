@@ -1,5 +1,5 @@
-import { Button } from '../Button'
 import CommonContainer from '../CommonContainer'
+import CtaButtons from '../CtaButtons'
 import { SectionTitle } from '../SectionTitle'
 
 export default function Cta() {
@@ -17,12 +17,7 @@ export default function Cta() {
               </p>
             </div>
             <div className='mt-6'>
-              <div className='flex flex-col gap-6 md:flex-row'>
-                <Button href='/contact'>フォームからお問い合わせ</Button>
-                <Button href='/contact' buttonColor='bg-[#00B900]'>
-                  LINEからお問い合わせ
-                </Button>
-              </div>
+              <CtaButtons />
             </div>
           </div>
         </CommonContainer>

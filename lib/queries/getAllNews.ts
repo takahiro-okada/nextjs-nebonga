@@ -13,6 +13,7 @@ export default async function getAllNews() {
         newsCategories {
           nodes {
             name
+            slug
           }
         }
         featuredImage {

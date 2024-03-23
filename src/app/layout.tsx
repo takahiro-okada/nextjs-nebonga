@@ -1,6 +1,7 @@
 import './globals.css'
 
 import type { Metadata } from 'next'
+import { Lato,Montserrat } from 'next/font/google'
 
 import Footer from './components/Footer'
 import Header from './components/Header'
@@ -10,10 +11,23 @@ export const metadata: Metadata = {
   description: '株式会社NeBonga | ドキュメンタリー、ショートフィルム、ソーシャルプロジェクトの映像制作会社です。',
 }
 
+export const montserrat = Montserrat({
+  display: 'swap',
+  subsets: ['latin'],
+  variable: '--font-montserrat',
+  weight: '400',
+})
+
+export const lato = Lato({
+  display: 'swap',
+  subsets: ['latin'],
+  weight: '400',
+})
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang='ja' className='font-yuGothic'>
-      <body className='font-yuGothic'>
+    <html lang='ja'>
+      <body className={`${montserrat.className}`}>
         <Header />
         <div>{children}</div>
         <Footer />

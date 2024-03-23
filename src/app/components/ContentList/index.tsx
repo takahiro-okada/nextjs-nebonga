@@ -2,9 +2,10 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import formatDate from '../util/formatDate'
 import { Category, Post } from '@/lib/types'
+
 import SnsIcons from '../SnsIcons'
+import formatDate from '../util/formatDate'
 
 interface ContentListProps {
   basePath: string
@@ -26,7 +27,7 @@ export default function ContentList({ basePath, categoryKey, items }: ContentLis
 
   return (
     <>
-      <ul className='grid gap-y-10 md:gap-x-8 md:gap-y-16 md:grid md:grid-cols-2'>
+      <ul className='grid gap-y-10 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-16'>
         {items?.map((item) => {
           return (
             <li key={item.slug}>
@@ -44,16 +45,26 @@ export default function ContentList({ basePath, categoryKey, items }: ContentLis
                 <div className='mt-2'>
                   <p className='text-sm text-gray-500'>{formatDate(item.date)}</p>
                   <h3 className='mt-2 text-xl'>{item.title}</h3>
-                  <p className='mt-2 flex gap-2 text-sm text-gray-500'>
-                    {item[categoryKey] &&
-                      item[categoryKey]?.nodes?.map((category: Category) => (
-                        <span key={category.name} className='inline-block rounded-md bg-[#EDEDED] p-2 px-3 text-xs'>
-                          {category.name}
-                        </span>
-                      ))}
-                  </p>
                 </div>
               </Link>
+              <p className='mt-2 flex gap-2 text-sm text-gray-500'>
+                <p className='mt-2 flex gap-2 text-sm text-gray-500'>
+                  {item[categoryKey] &&
+                    item[categoryKey]?.nodes?.map((category: Category) => {
+                      const parentSlug = category.parent?.node?.slug ? `${category.parent.node.slug}/` : ''
+                      return (
+                        <Link
+                          key={category.name}
+                          className='inline-block rounded-md bg-[#EDEDED] p-2 px-3 text-xs'
+                          href={`/${basePath}/category/${parentSlug}${category.slug}/`}
+                          passHref
+                        >
+                          {category.name}
+                        </Link>
+                      )
+                    })}
+                </p>
+              </p>
             </li>
           )
         })}

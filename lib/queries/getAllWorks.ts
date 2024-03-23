@@ -13,6 +13,7 @@ export default async function getAllWorks(limit: number = 10) {
         worksCategories {
           nodes {
             name
+            slug
           }
         }
         featuredImage {

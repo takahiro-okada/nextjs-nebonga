@@ -5,7 +5,6 @@ import { usePathname } from 'next/navigation'
 import { useState } from 'react'
 
 import HamburgerButton from '../HamburgerButton'
-import { montserrat } from '../util/fonts'
 
 export default function Header() {
   const [openMenu, setOpenMenu] = useState(false)
@@ -34,34 +33,34 @@ export default function Header() {
         <nav className='hidden lg:flex'>
           <ul className='space-x-4 lg:flex'>
             <li>
-              <Link href='/about' className={`mx-4 hover:underline lg:mx-6 ${montserrat.className}`}>
+              <Link href='/about' className='mx-4 font-Montserrat hover:underline lg:mx-6'>
                 About
               </Link>
             </li>
             <li>
-              <Link href='/works' className={`mx-4 hover:underline lg:mx-6 ${montserrat.className}`}>
+              <Link href='/works' className='mx-4 font-Montserrat hover:underline lg:mx-6'>
                 Works
               </Link>
             </li>
             <li>
-              <Link href='/story' className={`mx-4 hover:underline lg:mx-6 ${montserrat.className}`}>
+              <Link href='/story' className='mx-4 font-Montserrat hover:underline lg:mx-6'>
                 Story
               </Link>
             </li>
             <li>
-              <Link href='/news' className={`mx-4 hover:underline lg:mx-6 ${montserrat.className}`}>
+              <Link href='/news' className='mx-4 font-Montserrat hover:underline lg:mx-6'>
                 News
               </Link>
             </li>
             <li>
-              <Link href='/price' className={`mx-4 hover:underline lg:mx-6 ${montserrat.className}`}>
+              <Link href='/price' className='mx-4 font-Montserrat hover:underline lg:mx-6'>
                 Price
               </Link>
             </li>
             <li>
               <Link
                 href='/contact'
-                className={`mx-4 rounded-full border-DEFAULT border-solid border-white px-4 py-1 lg:mx-6  ${montserrat.className}`}
+                className='mx-4 rounded-full border-DEFAULT border-solid border-white px-4 py-1 font-Montserrat lg:mx-6'
               >
                 Contact
               </Link>

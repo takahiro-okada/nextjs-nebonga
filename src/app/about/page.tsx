@@ -1,7 +1,6 @@
 import Image from 'next/image'
 
 import { SliderImages } from '../components/SliderImages'
-import { montserrat } from '../components/util/fonts'
 
 export default function About() {
   return (
@@ -9,7 +8,7 @@ export default function About() {
       <section className='mx-auto max-w-1140 px-3'>
         <div className='md:flex'>
           <div className='mt-20 md:w-1/2'>
-            <h1 className={`${montserrat.className} text-5xl font-extrabold md:text-7xl`}>Passion on the border</h1>
+            <h1 className='font-Montserrat text-5xl font-extrabold md:text-7xl'>Passion on the border</h1>
             <p className='mt-6 text-lg'>境界線上の葛藤</p>
           </div>
           <div className='md:w-1/2'>
