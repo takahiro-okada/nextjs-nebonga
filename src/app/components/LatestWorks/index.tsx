@@ -12,12 +12,12 @@ export default async function LatestWorks() {
   const works = await getAllWorks(6)
 
   return (
-    <section className='bg-gray pb-40 pt-8'>
+    <section className='pb-40 pt-8'>
       <CommonContainer>
         <SectionTitle title='Works' subtitle='制作実績' />
         <div className='mt-8'>
           <ul className='grid gap-6 md:grid-cols-3'>
-            {works.map((work: Post) => (
+            {works.posts.map((work: Post) => (
               <li key={work.slug} className='group'>
                 <Link href={`/works/${work.slug}/`}>
                   <div className='relative aspect-video h-auto w-full overflow-hidden rounded-md'>

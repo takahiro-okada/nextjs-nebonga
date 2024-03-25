@@ -21,8 +21,8 @@ async function fetchData(slug: string) {
         categoryKey: 'categories',
         context: 'Story',
         posts,
-        total,
         subtitle: '感じたことなどを綴ります',
+        total,
       }
     }
 
@@ -33,8 +33,8 @@ async function fetchData(slug: string) {
         categoryKey: 'worksCategories',
         context: 'Works',
         posts,
-        total, // 追加: 総投稿数
         subtitle: 'NeBongaのお仕事の一部をご紹介します',
+        total, // 追加: 総投稿数
       }
     }
 
@@ -45,8 +45,8 @@ async function fetchData(slug: string) {
         categoryKey: 'newsCategories',
         context: 'News',
         posts,
-        total, // 追加: 総投稿数
         subtitle: '各種お知らせ',
+        total, // 追加: 総投稿数
       }
     }
 
@@ -63,18 +63,18 @@ function RenderPostList({
   title,
   basePath,
   categoryKey,
+  categoryName,
   posts,
   subtitle,
   total,
-  categoryName,
 }: {
   title: string
   basePath: string
   categoryKey: 'categories' | 'worksCategories' | 'newsCategories'
+  categoryName: string
   posts: Post[]
   subtitle: string
   total: number
-  categoryName: string
 }) {
   return (
     <>
@@ -91,19 +91,7 @@ function RenderPostList({
   )
 }
 
-function RenderNewsList({
-  title,
-  basePath,
-  categoryKey,
-  posts,
-  subtitle,
-}: {
-  title: string
-  basePath: string
-  categoryKey: 'categories' | 'worksCategories' | 'newsCategories'
-  posts: Post[]
-  subtitle: string
-}) {
+function RenderNewsList({ categoryKey, posts }: { categoryKey: 'newsCategories'; posts: Post[] }) {
   return (
     <>
       <PageTitle title='News' subtitle='各種お知らせ' />
@@ -136,9 +124,17 @@ function RenderNewsList({
 
 export default async function Archive({ params }: { params: { slug: string } }) {
   const slugArray = params.slug
-  const slug = Array.isArray(slugArray) ? slugArray[0] : slugArray // slugが配列ならその最初の要素を取得、そうでなければslugをそのまま使う
+  const slug = Array.isArray(slugArray) ? slugArray[0] : slugArray
   const data = await fetchData(slug)
-  const { basePath, categoryKey, context, error, posts, subtitle, total } = data
+  const { basePath, categoryKey, context, posts, subtitle, total } = data as {
+    basePath: string
+    categoryKey: 'newsCategories'
+    categoryName: string
+    context: string
+    posts: Post[]
+    subtitle: string
+    total: number
+  }
   if (slug == 'story' || slug == 'works') {
     return (
       <main>
@@ -151,10 +147,11 @@ export default async function Archive({ params }: { params: { slug: string } }) 
                 subtitle={subtitle}
                 basePath={basePath}
                 total={total}
-                categoryKey={categoryKey as 'categories' | 'worksCategories' | 'newsCategories'}
+                categoryKey={categoryKey}
+                categoryName='All'
               />
             ) : (
-              <p>No stories found.</p>
+              <p>No Posts found.</p>
             )}
           </section>
         </CommonContainer>
@@ -166,15 +163,9 @@ export default async function Archive({ params }: { params: { slug: string } }) 
         <CommonContainer>
           <section>
             {posts && posts.length > 0 ? (
-              <RenderNewsList
-                posts={posts}
-                title={context}
-                subtitle={subtitle}
-                basePath={basePath}
-                categoryKey={categoryKey as 'categories' | 'worksCategories' | 'newsCategories'}
-              />
+              <RenderNewsList posts={posts} categoryKey={categoryKey} />
             ) : (
-              <p>No stories found.</p>
+              <p>No Posts found.</p>
             )}
           </section>
         </CommonContainer>

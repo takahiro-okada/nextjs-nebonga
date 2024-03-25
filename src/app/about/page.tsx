@@ -1,17 +1,17 @@
 import Image from 'next/image'
 
-import { SliderImages } from '../components/SliderImages'
-import ProfileSection from '../components/ProfileSection'
 import CommonContainer from '../components/CommonContainer'
+import ProfileSection from '../components/ProfileSection'
+import { SliderImages } from '../components/SliderImages'
 
 export default function About() {
   return (
     <main>
       <section className='mt-16'>
         <CommonContainer>
-          <div className='md:flex md:ml-16'>
+          <div className='md:ml-16 md:flex'>
             <div className='mt-20 md:w-1/2'>
-              <span className='absolute text-sm -left-5 top-8 w-fit translate-x-0 rotate-90 tracking-widest after:absolute after:top-1/2 after:ml-6 after:inline-block after:w-16 after:border-t-2 after:border-black lg:after:w-52'>
+              <span className='absolute -left-5 top-8 w-fit translate-x-0 rotate-90 text-sm tracking-widest after:absolute after:top-1/2 after:ml-6 after:inline-block after:w-16 after:border-t-2 after:border-black lg:after:w-52'>
                 About
               </span>
               <h1 className='font-Montserrat text-5xl font-extrabold md:text-7xl '>Passion on the border</h1>
@@ -45,11 +45,11 @@ export default function About() {
             descriptionEn="NeBonga Inc.<br>CEOBorn in 1990 in Yokohama. Based in Tokyo, Japan.​<br>CinematographerPR movie / Creation of contents related international cooperation, education and so on.<br>I’ve traveled to 56 countries and started to take photography of people's life around the world.<br>Based on this experience (includes time in Uganda for two years),  Having deep conversation and trusting each other is my most important value."
             imageSrc='/images/profile-hiro.jpg'
             timeline={[
-              { year: '2013', event: '関西学院大法学部政治学科卒' },
-              { year: '2014', event: 'JICA海外協力隊としてウガンダ共和国へ' },
-              { year: '2017', event: '現地での活動や帰国後の社会還元が評価され天皇皇后両陛下に謁見を賜る' },
-              { year: '2018', event: '個人事業主として独立' },
-              { year: '2023', event: '株式会社NeBonga設立' },
+              { event: '関西学院大法学部政治学科卒', year: '2013' },
+              { event: 'JICA海外協力隊としてウガンダ共和国へ', year: '2014' },
+              { event: '現地での活動や帰国後の社会還元が評価され天皇皇后両陛下に謁見を賜る', year: '2017' },
+              { event: '個人事業主として独立', year: '2018' },
+              { event: '株式会社NeBonga設立', year: '2023' },
             ]}
           />
           <div className='mt-24'>
@@ -60,11 +60,11 @@ export default function About() {
               descriptionEn="NeBonga Inc. Sales/Accounting/Photography While working for a food marketing company, I experienced a wide range of business activities such as product development using local ingredients, wholesale sales, and retail store management.Working at a Japanese sweet shop in Toyooka City, Hyogo Prefecture, I feel happiness when I have nice conversation with customers.Currently, I'm studying to become an interpreter for International Signs by making use of my experience of studying it when I was student."
               imageSrc='/images/profile-yuri.jpg'
               timeline={[
-                { year: '2010', event: '同志社大学　商学部商学科卒' },
-                { year: '2010', event: '損害保険会社勤務' },
-                { year: '2015', event: 'JICA海外協力隊としてフィリピンへ' },
-                { year: '2018', event: '食品マーケティング企業勤務' },
-                { year: '2023', event: '株式会社NeBongaに入社' },
+                { event: '同志社大学　商学部商学科卒', year: '2010' },
+                { event: '損害保険会社勤務', year: '2010' },
+                { event: 'JICA海外協力隊としてフィリピンへ', year: '2015' },
+                { event: '食品マーケティング企業勤務', year: '2018' },
+                { event: '株式会社NeBongaに入社', year: '2023' },
               ]}
             />
           </div>
@@ -73,7 +73,7 @@ export default function About() {
 
       <section className='mt-12 bg-[#F5F6F7] py-16' data-section='about-logo'>
         <CommonContainer>
-          <div className='md:flex md:gap-10 justify-center mx-auto md:max-w-[960px]'>
+          <div className='mx-auto justify-center md:flex md:max-w-[960px] md:gap-10'>
             <div className='mt-6 p-16 md:mt-0 md:w-1/2'>
               <Image src='/logo.png' alt='NeBonga' width={640} height={640} className='' />
             </div>

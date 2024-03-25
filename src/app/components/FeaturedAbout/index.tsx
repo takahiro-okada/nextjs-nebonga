@@ -6,7 +6,7 @@ export default function FeaturedAbout() {
   return (
     <section className='-mt-12 lg:-mt-16'>
       <div className=''>
-        <div className='relative mx-auto max-w-1140 px-3'>
+        <div className='relative mx-auto px-3'>
           <h2 className='absolute -left-5 top-8 w-fit translate-x-0 rotate-90 text-lg tracking-widest after:absolute after:top-1/2 after:ml-6 after:inline-block after:w-16 after:border-t-2 after:border-black lg:text-3xl lg:after:w-32'>
             About us
           </h2>

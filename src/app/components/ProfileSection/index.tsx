@@ -1,9 +1,10 @@
+import Image from 'next/image'
 import React from 'react'
 
 // Timeline コンポーネントのProps型定義
 interface TimelineItem {
-  year: string
   event: string
+  year: string
 }
 
 interface TimelineProps {
@@ -26,9 +27,9 @@ export const Timeline: React.FC<TimelineProps> = ({ data }) => {
 
 interface ProfileSectionProps {
   name: string
-  englishName: string
-  descriptionJa: string | string[]
   descriptionEn: string | string[]
+  descriptionJa: string | string[]
+  englishName: string
   imageSrc: string
   timeline: TimelineItem[]
 }
@@ -36,15 +37,15 @@ interface ProfileSectionProps {
 // ProfileSection コンポーネント（デフォルトエクスポート）
 const ProfileSection: React.FC<ProfileSectionProps> = ({
   name,
-  englishName,
-  descriptionJa,
   descriptionEn,
+  descriptionJa,
+  englishName,
   imageSrc,
   timeline,
 }) => {
   return (
     <div className='md:flex md:flex-row md:gap-16'>
-      <img src={imageSrc} alt={`${name}のプロフィール写真`} width={481} height={321} className='w-full md:hidden' />
+      <Image src={imageSrc} alt={`${name}のプロフィール写真`} width={481} height={321} className='w-full md:hidden' />
       <div className='mt-6 md:w-1/2'>
         <h2 className='text-4xl font-bold'>{name}</h2>
         <p className='mt-2'>{englishName}</p>
@@ -53,17 +54,17 @@ const ProfileSection: React.FC<ProfileSectionProps> = ({
           dangerouslySetInnerHTML={{ __html: descriptionJa }}
         ></p>
         <p
-          className='mt-6 text-sm leading-relaxed tracking-wide font-lato'
+          className='mt-6 font-lato text-sm leading-relaxed tracking-wide'
           dangerouslySetInnerHTML={{ __html: descriptionEn }}
         ></p>
       </div>
       <div className='mt-6 md:mt-0 md:w-1/2'>
-        <img
+        <Image
           src={imageSrc}
           alt={`${name}のプロフィール写真`}
           width={481}
           height={321}
-          className='w-full hidden md:block'
+          className='hidden w-full md:block'
         />
         <div className='mt-3'>
           <Timeline data={timeline} />

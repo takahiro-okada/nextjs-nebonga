@@ -50,7 +50,7 @@ export default function SideNav({ categoryKey, linkPrefix }: SideNavProps) {
         <a
           key={category.slug}
           href={`/${linkPrefix}/category/${category.slug}/`}
-          className='inline-block w-full border-b-DEFAULT p-3 font-bold transition-all duration-700 ease-out hover:rounded-md hover:bg-gray'
+          className='inline-block w-full border-b-DEFAULT p-3 font-bold transition-all duration-700 ease-out hover:rounded-md'
         >
           {category.name}
         </a>
@@ -61,7 +61,7 @@ export default function SideNav({ categoryKey, linkPrefix }: SideNavProps) {
                 <a
                   key={child.slug}
                   href={`/${linkPrefix}/category/${category.slug}/${child.slug}`}
-                  className='inline-block w-full border-b-DEFAULT py-3 pl-8 transition-all duration-700 ease-out hover:rounded-md hover:bg-gray'
+                  className='inline-block w-full border-b-DEFAULT py-3 pl-8 transition-all duration-700 ease-out hover:rounded-md'
                 >
                   {child.name}
                   <FontAwesomeIcon className='ml-2' icon={faChevronRight} size='xs' />
@@ -81,7 +81,7 @@ export default function SideNav({ categoryKey, linkPrefix }: SideNavProps) {
           <a
             key={'all'}
             href={`/${linkPrefix}/`}
-            className='inline-block w-full border-b-DEFAULT p-3 font-Montserrat font-bold transition-all duration-700 ease-out hover:rounded-md hover:bg-gray'
+            className='inline-block w-full border-b-DEFAULT p-3 font-Montserrat font-bold transition-all duration-700 ease-out hover:rounded-md'
           >
             ALL
           </a>

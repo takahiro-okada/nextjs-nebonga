@@ -6,7 +6,6 @@ import { fetchGraphQL } from '../functions'
 export default async function getCategoryBySlug(slug: [string, string] | string, limit = 10, category = 'story') {
   const slugs = Array.isArray(slug) ? slug : [slug]
   const lastSlug = slugs.length > 0 ? slugs[slugs.length - 1] : ''
-  console.log(lastSlug)
   let query = ''
 
   // カテゴリに応じてGraphQLクエリを構築

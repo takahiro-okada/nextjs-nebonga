@@ -9,8 +9,7 @@ import PageTitle from '../../../components/PageTItle'
 import SideNav from '../../../components/SideNav'
 
 export default async function CategoryArchive({ params }: { params: any }) {
-  const news: Post[] = await getCategoryBySlug(params.slug, 10, 'news')
-  console.log(news)
+  const { nodes: news, total } = await getCategoryBySlug(params.slug, 10, 'news')
   return (
     <main>
       <CommonContainer>
@@ -19,7 +18,7 @@ export default async function CategoryArchive({ params }: { params: any }) {
           <div className='mt-8 md:flex'>
             <div className='flex-auto'>
               {news &&
-                news.map((news) => (
+                news.map((news: Post) => (
                   <article key={news.databaseId} className='mb-4 border-b-DEFAULT bg-white'>
                     <Link
                       href={`/news/${news.slug}`}
