@@ -25,13 +25,8 @@ export interface Post {
   newsCategories?: {
     nodes: Category[]
   }
-  newsCategories?: {
-    nodes: [
-      {
-        name: string
-        databaseId: string
-      },
-    ]
+  worksCategories?: {
+    nodes: Category[]
   }
   nextPost?: {
     title: string
@@ -51,9 +46,6 @@ export interface Post {
         databaseId: string
       },
     ]
-  }
-  worksCategories?: {
-    nodes: Category[]
   }
 }
 export interface Category {

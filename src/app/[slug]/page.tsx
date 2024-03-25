@@ -1,7 +1,7 @@
 import Link from 'next/link'
 
 import getAllNews from '@/lib/queries/getAllNews'
-import getAllStoryies from '@/lib/queries/getAllStories'
+import getAllStories from '@/lib/queries/getAllStories'
 import getAllWorks from '@/lib/queries/getAllWorks'
 import { Post } from '@/lib/types'
 import CommonContainer from '@/src/app/components/CommonContainer'
@@ -13,46 +13,50 @@ import formatDate from '../components/util/formatDate'
 import page from '../page'
 
 async function fetchData(slug: string) {
-  if (slug === 'story') {
-    return {
-      basePath: 'story',
-      categoryKey: 'categories',
-      context: 'Story',
-      posts: await getAllStoryies(),
-      subtitle: '感じたことなどを綴ります',
+  try {
+    if (slug === 'story') {
+      const { posts, total } = await getAllStories()
+      return {
+        basePath: 'story',
+        categoryKey: 'categories',
+        context: 'Story',
+        posts,
+        total,
+        subtitle: '感じたことなどを綴ります',
+      }
     }
-  }
 
-  if (slug === 'works') {
-    return {
-      basePath: 'works',
-      categoryKey: 'worksCategories',
-      context: 'Works',
-      posts: await getAllWorks(),
-      subtitle: 'NeBongaのお仕事の一部をご紹介します',
+    if (slug === 'works') {
+      const { posts, total } = await getAllWorks()
+      return {
+        basePath: 'works',
+        categoryKey: 'worksCategories',
+        context: 'Works',
+        posts,
+        total, // 追加: 総投稿数
+        subtitle: 'NeBongaのお仕事の一部をご紹介します',
+      }
     }
-  }
 
-  if (slug === 'news') {
-    return {
-      basePath: 'news',
-      categoryKey: 'newsCategories',
-      context: 'News',
-      posts: await getAllNews(),
-      subtitle: '各種お知らせ',
+    if (slug === 'news') {
+      const { posts, total } = await getAllNews()
+      return {
+        basePath: 'news',
+        categoryKey: 'newsCategories',
+        context: 'News',
+        posts,
+        total, // 追加: 総投稿数
+        subtitle: '各種お知らせ',
+      }
     }
+
+    if (page) {
+      return { post: page }
+    }
+  } catch (error) {
+    console.error(error)
+    return { error: 'データの取得中にエラーが発生しました。' }
   }
-
-  // Otherwise, this could be a page.
-  // const page = await getPageBySlug(slug)
-
-  // If page data exists, return it.
-  if (page) {
-    return { post: page }
-  }
-
-  // Otherwise, return an error.
-  return { error: 'No data found' }
 }
 
 function RenderPostList({
@@ -61,19 +65,23 @@ function RenderPostList({
   categoryKey,
   posts,
   subtitle,
+  total,
+  categoryName,
 }: {
   title: string
   basePath: string
   categoryKey: 'categories' | 'worksCategories' | 'newsCategories'
   posts: Post[]
   subtitle: string
+  total: number
+  categoryName: string
 }) {
   return (
     <>
       <PageTitle title={title} subtitle={subtitle} />
       <div className='mt-8 md:flex'>
         <div className='flex-auto'>
-          <ContentList items={posts} basePath={basePath} categoryKey={categoryKey} />
+          <ContentList items={posts} basePath={basePath} categoryKey={categoryKey} total={total} categoryName='ALL' />
         </div>
         <div className='mt-16 md:ml-8 md:mt-0 md:w-full md:max-w-xs md:flex-auto'>
           <SideNav linkPrefix={basePath} categoryKey={categoryKey} />
@@ -130,7 +138,7 @@ export default async function Archive({ params }: { params: { slug: string } }) 
   const slugArray = params.slug
   const slug = Array.isArray(slugArray) ? slugArray[0] : slugArray // slugが配列ならその最初の要素を取得、そうでなければslugをそのまま使う
   const data = await fetchData(slug)
-  const { basePath, categoryKey, context, error, posts, subtitle } = data
+  const { basePath, categoryKey, context, error, posts, subtitle, total } = data
   if (slug == 'story' || slug == 'works') {
     return (
       <main>
@@ -142,6 +150,7 @@ export default async function Archive({ params }: { params: { slug: string } }) 
                 title={context}
                 subtitle={subtitle}
                 basePath={basePath}
+                total={total}
                 categoryKey={categoryKey as 'categories' | 'worksCategories' | 'newsCategories'}
               />
             ) : (

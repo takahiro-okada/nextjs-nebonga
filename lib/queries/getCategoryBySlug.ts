@@ -6,32 +6,38 @@ import { fetchGraphQL } from '../functions'
 export default async function getCategoryBySlug(slug: [string, string] | string, limit = 10, category = 'story') {
   const slugs = Array.isArray(slug) ? slug : [slug]
   const lastSlug = slugs.length > 0 ? slugs[slugs.length - 1] : ''
-
+  console.log(lastSlug)
   let query = ''
 
+  // カテゴリに応じてGraphQLクエリを構築
   if (category === 'story') {
     query = `
-      query getCategoryBySlug {
-        posts(where: { categoryName: "${lastSlug}" }, first: ${limit}) {
-          nodes {
-            date
-            slug
-            title
-            id
-            categories {
-              nodes {
-                name
-              }
+    query getCategoryBySlug {
+      posts(where: {categoryName: "${lastSlug}"}, first: ${limit}) {
+        nodes {
+          date
+          slug
+          title
+          id
+          categories {
+            nodes {
+              name
             }
-            featuredImage {
-              node {
-                altText
-                sourceUrl
-              }
+          }
+          featuredImage {
+            node {
+              altText
+              sourceUrl
             }
           }
         }
-      }`
+        pageInfo {
+          offsetPagination {
+            total
+          }
+        }
+      }
+    }`
   } else if (category === 'works') {
     query = `
       query getCategoryBySlug {
@@ -46,7 +52,7 @@ export default async function getCategoryBySlug(slug: [string, string] | string,
               }
             ]
           }
-        }) {
+        }, first: ${limit}) {
           nodes {
             date
             slug
@@ -62,6 +68,11 @@ export default async function getCategoryBySlug(slug: [string, string] | string,
                 altText
                 sourceUrl
               }
+            }
+          }
+          pageInfo {
+            offsetPagination {
+              total
             }
           }
         }
@@ -80,7 +91,7 @@ export default async function getCategoryBySlug(slug: [string, string] | string,
               }
             ]
           }
-        }) {
+        }, first: ${limit}) {
           nodes {
             date
             slug
@@ -98,21 +109,35 @@ export default async function getCategoryBySlug(slug: [string, string] | string,
               }
             }
           }
+          pageInfo {
+            offsetPagination {
+              total
+            }
+          }
         }
       }`
   }
 
-  console.log(query)
   const variables = {}
 
   const response = await fetchGraphQL(query, variables)
-  // カテゴリに応じて正しいデータを返すように変更
+
+  // カテゴリに応じたレスポンスデータを構造化して返す
+  let nodes, total
   if (category === 'story') {
-    return response.data.posts.nodes
+    nodes = response.data.posts.nodes
+    total = response.data.posts.pageInfo.offsetPagination.total
   } else if (category === 'works') {
-    return response.data.works.nodes
+    nodes = response.data.works.nodes
+    total = response.data.works.pageInfo.offsetPagination.total
   } else if (category === 'news') {
-    console.log(response.data)
-    return response.data.newslist.nodes
+    nodes = response.data.newslist.nodes
+    total = response.data.newslist.pageInfo ? response.data.newslist.pageInfo.offsetPagination.total : 0 // newslistのレスポンスにpageInfoが含まれない場合のための条件付きアクセス
+  }
+
+  // ノードと総件数を含むオブジェクトを返す
+  return {
+    nodes,
+    total,
   }
 }
