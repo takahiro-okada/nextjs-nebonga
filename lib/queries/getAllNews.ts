@@ -27,8 +27,20 @@ export default async function getAllNews() {
           }
         }
       }
+      pageInfo {
+        offsetPagination {
+          total
+        }
+      }
     }
   }`
   const response = await fetchGraphQL(query)
-  return response.data.newslist.nodes as Post[]
+
+  const posts = response.data.newslist.nodes as Post[]
+  const total = response.data.newslist.pageInfo.offsetPagination.total
+
+  return {
+    posts,
+    total,
+  }
 }

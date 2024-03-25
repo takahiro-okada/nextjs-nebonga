@@ -34,8 +34,22 @@ export default async function getAllStories() {
           }
         }
       }
+      pageInfo {
+        offsetPagination {
+          total
+        }
+      }
     }
   }`
   const response = await fetchGraphQL(query)
-  return response.data.posts.nodes as Post[]
+
+  // レスポンスからpostsのnodesとtotalを抽出
+  const posts = response.data.posts.nodes as Post[]
+  const total = response.data.posts.pageInfo.offsetPagination.total
+
+  // nodesとtotalの両方を含むオブジェクトを返す
+  return {
+    posts,
+    total,
+  }
 }

@@ -27,8 +27,23 @@ export default async function getAllWorks(limit: number = 10) {
           }
         }
       }
+      pageInfo {
+        offsetPagination {
+          total
+        }
+      }
     }
   }`
+
   const response = await fetchGraphQL(query, { limit })
-  return response.data.works.nodes as Post[]
+
+  // レスポンスからpostsのnodesとtotalを抽出
+  const posts = response.data.works.nodes as Post[]
+  const total = response.data.works.pageInfo.offsetPagination.total
+
+  // nodesとtotalの両方を含むオブジェクトを返す
+  return {
+    posts,
+    total,
+  }
 }

@@ -11,9 +11,11 @@ interface ContentListProps {
   basePath: string
   categoryKey: 'categories' | 'worksCategories' | 'newsCategories'
   items: Post[]
+  total: number
+  categoryName: string
 }
 
-export default function ContentList({ basePath, categoryKey, items }: ContentListProps) {
+export default function ContentList({ basePath, categoryKey, items, total, categoryName }: ContentListProps) {
   if (!items || items.length === 0) {
     return (
       <div className='my-16'>
@@ -27,7 +29,11 @@ export default function ContentList({ basePath, categoryKey, items }: ContentLis
 
   return (
     <>
-      <ul className='grid gap-y-10 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-16'>
+      <div className='flex items-center'>
+        <p className='text-xl capitalize'>{categoryName}</p>
+        <span className='text-sm ml-4'>{total}件</span>
+      </div>
+      <ul className='mt-5 grid gap-y-10 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-16'>
         {items?.map((item) => {
           return (
             <li key={item.slug}>

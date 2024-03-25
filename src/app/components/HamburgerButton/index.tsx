@@ -12,7 +12,7 @@ export default function HamburgerButton({ handleMenuOpen, openMenu }: HamburgerB
         <div
           className={
             openMenu
-              ? 'h-0.5 w-8 translate-y-2.5 rotate-45 bg-white transition duration-500 ease-in-out'
+              ? 'h-0.5 w-8 translate-y-2.5 rotate-45 bg-black transition duration-500 ease-in-out'
               : 'h-0.5 w-8 bg-white transition duration-500 ease-in-out'
           }
         />
@@ -26,7 +26,7 @@ export default function HamburgerButton({ handleMenuOpen, openMenu }: HamburgerB
         <div
           className={
             openMenu
-              ? 'h-0.5 w-8 -rotate-45 bg-white transition duration-500 ease-in-out'
+              ? 'h-0.5 w-8 -rotate-45 bg-black transition duration-500 ease-in-out'
               : 'h-0.5 w-8 bg-white transition duration-500 ease-in-out'
           }
         />
@@ -35,8 +35,8 @@ export default function HamburgerButton({ handleMenuOpen, openMenu }: HamburgerB
       <nav
         className={
           openMenu
-            ? 'fixed right-0 top-0 z-30 flex h-screen w-full translate-x-0 animate-scaleInCenter flex-col justify-start bg-[#BDC4D0] px-3 pt-8 text-left transition-transform duration-300 ease-linear'
-            : 'fixed right-0 top-0 z-30 flex h-screen w-full translate-x-full animate-scaleOutCenter flex-col justify-start bg-[#BDC4D0] px-3 pt-8 text-left transition-transform duration-300 ease-linear'
+            ? 'fixed right-0 top-0 z-30 flex h-screen w-full translate-x-0 flex-col justify-start bg-white px-3 pt-8 text-left transition-transform duration-300 ease-linear'
+            : 'fixed right-0 top-0 z-30 flex h-screen w-full translate-x-full animate-scaleOutCenter flex-col justify-start bg-white px-3 pt-8 text-left transition-transform duration-300 ease-linear'
         }
       >
         <ul>
