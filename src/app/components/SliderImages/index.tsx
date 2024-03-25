@@ -9,14 +9,18 @@ import { Autoplay, Navigation, Pagination } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
 const images = [
-  '/images/bg-sample.jpg',
-  '/images/bg-sample.jpg',
-  '/images/bg-sample.jpg',
-  '/images/bg-sample.jpg',
-  '/images/bg-sample.jpg',
-  '/images/bg-sample.jpg',
-  '/images/bg-sample.jpg',
-  '/images/bg-sample.jpg',
+  '/images/about-slider_01.jpg',
+  '/images/about-slider_02.jpg',
+  '/images/about-slider_03.jpg',
+  '/images/about-slider_04.jpg',
+  '/images/about-slider_05.jpg',
+  '/images/about-slider_06.jpg',
+  '/images/about-slider_01.jpg',
+  '/images/about-slider_02.jpg',
+  '/images/about-slider_03.jpg',
+  '/images/about-slider_04.jpg',
+  '/images/about-slider_05.jpg',
+  '/images/about-slider_06.jpg',
 ]
 
 export function SliderImages() {
@@ -26,7 +30,7 @@ export function SliderImages() {
       spaceBetween: 0,
     },
     1024: {
-      slidesPerView: 3,
+      slidesPerView: 6,
       spaceBetween: 0,
     },
   }
@@ -41,14 +45,14 @@ export function SliderImages() {
         allowTouchMove={false}
         loop={true}
         className='ease-linear'
-        speed={3000}
+        speed={5000}
         autoplay={{
           delay: 0,
         }}
       >
         {images.map((src: string, index: number) => (
           <SwiperSlide key={index} className='ease-linear'>
-            <Image src={src} width={1920} height={1038} alt='Slider Image' sizes='(min-width: 1024px) 100vw, 60vw' />
+            <Image src={src} width={1000} height={1000} alt='' sizes='(min-width: 1024px) 100vw, 60vw' />
           </SwiperSlide>
         ))}
       </Swiper>
