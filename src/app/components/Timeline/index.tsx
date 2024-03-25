@@ -1,7 +1,7 @@
 // Timeline コンポーネントのProps型定義
 interface TimelineItem {
-  year: string
   event: string
+  year: string
 }
 
 interface TimelineProps {
