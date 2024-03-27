@@ -41,8 +41,8 @@ export default function About() {
           <ProfileSection
             name='川崎 芳勲'
             englishName='Yoshihiro Kawasaki'
-            descriptionJa='株式会社NeBonga 代表取締役。<br><br>1990年生まれ、神奈川県横浜市在住。<br>映像作家・写真家。<br>企業/団体のPR映像制作、国際協力・教育分野のコンテンツ制作。<br>大学生時代より56カ国を旅し、人間の暮らしや営みを撮影することに夢中になる。<br>その経験から、「対話」と「相互理解」を撮影のべースとしており、信頼関係の構築から得られる説得力のある映像制作を得意としている。'
-            descriptionEn="NeBonga Inc.<br>CEOBorn in 1990 in Yokohama. Based in Tokyo, Japan.​<br>CinematographerPR movie / Creation of contents related international cooperation, education and so on.<br>I’ve traveled to 56 countries and started to take photography of people's life around the world.<br>Based on this experience (includes time in Uganda for two years),  Having deep conversation and trusting each other is my most important value."
+            descriptionJa={`株式会社NeBonga 代表取締役。<br><br>1990年生まれ、神奈川県横浜市在住。<br>映像作家・写真家。<br>企業/団体のPR映像制作、国際協力・教育分野のコンテンツ制作。<br>大学生時代より56カ国を旅し、人間の暮らしや営みを撮影することに夢中になる。<br>その経験から、「対話」と「相互理解」を撮影のべースとしており、信頼関係の構築から得られる説得力のある映像制作を得意としている。`}
+            descriptionEn={`NeBonga Inc.<br>CEOBorn in 1990 in Yokohama. Based in Tokyo, Japan.​<br>CinematographerPR movie / Creation of contents related international cooperation, education and so on.<br>I’ve traveled to 56 countries and started to take photography of people's life around the world.<br>Based on this experience (includes time in Uganda for two years),  Having deep conversation and trusting each other is my most important value.`}
             imageSrc='/images/profile-hiro.jpg'
             timeline={[
               { event: '関西学院大法学部政治学科卒', year: '2013' },
@@ -56,8 +56,8 @@ export default function About() {
             <ProfileSection
               name='平松 佑理'
               englishName='Yuri Hiramatsu'
-              descriptionJa='株式会社NeBonga 営業・経理・写真撮影 担当。<br>食品マーケティング会社勤務時代に、地域食材を使った商品開発や卸営業、小売店の運営等多岐に渡る業務を経験。特に兵庫県豊岡市の和菓子店での勤務では、お客様の喜んでいただける顔が見えることに、やりがいを感じていた。現在は、学生時代に勉強していた手話を活かし、国際手話の通訳士の勉強をしている。'
-              descriptionEn="NeBonga Inc. Sales/Accounting/Photography While working for a food marketing company, I experienced a wide range of business activities such as product development using local ingredients, wholesale sales, and retail store management.Working at a Japanese sweet shop in Toyooka City, Hyogo Prefecture, I feel happiness when I have nice conversation with customers.Currently, I'm studying to become an interpreter for International Signs by making use of my experience of studying it when I was student."
+              descriptionJa={`株式会社NeBonga 営業・経理・写真撮影 担当。<br>食品マーケティング会社勤務時代に、地域食材を使った商品開発や卸営業、小売店の運営等多岐に渡る業務を経験。特に兵庫県豊岡市の和菓子店での勤務では、お客様の喜んでいただける顔が見えることに、やりがいを感じていた。現在は、学生時代に勉強していた手話を活かし、国際手話の通訳士の勉強をしている。`}
+              descriptionEn={`NeBonga Inc. Sales/Accounting/Photography While working for a food marketing company, I experienced a wide range of business activities such as product development using local ingredients, wholesale sales, and retail store management.Working at a Japanese sweet shop in Toyooka City, Hyogo Prefecture, I feel happiness when I have nice conversation with customers.Currently, I'm studying to become an interpreter for International Signs by making use of my experience of studying it when I was student.`}
               imageSrc='/images/profile-yuri.jpg'
               timeline={[
                 { event: '同志社大学　商学部商学科卒', year: '2010' },
@@ -81,13 +81,18 @@ export default function About() {
               <h2 className='text-3xl'>ロゴに込められた思い</h2>
               <p className='mt-6 leading-[1.85]'>
                 NeBongaはウガンダ共和国で使用されている言葉の１つであるガンダ語で、《Ne（And/With）＋Bonga（グータッチの挨拶の習慣）》を組み合わせた造語になります。
+                <br />
                 どんな人でもBongaちょうだい！というと笑顔でグータッチをしてくれた。
+                <br />
                 あの瞬間に胸の中に広がるものをクリエイティブな仕事を通じて再現していきたいという想いがあります。
               </p>
               <p className='mt-6 leading-[1.85]'>
-                "AKWATA EMPOLA ATUKA WALA NAWOLOVU ATUKA KU KIBUGA"
+                {`"AKWATA EMPOLA ATUKA WALA NAWOLOVU ATUKA KU KIBUGA"`}
+                <br />
                 「ゆっくり始めれば遠くまで行くことができる。カメレオンもやがて街へたどり着く」
+                <br />
                 ウガンダで出会ったこの諺から着想を得て、カメレオンをモチーフにしたロゴにしました。
+                <br />
                 熱い芯を持ちつつも、変幻自在なクリエイターを目指して。
               </p>
             </div>
