@@ -25,12 +25,12 @@ export interface Post {
   newsCategories?: {
     nodes: Category[]
   }
-  nextPost?: {
+  next?: {
     title: string
     slug: url
     uri: string
   }
-  previousPost?: {
+  previous?: {
     title: string
     slug: url
     uri: string

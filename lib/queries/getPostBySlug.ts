@@ -2,12 +2,55 @@ import { fetchGraphQL } from '@/lib/functions'
 import { Post } from '@/lib/types'
 
 /**
- * Fetch a single blog post by slug.
+ * Fetch a single blog post, work, or news by slug based on the post type.
  */
-export default async function getPostBySlug(slug: string) {
-  const query = `
-    query GetPost($slug: ID!) {
-      post(id: $slug, idType: SLUG) {
+export default async function getPostBySlug(slug: string, postType: string) {
+  let query = ''
+  let resultField = ''
+
+  if (postType === 'post') {
+    query = `
+      query GetPost($slug: ID!) {
+        post(id: $slug, idType: SLUG) {
+          databaseId
+          date
+          modified
+          content(format: RENDERED)
+          title(format: RENDERED)
+          featuredImage {
+            node {
+              altText
+              sourceUrl
+              mediaDetails {
+                  height
+                  width
+              }
+            }
+          }
+          categories {
+            nodes {
+              databaseId
+              name
+            }
+          }
+          next {
+            title
+            slug
+            uri
+          }
+          previous {
+            titleonents/PostDetail/index.tsx
+            slug
+            uri
+          }
+        }
+      }
+    `
+    resultField = 'post'
+  } else if (postType === 'works') {
+    query = `
+    query GetPost{
+      work(id: "${slug}",idType: SLUG) {
         databaseId
         date
         modified
@@ -23,37 +66,68 @@ export default async function getPostBySlug(slug: string) {
             }
           }
         }
-        tags {
+        worksCategories {
           nodes {
             databaseId
             name
           }
         }
-        categories {
-          nodes {
-            databaseId
-            name
-          }
-        }
-        nextPost {
+        next {
           title
           slug
           uri
         }
-        previousPost {
+        previous {
           title
           slug
           uri
         }
       }
     }
-  `
-
-  const variables = {
-    slug: slug,
+    `
+    resultField = 'work'
+  } else if (postType === 'news') {
+    query = `
+    query GetPost($slug: ID!) {
+      news(id: $slug, idType: SLUG) {
+        databaseId
+        date
+        modified
+        content(format: RENDERED)
+        title(format: RENDERED)
+        featuredImage {
+          node {
+            altText
+            sourceUrl
+            mediaDetails {
+                height
+                width
+            }
+          }
+        }
+        newsCategories {
+          nodes {
+            databaseId
+            name
+          }
+        }
+        next {
+          title
+          slug
+          uri
+        }
+        previous {
+          title
+          slug
+          uri
+        }
+      }
+    }
+    `
+    resultField = 'news'
   }
+
+  const variables = { slug }
   const response = await fetchGraphQL(query, variables)
-  console.log('hogehogeog')
-  console.log(response)
-  return response.data.post as Post
+  return response.data[resultField] as Post
 }
