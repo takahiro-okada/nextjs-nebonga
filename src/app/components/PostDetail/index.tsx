@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { Category,Post  } from '@/lib/types'
+import { Category, Post } from '@/lib/types'
 
 import CommonContainer from '../CommonContainer'
 import CtaButtons from '../CtaButtons'

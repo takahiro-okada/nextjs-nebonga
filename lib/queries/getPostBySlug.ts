@@ -39,7 +39,7 @@ export default async function getPostBySlug(slug: string, postType: string) {
             uri
           }
           previous {
-            titleonents/PostDetail/index.tsx
+            title
             slug
             uri
           }

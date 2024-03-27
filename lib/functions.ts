@@ -56,7 +56,8 @@ export async function fetchGraphQL<T = any>(
       data.errors.forEach((error: any) => {
         console.error('Error message:', error.message)
       })
-      throw new Error('Error executing GraphQL query')
+      // Include the first error message in the thrown error.
+      throw new Error(`Error executing GraphQL query: ${data.errors[0].message}`)
     }
 
     // Finally, return the data.
