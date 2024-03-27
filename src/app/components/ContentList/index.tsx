@@ -54,22 +54,20 @@ export default function ContentList({ basePath, categoryKey, categoryName, items
                 </div>
               </Link>
               <p className='mt-2 flex gap-2 text-sm text-gray-500'>
-                <p className='mt-2 flex gap-2 text-sm text-gray-500'>
-                  {item[categoryKey] &&
-                    item[categoryKey]?.nodes?.map((category: Category) => {
-                      const parentSlug = category.parent?.node?.slug ? `${category.parent.node.slug}/` : ''
-                      return (
-                        <Link
-                          key={category.name}
-                          className='inline-block rounded-md bg-[#EDEDED] p-2 px-3 text-xs'
-                          href={`/${basePath}/category/${parentSlug}${category.slug}/`}
-                          passHref
-                        >
-                          {category.name}
-                        </Link>
-                      )
-                    })}
-                </p>
+                {item[categoryKey] &&
+                  item[categoryKey]?.nodes?.map((category: Category) => {
+                    const parentSlug = category.parent?.node?.slug ? `${category.parent.node.slug}/` : ''
+                    return (
+                      <Link
+                        key={category.name}
+                        className='inline-block rounded-md bg-[#EDEDED] p-2 px-3 text-xs'
+                        href={`/${basePath}/category/${parentSlug}${category.slug}/`}
+                        passHref
+                      >
+                        {category.name}
+                      </Link>
+                    )
+                  })}
               </p>
             </li>
           )
