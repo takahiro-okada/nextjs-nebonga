@@ -27,7 +27,7 @@ export default async function LatestWorks() {
                       alt={work.featuredImage?.node?.altText || ''}
                       width={640}
                       height={300}
-                      className='object-cover transition-transform duration-300 group-hover:scale-110'
+                      className='aspect-video object-cover transition-transform duration-300 group-hover:scale-110'
                     />
                     <h3 className='absolute bottom-0 z-10 mt-2 px-5 py-4 font-semibold text-white'>{work.title}</h3>
                   </div>

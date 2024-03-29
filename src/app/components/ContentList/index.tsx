@@ -1,8 +1,13 @@
 // components/ContentList.js
+'use client'
+
 import Image from 'next/image'
 import Link from 'next/link'
+import { useState } from 'react'
 
 import { Category, Post } from '@/lib/types'
+import CategoryHierarchy from '@/src/app/components/CategoryHierarchy'
+import useCategoriesHierarchy from '@/src/app/components/hooks/useCategoriesHierachy'
 
 import SnsIcons from '../SnsIcons'
 import formatDate from '../util/formatDate'
@@ -16,6 +21,9 @@ interface ContentListProps {
 }
 
 export default function ContentList({ basePath, categoryKey, categoryName, items, total }: ContentListProps) {
+  const [showMenu, setShowMenu] = useState(false) // メニュー表示状態の管理
+  const categories = useCategoriesHierarchy(categoryKey)
+
   if (!items || items.length === 0) {
     return (
       <div className='my-16'>
@@ -29,9 +37,17 @@ export default function ContentList({ basePath, categoryKey, categoryName, items
 
   return (
     <>
-      <div className='flex items-center'>
-        <p className='text-xl capitalize'>{categoryName}</p>
-        <span className='ml-4 text-sm'>{total}件</span>
+      <div className='flex justify-between'>
+        <div className='flex items-center'>
+          <p className='text-xl capitalize'>{categoryName}</p>
+          <span className='ml-4 text-sm'>{total}件</span>
+        </div>
+        <div className='relative md:hidden'>
+          <button className='' onClick={() => setShowMenu(!showMenu)}>
+            <Image src='/images/icon-category.png' alt='Category icon' width={26} height={26} className='ml-4' />
+          </button>
+          {showMenu && <CategoryHierarchy categories={categories} basePath={basePath} />}
+        </div>
       </div>
       <ul className='mt-5 grid gap-y-10 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-16'>
         {items?.map((item) => {

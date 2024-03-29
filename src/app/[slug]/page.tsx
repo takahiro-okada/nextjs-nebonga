@@ -137,7 +137,7 @@ export default async function Archive({ params }: { params: { slug: string } }) 
   }
   if (slug == 'story' || slug == 'works') {
     return (
-      <main>
+      <main className='mt-32'>
         <CommonContainer>
           <section>
             {posts && posts.length > 0 ? (
@@ -159,7 +159,7 @@ export default async function Archive({ params }: { params: { slug: string } }) 
     )
   } else if (slug == 'news') {
     return (
-      <main>
+      <main className='mt-32'>
         <CommonContainer>
           <section>
             {posts && posts.length > 0 ? (
@@ -173,7 +173,7 @@ export default async function Archive({ params }: { params: { slug: string } }) 
     )
   } else {
     return (
-      <main>
+      <main className='mt-32'>
         <CommonContainer>
           <section>
             <h1>No page</h1>

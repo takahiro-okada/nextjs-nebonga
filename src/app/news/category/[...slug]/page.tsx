@@ -11,7 +11,7 @@ import SideNav from '../../../components/SideNav'
 export default async function CategoryArchive({ params }: { params: any }) {
   const { nodes: news, total } = await getCategoryBySlug(params.slug, 10, 'news')
   return (
-    <main>
+    <main className='mt-32'>
       <CommonContainer>
         <section>
           <PageTitle title='News' subtitle='各種お知らせ' />

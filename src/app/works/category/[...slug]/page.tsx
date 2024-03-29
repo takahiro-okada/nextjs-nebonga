@@ -11,7 +11,7 @@ export default async function CategoryArchive({ params }: { params: any }) {
   const categoryName = await getCategoryNameBySlug(params.slug[params.slug.length - 1], 'worksCategories')
 
   return (
-    <main>
+    <main className='mt-32'>
       <CommonContainer>
         <section>
           <PageTitle title='Works' subtitle='NeBongaのお仕事の一部をご紹介します' />

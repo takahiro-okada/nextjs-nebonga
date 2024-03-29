@@ -18,7 +18,7 @@ export default function PostDetail({ categoryKey, post, slug }: PostDetailProps)
   const categories = categoryData?.nodes ? categoryData.nodes : []
 
   return (
-    <main>
+    <main className='mt-32'>
       <CommonContainer>
         <article className='mx-auto mt-16 max-w-3xl'>
           <Image

@@ -17,7 +17,7 @@ export const Timeline: React.FC<TimelineProps> = ({ data }) => {
     <table className='table-fixed align-top leading-[1.8]'>
       {data.map((item, index) => (
         <tr key={index}>
-          <td className='w-1/6 align-baseline'>{item.year}</td>
+          <th className='w-1/6 text-left align-baseline'>{item.year}</th>
           <td className='w-5/6'>{item.event}</td>
         </tr>
       ))}
