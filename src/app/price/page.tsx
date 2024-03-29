@@ -9,7 +9,7 @@ import PriceCard from '../components/PriceCard'
 
 export default function Price() {
   return (
-    <main>
+    <main className='mt-32'>
       <CommonContainer>
         <PageTitle title='Price' subtitle='NeBongaのお仕事の一部をご紹介します' />
 

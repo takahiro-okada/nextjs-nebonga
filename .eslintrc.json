@@ -9,7 +9,8 @@
     "import/first": "error",
     "import/newline-after-import": "error",
     "import/no-duplicates": "error",
-    "unused-imports/no-unused-imports": "error"
+    "unused-imports/no-unused-imports": "error",
+    "react/no-unescaped-entities": "off"
   },
   "settings": {
     "tailwindcss": {

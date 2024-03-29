@@ -7,10 +7,15 @@ export default function Cta() {
     <>
       <section className='mt-24'>
         <CommonContainer>
-          <div className='border-2 border-[EDEFF1] px-8 py-10  lg:flex lg:items-center lg:justify-between lg:px-20'>
-            <div className=''>
-              <SectionTitle title='Contact' subtitle='お問い合わせ' />
-              <p className='mt-8'>
+          <div className='relative border-2 border-[EDEFF1] px-8  py-12 lg:flex lg:items-center lg:justify-between lg:px-20'>
+            <div className='relative after:absolute after:right-[-60px] after:top-1/2 after:h-[132px] after:w-[2px] after:-translate-y-1/2 after:bg-[#EDEFF1]'>
+              <div className='lg:hidden'>
+                <SectionTitle title='Contact' subtitle='お問い合わせ' />
+              </div>
+              <div className='hidden lg:block'>
+                <h3 className='font-Montserrat text-2xl font-bold tracking-wider'>Contact</h3>
+              </div>
+              <p className='mt-2'>
                 写真撮影、映像制作等
                 <br />
                 お気軽にお問い合わせください。

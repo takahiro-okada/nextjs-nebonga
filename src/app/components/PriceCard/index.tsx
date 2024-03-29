@@ -18,7 +18,7 @@ export default function PriceCard({
   priceRange,
 }: PriceCardProps) {
   return (
-    <li className='relative rounded-xl border-[#333] px-8 pb-8  pt-10 md:px-16 md:pb-16 md:pt-12'>
+    <li className='relative rounded-xl border border-[#333] px-8 pb-8  pt-10 md:px-16 md:pb-16 md:pt-12'>
       <p className='absolute left-1/2 top-0 min-w-52 -translate-x-1/2 -translate-y-1/2 rounded-full bg-black px-9 py-2 text-center text-white'>
         CASE {caseNumber}
       </p>

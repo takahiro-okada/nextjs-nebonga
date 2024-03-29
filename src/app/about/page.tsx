@@ -6,24 +6,29 @@ import { SliderImages } from '../components/SliderImages'
 
 export default function About() {
   return (
-    <main>
+    <main className='mt-32'>
       <section className='mt-16'>
         <CommonContainer>
           <div className='md:ml-16 md:flex'>
-            <div className='mt-20 md:w-1/2'>
-              <span className='absolute -left-5 top-8 w-fit translate-x-0 rotate-90 text-sm tracking-widest after:absolute after:top-1/2 after:ml-6 after:inline-block after:w-16 after:border-t-2 after:border-black lg:after:w-52'>
+            <div className='pt-16 md:w-1/2 md:pt-12'>
+              <span className='absolute right-0 top-0 w-fit translate-x-0 rotate-90 text-sm tracking-widest after:absolute after:top-1/2 after:ml-6 after:inline-block after:w-16 after:border-black md:-left-5 md:top-8 lg:after:w-52'>
                 About
               </span>
-              <h1 className='font-Montserrat text-5xl font-extrabold md:text-7xl '>Passion on the border</h1>
+              <h1 className='font-Montserrat text-5xl font-extrabold md:text-7xl '>
+                Passion on
+                <br />
+                the border
+              </h1>
               <p className='mt-6 text-lg'>境界線上の葛藤</p>
             </div>
             <div className='md:w-1/2'>
               <p className='mt-8'>
                 志を持つすべての企業、人の取り組みをビジュアルコンテンツでサポート致します。
+                <br />
                 人は葛藤しながらも、それでも情熱を絶やすことなく、前に進む。
                 その奮闘と熱意の証を残すお手伝いをさせていただきます。
               </p>
-              <p className='mt-8 font-lato'>
+              <p className='mt-8 font-lato leading-7'>
                 Our mission is to make better world with people who has passion. We are focusing on not only achieving
                 goals with clients but also knowing subconscious through creating.
               </p>
@@ -107,38 +112,38 @@ export default function About() {
             <div className='grid-cols-2 items-start gap-4 md:grid md:gap-24'>
               <table className='text-left'>
                 <tr className='border-b border-[#EDEFF1]'>
-                  <th className='w-1/5 py-6 align-baseline'>会社名</th>
-                  <td className='w-4/5 py-6'>
+                  <th className='w-1/3 py-6 align-baseline md:w-1/5'>会社名</th>
+                  <td className='w-2/3 py-6 md:w-4/5'>
                     株式会社NeBonga(ネボンガ)
                     <br />
                     (英語表記:NeBonga.inc)
                   </td>
                 </tr>
                 <tr className='border-b border-[#EDEFF1]'>
-                  <th className='w-1/5 py-6 align-baseline'>住所</th>
-                  <td className='w-4/5 py-6'>
+                  <th className='w-1/3 py-6 align-baseline md:w-1/5'>住所</th>
+                  <td className='w-2/3 py-6 md:w-4/5'>
                     〒1500043
                     <br />
                     東京都渋谷区道玄坂1丁目10番8号渋谷道玄坂東急ビル 2F-C
                   </td>
                 </tr>
                 <tr className='border-b border-[#EDEFF1]'>
-                  <th className='w-1/5 py-6 align-baseline'>代表</th>
-                  <td className='w-4/5 py-6'>川崎 芳勲</td>
+                  <th className='w-1/3 py-6 align-baseline md:w-1/5'>代表</th>
+                  <td className='w-2/3 py-6 md:w-4/5'>川崎 芳勲</td>
                 </tr>
                 <tr className='border-b border-[#EDEFF1]'>
-                  <th className='w-1/5 py-6 align-baseline'>資本金</th>
-                  <td className='w-4/5 py-6'>3,000,000円</td>
+                  <th className='w-1/3 py-6 align-baseline md:w-1/5'>資本金</th>
+                  <td className='w-2/3 py-6 md:w-4/5'>3,000,000円</td>
                 </tr>
                 <tr className='border-b border-[#EDEFF1]'>
-                  <th className='w-1/5 py-6 align-baseline'>創業</th>
-                  <td className='w-4/5 py-6'>2023年9月</td>
+                  <th className='w-1/3 py-6 align-baseline md:w-1/5'>創業</th>
+                  <td className='w-2/3 py-6 md:w-4/5'>2023年9月</td>
                 </tr>
               </table>
               <table className='text-left'>
                 <tr className='border-b border-[#EDEFF1]'>
-                  <th className='w-1/5 py-6 align-baseline'>事業内容</th>
-                  <td className='w-4/5 py-6'>
+                  <th className='w-1/3 py-6 align-baseline md:w-1/5'>事業内容</th>
+                  <td className='w-2/3 py-6 md:w-4/5'>
                     <ul className='list-disc'>
                       <li>写真・動画・映画コンテンツの企画、撮影、編集業務及びその制作物の販売</li>
                       <li>ソーシャルメディア、ＷＥＢサイト構築、運用並びにその他の広告宣伝</li>
@@ -147,12 +152,12 @@ export default function About() {
                   </td>
                 </tr>
                 <tr className='border-b border-[#EDEFF1]'>
-                  <th className='w-1/5 py-6 align-baseline'>取引先銀行</th>
-                  <td className='w-4/5 py-6'>XXXX銀行</td>
+                  <th className='w-1/3 py-6 align-baseline md:w-1/5'>取引先銀行</th>
+                  <td className='w-2/3 py-6 md:w-4/5'>XXXX銀行</td>
                 </tr>
                 <tr className='border-b border-[#EDEFF1]'>
-                  <th className='w-1/5 py-6 align-baseline'>お問い合わせ</th>
-                  <td className='w-4/5 py-6'>TODO:@nebonga.com</td>
+                  <th className='w-1/3 py-6 align-baseline md:w-1/5'>お問い合わせ</th>
+                  <td className='w-2/3 py-6 md:w-4/5'>TODO:@nebonga.com</td>
                 </tr>
               </table>
             </div>

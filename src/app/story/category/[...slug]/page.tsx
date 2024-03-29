@@ -12,7 +12,7 @@ export default async function CategoryArchive({ params }: { params: any }) {
   const categoryName = await getCategoryNameBySlug(params.slug[params.slug.length - 1], 'categories')
 
   return (
-    <main>
+    <main className='mt-32'>
       <CommonContainer>
         <section>
           <PageTitle title='Story' subtitle='感じたことなどを綴ります' />

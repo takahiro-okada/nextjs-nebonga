@@ -1,6 +1,10 @@
 import Image from 'next/image'
 
-export default function SnsIcons() {
+interface SnsIconsProps {
+  className?: string // オプショナルなpropsで、デフォルトはw-8
+}
+
+export default function SnsIcons({ className = 'w-8' }: SnsIconsProps) {
   return (
     <ul className='flex justify-center gap-4'>
       <li>
@@ -8,9 +12,9 @@ export default function SnsIcons() {
           <Image
             src='/images/icon-youtube-black.svg'
             alt='Youtube'
-            width={33}
-            height={33}
-            className='h-full w-8 rounded-xl'
+            width={32}
+            height={32}
+            className={`h-full ${className} rounded-xl`}
           />
         </a>
       </li>
@@ -19,15 +23,21 @@ export default function SnsIcons() {
           <Image
             src='/images/icon-instagram-black.svg'
             alt='Instagram'
-            width={33}
-            height={33}
-            className='h-full w-8 rounded-xl'
+            width={32}
+            height={32}
+            className={`h-full ${className} rounded-xl`}
           />
         </a>
       </li>
       <li>
         <a href='/'>
-          <Image src='/images/icon-x-black.svg' alt='x' width={33} height={33} className='h-full w-8 rounded-xl' />
+          <Image
+            src='/images/icon-x-black.svg'
+            alt='x'
+            width={32}
+            height={32}
+            className={`h-full ${className} rounded-xl`}
+          />
         </a>
       </li>
       <li>
@@ -35,9 +45,9 @@ export default function SnsIcons() {
           <Image
             src='/images/icon-facebook-black.svg'
             alt='Facebook'
-            width={33}
-            height={33}
-            className='h-full w-8 rounded-xl'
+            width={32}
+            height={32}
+            className={`h-full ${className} rounded-xl`}
           />
         </a>
       </li>

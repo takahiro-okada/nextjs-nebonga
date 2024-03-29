@@ -6,7 +6,7 @@ import SnsIcons from '../SnsIcons'
 
 export default function Footer() {
   return (
-    <footer className='mt-24 py-10'>
+    <footer className='mt-24 bg-[#F5F6F7] py-10'>
       <CommonContainer>
         <div className='md:flex md:items-center md:justify-between'>
           <div className='flex justify-center'>

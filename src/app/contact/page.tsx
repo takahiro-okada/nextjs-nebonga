@@ -29,7 +29,7 @@ export default function ContactForm() {
   }
 
   return (
-    <main>
+    <main className='mt-32'>
       <CommonContainer>
         <section>
           <PageTitle title='Contact' subtitle='写真撮影、映像制作等のご依頼・ご相談窓口です。' />
