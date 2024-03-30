@@ -9,6 +9,9 @@ import Header from '@/app/components/Header'
 export const metadata: Metadata = {
   title: 'NeBonga | Documentary Filmmaking',
   description: '株式会社NeBonga | ドキュメンタリー、ショートフィルム、ソーシャルプロジェクトの映像制作会社です。',
+  icons: {
+    icon: '/logo.png',
+  },
 }
 
 export const montserrat = Montserrat({

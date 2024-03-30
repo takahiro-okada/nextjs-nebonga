@@ -122,8 +122,13 @@ function RenderNewsList({ categoryKey, posts }: { categoryKey: 'newsCategories';
 
 export default async function Archive({ params }: { params: { slug: string } }) {
   const slugArray = params.slug
-  const slug = Array.isArray(slugArray) ? slugArray[0] : slugArray
+  const slug = Array.isArray(slugArray) ? slugArray[0] : typeof slugArray === 'string' ? slugArray : undefined
   const data = await fetchData(slug)
+
+  if (!data) {
+    throw new Error('Failed to fetch data')
+  }
+
   const { basePath, categoryKey, context, posts, subtitle, total } = data as {
     basePath: string
     categoryKey: 'newsCategories'
@@ -133,6 +138,7 @@ export default async function Archive({ params }: { params: { slug: string } }) 
     subtitle: string
     total: number
   }
+
   if (slug == 'story' || slug == 'works') {
     return (
       <main className='mt-32'>
