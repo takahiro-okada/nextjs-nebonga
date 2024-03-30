@@ -5,8 +5,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useForm } from 'react-hook-form'
 
-import CommonContainer from '@/src/app/components/CommonContainer'
-import PageTitle from '@/src/app/components/PageTItle'
+import CommonContainer from '@/app/components/CommonContainer'
+import PageTitle from '@/app/components/PageTItle'
 
 export default function ContactForm() {
   const { handleSubmit, register } = useForm() // 'register' and 'handleSubmit' are swapped

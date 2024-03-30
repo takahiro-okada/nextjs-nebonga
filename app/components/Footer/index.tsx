@@ -1,8 +1,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import CommonContainer from '../CommonContainer'
-import SnsIcons from '../SnsIcons'
+import CommonContainer from '@/app/components/CommonContainer'
+import SnsIcons from '@/app/components/SnsIcons'
 
 export default function Footer() {
   return (

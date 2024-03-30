@@ -6,8 +6,8 @@ import Link from 'next/link'
 import { useState } from 'react'
 
 import { Category, Post } from '@/lib/types'
-import CategoryHierarchy from '@/src/app/components/CategoryHierarchy'
-import useCategoriesHierarchy from '@/src/app/components/hooks/useCategoriesHierachy'
+import CategoryHierarchy from '@/app/components/CategoryHierarchy'
+import useCategoriesHierarchy from '@/app/components/hooks/useCategoriesHierachy'
 
 import SnsIcons from '../SnsIcons'
 import formatDate from '../util/formatDate'

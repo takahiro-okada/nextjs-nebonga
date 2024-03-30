@@ -1,4 +1,4 @@
-import { Button } from '@/src/app/components/Button'
+import { Button } from '@/app/components/Button'
 
 export default function CtaButtons() {
   return (

@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 import getCategoryBySlug from '@/lib/queries/getCategoryBySlug'
 import { Post } from '@/lib/types'
-import formatDate from '@/src/app/components/util/formatDate'
+import formatDate from '@/app/components/util/formatDate'
 
 import CommonContainer from '../../../components/CommonContainer'
 import PageTitle from '../../../components/PageTItle'
