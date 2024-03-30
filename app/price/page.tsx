@@ -71,7 +71,7 @@ export default function Price() {
             まずは、お気軽にお問い合わせください。
           </p>
 
-          <ul className='mt-10 grid gap-6 items-center justify-center md:grid-cols-3 lg:grid-cols-5 md:items-stretch'>
+          <ul className='mt-10 grid items-center justify-center gap-6 md:grid-cols-3 md:items-stretch lg:grid-cols-5'>
             <FlowCard
               number='01'
               titleEn='Contact'
@@ -109,7 +109,7 @@ export default function Price() {
             />
           </ul>
           <div className='mt-14'>
-            <div className='flex flex-col justify-center items-center align-middle gap-6 md:flex-row'>
+            <div className='flex flex-col items-center justify-center gap-6 align-middle md:flex-row'>
               <Button href='/contact'>フォームからお問い合わせ</Button>
               <Button href='/contact' buttonColor='bg-[#00B900]'>
                 LINEからお問い合わせ

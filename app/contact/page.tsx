@@ -10,9 +10,9 @@ import PageTitle from '@/app/components/PageTItle'
 
 export default function ContactForm() {
   const {
+    formState: { errors },
     handleSubmit,
     register,
-    formState: { errors },
   } = useForm()
 
   const onSubmit = (data: any) => {
@@ -55,7 +55,7 @@ export default function ContactForm() {
                     className='block w-full rounded-lg  bg-[#F6F6F6] p-2.5 text-gray-900'
                   />
                   {errors['form-name']?.message && (
-                    <p className='text-red-500 text-[12px]'>{errors['form-name'].message as string}</p>
+                    <p className='text-[12px] text-red-500'>{errors['form-name'].message as string}</p>
                   )}
                 </div>
                 <div className='mb-5'>
@@ -65,7 +65,7 @@ export default function ContactForm() {
                     className='block w-full rounded-lg  bg-[#F6F6F6] p-2.5 text-gray-900'
                   />
                   {errors.email?.message && (
-                    <p className='text-red-500 text-[12px]'>{errors.email.message as string}</p>
+                    <p className='text-[12px] text-red-500'>{errors.email.message as string}</p>
                   )}
                 </div>
                 <div className='mb-5'>
@@ -75,7 +75,7 @@ export default function ContactForm() {
                     className='block w-full rounded-lg  bg-[#F6F6F6] p-2.5 text-gray-900'
                   />
                   {errors.subject?.message && (
-                    <p className='text-red-500 text-[12px]'>{errors.subject.message as string}</p>
+                    <p className='text-[12px] text-red-500'>{errors.subject.message as string}</p>
                   )}
                 </div>
                 <div className='mb-5'>
@@ -87,7 +87,7 @@ export default function ContactForm() {
                     className='block min-h-48 w-full  rounded-lg bg-[#F6F6F6] p-2.5 text-gray-900'
                   />
                   {errors.message?.message && (
-                    <p className='text-red-500 text-[12px]'>{errors.message.message as string}</p>
+                    <p className='text-[12px] text-red-500'>{errors.message.message as string}</p>
                   )}
                 </div>
                 <button

@@ -64,7 +64,7 @@ export default function PostDetail({ categoryKey, post, slug }: PostDetailProps)
           <div className='flex justify-between'>
             {post.previous ? (
               <Link
-                className='relative inline-block w-4/5 text-left font-Montserrat tracking-wider ml-2 before:top-1/2 before:mr-8 before:inline-block before:w-8 before:-translate-y-1/2 before:border-t-2 before:border-black md:before:w-36'
+                className='relative ml-2 inline-block w-4/5 text-left font-Montserrat tracking-wider before:top-1/2 before:mr-8 before:inline-block before:w-8 before:-translate-y-1/2 before:border-t-2 before:border-black md:before:w-36'
                 href={`/${slug}/${post.previous.slug}`}
               >
                 Prev
@@ -83,7 +83,7 @@ export default function PostDetail({ categoryKey, post, slug }: PostDetailProps)
             </Link>
             {post.next ? (
               <Link
-                className='relative inline-block w-4/5 text-right font-Montserrat tracking-wider mr-2 after:top-1/2 after:ml-8 after:inline-block after:w-8 after:-translate-y-1/2 after:border-t-2 after:border-black md:after:w-36'
+                className='relative mr-2 inline-block w-4/5 text-right font-Montserrat tracking-wider after:top-1/2 after:ml-8 after:inline-block after:w-8 after:-translate-y-1/2 after:border-t-2 after:border-black md:after:w-36'
                 href={`/${slug}/${post.next.slug}`}
               >
                 Next
