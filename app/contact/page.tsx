@@ -54,7 +54,9 @@ export default function ContactForm() {
                     {...register('form-name', { required: 'お名前を入力してください。' })}
                     className='block w-full rounded-lg  bg-[#F6F6F6] p-2.5 text-gray-900'
                   />
-                  {errors['form-name'] && <p className='text-red-500 text-[12px]'>{errors['form-name'].message}</p>}
+                  {errors['form-name']?.message && (
+                    <p className='text-red-500 text-[12px]'>{errors['form-name'].message as string}</p>
+                  )}
                 </div>
                 <div className='mb-5'>
                   <label className='mb-2 block font-medium text-gray-900'>メールアドレス Email</label>
@@ -62,7 +64,9 @@ export default function ContactForm() {
                     {...register('email', { required: 'メールアドレスを入力してください。' })}
                     className='block w-full rounded-lg  bg-[#F6F6F6] p-2.5 text-gray-900'
                   />
-                  {errors.email && <p className='text-red-500 text-[12px]'>{errors.email.message}</p>}
+                  {errors.email?.message && (
+                    <p className='text-red-500 text-[12px]'>{errors.email.message as string}</p>
+                  )}
                 </div>
                 <div className='mb-5'>
                   <label className='mb-2 block font-medium text-gray-900'>ご相談内容 Subject</label>
@@ -70,7 +74,9 @@ export default function ContactForm() {
                     {...register('subject', { required: 'ご相談内容を入力してください。' })}
                     className='block w-full rounded-lg  bg-[#F6F6F6] p-2.5 text-gray-900'
                   />
-                  {errors.subject && <p className='text-red-500 text-[12px]'>{errors.subject.message}</p>}
+                  {errors.subject?.message && (
+                    <p className='text-red-500 text-[12px]'>{errors.subject.message as string}</p>
+                  )}
                 </div>
                 <div className='mb-5'>
                   <label className='mb-2 block font-medium text-gray-900'>
@@ -80,7 +86,9 @@ export default function ContactForm() {
                     {...register('message', { required: 'ご相談の詳細を入力してください。' })}
                     className='block min-h-48 w-full  rounded-lg bg-[#F6F6F6] p-2.5 text-gray-900'
                   />
-                  {errors.message && <p className='text-red-500 text-[12px]'>{errors.message.message}</p>}
+                  {errors.message?.message && (
+                    <p className='text-red-500 text-[12px]'>{errors.message.message as string}</p>
+                  )}
                 </div>
                 <button
                   className='inline-block whitespace-nowrap rounded-full bg-black px-10 py-3 text-center text-white'
