@@ -1,5 +1,9 @@
+'use client'
+
 import Image from 'next/image'
 import React from 'react'
+
+import { motion } from 'framer-motion'
 
 // Timeline コンポーネントのProps型定義
 interface TimelineItem {
@@ -34,7 +38,6 @@ interface ProfileSectionProps {
   timeline: TimelineItem[]
 }
 
-// ProfileSection コンポーネント（デフォルトエクスポート）
 const ProfileSection: React.FC<ProfileSectionProps> = ({
   name,
   descriptionEn,
@@ -44,33 +47,47 @@ const ProfileSection: React.FC<ProfileSectionProps> = ({
   timeline,
 }) => {
   return (
-    <div className='md:flex md:flex-row md:gap-16'>
-      <Image src={imageSrc} alt={`${name}のプロフィール写真`} width={481} height={321} className='w-full md:hidden' />
-      <div className='mt-6 md:w-1/2'>
-        <h2 className='text-4xl font-bold'>{name}</h2>
-        <p className='mt-2'>{englishName}</p>
-        <p
-          className='mt-6 text-sm leading-relaxed tracking-wide'
-          dangerouslySetInnerHTML={{ __html: descriptionJa }}
-        ></p>
-        <p
-          className='mt-6 font-lato text-sm leading-relaxed tracking-wide'
-          dangerouslySetInnerHTML={{ __html: descriptionEn }}
-        ></p>
-      </div>
-      <div className='mt-6 md:mt-0 md:w-1/2'>
-        <Image
-          src={imageSrc}
-          alt={`${name}のプロフィール写真`}
-          width={481}
-          height={321}
-          className='hidden w-full md:block'
-        />
-        <div className='mt-3'>
-          <Timeline data={timeline} />
+    <motion.div
+      viewport={{ once: true }}
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{
+        delay: 0.5,
+        duration: 0.8,
+        ease: 'easeOut',
+      }}
+    >
+      <div className='md:flex md:flex-row md:gap-16'>
+        <Image src={imageSrc} alt={`${name}のプロフィール写真`} width={481} height={321} className='w-full md:hidden' />
+
+        <div className='mt-6 md:w-1/2'>
+          <h2 className='text-4xl font-bold'>{name}</h2>
+          <p className='mt-2'>{englishName}</p>
+          <p
+            className='mt-6 text-sm leading-relaxed tracking-wide'
+            dangerouslySetInnerHTML={{ __html: descriptionJa }}
+          ></p>
+          <p
+            className='mt-6 font-lato text-sm leading-relaxed tracking-wide'
+            dangerouslySetInnerHTML={{ __html: descriptionEn }}
+          ></p>
+        </div>
+
+        <div className='mt-6 md:mt-0 md:w-1/2'>
+          <Image
+            src={imageSrc}
+            alt={`${name}のプロフィール写真`}
+            width={481}
+            height={321}
+            className='hidden w-full md:block'
+          />
+
+          <div className='mt-3'>
+            <Timeline data={timeline} />
+          </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }
 
