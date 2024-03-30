@@ -9,7 +9,11 @@ import CommonContainer from '@/app/components/CommonContainer'
 import PageTitle from '@/app/components/PageTItle'
 
 export default function ContactForm() {
-  const { handleSubmit, register } = useForm() // 'register' and 'handleSubmit' are swapped
+  const {
+    handleSubmit,
+    register,
+    formState: { errors },
+  } = useForm()
 
   const onSubmit = (data: any) => {
     data['form-name'] = 'contact'
@@ -47,31 +51,36 @@ export default function ContactForm() {
                 <div className='mb-5'>
                   <label className='mb-2 block font-medium text-gray-900'>お名前 Name</label>
                   <input
-                    {...register('form-name')}
+                    {...register('form-name', { required: 'お名前を入力してください。' })}
                     className='block w-full rounded-lg  bg-[#F6F6F6] p-2.5 text-gray-900'
                   />
+                  {errors['form-name'] && <p className='text-red-500 text-[12px]'>{errors['form-name'].message}</p>}
                 </div>
                 <div className='mb-5'>
                   <label className='mb-2 block font-medium text-gray-900'>メールアドレス Email</label>
-                  <input {...register('email')} className='block w-full rounded-lg  bg-[#F6F6F6] p-2.5 text-gray-900' />
+                  <input
+                    {...register('email', { required: 'メールアドレスを入力してください。' })}
+                    className='block w-full rounded-lg  bg-[#F6F6F6] p-2.5 text-gray-900'
+                  />
+                  {errors.email && <p className='text-red-500 text-[12px]'>{errors.email.message}</p>}
                 </div>
-
                 <div className='mb-5'>
                   <label className='mb-2 block font-medium text-gray-900'>ご相談内容 Subject</label>
                   <input
-                    {...register('subject')}
+                    {...register('subject', { required: 'ご相談内容を入力してください。' })}
                     className='block w-full rounded-lg  bg-[#F6F6F6] p-2.5 text-gray-900'
                   />
+                  {errors.subject && <p className='text-red-500 text-[12px]'>{errors.subject.message}</p>}
                 </div>
-
                 <div className='mb-5'>
                   <label className='mb-2 block font-medium text-gray-900'>
                     ご相談の詳細について Whad do you want ask?
                   </label>
                   <textarea
-                    {...register('message')}
+                    {...register('message', { required: 'ご相談の詳細を入力してください。' })}
                     className='block min-h-48 w-full  rounded-lg bg-[#F6F6F6] p-2.5 text-gray-900'
                   />
+                  {errors.message && <p className='text-red-500 text-[12px]'>{errors.message.message}</p>}
                 </div>
                 <button
                   className='inline-block whitespace-nowrap rounded-full bg-black px-10 py-3 text-center text-white'
