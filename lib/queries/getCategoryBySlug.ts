@@ -72,7 +72,6 @@ function buildQuery(category: string, lastSlug: string, limit: number): string {
 export default async function getCategoryBySlug(slug: [string, string] | string, limit = 10, category = 'story') {
   const slugs = Array.isArray(slug) ? slug : [slug]
   const lastSlug = slugs.at(-1) || '' // モダンなJavaScriptの機能を使用
-  console.log(lastSlug)
 
   const query = buildQuery(category, lastSlug, limit)
   const variables = {}
