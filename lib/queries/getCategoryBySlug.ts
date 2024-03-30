@@ -1,8 +1,9 @@
+// GraphQLクエリをフェッチする関数
 import { fetchGraphQL } from '../functions'
 
-// クエリ構築のロジックを専用の関数に抽出
-function buildQuery(category: string, lastSlug: string, limit: number): string {
-  const baseFields = `
+// ベースとなるフィールド定義を返す関数
+function getBaseFields(): string {
+  return `
     date
     slug
     title
@@ -19,6 +20,11 @@ function buildQuery(category: string, lastSlug: string, limit: number): string {
       }
     }
   `
+}
+
+// カテゴリに応じたクエリを構築する関数
+function buildQuery(category: string, lastSlug: string, limit: number): string {
+  const baseFields = getBaseFields()
 
   switch (category) {
     case 'story':
@@ -38,10 +44,11 @@ function buildQuery(category: string, lastSlug: string, limit: number): string {
       `
     case 'works':
     case 'news':
+      const postField = category === 'works' ? 'works' : 'newslist'
       const categoryField = category === 'works' ? 'worksCategories' : 'newsCategories'
       return `
         query getCategoryBySlug {
-          ${category}(where: {
+          ${postField}(where: {
             taxQuery: {
               taxArray: [
                 {
@@ -69,15 +76,16 @@ function buildQuery(category: string, lastSlug: string, limit: number): string {
   }
 }
 
+// カテゴリとスラグからデータを取得するメインの非同期関数
 export default async function getCategoryBySlug(slug: [string, string] | string, limit = 10, category = 'story') {
   const slugs = Array.isArray(slug) ? slug : [slug]
-  const lastSlug = slugs.at(-1) || '' // モダンなJavaScriptの機能を使用
+  const lastSlug = slugs.at(-1) || ''
 
   const query = buildQuery(category, lastSlug, limit)
-  const variables = {}
-  const response = await fetchGraphQL(query, variables)
 
-  const dataPath = category === 'story' ? 'posts' : category
+  const response = await fetchGraphQL(query, {})
+
+  const dataPath = category === 'story' ? 'posts' : category === 'works' ? 'works' : 'newslist'
   const nodes = response.data[dataPath].nodes
   const total = response.data[dataPath].pageInfo.offsetPagination.total
 
