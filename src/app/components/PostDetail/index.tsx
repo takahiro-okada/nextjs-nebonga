@@ -18,7 +18,7 @@ export default function PostDetail({ categoryKey, post, slug }: PostDetailProps)
   const categories = categoryData?.nodes ? categoryData.nodes : []
 
   return (
-    <main className='mt-32'>
+    <main className='mt-24'>
       <CommonContainer>
         <article className='mx-auto mt-16 max-w-3xl'>
           <Image
@@ -64,13 +64,13 @@ export default function PostDetail({ categoryKey, post, slug }: PostDetailProps)
           <div className='flex justify-between'>
             {post.previous ? (
               <Link
-                className='relative inline-block w-fit font-Montserrat tracking-wider before:top-1/2 before:ml-6 before:mr-8 before:inline-block before:w-36 before:-translate-y-1/2 before:border-t-2 before:border-black'
+                className='w-4/5 text-left relative inline-block font-Montserrat tracking-wider before:top-1/2 before:ml-6 before:mr-8 before:inline-block before:w-12 md:before:w-36 before:-translate-y-1/2 before:border-t-2 before:border-black'
                 href={`/${slug}/${post.previous.slug}`}
               >
                 Prev
               </Link>
             ) : (
-              <div className='inline-block font-Montserrat text-xl tracking-wider' />
+              <div className='w-4/5 text-left' />
             )}
             <Link className={`inline-block `} href={`/${slug}/`}>
               <Image
@@ -78,18 +78,18 @@ export default function PostDetail({ categoryKey, post, slug }: PostDetailProps)
                 alt='Back to story list'
                 width={40}
                 height={40}
-                className='inline-block'
+                className='inline-block w-16'
               />
             </Link>
             {post.next ? (
               <Link
-                className='relative inline-block w-fit font-Montserrat tracking-wider after:top-1/2 after:ml-8 after:inline-block after:w-36 after:-translate-y-1/2 after:border-t-2 after:border-black'
+                className='w-4/5 text-right relative inline-block font-Montserrat tracking-wider after:top-1/2 after:ml-8 after:inline-block before:w-12 md:before:w-36 after:-translate-y-1/2 after:border-t-2 after:border-black'
                 href={`/${slug}/${post.next.slug}`}
               >
                 Next
               </Link>
             ) : (
-              <div className='inline-block font-Montserrat text-xl tracking-wider' />
+              <div className='w-4/5 text-right' />
             )}
           </div>
         </div>
