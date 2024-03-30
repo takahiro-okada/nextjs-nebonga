@@ -49,9 +49,9 @@ async function fetchData(slug: string) {
       }
     }
 
-    if (page) {
-      return { post: page }
-    }
+    // if (page) {
+    //   return { post: page }
+    // }
   } catch (error) {
     console.error(error)
     return { error: 'データの取得中にエラーが発生しました。' }
