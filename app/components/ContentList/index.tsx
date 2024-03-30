@@ -69,7 +69,7 @@ export default function ContentList({ basePath, categoryKey, categoryName, items
                   <h3 className='mt-2 text-xl'>{item.title}</h3>
                 </div>
               </Link>
-              <p className='mt-2 flex gap-2 text-sm text-gray-500'>
+              <p className='mt-4 flex gap-2 text-sm text-gray-500'>
                 {item[categoryKey] &&
                   item[categoryKey]?.nodes?.map((category: Category) => {
                     const parentSlug = category.parent?.node?.slug ? `${category.parent.node.slug}/` : ''

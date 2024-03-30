@@ -28,7 +28,7 @@ export default function PriceCard({
         {priceRange}
         <span className='text-xl'>万円</span>
       </p>
-      <p className='mt-6 md:mt-16'>{additionalInfo}</p>
+      <p className='mt-12 md:mt-16'>{additionalInfo}</p>
       <ul className='mt-3 flex flex-wrap gap-4'>
         {points.map((point, index) => (
           <li key={index} className=''>
