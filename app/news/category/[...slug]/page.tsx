@@ -1,8 +1,8 @@
 import Link from 'next/link'
 
+import formatDate from '@/app/components/util/formatDate'
 import getCategoryBySlug from '@/lib/queries/getCategoryBySlug'
 import { Post } from '@/lib/types'
-import formatDate from '@/app/components/util/formatDate'
 
 import CommonContainer from '../../../components/CommonContainer'
 import PageTitle from '../../../components/PageTItle'

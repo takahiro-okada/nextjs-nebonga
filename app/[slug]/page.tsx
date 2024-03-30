@@ -1,15 +1,14 @@
 import Link from 'next/link'
 
-import getAllNews from '@/lib/queries/getAllNews'
-import getAllStories from '@/lib/queries/getAllStories'
-import getAllWorks from '@/lib/queries/getAllWorks'
-import { Post } from '@/lib/types'
 import CommonContainer from '@/app/components/CommonContainer'
 import ContentList from '@/app/components/ContentList'
 import PageTitle from '@/app/components/PageTItle'
 import SideNav from '@/app/components/SideNav'
-
 import formatDate from '@/app/components/util/formatDate'
+import getAllNews from '@/lib/queries/getAllNews'
+import getAllStories from '@/lib/queries/getAllStories'
+import getAllWorks from '@/lib/queries/getAllWorks'
+import { Post } from '@/lib/types'
 
 async function fetchData(slug: string) {
   try {

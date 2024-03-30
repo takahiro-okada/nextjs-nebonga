@@ -5,9 +5,9 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
 
-import { Category, Post } from '@/lib/types'
 import CategoryHierarchy from '@/app/components/CategoryHierarchy'
 import useCategoriesHierarchy from '@/app/components/hooks/useCategoriesHierachy'
+import { Category, Post } from '@/lib/types'
 
 import SnsIcons from '../SnsIcons'
 import formatDate from '../util/formatDate'
