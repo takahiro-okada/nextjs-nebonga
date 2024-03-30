@@ -1,12 +1,11 @@
 'use client'
+import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
+import React from 'react'
 
 import CommonContainer from '@/app/components/CommonContainer'
 import SnsIcons from '@/app/components/SnsIcons'
-
-import { motion } from 'framer-motion'
-import React from 'react'
 
 export default function Footer() {
   return (
