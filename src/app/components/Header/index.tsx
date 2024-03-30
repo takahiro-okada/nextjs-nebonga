@@ -42,7 +42,7 @@ export default function Header() {
           <ul className='space-x-4 lg:flex'>
             {['about', 'works', 'story', 'news', 'price'].map((item) => (
               <li key={item}>
-                <Link href={`/${item}`} className={`mx-4 font-Montserrat hover:underline lg:mx-6 ${textColorClass}`}>
+                <Link href={`/${item}/`} className={`mx-4 font-Montserrat hover:underline lg:mx-6 ${textColorClass}`}>
                   {item.charAt(0).toUpperCase() + item.slice(1)}
                 </Link>
               </li>

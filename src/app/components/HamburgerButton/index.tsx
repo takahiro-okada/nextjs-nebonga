@@ -46,32 +46,32 @@ export default function HamburgerButton({ handleMenuOpen, isScrolled, isTop, ope
       >
         <ul>
           <li>
-            <a href='/about' className='inline-block py-6 font-Montserrat text-3xl text-black'>
+            <a href='/about/' className='inline-block py-6 font-Montserrat text-3xl text-black'>
               About
             </a>
           </li>
           <li>
-            <a href='/works' className='inline-block py-6 font-Montserrat text-3xl text-black'>
+            <a href='/works/' className='inline-block py-6 font-Montserrat text-3xl text-black'>
               Works
             </a>
           </li>
           <li>
-            <a href='/story' className='inline-block py-6 font-Montserrat text-3xl text-black'>
+            <a href='/story/' className='inline-block py-6 font-Montserrat text-3xl text-black'>
               Story
             </a>
           </li>
           <li>
-            <a href='/price' className='inline-block py-6 font-Montserrat text-3xl text-black'>
+            <a href='/price/' className='inline-block py-6 font-Montserrat text-3xl text-black'>
               Price
             </a>
           </li>
           <li>
-            <a href='/news' className='inline-block py-6 font-Montserrat text-3xl text-black'>
+            <a href='/news/' className='inline-block py-6 font-Montserrat text-3xl text-black'>
               News
             </a>
           </li>
           <li>
-            <a href='/contact' className='inline-block py-6 font-Montserrat text-3xl text-black'>
+            <a href='/contact/' className='inline-block py-6 font-Montserrat text-3xl text-black'>
               Contact
             </a>
           </li>
