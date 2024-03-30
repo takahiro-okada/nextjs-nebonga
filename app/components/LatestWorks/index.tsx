@@ -1,6 +1,8 @@
 'use client'
+import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
+import React from 'react'
 
 import getAllWorks from '@/lib/queries/getAllWorks'
 import { Post } from '@/lib/types'
@@ -8,9 +10,6 @@ import { Post } from '@/lib/types'
 import { Button } from '../Button'
 import CommonContainer from '../CommonContainer'
 import { SectionTitle } from '../SectionTitle'
-
-import { motion } from 'framer-motion'
-import React from 'react'
 
 export default async function LatestWorks() {
   const works = await getAllWorks(6)
@@ -34,6 +33,7 @@ export default async function LatestWorks() {
           <ul className='grid gap-6 md:grid-cols-3'>
             {works.posts.map((work: Post) => (
               <motion.div
+                key={work.slug}
                 viewport={{ once: true }}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}

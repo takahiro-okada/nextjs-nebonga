@@ -1,9 +1,9 @@
 'use client'
+import { motion } from 'framer-motion'
 import Image from 'next/image'
+import React from 'react'
 
 import { Button } from '../Button'
-import { motion } from 'framer-motion'
-import React from 'react'
 
 export default function FeaturedAbout() {
   return (

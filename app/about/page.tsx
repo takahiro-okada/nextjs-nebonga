@@ -1,12 +1,11 @@
 'use client'
+import { motion } from 'framer-motion'
 import Image from 'next/image'
+import React from 'react'
 
 import CommonContainer from '../components/CommonContainer'
 import ProfileSection from '../components/ProfileSection'
 import { SliderImages } from '../components/SliderImages'
-
-import { motion } from 'framer-motion'
-import React from 'react'
 
 export default function About() {
   return (
@@ -25,7 +24,7 @@ export default function About() {
           <CommonContainer>
             <div className='md:ml-16 md:flex'>
               <div className='pt-16 md:w-1/2 md:pt-12'>
-                <span className='after:border-t-DEFAULT absolute right-0 top-0 w-fit translate-x-0 rotate-90 text-sm tracking-widest after:border-t-[1px] after:absolute after:top-1/2 after:ml-6 after:inline-block after:h-1 after:w-16 after:border-black md:-left-5 md:top-8 lg:after:w-52'>
+                <span className='after:border-t-DEFAULT absolute right-0 top-0 w-fit translate-x-0 rotate-90 text-sm tracking-widest after:absolute after:top-1/2 after:ml-6 after:inline-block after:h-1 after:w-16 after:border-black md:-left-5 md:top-8 lg:after:w-52'>
                   About
                 </span>
                 <h1 className='font-Montserrat text-5xl font-extrabold md:text-7xl '>
