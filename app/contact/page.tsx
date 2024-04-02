@@ -89,6 +89,19 @@ export default function ContactForm() {
                   {errors.message?.message && (
                     <p className='text-[12px] text-red-500'>{errors.message.message as string}</p>
                   )}
+                  <span className='text-[12px] text-[#7E828A]'>
+                    〈お問い合わせフォーム記入例〉
+                    <br />
+                    用途：事業PR動画
+                    <br />
+                    目的：新規事業の認知度をUPさせたい
+                    <br />
+                    予算：○○万円以内 希望納期：3ヶ月以内
+                    <br />
+                    本数：3-5分を1本、1分以内を2-3本
+                    <br />
+                    ※参考動画URLなどもございましたら、合わせてご記入ください。
+                  </span>
                 </div>
                 <button
                   className='inline-block whitespace-nowrap rounded-full bg-black px-10 py-3 text-center text-white'

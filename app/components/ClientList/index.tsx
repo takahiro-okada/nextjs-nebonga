@@ -10,102 +10,87 @@ export default function ClientList() {
           Our Client
         </h2>
         <CommonContainer>
-          <div className='mx-auto mt-6 grid grid-cols-2 justify-center gap-4 p-5 align-middle md:grid-cols-6'>
+          <div className='mx-auto mt-6 grid grid-cols-2 justify-center gap-4 p-5 align-middle md:max-w-4xl md:grid-cols-5'>
             <Image
-              src='/images/sample-logo.png'
-              alt='featured-about'
+              src='/images/company-logos/logo-jica.png'
+              alt='JICAのロゴ'
               className='size-full rounded border bg-white object-contain p-2'
               objectFit='contain'
-              width={640}
-              height={480}
+              width={200}
+              height={200}
             />
             <Image
-              src='/images/sample-logo.png'
-              alt='featured-about'
+              src='/images/company-logos/logo-jada.png'
+              alt='JADAのロゴ'
               className='size-full rounded border bg-white object-contain p-2'
               objectFit='contain'
-              width={640}
-              height={480}
+              width={200}
+              height={200}
             />
             <Image
-              src='/images/sample-logo.png'
-              alt='featured-about'
+              src='/images/company-logos/logo-osakauniv.png'
+              alt='大阪大学のロゴ'
               className='size-full rounded border bg-white object-contain p-2'
               objectFit='contain'
-              width={640}
-              height={480}
+              width={200}
+              height={200}
             />
             <Image
-              src='/images/sample-logo.png'
-              alt='featured-about'
+              src='/images/company-logos/logo-kif.png'
+              alt='かながわ国際交流財団のロゴ'
               className='size-full rounded border bg-white object-contain p-2'
               objectFit='contain'
-              width={640}
-              height={480}
+              width={200}
+              height={200}
             />
             <Image
-              src='/images/sample-logo.png'
-              alt='featured-about'
+              src='/images/company-logos/logo-caddi.png'
+              alt='キャディ株式会社のロゴ'
               className='size-full rounded border bg-white object-contain p-2'
               objectFit='contain'
-              width={640}
-              height={480}
+              width={200}
+              height={200}
             />
             <Image
-              src='/images/sample-logo.png'
-              alt='featured-about'
+              src='/images/company-logos/logo-makilabo.jpg'
+              alt='株式会社マキノハラボのロゴ'
               className='size-full rounded border bg-white object-contain p-2'
               objectFit='contain'
-              width={640}
-              height={480}
+              width={200}
+              height={200}
             />
             <Image
-              src='/images/sample-logo.png'
-              alt='featured-about'
+              src='/images/company-logos/logo-kobe-athlete.png'
+              alt='神戸アスリートタウンクラブのロゴ'
               className='size-full rounded border bg-white object-contain p-2'
               objectFit='contain'
-              width={640}
-              height={480}
+              width={200}
+              height={200}
             />
             <Image
-              src='/images/sample-logo.png'
-              alt='featured-about'
+              src='/images/company-logos/logo-ccc.jpg'
+              alt='CCCメディアハウスのロゴ'
               className='size-full rounded border bg-white object-contain p-2'
               objectFit='contain'
-              width={640}
-              height={480}
+              width={200}
+              height={200}
             />
             <Image
-              src='/images/sample-logo.png'
-              alt='featured-about'
+              src='/images/company-logos/logo-ecoring.png'
+              alt='株式カイシャエコリングのロゴ'
               className='size-full rounded border bg-white object-contain p-2'
               objectFit='contain'
-              width={640}
-              height={480}
+              width={200}
+              height={200}
             />
+
             <Image
-              src='/images/sample-logo.png'
-              alt='featured-about'
+              src='/images/company-logos/logo-kokureo.png'
+              alt='認定NPG法人コクレオの森のロゴ'
               className='size-full rounded border bg-white object-contain p-2'
               objectFit='contain'
-              width={640}
-              height={480}
-            />
-            <Image
-              src='/images/sample-logo.png'
-              alt='featured-about'
-              className='size-full rounded border bg-white object-contain p-2'
-              objectFit='contain'
-              width={640}
-              height={480}
-            />
-            <Image
-              src='/images/sample-logo.png'
-              alt='featured-about'
-              className='size-full rounded border bg-white object-contain p-2'
-              objectFit='contain'
-              width={640}
-              height={480}
+              width={200}
+              height={200}
             />
           </div>
         </CommonContainer>
