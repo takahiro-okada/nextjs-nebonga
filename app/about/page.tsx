@@ -24,7 +24,7 @@ export default function About() {
           <CommonContainer>
             <div className='md:ml-16 md:flex'>
               <div className='pt-16 md:w-1/2 md:pt-12'>
-                <span className='after:border-t-DEFAULT absolute right-0 top-0 w-fit translate-x-0 rotate-90 text-sm tracking-widest after:absolute after:top-1/2 after:ml-6 after:inline-block after:h-1 after:w-16 after:border-black md:-left-5 md:top-8 lg:after:w-52'>
+                <span className='absolute right-0 top-0 w-fit translate-x-0 rotate-90 text-sm tracking-widest after:absolute after:top-1/2 after:ml-6 after:inline-block after:h-1 after:w-16 after:border-t after:border-black md:-left-5 md:top-8 lg:after:w-52'>
                   About
                 </span>
                 <h1 className='font-Montserrat text-5xl font-extrabold md:text-7xl '>
@@ -32,7 +32,7 @@ export default function About() {
                   <br />
                   the border
                 </h1>
-                <p className='mt-6 text-lg'>境界線上の葛藤</p>
+                <p className='mt-6 text-lg'>境界線上の情熱</p>
               </div>
               <div className='md:w-1/2'>
                 <p className='mt-8'>
@@ -232,11 +232,11 @@ export default function About() {
                   </tr>
                   <tr className='border-b border-[#EDEFF1]'>
                     <th className='w-1/3 py-6 align-baseline md:w-1/5'>取引先銀行</th>
-                    <td className='w-2/3 py-6 md:w-4/5'>XXXX銀行</td>
+                    <td className='w-2/3 py-6 md:w-4/5'>三井住友銀行・GMOあおぞらネット銀行</td>
                   </tr>
                   <tr className='border-b border-[#EDEFF1]'>
                     <th className='w-1/3 py-6 align-baseline md:w-1/5'>お問い合わせ</th>
-                    <td className='w-2/3 py-6 md:w-4/5'>TODO:@nebonga.com</td>
+                    <td className='w-2/3 py-6 md:w-4/5'>y.kawasaki@nebonga.com</td>
                   </tr>
                 </table>
               </div>

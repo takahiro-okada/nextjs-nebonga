@@ -16,7 +16,7 @@ export async function fetchGraphQL<T = any>(
     }
 
     // Get the refresh token.
-    // const refreshToken = process.env.NEXTJS_AUTH_REFRESH_TOKEN
+    const refreshToken = process.env.NEXTJS_AUTH_REFRESH_TOKEN
 
     // Prepare headers.
     const headers: { [key: string]: string } = {
