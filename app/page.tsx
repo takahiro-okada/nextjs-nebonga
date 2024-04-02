@@ -9,7 +9,7 @@ export default function Home() {
     <main>
       <MainVisual />
 
-      <LatestWorks />
+      {/* <LatestWorks /> */}
 
       <FeaturedAbout />
 
