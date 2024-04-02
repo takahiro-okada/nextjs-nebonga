@@ -40,7 +40,6 @@ export default function FeaturedAbout() {
               <Image
                 src='/images/top-about_01.jpg'
                 alt='featured-about'
-                objectFit='cover'
                 width={757}
                 height={505}
                 className='max-h-[505px] w-full object-cover'
@@ -97,7 +96,6 @@ export default function FeaturedAbout() {
                 <Image
                   src='/images/top-about_02.jpg'
                   alt='featured-about'
-                  objectFit='cover'
                   width={757}
                   height={505}
                   className='max-h-[505px] w-full object-cover'
