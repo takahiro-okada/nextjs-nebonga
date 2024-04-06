@@ -1,10 +1,8 @@
-import Link from 'next/link'
-
 import CommonContainer from '@/app/components/CommonContainer'
 import ContentList from '@/app/components/ContentList'
 import PageTitle from '@/app/components/PageTItle'
 import SideNav from '@/app/components/SideNav'
-import formatDate from '@/app/components/util/formatDate'
+import NewsArticle from '@/app/components/NewsArticle'
 import getAllNews from '@/lib/queries/getAllNews'
 import getAllStories from '@/lib/queries/getAllStories'
 import getAllWorks from '@/lib/queries/getAllWorks'
@@ -95,22 +93,7 @@ function RenderNewsList({ categoryKey, posts }: { categoryKey: 'newsCategories';
       <PageTitle title='News' subtitle='各種お知らせ' />
       <div className='mt-8 md:flex'>
         <div className='flex-auto'>
-          {posts &&
-            posts.map((post) => (
-              <article key={post.databaseId} className='mb-4 border-b-DEFAULT bg-white'>
-                <Link href={`/news/${post.slug}`} className='inline-block py-3 md:flex md:items-start md:align-middle'>
-                  <div className='flex content-center'>
-                    <time className='inline-block' dateTime={post.date}>
-                      {formatDate(post.date)}
-                    </time>
-                    <div className='ml-4'>
-                      <span className='inline-block rounded-md bg-[#EDEDED] p-2 px-3 text-xs'>Category</span>
-                    </div>
-                  </div>
-                  <h3 className='mt-2 md:ml-8 md:mt-0'>{post.title}</h3>
-                </Link>
-              </article>
-            ))}
+          {posts && posts.map((post) => <NewsArticle key={post.databaseId} post={post} />)}
         </div>
         <div className='mt-16 md:ml-8 md:mt-0 md:w-full md:max-w-xs md:flex-auto'>
           <SideNav linkPrefix='news' categoryKey={categoryKey} />
