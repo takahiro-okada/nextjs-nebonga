@@ -7,7 +7,8 @@ import { useState } from 'react'
 
 import CategoryHierarchy from '@/app/components/CategoryHierarchy'
 import useCategoriesHierarchy from '@/app/components/hooks/useCategoriesHierachy'
-import { Category, Post } from '@/lib/types'
+import CategoryLinks from '@/app/components/CategoryLinks'
+import { Post } from '@/lib/types'
 
 import SnsIcons from '../SnsIcons'
 import formatDate from '../util/formatDate'
@@ -69,22 +70,9 @@ export default function ContentList({ basePath, categoryKey, categoryName, items
                   <h3 className='mt-2 text-xl'>{item.title}</h3>
                 </div>
               </Link>
-              <p className='mt-4 flex gap-2 text-sm text-gray-500'>
-                {item[categoryKey] &&
-                  item[categoryKey]?.nodes?.map((category: Category) => {
-                    const parentSlug = category.parent?.node?.slug ? `${category.parent.node.slug}/` : ''
-                    return (
-                      <Link
-                        key={category.name}
-                        className='inline-block rounded-md bg-[#EDEDED] p-2 px-3 text-xs'
-                        href={`/${basePath}/category/${parentSlug}${category.slug}/`}
-                        passHref
-                      >
-                        {category.name}
-                      </Link>
-                    )
-                  })}
-              </p>
+              <div className='mt-4 flex gap-2 text-sm text-gray-500'>
+                <CategoryLinks categoryKey={categoryKey} item={item} bathPath={basePath} />
+              </div>
             </li>
           )
         })}

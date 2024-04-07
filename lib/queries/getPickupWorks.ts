@@ -14,8 +14,16 @@ export default async function getPickupWorks(limit: number = 6) {
         slug
         worksCategories {
           nodes {
+            databaseId
             name
             slug
+            parent {
+              node {
+                databaseId
+                name
+                slug
+              }
+            }
           }
         }
         featuredImage {

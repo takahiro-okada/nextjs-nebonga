@@ -12,8 +12,16 @@ export default async function getAllWorks(limit: number = 10) {
         slug
         worksCategories {
           nodes {
+            databaseId
             name
             slug
+            parent {
+              node {
+                databaseId
+                name
+                slug
+              }
+            }
           }
         }
         featuredImage {
@@ -39,6 +47,9 @@ export default async function getAllWorks(limit: number = 10) {
 
   const posts = response.data.works.nodes as Post[]
   const total = response.data.works.pageInfo.offsetPagination.total
+
+  console.log('posts', posts[1].worksCategories)
+  console.log('posts', posts[1].worksCategories?.nodes[0].parent?.node)
 
   return {
     posts,

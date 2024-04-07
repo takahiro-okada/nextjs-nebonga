@@ -2,6 +2,7 @@
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useEffect, useState } from 'react'
+import createCategoryHierarchy from '@/app/components/util/createCategoryHierarchy'
 
 import getAllCategories from '@/lib/queries/getAllCategories'
 import { Category } from '@/lib/types'
@@ -11,33 +12,13 @@ type SideNavProps = {
   linkPrefix: string
 }
 
-const createHierarchy = (categories: Category[]) => {
-  const categoriesMap: { [key: string]: Category & { children: Category[] } } = {}
-  categories.forEach((category) => {
-    categoriesMap[category.slug] = { ...category, children: [] }
-  })
-  categories.forEach((category) => {
-    if (category.parent) {
-      if (categoriesMap[category.parent.node.slug]) {
-        categoriesMap[category.parent.node.slug].children.push(categoriesMap[category.slug])
-      }
-    }
-  })
-
-  const topLevelCategories: (Category & { children: Category[] })[] = Object.values(categoriesMap).filter(
-    (category) => !category.parent,
-  )
-
-  return topLevelCategories
-}
-
 export default function SideNav({ categoryKey, linkPrefix }: SideNavProps) {
   const [categories, setCategories] = useState<(Category & { children: Category[] })[]>([])
   useEffect(() => {
     const fetchData = async () => {
       const result: Category[] = await getAllCategories(categoryKey)
       if (result) {
-        const hierarchy = createHierarchy(result)
+        const hierarchy = createCategoryHierarchy(result)
         setCategories(hierarchy)
       }
     }
