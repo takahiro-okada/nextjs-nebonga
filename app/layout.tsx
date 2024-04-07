@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: 'NeBonga | Documentary Filmmaking',
   description: '株式会社NeBonga | ドキュメンタリー、ショートフィルム、ソーシャルプロジェクトの映像制作会社です。',
   icons: {
-    icon: '/logo.png',
+    icon: '/favicon.ico',
   },
 }
 
