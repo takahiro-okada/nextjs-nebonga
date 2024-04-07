@@ -1,13 +1,14 @@
 import Link from 'next/link'
+
 import { Post } from '@/lib/types'
 
 interface CategoryLinksProps {
-  categoryKey: 'categories' | 'worksCategories' | 'newsCategories'
   bathPath: string
+  categoryKey: 'categories' | 'worksCategories' | 'newsCategories'
   item: Post
 }
 
-export default function ({ categoryKey, item, bathPath }: CategoryLinksProps) {
+export default function CategoryLinks({ bathPath, categoryKey, item }: CategoryLinksProps) {
   return (
     <>
       {item[categoryKey] &&

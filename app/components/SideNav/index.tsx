@@ -2,8 +2,8 @@
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useEffect, useState } from 'react'
-import createCategoryHierarchy from '@/app/components/util/createCategoryHierarchy'
 
+import createCategoryHierarchy from '@/app/components/util/createCategoryHierarchy'
 import getAllCategories from '@/lib/queries/getAllCategories'
 import { Category } from '@/lib/types'
 

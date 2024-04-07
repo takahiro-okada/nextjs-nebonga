@@ -1,4 +1,5 @@
 import Link from 'next/link'
+
 import formatDate from '@/app/components/util/formatDate'
 import { Post } from '@/lib/types'
 
