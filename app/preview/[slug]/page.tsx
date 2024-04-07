@@ -18,10 +18,6 @@ interface PreviewProps {
  * @see https://nextjs.org/docs/app/building-your-application/routing/pages-and-layouts#pages
  */
 export default async function Preview({ params, searchParams }: PreviewProps) {
-  console.log('HOGEHOGEHOGEHOGEHOGEHOGEHOGEHOGE')
-  console.log(params)
-  console.log(searchParams)
-
   // Get the secret from the query parameters.
   const secret = searchParams.secret
 
