@@ -5,8 +5,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useForm } from 'react-hook-form'
 
-import CommonContainer from '@/app/components/CommonContainer'
-import PageTitle from '@/app/components/PageTItle'
+import CommonContainer from '@/components/base/CommonContainer'
+import PageTitle from '@/components/ui/PageTItle'
 
 export default function ContactForm() {
   const {
@@ -52,7 +52,7 @@ export default function ContactForm() {
                   <label className='mb-2 block font-medium text-gray-900'>お名前 Name</label>
                   <input
                     {...register('form-name', { required: 'お名前を入力してください。' })}
-                    className='block w-full rounded-lg  bg-[#F6F6F6] p-2.5 text-gray-900'
+                    className='block w-full rounded-lg  bg-grayLight p-2.5 text-gray-900'
                   />
                   {errors['form-name']?.message && (
                     <p className='text-[12px] text-red-500'>{errors['form-name'].message as string}</p>
@@ -62,7 +62,7 @@ export default function ContactForm() {
                   <label className='mb-2 block font-medium text-gray-900'>メールアドレス Email</label>
                   <input
                     {...register('email', { required: 'メールアドレスを入力してください。' })}
-                    className='block w-full rounded-lg  bg-[#F6F6F6] p-2.5 text-gray-900'
+                    className='block w-full rounded-lg  bg-grayLight p-2.5 text-gray-900'
                   />
                   {errors.email?.message && (
                     <p className='text-[12px] text-red-500'>{errors.email.message as string}</p>
@@ -72,7 +72,7 @@ export default function ContactForm() {
                   <label className='mb-2 block font-medium text-gray-900'>ご相談内容 Subject</label>
                   <input
                     {...register('subject', { required: 'ご相談内容を入力してください。' })}
-                    className='block w-full rounded-lg  bg-[#F6F6F6] p-2.5 text-gray-900'
+                    className='block w-full rounded-lg  bg-grayLight p-2.5 text-gray-900'
                   />
                   {errors.subject?.message && (
                     <p className='text-[12px] text-red-500'>{errors.subject.message as string}</p>
@@ -84,7 +84,7 @@ export default function ContactForm() {
                   </label>
                   <textarea
                     {...register('message', { required: 'ご相談の詳細を入力してください。' })}
-                    className='block min-h-48 w-full  rounded-lg bg-[#F6F6F6] p-2.5 text-gray-900'
+                    className='block min-h-48 w-full  rounded-lg bg-grayLight p-2.5 text-gray-900'
                   />
                   {errors.message?.message && (
                     <p className='text-[12px] text-red-500'>{errors.message.message as string}</p>
@@ -124,8 +124,8 @@ export default function ContactForm() {
               <p className='mt-7 text-sm'>※3営業日以内に担当者よりご連絡させていただきます</p>
             </div>
             <div className='mt-8 md:ml-24 md:mt-0 md:w-1/2'>
-              <div className='flex min-h-28 items-center border border-[#EDEFF1] p-4'>
-                <div className='w-1/2 border-r-2 border-[#EDEFF1]  text-center leading-10'>ボタンから友達追加</div>
+              <div className='flex min-h-28 items-center border border-grayDark p-4'>
+                <div className='w-1/2 border-r border-grayDark  text-center leading-10'>ボタンから友達追加</div>
                 <div className='w-1/2 text-center'>
                   <Link href='#' className='inline-block'>
                     <Image
@@ -138,8 +138,8 @@ export default function ContactForm() {
                   </Link>
                 </div>
               </div>
-              <div className='mt-6 flex min-h-28 content-center items-center border border-[#EDEFF1] p-4'>
-                <div className='w-2/3 border-r-2 border-[#EDEFF1]  text-center leading-10 md:w-1/2'>
+              <div className='mt-6 flex min-h-28 content-center items-center border border-grayDark p-4'>
+                <div className='w-2/3 border-r border-grayDark  text-center leading-10 md:w-1/2'>
                   QRコードから友達追加
                 </div>
                 <div className='w-1/3 text-center md:w-1/2'>

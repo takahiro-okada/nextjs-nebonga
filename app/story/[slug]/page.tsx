@@ -1,6 +1,6 @@
-import getPostBySlug from '@/lib/queries/getPostBySlug'
+import getPostBySlug from '@/libs/queries/getPostBySlug'
 
-import PostDetail from '../../components/PostDetail'
+import PostDetail from '@/components/pages/PostDetail'
 
 export default async function Post({ params }: { params: { slug: string } }) {
   // Fetch a single post from WordPress.

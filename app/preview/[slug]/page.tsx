@@ -1,5 +1,5 @@
-import PostDetail from '@/app/components/PostDetail'
-import getPreview from '@/lib/queries/getPreview'
+import PostDetail from '@/components/pages/PostDetail'
+import getPreview from '@/libs/queries/getPreview'
 
 // Types.
 interface PreviewProps {

@@ -1,12 +1,12 @@
-import CommonContainer from '@/app/components/CommonContainer'
-import ContentList from '@/app/components/ContentList'
-import NewsArticle from '@/app/components/NewsArticle'
-import PageTitle from '@/app/components/PageTItle'
-import SideNav from '@/app/components/SideNav'
-import getAllNews from '@/lib/queries/getAllNews'
-import getAllStories from '@/lib/queries/getAllStories'
-import getAllWorks from '@/lib/queries/getAllWorks'
-import { Post } from '@/lib/types'
+import CommonContainer from '@/components/base/CommonContainer'
+import ContentList from '@/components/pages/ContentList'
+import NewsArticle from '@/components/pages/NewsArticle'
+import PageTitle from '@/components/ui/PageTItle'
+import SideNav from '@/components/base/SideNav'
+import getAllNews from '@/libs/queries/getAllNews'
+import getAllStories from '@/libs/queries/getAllStories'
+import getAllWorks from '@/libs/queries/getAllWorks'
+import { Post } from '@/typs/types'
 
 async function fetchData(slug: string) {
   try {

@@ -1,8 +1,8 @@
-import ClientList from './components/ClientList'
-import Cta from './components/Cta'
-import FeaturedAbout from './components/FeaturedAbout'
-import LatestWorks from './components/LatestWorks'
-import MainVisual from './components/MainVisual'
+import ClientList from '@/components/pages/ClientList'
+import Cta from '@/components/ui/Cta'
+import FeaturedAbout from '@/components/pages/FeaturedAbout'
+import LatestWorks from '@/components/pages/LatestWorks'
+import MainVisual from '@/components/pages/MainVisual'
 
 export default function Home() {
   return (

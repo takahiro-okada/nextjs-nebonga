@@ -3,8 +3,8 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Lato, Montserrat } from 'next/font/google'
 
-import Footer from '@/app/components/Footer'
-import Header from '@/app/components/Header'
+import Footer from '@/components/base/Footer'
+import Header from '@/components/base/Header'
 
 export const metadata: Metadata = {
   title: 'NeBonga | Documentary Filmmaking',

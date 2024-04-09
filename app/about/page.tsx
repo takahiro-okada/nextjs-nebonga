@@ -3,9 +3,9 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 import React from 'react'
 
-import CommonContainer from '../components/CommonContainer'
-import ProfileSection from '../components/ProfileSection'
-import { SliderImages } from '../components/SliderImages'
+import CommonContainer from '@/components/base/CommonContainer'
+import ProfileSection from '@/components/pages/ProfileSection'
+import { SliderImages } from '@/components/pages/SliderImages'
 
 export default function About() {
   return (
@@ -86,8 +86,8 @@ export default function About() {
             <ProfileSection
               name='平松 佑理'
               englishName='Yuri Hiramatsu'
-              descriptionJa={`株式会社NeBonga 営業・経理・写真撮影 担当。<br>食品マーケティング会社勤務時代に、地域食材を使った商品開発や卸営業、小売店の運営等多岐に渡る業務を経験。特に兵庫県豊岡市の和菓子店での勤務では、お客様の喜んでいただける顔が見えることに、やりがいを感じていた。現在は、学生時代に勉強していた手話を活かし、国際手話の通訳士の勉強をしている。`}
-              descriptionEn={`NeBonga Inc. Sales/Accounting/Photography While working for a food marketing company, I experienced a wide range of business activities such as product development using local ingredients, wholesale sales, and retail store management.Working at a Japanese sweet shop in Toyooka City, Hyogo Prefecture, I feel happiness when I have nice conversation with customers.Currently, I'm studying to become an interpreter for International Signs by making use of my experience of studying it when I was student.`}
+              descriptionJa={`株式会社NeBonga 営業・経理・写真撮影 担当。<br>食品マーケティング会社勤務時代に、地域食材を使った商品開発や卸営業、小売店の運営等多岐に渡る業務を経験。<br>特に兵庫県豊岡市の和菓子店での勤務では、お客様の喜んでいただける顔が見えることに、やりがいを感じていた。<br>現在は、学生時代に勉強していた手話を活かし、国際手話の通訳士の勉強をしている。`}
+              descriptionEn={`NeBonga Inc. Sales/Accounting/Photography<br>While working for a food marketing company, I experienced a wide range of business activities such as product development using local ingredients, wholesale sales, and retail store management.<br>Working at a Japanese sweet shop in Toyooka City, Hyogo Prefecture, I feel happiness when I have nice conversation with customers.<br>Currently, I'm studying to become an interpreter for International Signs by making use of my experience of studying it when I was student.`}
               imageSrc='/images/profile-yuri.jpg'
               timeline={[
                 { event: '同志社大学　商学部商学科卒', year: '2010' },
@@ -101,7 +101,7 @@ export default function About() {
         </CommonContainer>
       </section>
 
-      <section className='mt-12 bg-[#F5F6F7] py-16' data-section='about-logo'>
+      <section className='mt-12 bg-grayLight py-16' data-section='about-logo'>
         <CommonContainer>
           <div className='mx-auto justify-center md:flex md:max-w-[960px] md:gap-10'>
             <div className='mt-6 p-16 md:mt-0 md:w-1/2'>
