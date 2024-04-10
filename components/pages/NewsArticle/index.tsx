@@ -1,7 +1,7 @@
 import Link from 'next/link'
 
-import formatDate from '@/utils/formatDate'
 import { Post } from '@/typs/types'
+import formatDate from '@/utils/formatDate'
 
 export default function NewsArticle({ post }: { post: Post }) {
   return (

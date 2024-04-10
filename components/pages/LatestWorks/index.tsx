@@ -2,18 +2,17 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
+import CommonContainer from '@/components/base/CommonContainer'
+import { Button } from '@/components/ui/Button'
+import { SectionTitle } from '@/components/ui/SectionTitle'
 import getAllWorks from '@/libs/queries/getAllWorks'
 import { Post } from '@/typs/types'
-
-import { Button } from '@/components/ui/Button'
-import CommonContainer from '@/components/base/CommonContainer'
-import { SectionTitle } from '@/components/ui/SectionTitle'
 
 export default async function LatestWorks() {
   const works = await getAllWorks(6)
 
   return (
-    <section className='pb-40 pt-8 bg-grayLight'>
+    <section className='bg-grayLight pb-40 pt-8'>
       <CommonContainer>
         <SectionTitle title='Works' subtitle='制作実績' />
         <div className='mt-8'>

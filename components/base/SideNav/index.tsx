@@ -3,9 +3,9 @@ import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useEffect, useState } from 'react'
 
-import createCategoryHierarchy from '@/utils/createCategoryHierarchy'
 import getAllCategories from '@/libs/queries/getAllCategories'
 import { Category } from '@/typs/types'
+import createCategoryHierarchy from '@/utils/createCategoryHierarchy'
 
 type SideNavProps = {
   categoryKey: string

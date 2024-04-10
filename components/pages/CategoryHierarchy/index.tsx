@@ -16,7 +16,7 @@ export default function CategoryHierarchy({ basePath, categories }: CategoryHier
       {categories.map((category) => (
         <li key={category.slug}>
           <Link
-            className='inline-block w-full border-b border-[#EDEFF1] p-3'
+            className='inline-block w-full border-b border-grayNormal p-3'
             href={`/${basePath}/category/${category.slug}/`}
           >
             {category.name}
@@ -26,7 +26,7 @@ export default function CategoryHierarchy({ basePath, categories }: CategoryHier
               {category.children.map((child: Category) => (
                 <li key={child.slug}>
                   <Link
-                    className='inline-block w-full border-b border-[#EDEFF1] px-5 py-3'
+                    className='inline-block w-full border-b border-grayNormal px-5 py-3'
                     href={`/${basePath}/category/${category.slug}/${child.slug}`}
                   >
                     <FontAwesomeIcon className='mr-4' icon={faChevronRight} size='xs' />

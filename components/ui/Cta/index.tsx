@@ -8,7 +8,7 @@ export default function Cta() {
       <section className='mt-24'>
         <CommonContainer>
           <div className='relative border border-grayDark px-8  py-12 lg:flex lg:items-center lg:justify-between lg:px-20'>
-            <div className='relative after:absolute after:right-[-60px] after:top-1/2 after:h-[132px] after:w-[1px] after:-translate-y-1/2 after:bg-[#BDC4D0]'>
+            <div className='relative after:absolute after:right-[-60px] after:top-1/2 after:h-[132px] after:w-px after:-translate-y-1/2 after:bg-[#BDC4D0]'>
               <div className='lg:hidden'>
                 <SectionTitle title='Contact' subtitle='お問い合わせ' />
               </div>

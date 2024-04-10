@@ -1,10 +1,10 @@
 'use client'
-import { Button } from '@/components/ui/Button'
 import CommonContainer from '@/components/base/CommonContainer'
 import FlowCard from '@/components/pages/FlowCrad'
-import PageTitle from '@/components/ui/PageTItle'
 import LessonWorks from '@/components/pages/LessonWorks'
 import PriceCard from '@/components/pages/PriceCard'
+import { Button } from '@/components/ui/Button'
+import PageTitle from '@/components/ui/PageTItle'
 
 export default function Price() {
   return (

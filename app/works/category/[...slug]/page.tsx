@@ -1,10 +1,9 @@
-import getCategoryBySlug from '@/libs/queries/getCategoryBySlug'
-import getCategoryNameBySlug from '@/libs/queries/getCategoryNameBySlug'
-
 import CommonContainer from '@/components/base/CommonContainer'
+import SideNav from '@/components/base/SideNav'
 import ContentList from '@/components/pages/ContentList'
 import PageTitle from '@/components/ui/PageTItle'
-import SideNav from '@/components/base/SideNav'
+import getCategoryBySlug from '@/libs/queries/getCategoryBySlug'
+import getCategoryNameBySlug from '@/libs/queries/getCategoryNameBySlug'
 
 export default async function CategoryArchive({ params }: { params: any }) {
   const { nodes: works, total } = await getCategoryBySlug(params.slug, 10, 'works')

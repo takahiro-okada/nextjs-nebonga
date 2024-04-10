@@ -7,10 +7,9 @@ import { useState } from 'react'
 
 import CategoryHierarchy from '@/components/pages/CategoryHierarchy'
 import CategoryLinks from '@/components/pages/CategoryLinks'
+import SnsIcons from '@/components/ui/SnsIcons'
 import useCategoriesHierarchy from '@/hooks/useCategoriesHierachy'
 import { Post } from '@/typs/types'
-
-import SnsIcons from '@/components/ui/SnsIcons'
 import formatDate from '@/utils/formatDate'
 
 interface ContentListProps {

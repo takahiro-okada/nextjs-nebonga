@@ -1,10 +1,9 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { Category, Post } from '@/typs/types'
-
 import CommonContainer from '@/components/base/CommonContainer'
 import CtaButtons from '@/components/ui/CtaButtons'
+import { Category, Post } from '@/typs/types'
 import formatDate from '@/utils/formatDate'
 
 interface PostDetailProps {
@@ -39,7 +38,7 @@ export default function PostDetail({ categoryKey, post, slug }: PostDetailProps)
                 return (
                   <Link
                     key={category.name}
-                    className='inline-block rounded-md bg-[#EDEDED] p-2 px-3 text-xs'
+                    className='inline-block rounded-md bg-grayLight p-2 px-3 text-xs'
                     href={`/${slug}/category/${parentSlug}${category.slug}/`}
                     passHref
                   >
@@ -50,7 +49,7 @@ export default function PostDetail({ categoryKey, post, slug }: PostDetailProps)
             </ul>
           </header>
           <div className='prose mx-auto mt-8 max-w-full' dangerouslySetInnerHTML={{ __html: post.content }} />
-          <div className='mt-14 bg-[#F5F6F7] p-5 pb-9 pt-8'>
+          <div className='mt-14 bg-grayLight p-5 pb-9 pt-8'>
             <p className='text-center text-xl font-bold'>お気軽にご相談ください</p>
             <p className='text-center'>写真撮影・映像制作などご要望に合わせて承ります。</p>
             <div className='mt-6'>
