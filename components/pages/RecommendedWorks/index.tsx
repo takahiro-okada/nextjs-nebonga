@@ -10,7 +10,7 @@ export default async function RecommendedWorks() {
   return (
     <>
       <p className='font-Montserrat text-xl font-bold'>Recommended Works</p>
-      <ul className='grid gap-6 mt-6'>
+      <ul className='mt-6 grid gap-6'>
         {works.posts.map((item) => {
           return (
             <li key={item.slug}>
