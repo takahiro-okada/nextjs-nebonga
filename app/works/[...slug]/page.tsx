@@ -1,9 +1,15 @@
 import PostDetail from '@/components/pages/PostDetail'
 import getPostBySlug from '@/libs/queries/getPostBySlug'
+import getRelatedPost from '@/libs/queries/getRelatedPost'
 
 export default async function Post({ params }: { params: { slug: string } }) {
   // Fetch a single post from WordPress.
   const post = await getPostBySlug(params.slug, 'works')
+  const categoryData = post['worksCategories']
+  const categories = categoryData?.nodes ? categoryData.nodes : []
+  const categoryIds = categories.map((category) => category.databaseId)
+  const categorySlug = 'works'
+  const relatedPosts = await getRelatedPost(categoryIds, categorySlug)
 
   if (!post) {
     return (
@@ -14,5 +20,5 @@ export default async function Post({ params }: { params: { slug: string } }) {
     )
   }
 
-  return <PostDetail post={post} slug='works' categoryKey='worksCategories' />
+  return <PostDetail post={post} slug='works' categoryKey='worksCategories' relatedPosts={relatedPosts} />
 }

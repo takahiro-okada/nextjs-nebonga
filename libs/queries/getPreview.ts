@@ -90,10 +90,6 @@ export default async function getPreview(id: string): Promise<Post | null> {
     console.log('getPreview response News', response.data.news)
   }
 
-  console.log('response.data.post', response.data)
-  console.log('response.data.work', response.data.work)
-  console.log('response.data.news', response.data.news)
-
   // Return the first non-null post, work, or news as Post
   return response.data.post || response.data.work || (response.data.news as Post | null)
 }

@@ -1,3 +1,4 @@
+'use client'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -6,13 +7,16 @@ import CtaButtons from '@/components/ui/CtaButtons'
 import { Category, Post } from '@/typs/types'
 import formatDate from '@/utils/formatDate'
 
+import RelatedPost from '../RelatedPost'
+
 interface PostDetailProps {
   categoryKey: 'newsCategories' | 'categories' | 'worksCategories'
   post: Post
+  relatedPosts?: Post[]
   slug: string
 }
 
-export default function PostDetail({ categoryKey, post, slug }: PostDetailProps) {
+export default function PostDetail({ categoryKey, post, relatedPosts, slug }: PostDetailProps) {
   const categoryData = post[categoryKey]
   const categories = categoryData?.nodes ? categoryData.nodes : []
 
@@ -93,6 +97,9 @@ export default function PostDetail({ categoryKey, post, slug }: PostDetailProps)
           </div>
         </div>
       </nav>
+      <CommonContainer>
+        <RelatedPost relatedPosts={relatedPosts} />
+      </CommonContainer>
     </main>
   )
 }
