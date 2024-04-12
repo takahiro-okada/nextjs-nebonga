@@ -60,3 +60,20 @@ pre.wp-block-verse {
 .has-inline-color.has-vivid-purple-color {
   color: #9b51e0;
 }
+
+/* 画像 */
+.prose img {
+  width: 100%;
+  height: auto;
+  margin: 10px 0;
+}
+
+.prose .wp-block-embed__wrapper {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+.prose iframe {
+  width: 100%;
+  height: 100%;
+}

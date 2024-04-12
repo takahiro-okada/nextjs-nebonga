@@ -1,3 +1,5 @@
+import React from 'react'
+
 export default function MainVisual() {
   return (
     <section className='relative'>
@@ -7,6 +9,7 @@ export default function MainVisual() {
         loop
         autoPlay
         playsInline
+        preload='none'
         className='aspect-square h-screen w-full object-cover'
       />
       <div className='absolute left-0 top-0 size-full bg-black opacity-50'></div>
