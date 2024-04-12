@@ -98,7 +98,7 @@ export default function PostDetail({ categoryKey, post, relatedPosts, slug }: Po
         </div>
       </nav>
       <CommonContainer>
-        <RelatedPost relatedPosts={relatedPosts} />
+        <RelatedPost slug={slug} relatedPosts={relatedPosts} />
       </CommonContainer>
     </main>
   )

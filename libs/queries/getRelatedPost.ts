@@ -92,7 +92,6 @@ export default async function getRelatedPost(relatedPosts: string[], categorySlu
       }`
       break
   }
-  console.log(query)
 
   const response = await fetchGraphQL(query)
   return response.data[resultField].nodes

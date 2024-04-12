@@ -5,15 +5,16 @@ import { Post } from '@/typs/types'
 
 interface RelatedPostProps {
   relatedPosts: Post[] | undefined
+  slug: string
 }
 
-export default function RelatedPost({ relatedPosts }: RelatedPostProps) {
+export default function RelatedPost({ relatedPosts, slug }: RelatedPostProps) {
   return (
     <ul className='grid gap-4 md:grid-cols-3 lg:grid-cols-4'>
       {relatedPosts?.map((item: Post) => {
         return (
           <li key={item.slug}>
-            <Link href={`/works/${item.slug}/`} className='group'>
+            <Link href={`/${slug}/${item.slug}/`} className='group'>
               <div className='relative aspect-video h-auto w-full overflow-hidden rounded-md'>
                 <div className='absolute left-0 top-0 z-10 size-full bg-black opacity-30'></div>
                 <Image

@@ -10,3 +10,53 @@ body {
 .swiper-wrapper {
   transition-timing-function: linear !important;
 }
+
+/* テーブルブロック */
+.wp-block-table {
+  font-size: 16px;
+}
+/* 引用ブロック */
+pre.wp-block-verse {
+  line-height: 1.75;
+  font-size: 16px;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  color: #111827;
+  background-color: #f5f6f7;
+  white-space: break-spaces;
+}
+
+/* カラーパレット */
+.has-inline-color.has-cyan-bluish-gray-color {
+  color: #abb8c3;
+}
+.has-inline-color.has-white-color {
+  color: #ffffff;
+}
+.has-inline-color.has-pale-pink-color {
+  color: #f78da7;
+}
+.has-inline-color.has-vivid-red-color {
+  color: #cf2e2e;
+}
+.has-inline-color.has-luminous-vivid-orange-color {
+  color: #ff6900;
+}
+.has-inline-color.has-luminous-vivid-amber-color {
+  color: #fcb900;
+}
+.has-inline-color.has-light-green-cyan-color {
+  color: #7bdcb5;
+}
+.has-inline-color.has-vivid-green-cyan-color {
+  color: #00d084;
+}
+.has-inline-color.has-pale-cyan-blue-color {
+  color: #8ed1fc;
+}
+.has-inline-color.has-vivid-cyan-blue-color {
+  color: #0693e3;
+}
+.has-inline-color.has-vivid-purple-color {
+  color: #9b51e0;
+}
