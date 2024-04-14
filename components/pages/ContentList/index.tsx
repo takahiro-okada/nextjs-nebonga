@@ -44,7 +44,7 @@ export default function ContentList({ basePath, categoryKey, categoryName, items
         </div>
         <div className='relative md:hidden'>
           <button className='' onClick={() => setShowMenu(!showMenu)}>
-            <Image src='/images/icon-category.png' alt='Category icon' width={26} height={26} className='ml-4' />
+            <Image src='/images/icon-category.svg' alt='Category icon' width={26} height={26} className='ml-4' />
           </button>
           {showMenu && <CategoryHierarchy categories={categories} basePath={basePath} />}
         </div>
