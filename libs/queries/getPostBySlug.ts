@@ -72,6 +72,9 @@ export default async function getPostBySlug(slug: string, postType: string) {
             name
           }
         }
+        acf_youtube {
+          youtubeUrl
+        }
         next {
           title
           slug

@@ -19,18 +19,32 @@ interface PostDetailProps {
 export default function PostDetail({ categoryKey, post, relatedPosts, slug }: PostDetailProps) {
   const categoryData = post[categoryKey]
   const categories = categoryData?.nodes ? categoryData.nodes : []
-
+  console.log(post)
   return (
     <main className='mt-24'>
       <CommonContainer>
         <article className='mx-auto mt-16 max-w-3xl'>
-          <Image
-            src={post.featuredImage?.node?.sourceUrl || '/images/image-placeholder.jpg'}
-            alt={post.featuredImage?.node?.altText || ''}
-            width={640}
-            height={300}
-            className='aspect-video w-full object-cover transition-transform duration-300 group-hover:scale-110'
-          />
+          {/* YouTube URLが存在する場合に、YouTube動画を埋め込む */}
+          {post.acf_youtube?.youtubeUrl ? (
+            <div className='relative aspect-video w-full'>
+              <iframe
+                src={`https://www.youtube.com/embed/${post.acf_youtube.youtubeUrl.split('v=')[1]}`}
+                frameBorder='0'
+                allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+                allowFullScreen
+                className='absolute inset-0 w-full h-full object-cover'
+              ></iframe>
+            </div>
+          ) : (
+            <Image
+              src={post.featuredImage?.node?.sourceUrl || '/images/image-placeholder.jpg'}
+              alt={post.featuredImage?.node?.altText || ''}
+              width={640}
+              height={300}
+              className='aspect-video w-full object-cover transition-transform duration-300 group-hover:scale-110'
+            />
+          )}
+
           <header>
             <p className='mt-3'>
               <time>{formatDate(post.date)}</time>

@@ -47,6 +47,9 @@ export interface Post {
   worksCategories?: {
     nodes: Category[]
   }
+  acf_youtube?: {
+    youtubeUrl: string
+  }
 }
 export interface Category {
   id: string
