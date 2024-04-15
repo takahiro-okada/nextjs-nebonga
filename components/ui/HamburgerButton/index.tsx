@@ -40,8 +40,8 @@ export default function HamburgerButton({ handleMenuOpen, isScrolled, isTop, ope
       <nav
         className={
           openMenu
-            ? 'fixed right-0 top-0 z-30 flex h-screen w-full translate-x-0 flex-col justify-center bg-white px-3 pt-8 text-center transition-transform duration-300 ease-linear'
-            : 'fixed right-0 top-0 z-30 flex h-screen w-full translate-x-full flex-col justify-center bg-white px-3 pt-8 text-center transition-transform duration-300 ease-linear'
+            ? 'fixed right-0 top-0 z-30 flex h-dvh w-full translate-x-0 flex-col justify-center bg-grayLight px-3 pt-8 text-center transition-transform duration-300 ease-linear'
+            : 'fixed right-0 top-0 z-30 flex h-dvh w-full translate-x-full flex-col justify-center bg-grayLight px-3 pt-8 text-center transition-transform duration-300 ease-linear'
         }
       >
         <ul>
