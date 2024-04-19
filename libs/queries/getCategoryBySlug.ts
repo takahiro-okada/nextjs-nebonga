@@ -92,7 +92,6 @@ export default async function getCategoryBySlug(slug: [string, string] | string,
 
   const query = buildQuery(category, lastSlug, limit)
 
-  console.log('query', query)
   const response = await fetchGraphQL(query, {})
 
   const dataPath = category === 'story' ? 'posts' : category === 'works' ? 'works' : 'newslist'

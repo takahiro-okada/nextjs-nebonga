@@ -32,7 +32,6 @@ export default async function getPreview(id: string): Promise<Post | null> {
   }
 
   let response = await fetchGraphQL(query, variables, true)
-  console.log('getPreview response Post', response.data.post)
 
   // If response.data.post is null, try fetching a work
   if (!response.data.post) {
@@ -59,7 +58,6 @@ export default async function getPreview(id: string): Promise<Post | null> {
     `
 
     response = await fetchGraphQL(query, variables, true)
-    console.log('getPreview response Works', response.data.work)
   }
 
   // If response.data.work is also null, try fetching news
@@ -87,7 +85,6 @@ export default async function getPreview(id: string): Promise<Post | null> {
     `
 
     response = await fetchGraphQL(query, variables, true)
-    console.log('getPreview response News', response.data.news)
   }
 
   // Return the first non-null post, work, or news as Post

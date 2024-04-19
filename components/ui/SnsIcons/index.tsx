@@ -1,59 +1,46 @@
+'use client'
+import { motion, useAnimation } from 'framer-motion'
 import Image from 'next/image'
+import React, { useEffect } from 'react'
 
 interface SnsIconsProps {
   className?: string
+  open?: boolean
 }
 
-export default function SnsIcons({ className = 'w-8' }: SnsIconsProps) {
+export default function SnsIcons({ className = 'w-8', open = false }: SnsIconsProps) {
+  const controls = useAnimation()
+
+  useEffect(() => {
+    if (open) {
+      controls.start((i) => ({ opacity: 1, transition: { delay: 0.3 + i * 0.3, duration: 0.5 }, y: 0 }))
+    } else {
+      controls.start({ opacity: 0, y: 10 })
+    }
+  }, [open, controls])
+
   return (
     <ul className='flex justify-center gap-4'>
-      <li>
-        <a target='_blank' href='https://www.youtube.com/@nebongainc.'>
-          <Image
-            src='/images/icon-youtube-black.svg'
-            alt='Youtube'
-            width={32}
-            height={32}
-            className={`h-full ${className} rounded-xl`}
-          />
-        </a>
-      </li>
-      <li>
-        <a
-          target='_blank'
-          href='https://www.instagram.com/hiro_kawasaki0610?fbclid=IwAR1pRgvw4mYHUXLAA-iTwIyQ-xyfx4mBg1jOfD-_uoWAeQTPg0GA7VqNYWI_aem_AYOgu6mjK9P6HeiGhWJXXLp766ycONbY01TghWWs12FutHxSxx5dYJqoWXUqZg8wpsCHWx4cifvECRhpwBvfyiBq'
-        >
-          <Image
-            src='/images/icon-instagram-black.svg'
-            alt='Instagram'
-            width={32}
-            height={32}
-            className={`h-full ${className} rounded-xl`}
-          />
-        </a>
-      </li>
-      <li>
-        <a target='_blank' href='https://twitter.com/hiro_works0610'>
-          <Image
-            src='/images/icon-x-black.svg'
-            alt='x'
-            width={32}
-            height={32}
-            className={`h-full ${className} rounded-xl`}
-          />
-        </a>
-      </li>
-      <li>
-        <a target='_blank' href='https://www.facebook.com/yoshihiro.kawasaki.94'>
-          <Image
-            src='/images/icon-facebook-black.svg'
-            alt='Facebook'
-            width={32}
-            height={32}
-            className={`h-full ${className} rounded-xl`}
-          />
-        </a>
-      </li>
+      {[
+        { alt: 'Youtube', href: 'https://www.youtube.com/@nebongainc', src: '/images/icon-youtube-black.svg' },
+        {
+          alt: 'Instagram',
+          href: 'https://www.instagram.com/hiro_kawasaki0610',
+          src: '/images/icon-instagram-black.svg',
+        },
+        { alt: 'x', href: 'https://twitter.com/hiro_works0610', src: '/images/icon-x-black.svg' },
+        {
+          alt: 'Facebook',
+          href: 'https://www.facebook.com/yoshihiro.kawasaki.94',
+          src: '/images/icon-facebook-black.svg',
+        },
+      ].map((link, index) => (
+        <motion.li key={index} custom={index} initial={{ opacity: 0, y: 10 }} animate={controls}>
+          <a target='_blank' href={link.href}>
+            <Image src={link.src} alt={link.alt} width={32} height={32} className={`h-full rounded-xl ${className}`} />
+          </a>
+        </motion.li>
+      ))}
     </ul>
   )
 }

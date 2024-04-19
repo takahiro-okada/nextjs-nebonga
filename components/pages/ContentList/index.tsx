@@ -1,6 +1,5 @@
-// components/ContentList.js
 'use client'
-
+import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
@@ -38,21 +37,48 @@ export default function ContentList({ basePath, categoryKey, categoryName, items
   return (
     <>
       <div className='flex justify-between'>
-        <div className='flex items-center'>
-          <p className='text-xl capitalize'>{categoryName}</p>
-          <span className='ml-4 text-sm'>{total}件</span>
-        </div>
-        <div className='relative md:hidden'>
-          <button className='' onClick={() => setShowMenu(!showMenu)}>
-            <Image src='/images/icon-category.svg' alt='Category icon' width={26} height={26} className='ml-4' />
-          </button>
-          {showMenu && <CategoryHierarchy categories={categories} basePath={basePath} />}
-        </div>
+        <motion.div
+          viewport={{ once: true }}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{
+            delay: 0.5,
+            duration: 0.8,
+            ease: 'easeOut',
+          }}
+        >
+          <div className='flex items-center'>
+            <p className='text-xl capitalize'>{categoryName}</p>
+            <span className='ml-4 text-sm'>{total}件</span>
+          </div>
+        </motion.div>
+        <motion.div
+          viewport={{ once: true }}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{
+            delay: 0.5,
+            duration: 0.8,
+            ease: 'easeOut',
+          }}
+        >
+          <div className='relative md:hidden'>
+            <button className='' onClick={() => setShowMenu(!showMenu)}>
+              <Image src='/images/icon-category.svg' alt='Category icon' width={26} height={26} className='ml-4' />
+            </button>
+            {showMenu && <CategoryHierarchy categories={categories} basePath={basePath} />}
+          </div>
+        </motion.div>
       </div>
       <ul className='mt-5 grid gap-y-10 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-16'>
-        {items?.map((item) => {
+        {items?.map((item, index) => {
           return (
-            <li key={item.slug}>
+            <motion.li
+              key={item.slug}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 + index * 0.3, duration: 0.5 }}
+            >
               <Link href={`/${basePath}/${item.slug}/`} className='group'>
                 <div className='relative aspect-video h-auto w-full overflow-hidden rounded-md'>
                   <div className='absolute left-0 top-0 z-10 size-full bg-black opacity-30'></div>
@@ -72,7 +98,7 @@ export default function ContentList({ basePath, categoryKey, categoryName, items
               <div className='mt-4 flex gap-2 text-sm'>
                 <CategoryLinks categoryKey={categoryKey} item={item} bathPath={basePath} />
               </div>
-            </li>
+            </motion.li>
           )
         })}
       </ul>

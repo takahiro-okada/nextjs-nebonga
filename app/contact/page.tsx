@@ -1,6 +1,6 @@
 'use client'
-
 import axios from 'axios'
+import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useForm } from 'react-hook-form'
@@ -39,14 +39,58 @@ export default function ContactForm() {
           <PageTitle title='Contact' subtitle='写真撮影、映像制作等のご依頼・ご相談窓口です。' />
           <div className='mt-11 md:mt-28 md:flex'>
             <div className='md:w-1/2'>
-              <h3 className='text-2xl font-bold md:text-3xl'>フォームからのお問い合わせ</h3>
-              <p className='mt-6'>
+              <motion.h3
+                className='text-2xl font-bold md:text-3xl'
+                viewport={{ once: true }}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  delay: 0.5,
+                  duration: 0.8,
+                  ease: 'easeOut',
+                }}
+              >
+                フォームからのお問い合わせ
+              </motion.h3>
+              <motion.p
+                className='mt-6'
+                viewport={{ once: true }}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  delay: 0.5,
+                  duration: 0.8,
+                  ease: 'easeOut',
+                }}
+              >
                 お手数ですが、右の項目をご記入の上「同意して送信する」ボタンを押してください。
                 詳しくご記入いただけますと、ご契約までがスムーズになると思いますので、よろしくお願いいたします。
-              </p>
-              <p className='mt-7 text-sm'>※3営業日以内に担当者よりご連絡させていただきます</p>
+              </motion.p>
+              <motion.p
+                className='mt-7 text-sm'
+                viewport={{ once: true }}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  delay: 0.5,
+                  duration: 0.8,
+                  ease: 'easeOut',
+                }}
+              >
+                ※3営業日以内に担当者よりご連絡させていただきます
+              </motion.p>
             </div>
-            <div className='mt-8 md:ml-24 md:mt-0 md:w-1/2'>
+            <motion.div
+              className='mt-8 md:ml-24 md:mt-0 md:w-1/2'
+              viewport={{ once: true }}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                delay: 0.5,
+                duration: 0.8,
+                ease: 'easeOut',
+              }}
+            >
               <form onSubmit={handleSubmit(onSubmit)} data-netlify='true' data-netlify-honeypot='bot-field'>
                 <div className='mb-5'>
                   <label className='mb-2 block font-medium text-gray-900'>お名前 Name</label>
@@ -110,11 +154,21 @@ export default function ContactForm() {
                   送信する
                 </button>
               </form>
-            </div>
+            </motion.div>
           </div>
         </section>
         <section className='mt-24'>
-          <div className='mt-11 md:mt-28 md:flex'>
+          <motion.div
+            className='mt-11 md:mt-28 md:flex'
+            viewport={{ once: true }}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              delay: 0.5,
+              duration: 0.8,
+              ease: 'easeOut',
+            }}
+          >
             <div className='md:w-1/2'>
               <h3 className='text-2xl font-bold md:text-3xl'>LINEからのお問い合わせ</h3>
               <p className='mt-6'>
@@ -125,7 +179,7 @@ export default function ContactForm() {
             </div>
             <div className='mt-8 md:ml-24 md:mt-0 md:w-1/2'>
               <div className='flex min-h-28 items-center border border-grayDark p-4'>
-                <div className='w-1/2 border-r border-grayDark  text-center leading-10'>ボタンから友達追加</div>
+                <div className='w-1/2 border-r border-grayDark pr-3  text-center leading-10'>ボタンから友達追加</div>
                 <div className='w-1/2 text-center'>
                   <Link href='#' className='inline-block'>
                     <Image
@@ -147,7 +201,7 @@ export default function ContactForm() {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </section>
       </CommonContainer>
     </main>
