@@ -35,36 +35,29 @@ export default function Footer() {
             </div>
             <div className='mt-10 sm:flex sm:items-center sm:justify-between'>
               <ul className='mb-6 flex flex-wrap items-center justify-center text-sm font-medium sm:mb-0'>
-                <li className='w-1/2 md:w-fit'>
-                  <Link className='inline-block w-full px-3 py-2 text-center font-Montserrat font-bold' href='/about'>
-                    About
-                  </Link>
-                </li>
-                <li className='w-1/2 md:w-fit'>
-                  <Link className='inline-block w-full px-3 py-2 text-center font-Montserrat font-bold' href='/works'>
-                    Works
-                  </Link>
-                </li>
-                <li className='w-1/2 md:w-fit'>
-                  <Link className='inline-block w-full px-3 py-2 text-center font-Montserrat font-bold' href='/story'>
-                    Story
-                  </Link>
-                </li>
-                <li className='w-1/2 md:w-fit'>
-                  <Link className='inline-block w-full px-3 py-2 text-center font-Montserrat font-bold' href='/price'>
-                    News
-                  </Link>
-                </li>
-                <li className='w-1/2 md:w-fit'>
-                  <Link className='inline-block w-full px-3 py-2 text-center font-Montserrat font-bold' href='/price'>
-                    Price
-                  </Link>
-                </li>
-                <li className='w-1/2 md:w-fit'>
-                  <Link className='inline-block w-full px-3 py-2 text-center font-Montserrat font-bold' href='/contact'>
-                    Contact
-                  </Link>
-                </li>
+                {[
+                  { href: '/about', text: 'About' },
+                  { href: '/works', text: 'Works' },
+                  { href: '/story', text: 'Story' },
+                  { href: '/news', text: 'News' },
+                  { href: '/price', text: 'Price' },
+                  { href: '/contact', text: 'Contact' },
+                ].map((link, index) => (
+                  <motion.li
+                    key={index}
+                    className='w-1/2 md:w-fit'
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.3 + index * 0.3, duration: 0.5 }}
+                  >
+                    <Link
+                      className='inline-block w-full px-3 py-2 text-center font-Montserrat font-bold'
+                      href={link.href}
+                    >
+                      {link.text}
+                    </Link>
+                  </motion.li>
+                ))}
               </ul>
             </div>
           </div>

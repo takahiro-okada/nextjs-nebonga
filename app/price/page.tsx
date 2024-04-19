@@ -1,4 +1,6 @@
 'use client'
+import { motion } from 'framer-motion'
+
 import CommonContainer from '@/components/base/CommonContainer'
 import FlowCard from '@/components/pages/FlowCrad'
 import LessonWorks from '@/components/pages/LessonWorks'
@@ -11,12 +13,23 @@ export default function Price() {
     <main className='mt-32'>
       <CommonContainer>
         <PageTitle title='Price' subtitle='NeBongaのお仕事の一部をご紹介します' />
-
-        <p className='mt-12 md:mt-16'>
-          お客様のご要望に合わせた映像制作/写真撮影を行っているため、料金を一律にはできません。
-          <br />
-          正確なお見積りはヒアリングののにご提示致しますが、目安となるお見積りと価格表は下記の通りです。
-        </p>
+        <motion.div
+          className='mt-10'
+          viewport={{ once: true }}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{
+            delay: 0.5,
+            duration: 0.8,
+            ease: 'easeOut',
+          }}
+        >
+          <p className='mt-12 md:mt-16'>
+            お客様のご要望に合わせた映像制作/写真撮影を行っているため、料金を一律にはできません。
+            <br />
+            正確なお見積りはヒアリングののにご提示致しますが、目安となるお見積りと価格表は下記の通りです。
+          </p>
+        </motion.div>
 
         <section>
           <ul className='mt-16 grid gap-12 md:mt-16 md:grid-cols-2 md:gap-x-6 md:gap-y-12'>
@@ -64,11 +77,33 @@ export default function Price() {
 
       <section className='mt-24 bg-grayLight py-24'>
         <CommonContainer>
-          <h2 className='text-3xl font-bold'>ご依頼までの流れ</h2>
-          <p className='mt-6'>
+          <motion.h2
+            className='text-3xl font-bold'
+            viewport={{ once: true }}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              delay: 0.5,
+              duration: 0.8,
+              ease: 'easeOut',
+            }}
+          >
+            ご依頼までの流れ
+          </motion.h2>
+          <motion.p
+            className='mt-6'
+            viewport={{ once: true }}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              delay: 0.5,
+              duration: 0.8,
+              ease: 'easeOut',
+            }}
+          >
             目的を明確にするヒアリングで“想い”を視覚化するお手伝いをさせていただきます 。<br />
             まずは、お気軽にお問い合わせください。
-          </p>
+          </motion.p>
 
           <ul className='mt-10 grid items-center justify-center gap-6 md:grid-cols-3 md:items-stretch lg:grid-cols-5'>
             <FlowCard

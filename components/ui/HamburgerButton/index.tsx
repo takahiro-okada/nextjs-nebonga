@@ -1,4 +1,6 @@
-import React from 'react'
+'use client'
+import { motion, useAnimation } from 'framer-motion'
+import React, { useEffect } from 'react'
 
 import SnsIcons from '@/components/ui/SnsIcons'
 
@@ -9,8 +11,26 @@ interface HamburgerButtonProps {
   openMenu: boolean
 }
 
+const menuItems = [
+  { name: 'About', href: '/about/' },
+  { name: 'Works', href: '/works/' },
+  { name: 'Story', href: '/story/' },
+  { name: 'Price', href: '/price/' },
+  { name: 'News', href: '/news/' },
+  { name: 'Contact', href: '/contact/' },
+]
+
 export default function HamburgerButton({ handleMenuOpen, isScrolled, isTop, openMenu }: HamburgerButtonProps) {
+  const controls = useAnimation()
   const borderColor = isTop && !isScrolled ? 'bg-white' : 'bg-black'
+
+  useEffect(() => {
+    if (openMenu) {
+      controls.start((i) => ({ opacity: 1, transition: { delay: 0.1 * i, duration: 0.3 }, y: 0 }))
+    } else {
+      controls.start({ opacity: 0, y: 20 })
+    }
+  }, [openMenu, controls])
 
   return (
     <div className='absolute right-3 flex items-center'>
@@ -45,39 +65,16 @@ export default function HamburgerButton({ handleMenuOpen, isScrolled, isTop, ope
         }
       >
         <ul>
-          <li>
-            <a href='/about/' className='inline-block py-6 font-Montserrat text-3xl text-black'>
-              About
-            </a>
-          </li>
-          <li>
-            <a href='/works/' className='inline-block py-6 font-Montserrat text-3xl text-black'>
-              Works
-            </a>
-          </li>
-          <li>
-            <a href='/story/' className='inline-block py-6 font-Montserrat text-3xl text-black'>
-              Story
-            </a>
-          </li>
-          <li>
-            <a href='/price/' className='inline-block py-6 font-Montserrat text-3xl text-black'>
-              Price
-            </a>
-          </li>
-          <li>
-            <a href='/news/' className='inline-block py-6 font-Montserrat text-3xl text-black'>
-              News
-            </a>
-          </li>
-          <li>
-            <a href='/contact/' className='inline-block py-6 font-Montserrat text-3xl text-black'>
-              Contact
-            </a>
-          </li>
+          {menuItems.map((item, index) => (
+            <motion.li key={item.name} custom={index} initial={{ opacity: 0, y: 20 }} animate={controls}>
+              <a href={item.href} className='inline-block py-6 font-Montserrat text-3xl text-black'>
+                {item.name}
+              </a>
+            </motion.li>
+          ))}
         </ul>
         <div className='mt-8'>
-          <SnsIcons className='w-12' />
+          <SnsIcons className='w-12' open={openMenu} />
         </div>
       </nav>
     </div>

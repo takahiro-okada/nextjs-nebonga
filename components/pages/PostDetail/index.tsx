@@ -19,7 +19,6 @@ interface PostDetailProps {
 export default function PostDetail({ categoryKey, post, relatedPosts, slug }: PostDetailProps) {
   const categoryData = post[categoryKey]
   const categories = categoryData?.nodes ? categoryData.nodes : []
-  console.log(post)
   return (
     <main className='mt-24'>
       <CommonContainer>
@@ -32,7 +31,7 @@ export default function PostDetail({ categoryKey, post, relatedPosts, slug }: Po
                 frameBorder='0'
                 allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
                 allowFullScreen
-                className='absolute inset-0 w-full h-full object-cover'
+                className='absolute inset-0 size-full object-cover'
               ></iframe>
             </div>
           ) : (
@@ -81,7 +80,7 @@ export default function PostDetail({ categoryKey, post, relatedPosts, slug }: Po
           <div className='flex justify-between'>
             {post.previous ? (
               <Link
-                className='relative ml-2 inline-block w-4/5 text-left font-Montserrat tracking-wider before:top-1/2 before:mr-8 before:inline-block before:w-8 before:-translate-y-1/2 before:border-t-2 before:border-black md:before:w-36'
+                className='relative ml-2 flex w-4/5 items-center text-left font-Montserrat tracking-wider before:top-1/2 before:mr-8 before:inline-block before:w-8 before:-translate-y-1/2 before:border-t-2 before:border-black md:before:w-36'
                 href={`/${slug}/${post.previous.slug}`}
               >
                 Prev
@@ -89,7 +88,7 @@ export default function PostDetail({ categoryKey, post, relatedPosts, slug }: Po
             ) : (
               <div className='w-4/5 text-left' />
             )}
-            <Link className={`inline-block `} href={`/${slug}/`}>
+            <Link className='inline-block' href={`/${slug}/`}>
               <Image
                 src='/images/icon-archive-list.svg'
                 alt='Back to story list'
@@ -100,7 +99,7 @@ export default function PostDetail({ categoryKey, post, relatedPosts, slug }: Po
             </Link>
             {post.next ? (
               <Link
-                className='relative mr-2 inline-block w-4/5 text-right font-Montserrat tracking-wider after:top-1/2 after:ml-8 after:inline-block after:w-8 after:-translate-y-1/2 after:border-t-2 after:border-black md:after:w-36'
+                className='relative mr-2 flex w-4/5 items-center justify-end text-right font-Montserrat tracking-wider after:top-1/2 after:ml-8 after:inline-block after:w-8 after:-translate-y-1/2 after:border-t-2 after:border-black md:after:w-36'
                 href={`/${slug}/${post.next.slug}`}
               >
                 Next
