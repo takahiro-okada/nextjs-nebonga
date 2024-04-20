@@ -33,7 +33,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang='ja'>
       <body className={`${montserrat.variable} ${lato.variable}`}>
         <Header />
-        <div>{children}</div>
+        {children}
         <Footer />
       </body>
     </html>
