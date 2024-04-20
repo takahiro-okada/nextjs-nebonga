@@ -43,7 +43,7 @@ export default function MainVisual() {
         <>
           <motion.video
             ref={videoRef}
-            src='/images/top.mp4'
+            src='./images/top.mp4'
             muted
             loop
             autoPlay
