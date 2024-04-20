@@ -1,6 +1,6 @@
 'use client'
 import { motion } from 'framer-motion'
-import React, { useRef, useState, useEffect } from 'react'
+import React, { useEffect,useRef, useState } from 'react'
 
 const MainVisual = () => {
   const [videoVisible, setVideoVisible] = useState(false)
