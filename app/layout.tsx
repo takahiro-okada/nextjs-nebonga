@@ -30,8 +30,8 @@ export const lato = Lato({
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang='ja'>
-      <body className={`${montserrat.variable} ${lato.variable}`}>
+    <html lang='ja' className='overflow-x-hidden md:overflow-x-visible'>
+      <body className={`${montserrat.variable} ${lato.variable} overflow-x-hidden md:overflow-x-auto`}>
         <Header />
         {children}
         <Footer />
