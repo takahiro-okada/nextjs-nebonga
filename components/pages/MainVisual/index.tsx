@@ -1,8 +1,8 @@
 'use client'
 import { motion } from 'framer-motion'
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 
-export default function MainVisual() {
+const MainVisual = () => {
   const [videoVisible, setVideoVisible] = useState(false)
   const videoRef = useRef(null)
 
@@ -33,9 +33,13 @@ export default function MainVisual() {
     show: { opacity: 1, y: 0 },
   }
 
-  const handleAnimationComplete = () => {
-    setVideoVisible(true)
-  }
+  useEffect(() => {
+    // 確実に1回のみ動画を表示するために useEffect を使用
+    const timer = setTimeout(() => {
+      setVideoVisible(true)
+    }, 2400) // テキストアニメーションの完了後に動画を表示
+    return () => clearTimeout(timer)
+  }, [])
 
   return (
     <section className='relative h-screen bg-black'>
@@ -61,7 +65,6 @@ export default function MainVisual() {
         initial='hidden'
         animate='show'
         variants={neBongaContainer}
-        onAnimationComplete={handleAnimationComplete}
         className='absolute right-1/2 top-1/2 z-10 w-full -translate-y-1/2 translate-x-1/2 text-center'
       >
         <motion.p variants={textContainer} className='text-[14px] text-white'>
@@ -95,3 +98,5 @@ export default function MainVisual() {
     </section>
   )
 }
+
+export default React.memo(MainVisual)
