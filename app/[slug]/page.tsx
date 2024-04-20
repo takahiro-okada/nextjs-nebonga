@@ -93,7 +93,7 @@ function RenderNewsList({ categoryKey, posts }: { categoryKey: 'newsCategories';
       <PageTitle title='News' subtitle='各種お知らせ' />
       <div className='mt-8 md:flex'>
         <div className='flex-auto'>
-          {posts && posts.map((post) => <NewsArticle key={post.databaseId} post={post} />)}
+          {posts && posts.map((post, index) => <NewsArticle key={post.databaseId} post={post} index={index} />)}
         </div>
         <div className='mt-16 md:ml-8 md:mt-0 md:w-full md:max-w-xs md:flex-auto'>
           <SideNav linkPrefix='news' categoryKey={categoryKey} />
