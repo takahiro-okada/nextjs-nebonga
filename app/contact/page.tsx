@@ -124,7 +124,7 @@ export default function ContactForm() {
                 </div>
                 <div className='mb-5'>
                   <label className='mb-2 block font-medium text-gray-900'>
-                    ご相談の詳細について Whad do you want ask?
+                    ご相談の詳細について What do you want to ask us?
                   </label>
                   <textarea
                     {...register('message', { required: 'ご相談の詳細を入力してください。' })}

@@ -30,7 +30,7 @@ export default function About() {
                 <h1 className='font-Montserrat text-5xl font-extrabold md:text-7xl '>
                   Passion on
                   <br />
-                  the border
+                  the Border
                 </h1>
                 <p className='mt-6 text-lg'>境界線上の情熱</p>
               </div>
@@ -195,7 +195,7 @@ export default function About() {
                     <td className='w-2/3 py-6 md:w-4/5'>
                       株式会社NeBonga(ネボンガ)
                       <br />
-                      (英語表記:NeBonga.inc)
+                      (英語表記:NeBonga Inc.)
                     </td>
                   </tr>
                   <tr className='border-b border-grayNormal'>
@@ -236,7 +236,7 @@ export default function About() {
                   </tr>
                   <tr className='border-b border-grayNormal'>
                     <th className='w-1/3 py-6 align-baseline md:w-1/5'>お問い合わせ</th>
-                    <td className='w-2/3 py-6 md:w-4/5'>y.kawasaki@nebonga.com</td>
+                    <td className='w-2/3 py-6 md:w-4/5'>contact@nebonga.com</td>
                   </tr>
                 </table>
               </div>

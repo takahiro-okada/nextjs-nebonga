@@ -1,6 +1,6 @@
 'use client'
 import { motion } from 'framer-motion'
-import React, { useEffect,useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 const MainVisual = () => {
   const [videoVisible, setVideoVisible] = useState(false)
@@ -67,7 +67,7 @@ const MainVisual = () => {
         variants={neBongaContainer}
         className='absolute right-1/2 top-1/2 z-10 w-full -translate-y-1/2 translate-x-1/2 text-center'
       >
-        <motion.p variants={textContainer} className='text-[14px] text-white'>
+        <motion.p variants={textContainer} className='text-[16px] text-white'>
           {'より良い世界を創る'.split('').map((char, index) => (
             <motion.span key={index} variants={item}>
               {char}
@@ -86,7 +86,7 @@ const MainVisual = () => {
         </motion.p>
         <motion.p
           variants={textContainer}
-          className='mt-1 text-center font-Montserrat text-[10px] tracking-widest text-white'
+          className='mt-1 text-center font-Montserrat text-[16px] tracking-widest text-white'
         >
           {'Create a better world'.split('').map((char, index) => (
             <motion.span key={index} variants={item}>

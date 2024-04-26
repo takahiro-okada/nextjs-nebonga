@@ -12,6 +12,9 @@ export default function useFetchData<T>(
       body: JSON.stringify({ query }),
       headers: { 'Content-Type': 'application/json' },
       method: 'POST',
+      next: {
+        revalidate: 10,
+      },
     })
       .then((res) => res.json())
       .then((json) => {
