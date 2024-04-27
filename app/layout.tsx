@@ -2,6 +2,7 @@ import './globals.css'
 
 import type { Metadata } from 'next'
 import { Lato, Montserrat } from 'next/font/google'
+import { Suspense } from 'react'
 
 import Footer from '@/components/base/Footer'
 import Header from '@/components/base/Header'
@@ -30,12 +31,14 @@ export const lato = Lato({
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang='ja' className='overflow-x-hidden md:overflow-x-visible'>
-      <body className={`${montserrat.variable} ${lato.variable} overflow-x-hidden md:overflow-x-auto`}>
-        <Header />
-        {children}
-        <Footer />
-      </body>
-    </html>
+    <Suspense fallback={'<h1>Loading ...</h1>'}>
+      <html lang='ja' className='overflow-x-hidden md:overflow-x-visible'>
+        <body className={`${montserrat.variable} ${lato.variable} overflow-x-hidden md:overflow-x-auto`}>
+          <Header />
+          {children}
+          <Footer />
+        </body>
+      </html>
+    </Suspense>
   )
 }
