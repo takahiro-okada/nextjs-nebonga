@@ -42,6 +42,7 @@ export async function fetchGraphQL<T = any>(
       method: 'POST',
       next: {
         tags: ['graphql'],
+        revalidate: 10,
       },
     })
 
