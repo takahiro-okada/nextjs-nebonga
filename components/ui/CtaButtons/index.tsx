@@ -28,7 +28,7 @@ export default function CtaButtons() {
           ease: 'easeOut',
         }}
       >
-        <Button href='/contact' buttonColor='bg-[#00B900]'>
+        <Button href='https://page.line.me/167gakqf' buttonColor='bg-[#00B900]'>
           LINEからお問い合わせ
         </Button>
       </motion.div>
