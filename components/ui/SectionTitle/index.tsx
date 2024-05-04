@@ -20,10 +20,10 @@ export function SectionTitle({ title, subtitle }: Props) {
     >
       <section>
         <div className='relative'>
-          <h2 className='relative w-fit font-Montserrat text-2xl after:absolute after:top-1/2 after:ml-6 after:inline-block after:w-36 after:border-t-2 after:border-black md:text-4xl'>
+          <h2 className='relative w-fit font-Montserrat text-2xl font-semibold tracking-wide after:absolute after:top-1/2 after:ml-6 after:inline-block after:w-36 after:border-t after:border-black md:text-4xl'>
             {title}
           </h2>
-          <p className='mt-1 text-xs'>{subtitle}</p>
+          <p className='mt-1 text-sm tracking-wide'>{subtitle}</p>
         </div>
       </section>
     </motion.div>

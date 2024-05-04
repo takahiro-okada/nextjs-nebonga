@@ -27,7 +27,7 @@ export default function About() {
                 <span className='absolute right-0 top-0 w-fit translate-x-0 rotate-90 text-sm tracking-widest after:absolute after:top-1/2 after:ml-6 after:inline-block after:h-1 after:w-16 after:border-t after:border-black md:-left-5 md:top-8 lg:after:w-52'>
                   About
                 </span>
-                <h1 className='font-Montserrat text-5xl font-extrabold md:text-7xl '>
+                <h1 className='font-Montserrat text-5xl font-bold md:text-7xl '>
                   Passion on
                   <br />
                   the Border
@@ -35,13 +35,13 @@ export default function About() {
                 <p className='mt-6 text-lg'>境界線上の情熱</p>
               </div>
               <div className='md:w-1/2'>
-                <p className='mt-8'>
+                <p className='mt-8 leading-7'>
                   志を持つすべての企業、人の取り組みをビジュアルコンテンツでサポート致します。
                   <br />
                   人は葛藤しながらも、それでも情熱を絶やすことなく、前に進む。
                   その奮闘と熱意の証を残すお手伝いをさせていただきます。
                 </p>
-                <p className='mt-8 font-lato leading-7'>
+                <p className='mt-8 font-lato leading-7 tracking-wide'>
                   Our mission is to make better world with people who has passion. We are focusing on not only achieving
                   goals with clients but also knowing subconscious through creating.
                 </p>
@@ -108,7 +108,7 @@ export default function About() {
         </CommonContainer>
       </section>
 
-      <section className='mt-12 bg-grayLight py-16' data-section='about-logo'>
+      <section className='mt-12 bg-grayLight pb-16 md:pt-16' data-section='about-logo'>
         <CommonContainer>
           <div className='mx-auto justify-center md:flex md:max-w-[960px] md:gap-10'>
             <div className='mt-6 p-16 md:mt-0 md:w-1/2'>
@@ -136,7 +136,7 @@ export default function About() {
                   ease: 'easeOut',
                 }}
               >
-                <h2 className='text-3xl'>ロゴに込められた思い</h2>
+                <h2 className='text-3xl font-bold'>ロゴに込められた思い</h2>
               </motion.div>
               <motion.div
                 viewport={{ once: true }}
@@ -183,7 +183,7 @@ export default function About() {
                 ease: 'easeOut',
               }}
             >
-              <h2 className='text-2xl font-bold tracking-tighter'>会社概要</h2>
+              <h2 className='text-2xl font-bold tracking-wide'>会社概要</h2>
             </motion.div>
             <motion.div
               viewport={{ once: true }}
@@ -197,54 +197,58 @@ export default function About() {
             >
               <div className='grid-cols-2 items-start gap-4 md:grid md:gap-24'>
                 <table className='text-left'>
-                  <tr className='border-b border-grayNormal'>
-                    <th className='w-1/3 py-6 align-baseline md:w-1/5'>会社名</th>
-                    <td className='w-2/3 py-6 md:w-4/5'>
-                      株式会社NeBonga(ネボンガ)
-                      <br />
-                      (英語表記:NeBonga Inc.)
-                    </td>
-                  </tr>
-                  <tr className='border-b border-grayNormal'>
-                    <th className='w-1/3 py-6 align-baseline md:w-1/5'>住所</th>
-                    <td className='w-2/3 py-6 md:w-4/5'>
-                      〒1500043
-                      <br />
-                      東京都渋谷区道玄坂1丁目10番8号渋谷道玄坂東急ビル 2F-C
-                    </td>
-                  </tr>
-                  <tr className='border-b border-grayNormal'>
-                    <th className='w-1/3 py-6 align-baseline md:w-1/5'>代表</th>
-                    <td className='w-2/3 py-6 md:w-4/5'>川崎 芳勲</td>
-                  </tr>
-                  <tr className='border-b border-grayNormal'>
-                    <th className='w-1/3 py-6 align-baseline md:w-1/5'>資本金</th>
-                    <td className='w-2/3 py-6 md:w-4/5'>3,000,000円</td>
-                  </tr>
-                  <tr className='border-b border-grayNormal'>
-                    <th className='w-1/3 py-6 align-baseline md:w-1/5'>創業</th>
-                    <td className='w-2/3 py-6 md:w-4/5'>2023年9月</td>
-                  </tr>
+                  <tbody>
+                    <tr className='border-b border-grayNormal'>
+                      <th className='w-1/3 py-6 align-baseline font-normal md:w-1/4'>会社名</th>
+                      <td className='w-2/3 py-6 md:w-4/5'>
+                        株式会社NeBonga(ネボンガ)
+                        <br />
+                        (英語表記:NeBonga Inc.)
+                      </td>
+                    </tr>
+                    <tr className='border-b border-grayNormal'>
+                      <th className='w-1/3 py-6 align-baseline font-normal md:w-1/4'>住所</th>
+                      <td className='w-2/3 py-6 md:w-4/5'>
+                        〒1500043
+                        <br />
+                        東京都渋谷区道玄坂1丁目10番8号渋谷道玄坂東急ビル 2F-C
+                      </td>
+                    </tr>
+                    <tr className='border-b border-grayNormal'>
+                      <th className='w-1/3 py-6 align-baseline font-normal md:w-1/4'>代表</th>
+                      <td className='w-2/3 py-6 md:w-4/5'>川崎 芳勲</td>
+                    </tr>
+                    <tr className='border-b border-grayNormal'>
+                      <th className='w-1/3 py-6 align-baseline font-normal md:w-1/4'>資本金</th>
+                      <td className='w-2/3 py-6 md:w-4/5'>3,000,000円</td>
+                    </tr>
+                    <tr className='border-b border-grayNormal'>
+                      <th className='w-1/3 py-6 align-baseline font-normal md:w-1/4'>創業</th>
+                      <td className='w-2/3 py-6 md:w-4/5'>2023年9月</td>
+                    </tr>
+                  </tbody>
                 </table>
                 <table className='text-left'>
-                  <tr className='border-b border-grayNormal'>
-                    <th className='w-1/3 py-6 align-baseline md:w-1/5'>事業内容</th>
-                    <td className='w-2/3 py-6 md:w-4/5'>
-                      <ul className='list-disc'>
-                        <li>写真・動画・映画コンテンツの企画、撮影、編集業務及びその制作物の販売</li>
-                        <li>ソーシャルメディア、ＷＥＢサイト構築、運用並びにその他の広告宣伝</li>
-                        <li>各種セミナー、イベント等の企画、開催、運営等及び講演等の受託</li>
-                      </ul>
-                    </td>
-                  </tr>
-                  <tr className='border-b border-grayNormal'>
-                    <th className='w-1/3 py-6 align-baseline md:w-1/5'>取引先銀行</th>
-                    <td className='w-2/3 py-6 md:w-4/5'>三井住友銀行・GMOあおぞらネット銀行</td>
-                  </tr>
-                  <tr className='border-b border-grayNormal'>
-                    <th className='w-1/3 py-6 align-baseline md:w-1/5'>お問い合わせ</th>
-                    <td className='w-2/3 py-6 md:w-4/5'>contact@nebonga.com</td>
-                  </tr>
+                  <tbody>
+                    <tr className='border-b border-grayNormal'>
+                      <th className='w-1/3 py-6 align-baseline font-normal md:w-1/4'>事業内容</th>
+                      <td className='w-2/3 py-6 md:w-4/5'>
+                        <ul className='ml-4 list-disc'>
+                          <li>写真・動画・映画コンテンツの企画、撮影、編集業務及びその制作物の販売</li>
+                          <li>ソーシャルメディア、ＷＥＢサイト構築、運用並びにその他の広告宣伝</li>
+                          <li>各種セミナー、イベント等の企画、開催、運営等及び講演等の受託</li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr className='border-b border-grayNormal'>
+                      <th className='w-1/3 py-6 align-baseline font-normal md:w-1/4'>取引先銀行</th>
+                      <td className='w-2/3 py-6 md:w-4/5'>三井住友銀行・GMOあおぞらネット銀行</td>
+                    </tr>
+                    <tr className='border-b border-grayNormal'>
+                      <th className='w-1/3 py-6 align-baseline font-normal md:w-1/4'>お問い合わせ</th>
+                      <td className='w-2/3 py-6 md:w-4/5'>contact@nebonga.com</td>
+                    </tr>
+                  </tbody>
                 </table>
               </div>
             </motion.div>

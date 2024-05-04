@@ -61,40 +61,42 @@ const MainVisual = () => {
           <div className='absolute inset-0 bg-black opacity-50' style={{ mixBlendMode: 'darken' }} />
         </>
       )}
-      <motion.div
-        initial='hidden'
-        animate='show'
-        variants={neBongaContainer}
-        className='absolute right-1/2 top-1/2 z-10 w-full -translate-y-1/2 translate-x-1/2 text-center'
-      >
-        <motion.p variants={textContainer} className='text-[16px] text-white'>
-          {'より良い世界を創る'.split('').map((char, index) => (
-            <motion.span key={index} variants={item}>
-              {char}
-            </motion.span>
-          ))}
-        </motion.p>
-        <motion.p
+      <div className={`absolute inset-0 ${videoVisible ? 'z-0 bg-transparent' : 'z-50 bg-black'}`}>
+        <motion.div
+          initial='hidden'
+          animate='show'
           variants={neBongaContainer}
-          className='mt-1 font-Montserrat text-[48px] font-semibold text-white delay-300 md:text-8xl'
+          className='absolute right-1/2 top-1/2 w-full -translate-y-1/2 translate-x-1/2 text-center'
         >
-          {'NeBonga'.split('').map((char, index) => (
-            <motion.span key={index} variants={item}>
-              {char}
-            </motion.span>
-          ))}
-        </motion.p>
-        <motion.p
-          variants={textContainer}
-          className='mt-1 text-center font-Montserrat text-[16px] tracking-widest text-white'
-        >
-          {'Create a better world'.split('').map((char, index) => (
-            <motion.span key={index} variants={item}>
-              {char}
-            </motion.span>
-          ))}
-        </motion.p>
-      </motion.div>
+          <motion.p variants={textContainer} className='text-base tracking-[0.4em] text-white md:text-2xl'>
+            {'より良い世界を創る'.split('').map((char, index) => (
+              <motion.span key={index} variants={item}>
+                {char}
+              </motion.span>
+            ))}
+          </motion.p>
+          <motion.p
+            variants={neBongaContainer}
+            className='mt-3 font-Montserrat text-5xl font-semibold tracking-widest text-white delay-300 md:mt-4 md:text-8xl'
+          >
+            {'NeBonga'.split('').map((char, index) => (
+              <motion.span key={index} variants={item}>
+                {char}
+              </motion.span>
+            ))}
+          </motion.p>
+          <motion.p
+            variants={textContainer}
+            className='mt-3 text-center font-Montserrat text-sm tracking-widest text-white md:mt-4 md:text-lg'
+          >
+            {'Create a better world'.split('').map((char, index) => (
+              <motion.span key={index} variants={item}>
+                {char}
+              </motion.span>
+            ))}
+          </motion.p>
+        </motion.div>
+      </div>
     </section>
   )
 }

@@ -37,9 +37,9 @@ export default function PriceCard({
         </p>
         <h3 className='whitespace-pre-wrap text-center text-2xl font-bold md:text-3xl'>{title}</h3>
         <p className='mt-1 text-center'>{description}</p>
-        <p className='relative mt-6 text-center font-Montserrat text-5xl font-extrabold after:absolute after:bottom-[-24px] after:left-1/2 after:inline-block after:w-16 after:-translate-x-1/2 after:border-t-2 after:border-black lg:after:w-32'>
+        <p className='relative mt-6 text-center font-Montserrat text-5xl font-bold after:absolute after:-bottom-7 after:left-1/2 after:inline-block after:w-16 after:-translate-x-1/2 after:border-t after:border-black lg:after:w-32'>
           {priceRange}
-          <span className='text-xl'>万円</span>
+          <span className='ml-1 text-xl'>万円</span>
         </p>
         <p className='mt-12 md:mt-16'>{additionalInfo}</p>
         <ul className='mt-3 flex flex-wrap gap-4'>

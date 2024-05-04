@@ -24,15 +24,15 @@ export default function Price() {
             ease: 'easeOut',
           }}
         >
-          <p className='mt-12 md:mt-16'>
+          <p className='mt-12 leading-relaxed md:mt-16'>
             お客様のご要望に合わせた映像制作/写真撮影を行っているため、料金を一律にはできません。
             <br />
-            正確なお見積りはヒアリングののにご提示致しますが、目安となるお見積りと価格表は下記の通りです。
+            正確なお見積りはヒアリングののちにご提示致しますが、目安となるお見積りと価格表は下記の通りです。
           </p>
         </motion.div>
 
         <section>
-          <ul className='mt-16 grid gap-12 md:mt-16 md:grid-cols-2 md:gap-x-6 md:gap-y-12'>
+          <ul className='mt-16 grid gap-12 md:mt-16 md:grid-cols-2 md:gap-x-8 md:gap-y-12'>
             <PriceCard
               caseNumber='01'
               title={['個人向け\nプロモーション映像・写真']}

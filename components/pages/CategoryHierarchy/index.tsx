@@ -12,7 +12,7 @@ interface CategoryHierarchyProps {
 
 export default function CategoryHierarchy({ basePath, categories }: CategoryHierarchyProps) {
   return (
-    <ul className='absolute right-0 top-8 z-50 w-44 rounded-md bg-white shadow-custom'>
+    <ul className='absolute right-0 top-8 z-40 w-44 rounded-md bg-white shadow-custom'>
       {categories.map((category) => (
         <li key={category.slug}>
           <Link

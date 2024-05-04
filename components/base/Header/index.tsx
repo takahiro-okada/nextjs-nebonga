@@ -22,15 +22,17 @@ export default function Header() {
   const isTop = path === '/'
 
   const textColorClass = isTop ? (isScrolled ? 'text-black' : 'text-white') : 'text-black'
-  const headerClass = `${isTop && !isScrolled ? 'bg-tranparent' : 'bg-white'} ${isScrolled ? ' shadow-md' : ''} fixed top-0 z-50 w-full py-${isScrolled ? '2' : '3'} transition-all duration-300`
+  const headerClass = `${isTop && !isScrolled ? 'bg-tranparent' : 'bg-white'} ${isScrolled ? ' shadow-md' : ''} fixed top-0 z-40 w-full py-2 transition-all duration-300`
+  const bgColorClass = isTop && !isScrolled ? 'bg-white' : 'bg-black'
 
+  const logoPath = isScrolled || !isTop ? '/logo.png' : '/logo_white.png'
   return (
     <header className={headerClass}>
       <div className='container relative mx-auto flex items-center justify-center px-3 md:justify-between'>
         <h1>
           <a href='/' className={`text-xl font-semibold tracking-tight ${textColorClass}`}>
             <Image
-              src='/logo.png'
+              src={logoPath}
               alt='NeBonga'
               width={100}
               height={100}
@@ -39,18 +41,21 @@ export default function Header() {
           </a>
         </h1>
         <nav className='hidden lg:flex'>
-          <ul className='space-x-4 lg:flex'>
+          <ul className='gap-10 lg:flex'>
             {['about', 'works', 'story', 'news', 'price'].map((item) => (
               <li key={item}>
-                <Link href={`/${item}/`} className={`mx-4 font-Montserrat hover:underline lg:mx-6 ${textColorClass}`}>
+                <Link href={`/${item}/`} className={`group relative font-Montserrat ${textColorClass}`}>
                   {item.charAt(0).toUpperCase() + item.slice(1)}
+                  <span
+                    className={`absolute -bottom-1 left-0 h-px w-0 bg-black transition-all duration-500 group-hover:w-full ${bgColorClass}`}
+                  ></span>
                 </Link>
               </li>
             ))}
             <li>
               <Link
                 href='/contact'
-                className={`mx-4 font-Montserrat lg:mx-6 ${textColorClass} ${isTop && !isScrolled ? 'border border-white' : 'border border-black'} rounded-full px-5 py-1 transition-all duration-300`}
+                className={`font-Montserrat ${textColorClass} ${isTop && !isScrolled ? 'border border-white' : 'border border-black'} rounded-full px-5 py-1 transition-all duration-300 hover:bg-black/10`}
               >
                 Contact
               </Link>

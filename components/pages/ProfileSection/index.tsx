@@ -15,13 +15,15 @@ interface TimelineProps {
 
 export const Timeline: React.FC<TimelineProps> = ({ data }) => {
   return (
-    <table className='table-fixed align-top leading-[1.8]'>
-      {data.map((item, index) => (
-        <tr key={index}>
-          <th className='w-1/6 text-left align-baseline'>{item.year}</th>
-          <td className='w-5/6'>{item.event}</td>
-        </tr>
-      ))}
+    <table className='table-fixed align-top text-sm leading-[1.8]'>
+      <tbody>
+        {data.map((item, index) => (
+          <tr key={index}>
+            <th className='w-11 text-left align-baseline font-normal'>{item.year}</th>
+            <td>{item.event}</td>
+          </tr>
+        ))}
+      </tbody>
     </table>
   )
 }
