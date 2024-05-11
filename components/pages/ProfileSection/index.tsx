@@ -60,7 +60,7 @@ const ProfileSection: React.FC<ProfileSectionProps> = ({
         <Image src={imageSrc} alt={`${name}のプロフィール写真`} width={481} height={321} className='w-full md:hidden' />
 
         <div className='mt-6 md:w-7/12'>
-          <h2 className='text-4xl font-bold'>{name}</h2>
+          <h2 className='text-4xl'>{name}</h2>
           <p className='mt-2'>{englishName}</p>
           <p
             className='mt-6 text-sm leading-relaxed tracking-wide'

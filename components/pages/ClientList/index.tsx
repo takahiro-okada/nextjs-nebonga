@@ -18,7 +18,7 @@ export default function ClientList() {
             ease: 'easeOut',
           }}
         >
-          <h2 className='text-center font-Montserrat text-2xl font-extrabold tracking-widest md:text-[28px]'>
+          <h2 className='text-center font-Montserrat text-2xl font-bold tracking-widest md:text-[28px]'>
             Our Client
           </h2>
         </motion.div>

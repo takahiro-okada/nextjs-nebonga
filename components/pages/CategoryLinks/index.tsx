@@ -26,7 +26,7 @@ export default function CategoryLinks({ bathPath, categoryKey, item }: CategoryL
                   ? `/${bathPath}/category/${category.parent.node.slug}/${category.slug}`
                   : `/${bathPath}/category/${category.slug}`
               }
-              className='inline-block rounded-md bg-grayLight p-2 px-3 text-xs'
+              className='inline-block rounded-md bg-grayLight px-3 py-1 text-xs'
             >
               {category.name}
             </Link>

@@ -57,14 +57,14 @@ export default function FeaturedAbout() {
                 ease: 'easeOut',
               }}
             >
-              <h3 className='font-Montserrat text-2xl font-semibold'>Beyond the Border</h3>
+              <h3 className='font-Montserrat text-2xl font-semibold tracking-wider'>Beyond the Border</h3>
               <p className='mt-1 text-base tracking-widest'>境界を越えて</p>
 
               <div className='mt-8'>
                 <p className='text-sm/relaxed tracking-wider'>
                   世の中にはいろんな境界が存在しています。
                   <br />
-                  目には見える境界、見えない境界。越えたくても越えられない境界。「昨日には存在しなかった境界の向こう側」へと踏み出すきっかけを映像や写真を通じて生み出してきます。そして、その過程を「半歩前を歩く黒子」として先導させて頂きます。あなたが境界を越える。それを見た別の誰かが境界を越えてゆく。私たちは、その循環を真摯に生み出し続けていきます。
+                  目には見える境界、見えない境界。越えたくても越えられない境界。「昨日には存在しなかった境界の向こう側」へと踏み出すきっかけを映像や写真を通じて生み出してきます。そして、その過程を「半歩前を歩く黒子」として先導させていただきます。あなたが境界を越える。それを見た別の誰かが境界を越えてゆく。私たちは、その循環を真摯に生み出し続けていきます。
                 </p>
                 <p className='mt-4 font-Montserrat text-sm/relaxed tracking-wider'>
                   There are many borders in this world.
@@ -113,7 +113,9 @@ export default function FeaturedAbout() {
                   ease: 'easeOut',
                 }}
               >
-                <h3 className='font-Montserrat text-2xl font-semibold'>Extracting the one and only story</h3>
+                <h3 className='font-Montserrat text-2xl font-semibold tracking-wider'>
+                  Extracting the one and only story
+                </h3>
                 <p className='mt-1 text-base tracking-widest'>唯一無二のストーリーを抽出する</p>
 
                 <div className='mt-8'>
