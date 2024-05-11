@@ -52,7 +52,14 @@ export function SliderImages() {
       >
         {images.map((src: string, index: number) => (
           <SwiperSlide key={index} className='ease-linear'>
-            <Image src={src} width={1000} height={1000} alt='' sizes='(min-width: 1024px) 100vw, 60vw' />
+            <Image
+              src={src}
+              width={1000}
+              height={1000}
+              className='object-cover h-full'
+              alt=''
+              sizes='(min-width: 1024px) 100vw, 60vw'
+            />
           </SwiperSlide>
         ))}
       </Swiper>
