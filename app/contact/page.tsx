@@ -185,7 +185,7 @@ export default function ContactForm() {
                   友達追加
                 </div>
                 <div className='w-3/5 text-center md:w-1/2'>
-                  <Link href='#' className='inline-block'>
+                  <Link href='https://page.line.me/167gakqf' className='inline-block'>
                     <Image
                       src='/images/line-button.png'
                       alt='友だちを追加'

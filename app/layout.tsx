@@ -1,8 +1,7 @@
 import './globals.css'
 
 import type { Metadata } from 'next'
-import { Lato, Montserrat,Zen_Kaku_Gothic_New } from 'next/font/google'
-import { Suspense } from 'react'
+import { Lato, Montserrat, Zen_Kaku_Gothic_New } from 'next/font/google'
 
 import Footer from '@/components/base/Footer'
 import Header from '@/components/base/Header'
@@ -37,16 +36,14 @@ const zenKaku = Zen_Kaku_Gothic_New({
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <Suspense fallback={'<h1>Loading ...</h1>'}>
-      <html lang='ja' className='overflow-x-hidden md:overflow-x-visible'>
-        <body
-          className={`${montserrat.variable} ${lato.variable} ${zenKaku.className} overflow-x-hidden md:overflow-x-auto`}
-        >
-          <Header />
-          {children}
-          <Footer />
-        </body>
-      </html>
-    </Suspense>
+    <html lang='ja' className='overflow-x-hidden md:overflow-x-visible'>
+      <body
+        className={`${montserrat.variable} ${lato.variable} ${zenKaku.className} overflow-x-hidden md:overflow-x-auto`}
+      >
+        <Header />
+        {children}
+        <Footer />
+      </body>
+    </html>
   )
 }
