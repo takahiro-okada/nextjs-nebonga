@@ -36,7 +36,7 @@ export default function LessonWorks() {
         形態：対面/オンライン
         <br />
       </motion.p>
-      <motion.p
+      <motion.div
         className='mt-6'
         viewport={{ once: true }}
         initial={{ opacity: 0, y: 40 }}
@@ -47,8 +47,11 @@ export default function LessonWorks() {
           ease: 'easeOut',
         }}
       >
-        150件を超える講演実績のもと、講師を育成するアドバイザーもしておりますので、ご自身のプレゼンテーションにお悩みがある方も、お気軽にご相談ください。ご依頼に関しましては、お問い合わせフォームよりご連絡ください。
-      </motion.p>
+        <p>
+          150件を超える講演実績のもと、講師を育成するアドバイザーもしておりますので、ご自身のプレゼンテーションにお悩みがある方も、お気軽にご相談ください。
+        </p>
+        <p className='mt-4'>ご依頼に関しましては、お問い合わせフォームよりご連絡ください。</p>
+      </motion.div>
 
       <ul className='mt-12 grid gap-5 md:grid-cols-4 '>
         <motion.li
