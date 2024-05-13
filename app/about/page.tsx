@@ -1,11 +1,11 @@
+import type { Metadata } from 'next'
 import React from 'react'
 
-import type { Metadata } from 'next'
-import AboutMainVisual from '@/components/pages/AboutMainVisual'
-import AboutSlider from '@/components/pages/AboutSlider'
-import AboutProfile from '@/components/pages/AboutProfile'
-import AboutLogo from '@/components/pages/AboutLogo'
 import AboutCompany from '@/components/pages/AboutCompany'
+import AboutLogo from '@/components/pages/AboutLogo'
+import AboutMainVisual from '@/components/pages/AboutMainVisual'
+import AboutProfile from '@/components/pages/AboutProfile'
+import AboutSlider from '@/components/pages/AboutSlider'
 
 export const metadata: Metadata = {
   title: 'NeBonga | About',

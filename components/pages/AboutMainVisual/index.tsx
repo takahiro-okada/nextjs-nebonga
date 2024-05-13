@@ -1,5 +1,6 @@
 'use client'
 import { motion } from 'framer-motion'
+
 import CommonContainer from '@/components/base/CommonContainer'
 
 export default function AboutMainVisual() {

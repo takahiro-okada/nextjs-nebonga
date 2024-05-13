@@ -56,7 +56,7 @@ export function SliderImages() {
               src={src}
               width={1000}
               height={1000}
-              className='object-cover h-full'
+              className='h-full object-cover'
               alt=''
               sizes='(min-width: 1024px) 100vw, 60vw'
             />
