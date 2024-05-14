@@ -13,14 +13,14 @@ export default function SnsIcons({ className = 'w-8', open = false }: SnsIconsPr
 
   useEffect(() => {
     if (open) {
-      controls.start((i) => ({ opacity: 1, transition: { delay: 0.3 + i * 0.3, duration: 0.5 }, y: 0 }))
+      controls.start({ opacity: 1, transition: { delay: 0.5, duration: 0.5 }, y: 0 })
     } else {
       controls.start({ opacity: 0, y: 10 })
     }
   }, [open, controls])
 
   return (
-    <ul className='flex justify-center gap-4'>
+    <motion.ul initial={{ opacity: 0, y: 10 }} animate={controls} className='flex justify-center gap-4'>
       {[
         { alt: 'Youtube', href: 'https://www.youtube.com/@nebongainc', src: '/images/icon-youtube-black.svg' },
         {
@@ -35,12 +35,12 @@ export default function SnsIcons({ className = 'w-8', open = false }: SnsIconsPr
           src: '/images/icon-facebook-black.svg',
         },
       ].map((link, index) => (
-        <motion.li key={index} custom={index} initial={{ opacity: 0, y: 10 }} animate={controls}>
+        <li key={index}>
           <a target='_blank' href={link.href}>
             <Image src={link.src} alt={link.alt} width={32} height={32} className={`h-full rounded-xl ${className}`} />
           </a>
-        </motion.li>
+        </li>
       ))}
-    </ul>
+    </motion.ul>
   )
 }

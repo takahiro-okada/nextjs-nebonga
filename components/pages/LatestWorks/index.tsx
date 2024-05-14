@@ -10,7 +10,7 @@ export default async function LatestWorks() {
   const posts = await getAllWorks(6)
 
   return (
-    <section className='bg-grayLight pb-40 pt-8'>
+    <section className='bg-grayLight pb-40 pt-10 md:pt-20'>
       <CommonContainer>
         <SectionTitle title='Works' subtitle='制作実績' />
         <div className='mt-8'>

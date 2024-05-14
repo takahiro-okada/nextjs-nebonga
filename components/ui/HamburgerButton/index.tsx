@@ -33,27 +33,27 @@ export default function HamburgerButton({ handleMenuOpen, isScrolled, isTop, ope
   }, [openMenu, controls])
 
   return (
-    <div className='absolute right-3 flex items-center'>
-      <button onClick={handleMenuOpen} type='button' className='z-50 space-y-2 lg:hidden'>
+    <div className='absolute right-4 flex items-center'>
+      <button onClick={handleMenuOpen} type='button' className='z-40 space-y-1.5 lg:hidden'>
         <div
           className={
             openMenu
-              ? 'h-0.5 w-8 translate-y-2.5 rotate-45 bg-black transition duration-500 ease-in-out'
-              : `${borderColor} h-0.5 w-8 transition duration-500 ease-in-out`
+              ? 'h-0.5 w-6 translate-y-2 rotate-45 bg-black transition duration-500 ease-in-out'
+              : `${borderColor} h-0.5 w-6 transition duration-500 ease-in-out`
           }
         />
         <div
           className={
             openMenu
               ? 'opacity-0 transition duration-500 ease-in-out'
-              : `${borderColor} h-0.5 w-8 transition duration-500 ease-in-out`
+              : `${borderColor} h-0.5 w-6 transition duration-500 ease-in-out`
           }
         />
         <div
           className={
             openMenu
-              ? 'h-0.5 w-8 -rotate-45 bg-black transition duration-500 ease-in-out'
-              : `${borderColor} h-0.5 w-8 transition duration-500 ease-in-out`
+              ? 'h-0.5 w-6 -rotate-45 bg-black transition duration-500 ease-in-out'
+              : `${borderColor} h-0.5 w-6 transition duration-500 ease-in-out`
           }
         />
       </button>
@@ -67,14 +67,14 @@ export default function HamburgerButton({ handleMenuOpen, isScrolled, isTop, ope
         <ul>
           {menuItems.map((item, index) => (
             <motion.li key={item.name} custom={index} initial={{ opacity: 0, y: 20 }} animate={controls}>
-              <a href={item.href} className='inline-block py-6 font-Montserrat text-3xl text-black'>
+              <a href={item.href} className='inline-block py-3 font-Montserrat text-base text-black'>
                 {item.name}
               </a>
             </motion.li>
           ))}
         </ul>
         <div className='mt-8'>
-          <SnsIcons className='w-12' open={openMenu} />
+          <SnsIcons className='w-6' open={openMenu} />
         </div>
       </nav>
     </div>

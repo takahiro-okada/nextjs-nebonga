@@ -22,7 +22,7 @@ export default function AboutMainVisual() {
               <span className='absolute right-0 top-0 w-fit translate-x-0 rotate-90 text-sm tracking-widest after:absolute after:top-1/2 after:ml-6 after:inline-block after:h-1 after:w-16 after:border-t after:border-black md:-left-5 md:top-8 lg:after:w-52'>
                 About
               </span>
-              <h1 className='font-Montserrat text-5xl font-extrabold md:text-7xl '>
+              <h1 className='font-Montserrat text-5xl font-bold md:text-7xl '>
                 Passion on
                 <br />
                 the Border
@@ -30,13 +30,13 @@ export default function AboutMainVisual() {
               <p className='mt-6 text-lg'>境界線上の情熱</p>
             </div>
             <div className='md:w-1/2'>
-              <p className='mt-8'>
+              <p className='mt-8 leading-7'>
                 志を持つすべての企業、人の取り組みをビジュアルコンテンツでサポート致します。
                 <br />
                 人は葛藤しながらも、それでも情熱を絶やすことなく、前に進む。
                 その奮闘と熱意の証を残すお手伝いをさせていただきます。
               </p>
-              <p className='mt-8 font-lato leading-7'>
+              <p className='mt-8 font-lato leading-7 tracking-wide'>
                 Our mission is to make better world with people who has passion. We are focusing on not only achieving
                 goals with clients but also knowing subconscious through creating.
               </p>

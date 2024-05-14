@@ -176,17 +176,19 @@ export default function ContactForm() {
           </div>
           <div className='mt-8 md:ml-24 md:mt-0 md:w-1/2'>
             <div className='flex min-h-28 items-center border border-grayDark p-4'>
-              <div className='w-1/2 border-r border-grayDark pr-3  text-center leading-10'>ボタンから友達追加</div>
-              <div className='w-1/2 text-center'>
+              <div className='w-2/5 border-r border-grayDark pr-3  text-center md:w-1/2'>
+                ボタンから
+                <br className='md:hidden' />
+                友達追加
+              </div>
+              <div className='w-3/5 text-center md:w-1/2'>
                 <Link href='https://page.line.me/167gakqf' className='inline-block'>
                   <Image src='/images/line-button.png' alt='友だちを追加' className='w-full' width={144} height={45} />
                 </Link>
               </div>
             </div>
             <div className='mt-6 flex min-h-28 content-center items-center border border-grayDark p-4'>
-              <div className='w-2/3 border-r border-grayDark  text-center leading-10 md:w-1/2'>
-                QRコードから友達追加
-              </div>
+              <div className='w-2/3 border-r border-grayDark  text-center md:w-1/2'>QRコードから友達追加</div>
               <div className='w-1/3 text-center md:w-1/2'>
                 <Image src='/images/line-qrcode.png' alt='QRコード' width={80} height={80} className='inline-block' />
               </div>

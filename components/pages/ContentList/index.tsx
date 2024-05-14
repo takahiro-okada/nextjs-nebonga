@@ -91,11 +91,11 @@ export default function ContentList({ basePath, categoryKey, categoryName, items
                   />
                 </div>
                 <div className='mt-2'>
-                  <p className='text-sm text-gray-500'>{formatDate(item.date)}</p>
-                  <h3 className='mt-2 text-xl'>{item.title}</h3>
+                  <p className='font-Montserrat text-sm text-gray-500'>{formatDate(item.date)}</p>
+                  <h3 className='mt-1 text-base'>{item.title}</h3>
                 </div>
               </Link>
-              <div className='mt-4 flex gap-2 text-sm'>
+              <div className='mt-2 flex gap-2 text-sm'>
                 <CategoryLinks categoryKey={categoryKey} item={item} bathPath={basePath} />
               </div>
             </motion.li>

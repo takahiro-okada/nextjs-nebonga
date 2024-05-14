@@ -6,7 +6,7 @@ import CommonContainer from '@/components/base/CommonContainer'
 
 export default function AboutLogo() {
   return (
-    <section className='mt-12 bg-grayLight py-16' data-section='about-logo'>
+    <section className='mt-12 bg-grayLight pb-16 md:pt-16' data-section='about-logo'>
       <CommonContainer>
         <div className='mx-auto justify-center md:flex md:max-w-[960px] md:gap-10'>
           <div className='mt-6 p-16 md:mt-0 md:w-1/2'>
@@ -34,7 +34,7 @@ export default function AboutLogo() {
                 ease: 'easeOut',
               }}
             >
-              <h2 className='text-3xl'>ロゴに込められた思い</h2>
+              <h2 className='text-3xl font-bold'>ロゴに込められた思い</h2>
             </motion.div>
             <motion.div
               viewport={{ once: true }}
