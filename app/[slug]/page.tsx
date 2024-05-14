@@ -1,3 +1,5 @@
+import type { Metadata } from 'next'
+
 import CommonContainer from '@/components/base/CommonContainer'
 import SideNav from '@/components/base/SideNav'
 import ContentList from '@/components/pages/ContentList'
@@ -7,6 +9,17 @@ import getAllNews from '@/libs/queries/getAllNews'
 import getAllStories from '@/libs/queries/getAllStories'
 import getAllWorks from '@/libs/queries/getAllWorks'
 import { Post } from '@/typs/types'
+
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata | null> {
+  const slug = params.slug
+  // slugの最初の文字を大文字に変更する
+  const title = slug.charAt(0).toUpperCase() + slug.slice(1)
+
+  return {
+    title: `NeBonga | ${title}`,
+    description: '株式会社NeBonga | ドキュメンタリー、ショートフィルム、ソーシャルプロジェクトの映像制作会社です。',
+  }
+}
 
 async function fetchData(slug: string) {
   try {
