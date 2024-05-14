@@ -7,6 +7,7 @@ import getRelatedPost from '@/libs/queries/getRelatedPost'
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata | null> {
   // Get the page.
   const post = await getPostBySlug(params.slug, 'works')
+  const imageUrl = post?.featuredImage?.node?.sourceUrl
 
   // No post? Bail...
   if (!post) {
@@ -16,6 +17,9 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   return {
     title: `NeBonga | ${post.title}`,
     description: '株式会社NeBonga | ドキュメンタリー、ショートフィルム、ソーシャルプロジェクトの映像制作会社です。',
+    openGraph: {
+      images: [imageUrl],
+    },
   }
 }
 

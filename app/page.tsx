@@ -9,6 +9,9 @@ import Cta from '@/components/ui/Cta'
 export const metadata: Metadata = {
   title: 'NeBonga | Documentary Filmmaking',
   description: '株式会社NeBonga | ドキュメンタリー、ショートフィルム、ソーシャルプロジェクトの映像制作会社です。',
+  openGraph: {
+    images: ['./images/ogp.png'],
+  },
 }
 
 export default function Home() {
