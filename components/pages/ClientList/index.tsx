@@ -50,7 +50,7 @@ export default function ClientList() {
                 <Image
                   src={logo.src}
                   alt={logo.alt}
-                  className='aspect-square size-full rounded border bg-white object-contain p-2'
+                  className='aspect-square size-full rounded object-contain p-2'
                   width={200}
                   height={200}
                 />

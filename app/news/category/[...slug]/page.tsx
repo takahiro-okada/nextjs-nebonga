@@ -1,9 +1,16 @@
+import type { Metadata } from 'next'
+
 import CommonContainer from '@/components/base/CommonContainer'
 import SideNav from '@/components/base/SideNav'
 import NewsArticle from '@/components/pages/NewsArticle'
 import PageTitle from '@/components/ui/PageTItle'
 import getCategoryBySlug from '@/libs/queries/getCategoryBySlug'
 import { Post } from '@/typs/types'
+
+export const metadata: Metadata = {
+  title: 'NeBonga | News',
+  description: '株式会社NeBonga | ドキュメンタリー、ショートフィルム、ソーシャルプロジェクトの映像制作会社です。',
+}
 
 export default async function CategoryArchive({ params }: { params: any }) {
   const { nodes: posts, total } = await getCategoryBySlug(params.slug, 10, 'news')

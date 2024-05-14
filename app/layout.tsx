@@ -7,10 +7,13 @@ import Footer from '@/components/base/Footer'
 import Header from '@/components/base/Header'
 
 export const metadata: Metadata = {
-  title: 'NeBonga | Documentary Filmmaking',
-  description: '株式会社NeBonga | ドキュメンタリー、ショートフィルム、ソーシャルプロジェクトの映像制作会社です。',
   icons: {
     icon: '/favicon.ico',
+  },
+  robots: {
+    googleBot: {
+      index: false,
+    },
   },
 }
 
