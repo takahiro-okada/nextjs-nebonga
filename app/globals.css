@@ -7,18 +7,47 @@
 }
 
 /* テーブルブロック */
+h2.wp-block-heading {
+  padding: 15px 10px;
+  border-left: 5px solid #bdc4d0;
+  background: #f5f6f7;
+}
+
+h3.wp-block-heading {
+  position: relative;
+  padding: 10px 10px;
+  border-bottom: 3px solid #edeff1;
+}
+
+h3.wp-block-heading::before {
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 20%;
+  height: 3px;
+  content: '';
+  background: #bdc4d0;
+}
+
+h4.wp-block-heading {
+  padding: 10px 10px;
+  border-bottom: 2px dashed #bdc4d0;
+}
+
 .wp-block-table {
   font-size: 16px;
 }
 /* 引用ブロック */
-pre.wp-block-verse {
-  line-height: 1.75;
+blockquote.wp-block-quote {
   font-size: 16px;
-  padding: 1rem;
-  border-radius: 0.5rem;
+  padding: 20px 20px;
   color: #111827;
   background-color: #f5f6f7;
-  white-space: break-spaces;
+  position: relative;
+}
+
+blockquote.wp-block-quote p {
+  margin: 0;
 }
 
 /* カラーパレット */
