@@ -7,6 +7,7 @@ import MainVisual from '@/components/pages/MainVisual'
 import Cta from '@/components/ui/Cta'
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://nebonga.com'),
   title: 'NeBonga | Documentary Filmmaking',
   description: '株式会社NeBonga | ドキュメンタリー、ショートフィルム、ソーシャルプロジェクトの映像制作会社です。',
   openGraph: {
