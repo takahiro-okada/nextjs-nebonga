@@ -3,9 +3,9 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import CommonContainer from '@/components/base/CommonContainer'
+import CategoryLinks from '@/components/pages/CategoryLinks'
 import CtaButtons from '@/components/ui/CtaButtons'
 import { Post } from '@/typs/types'
-import CategoryLinks from '@/components/pages/CategoryLinks'
 import formatDate from '@/utils/formatDate'
 
 import RelatedPost from '../RelatedPost'
