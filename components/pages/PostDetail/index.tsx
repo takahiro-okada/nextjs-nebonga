@@ -4,7 +4,8 @@ import Link from 'next/link'
 
 import CommonContainer from '@/components/base/CommonContainer'
 import CtaButtons from '@/components/ui/CtaButtons'
-import { Category, Post } from '@/typs/types'
+import { Post } from '@/typs/types'
+import CategoryLinks from '@/components/pages/CategoryLinks'
 import formatDate from '@/utils/formatDate'
 
 import RelatedPost from '../RelatedPost'
@@ -17,8 +18,6 @@ interface PostDetailProps {
 }
 
 export default function PostDetail({ categoryKey, post, relatedPosts, slug }: PostDetailProps) {
-  const categoryData = post[categoryKey]
-  const categories = categoryData?.nodes ? categoryData.nodes : []
   return (
     <main className='mt-24'>
       <CommonContainer>
@@ -28,7 +27,6 @@ export default function PostDetail({ categoryKey, post, relatedPosts, slug }: Po
             <div className='relative aspect-video w-full'>
               <iframe
                 src={`https://www.youtube.com/embed/${post.acf_youtube.youtubeUrl.split('v=')[1]}`}
-                frameBorder='0'
                 allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
                 allowFullScreen
                 className='absolute inset-0 size-full object-cover'
@@ -50,19 +48,7 @@ export default function PostDetail({ categoryKey, post, relatedPosts, slug }: Po
             </p>
             <h1 className='mt-3 text-4xl font-bold' dangerouslySetInnerHTML={{ __html: post.title }} />
             <ul className='mt-4 flex list-none gap-2 p-0'>
-              {categories.map((category: Category) => {
-                const parentSlug = category.parent?.node?.slug ? `${category.parent.node.slug}/` : ''
-                return (
-                  <Link
-                    key={category.name}
-                    className='inline-block rounded-md bg-grayLight p-2 px-3 text-xs'
-                    href={`/${slug}/category/${parentSlug}${category.slug}/`}
-                    passHref
-                  >
-                    {category.name}
-                  </Link>
-                )
-              })}
+              <CategoryLinks categoryKey={categoryKey} item={post} bathPath={slug} />
             </ul>
           </header>
           <div className='prose mx-auto mt-8 max-w-full' dangerouslySetInnerHTML={{ __html: post.content }} />

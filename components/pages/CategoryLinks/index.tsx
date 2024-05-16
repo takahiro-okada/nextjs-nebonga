@@ -20,7 +20,7 @@ export default function CategoryLinks({ bathPath, categoryKey, item }: CategoryL
           })
           .map((category) => (
             <Link
-              key={category.slug} // キーの追加が必要です
+              key={category.databaseId} // キーの追加が必要です
               href={
                 category.parent
                   ? `/${bathPath}/category/${category.parent.node.slug}/${category.slug}`

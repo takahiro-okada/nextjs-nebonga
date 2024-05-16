@@ -31,6 +31,12 @@ export default async function getPostBySlug(slug: string, postType: string) {
             nodes {
               databaseId
               name
+              parent {
+                node {
+                  name
+                  slug
+                }
+              }
             }
           }
           next {
@@ -70,6 +76,12 @@ export default async function getPostBySlug(slug: string, postType: string) {
           nodes {
             databaseId
             name
+            parent {
+              node {
+                name
+                slug
+              }
+            }
           }
         }
         acf_youtube {
@@ -112,6 +124,12 @@ export default async function getPostBySlug(slug: string, postType: string) {
           nodes {
             databaseId
             name
+            parent {
+              node {
+                name
+                slug
+              }
+            }
           }
         }
         next {
