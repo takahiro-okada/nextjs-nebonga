@@ -4,10 +4,10 @@ import CommonContainer from '@/components/base/CommonContainer'
 import WorkItems from '@/components/pages/WorksItems'
 import { Button } from '@/components/ui/Button'
 import { SectionTitle } from '@/components/ui/SectionTitle'
-import getAllWorks from '@/libs/queries/getAllWorks'
+import getTopWors from '@/libs/queries/getTopWorks'
 
 export default async function LatestWorks() {
-  const posts = await getAllWorks(6)
+  const posts = await getTopWors()
 
   return (
     <section className='bg-grayLight pb-40 pt-10 md:pt-20'>
