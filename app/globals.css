@@ -37,9 +37,11 @@ h4.wp-block-heading {
 .wp-block-table {
   font-size: 16px;
 }
+
 /* 引用ブロック */
 blockquote.wp-block-quote {
   font-size: 16px;
+  font-style: normal;
   padding: 20px 20px;
   color: #111827;
   background-color: #f5f6f7;
@@ -48,6 +50,30 @@ blockquote.wp-block-quote {
 
 blockquote.wp-block-quote p {
   margin: 0;
+}
+
+/* ペン */
+.is-style-icon-pen {
+  border-radius: 2px;
+  padding: 1em 1em 1em 4.25em;
+  position: relative;
+  background-color: #f5f6f7;
+}
+
+.is-style-icon-pen::before {
+  content: '';
+  background-image: url(/images/icons/icon-pencil.svg);
+  background-size: contain;
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  font-family: icomoon;
+  font-size: inherit;
+  left: 1.25em;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%) scale(1.5);
+  transform: translateY(-50%) scale(1.5);
 }
 
 /* カラーパレット */
