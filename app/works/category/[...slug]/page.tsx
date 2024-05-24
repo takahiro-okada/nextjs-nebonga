@@ -22,8 +22,6 @@ export default async function CategoryArchive({ params }: { params: { slug: stri
   const categorySlug = pageIndex !== -1 ? slugArray.slice(0, pageIndex) : slugArray
   const offset = (page - 1) * PAGE_SIZE
 
-  console.log('categorySlug:', categorySlug)
-
   const { nodes: works, total } = await getCategoryBySlug(categorySlug, offset, PAGE_SIZE, 'works')
   const categoryNameSlug = categorySlug[categorySlug.length - 1]
   const categoryName = await getCategoryNameBySlug(categoryNameSlug, 'worksCategories')

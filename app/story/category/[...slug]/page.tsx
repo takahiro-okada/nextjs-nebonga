@@ -26,8 +26,6 @@ export default async function CategoryArchive({ params }: { params: { slug: stri
   const categoryNameSlug = categorySlug[categorySlug.length - 1]
   const categoryName = await getCategoryNameBySlug(categoryNameSlug, 'categories')
 
-  console.log('categoryName:', categoryName)
-
   const totalPages = Math.ceil(total / PAGE_SIZE)
 
   return (
