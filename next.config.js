@@ -4,7 +4,7 @@ const nextConfig = {
     ignoreBuildErrors: false,
   },
   images: {
-    domains: ['wp.nebonga.com'], // 画像を取得するホスト名を許可する
+    domains: ['wp.nebonga.com', 'nebonga.local'], // 画像を取得するホスト名を許可する
   },
 }
 

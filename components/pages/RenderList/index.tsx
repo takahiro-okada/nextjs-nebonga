@@ -11,6 +11,7 @@ export function RenderPostList({
   title,
   basePath,
   categoryKey,
+  categoryName,
   currentPage,
   posts,
   subtitle,
@@ -19,6 +20,7 @@ export function RenderPostList({
   title: string
   basePath: string
   categoryKey: 'categories' | 'worksCategories' | 'newsCategories'
+  categoryName: string
   currentPage: number
   posts: Post[]
   subtitle: string
