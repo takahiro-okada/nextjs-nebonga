@@ -20,12 +20,8 @@ export default function CategoryLinks({ bathPath, categoryKey, item }: CategoryL
           })
           .map((category) => (
             <Link
-              key={category.databaseId} // キーの追加が必要です
-              href={
-                category.parent
-                  ? `/${bathPath}/category/${category.parent.node.slug}/${category.slug}`
-                  : `/${bathPath}/category/${category.slug}`
-              }
+              key={category.databaseId}
+              href={category.parent ? `/${bathPath}/${category.slug}` : `/${bathPath}/`}
               className='inline-block rounded-md bg-grayLight px-3 py-1 text-xs'
             >
               {category.name}
