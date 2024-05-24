@@ -1,4 +1,10 @@
-export default function Pagination({ currentPage, totalPages, basePath }) {
+type PaginationProps = {
+  basePath: string
+  currentPage: number
+  totalPages: number
+}
+
+export default function Pagination({ basePath, currentPage, totalPages }: PaginationProps) {
   const getPages = () => {
     let pages = []
     if (totalPages <= 5) {
@@ -14,8 +20,8 @@ export default function Pagination({ currentPage, totalPages, basePath }) {
   }
 
   return (
-    <nav aria-label='Page navigation' className='flex justify-center mt-7'>
-      <ul className='inline-flex gap-2 justify-center -space-x-px text-base h-10'>
+    <nav aria-label='Page navigation' className='mt-7 flex justify-center'>
+      <ul className='inline-flex h-10 justify-center gap-2 -space-x-px text-base'>
         {getPages().map((page, index) =>
           page === '...' ? (
             <li key={index} className='flex items-center justify-center px-2'>
@@ -25,8 +31,8 @@ export default function Pagination({ currentPage, totalPages, basePath }) {
             <li key={page}>
               <a
                 href={`/${basePath}/page/${page}`}
-                className={`flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 ${
-                  currentPage === page ? 'bg-gray-300 border-gray-300' : ''
+                className={`flex h-10 items-center justify-center border border-gray-300 px-4 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 ${
+                  currentPage === page ? 'border-gray-300 bg-grayLight' : ''
                 }`}
               >
                 {page}

@@ -4,7 +4,10 @@ import CommonContainer from '@/components/base/CommonContainer'
 import SideNav from '@/components/base/SideNav'
 import NewsArticle from '@/components/pages/NewsArticle'
 import PageTitle from '@/components/ui/PageTItle'
+import Pagination from '@/components/ui/Pagination'
+import { PAGE_SIZE } from '@/libs/constants'
 import getCategoryBySlug from '@/libs/queries/getCategoryBySlug'
+import getCategoryNameBySlug from '@/libs/queries/getCategoryNameBySlug'
 import { Post } from '@/typs/types'
 
 export const metadata: Metadata = {
@@ -13,7 +16,17 @@ export const metadata: Metadata = {
 }
 
 export default async function CategoryArchive({ params }: { params: any }) {
-  const { nodes: posts, total } = await getCategoryBySlug(params.slug, 10, 'news')
+  const slugArray = params.slug
+  const pageIndex = slugArray.indexOf('page')
+  const page = pageIndex !== -1 ? parseInt(slugArray[pageIndex + 1], 10) : 1
+  const categorySlug = pageIndex !== -1 ? slugArray.slice(0, pageIndex) : slugArray
+  const offset = (page - 1) * PAGE_SIZE
+
+  const { nodes: posts, total } = await getCategoryBySlug(categorySlug, offset, PAGE_SIZE, 'news')
+  const categoryName = await getCategoryNameBySlug(slugArray[slugArray.length - 1], 'newsCategories')
+
+  const totalPages = Math.ceil(total / PAGE_SIZE)
+
   return (
     <main className='mt-32'>
       <CommonContainer>
@@ -25,6 +38,11 @@ export default async function CategoryArchive({ params }: { params: any }) {
                 posts.map((post: Post, index: number) => (
                   <NewsArticle index={index} key={post.databaseId} post={post} />
                 ))}
+              <Pagination
+                currentPage={page}
+                totalPages={totalPages}
+                basePath={`news/category/${categorySlug.join('/')}`}
+              />
             </div>
             <div className='mt-16 md:ml-8 md:mt-0 md:w-full md:max-w-xs md:flex-auto'>
               <SideNav linkPrefix='news' categoryKey='newsCategories' />

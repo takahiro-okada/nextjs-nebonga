@@ -19,11 +19,13 @@ export default function NewsArticle({ index, post }: { index: number; post: Post
           <time className='inline-block' dateTime={post.date}>
             {formatDate(post.date)}
           </time>
-          <div className='ml-4'>
-            <span className='inline-block rounded-md bg-[#EDEDED] p-2 px-3 text-xs'>
-              {post.newsCategories?.nodes.map((category) => category.name).join(', ')}
-            </span>
-          </div>
+          {post.newsCategories?.nodes && post.newsCategories.nodes.length > 0 && (
+            <div className='ml-4'>
+              <span className='inline-block rounded-md bg-[#EDEDED] p-1 px-3 text-xs'>
+                {post.newsCategories.nodes.map((category) => category.name).join(', ')}
+              </span>
+            </div>
+          )}
         </div>
         <h3 className='mt-2 md:ml-8 md:mt-0 md:w-3/4'>{post.title}</h3>
       </Link>

@@ -1,7 +1,6 @@
-// GraphQLクエリをフェッチする関数
+// libs/queries/getCategoryBySlug.ts
 import { fetchGraphQL } from '../functions'
 
-// ベースとなるフィールド定義を返す関数
 function getBaseFields(): string {
   return `
     date
@@ -31,15 +30,18 @@ function getBaseFields(): string {
   `
 }
 
-// カテゴリに応じたクエリを構築する関数
-function buildQuery(category: string, lastSlug: string, limit: number): string {
+function buildQuery(category: string, slugs: string[], offset: number, limit: number): string {
   const baseFields = getBaseFields()
+
+  // 親子カテゴリの処理
+  const parentSlug = slugs.length > 1 ? slugs.slice(0, -1).join('/') : null
+  const lastSlug = slugs[slugs.length - 1]
 
   switch (category) {
     case 'story':
       return `
         query getCategoryBySlug {
-          posts(where: {categoryName: "${lastSlug}"}, first: ${limit}) {
+          posts(where: {categoryName: "${lastSlug}", offsetPagination: {offset: ${offset}, size: ${limit}}}) {
             nodes {
               ${baseFields}
             }
@@ -52,25 +54,52 @@ function buildQuery(category: string, lastSlug: string, limit: number): string {
         }
       `
     case 'works':
-    case 'news':
-      const postField = category === 'works' ? 'works' : 'newslist'
-      const categoryField = category === 'works' ? 'worksCategories' : 'newsCategories'
       return `
         query getCategoryBySlug {
-          ${postField}(where: {
+          works(where: {
             taxQuery: {
               taxArray: [
                 {
                   terms: ["${lastSlug}"],
-                  taxonomy: ${category.toUpperCase() + 'CATEGORY'},
+                  taxonomy: WORKSCATEGORY,
                   operator: IN,
                   field: SLUG
                 }
+                ${parentSlug ? `, { terms: ["${parentSlug}"], taxonomy: WORKSCATEGORY, operator: IN, field: SLUG }` : ''}
               ]
-            }
-          }, first: ${limit}) {
+            },
+            offsetPagination: {offset: ${offset}, size: ${limit}}
+          }) {
             nodes {
-              ${baseFields.replace('categories', categoryField)}
+              ${baseFields.replace('categories', 'worksCategories')}
+            }
+            pageInfo {
+              offsetPagination {
+                total
+              }
+            }
+          }
+        }
+      `
+    case 'news':
+      return `
+        query getCategoryBySlug {
+          newslist(where: {
+            taxQuery: {
+              taxArray: [
+                {
+                  terms: ["${lastSlug}"],
+                  taxonomy: NEWSCATEGORY,
+                  operator: IN,
+                  field: SLUG
+                }
+                ${parentSlug ? `, { terms: ["${parentSlug}"], taxonomy: NEWSCATEGORY, operator: IN, field: SLUG }` : ''}
+              ]
+            },
+            offsetPagination: {offset: ${offset}, size: ${limit}}
+          }) {
+            nodes {
+              ${baseFields.replace('categories', 'newsCategories')}
             }
             pageInfo {
               offsetPagination {
@@ -85,12 +114,8 @@ function buildQuery(category: string, lastSlug: string, limit: number): string {
   }
 }
 
-// カテゴリとスラグからデータを取得するメインの非同期関数
-export default async function getCategoryBySlug(slug: [string, string] | string, limit = 10, category = 'story') {
-  const slugs = Array.isArray(slug) ? slug : [slug]
-  const lastSlug = slugs.at(-1) || ''
-
-  const query = buildQuery(category, lastSlug, limit)
+export default async function getCategoryBySlug(slugs: string[], offset = 0, limit = 10, category = 'story') {
+  const query = buildQuery(category, slugs, offset, limit)
 
   const response = await fetchGraphQL(query, {})
 

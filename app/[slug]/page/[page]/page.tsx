@@ -1,14 +1,15 @@
 import type { Metadata } from 'next'
+
 import CommonContainer from '@/components/base/CommonContainer'
-import { fetchData } from '@/libs/fetchData'
-import { RenderPostList, RenderNewsList } from '@/components/pages/RenderList'
-import { Post } from '@/typs/types'
+import { RenderNewsList,RenderPostList } from '@/components/pages/RenderList'
 import { PAGE_SIZE } from '@/libs/constants'
+import { fetchData } from '@/libs/fetchData'
+import { Post } from '@/typs/types'
 
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string; page: string }
+  params: { page: string; slug: string }
 }): Promise<Metadata | null> {
   const slug = params.slug
   const title = slug.charAt(0).toUpperCase() + slug.slice(1)
@@ -19,7 +20,7 @@ export async function generateMetadata({
   }
 }
 
-export default async function Archive({ params }: { params: { slug: string; page: string } }) {
+export default async function Archive({ params }: { params: { page: string; slug: string } }) {
   const slug = params.slug
   const page = parseInt(params.page, 10) || 1
 

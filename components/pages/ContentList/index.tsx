@@ -28,7 +28,7 @@ export default function ContentList({ basePath, categoryKey, categoryName, items
       <div className='my-16'>
         <p>まだ投稿がありません。投稿されるまでの間はSNSを見て楽しんでください。</p>
         <div className='mt-8'>
-          <SnsIcons />
+          <SnsIcons open />
         </div>
       </div>
     )

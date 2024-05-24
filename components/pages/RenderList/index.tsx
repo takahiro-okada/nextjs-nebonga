@@ -1,30 +1,28 @@
 // components/RenderList.tsx
-import PageTitle from '@/components/ui/PageTItle'
-import ContentList from '@/components/pages/ContentList'
 import SideNav from '@/components/base/SideNav'
+import ContentList from '@/components/pages/ContentList'
 import NewsArticle from '@/components/pages/NewsArticle'
-import { Post } from '@/typs/types'
+import PageTitle from '@/components/ui/PageTItle'
 import Pagination from '@/components/ui/Pagination'
 import { PAGE_SIZE } from '@/libs/constants'
+import { Post } from '@/typs/types'
 
 export function RenderPostList({
   title,
   basePath,
   categoryKey,
-  categoryName,
+  currentPage,
   posts,
   subtitle,
   total,
-  currentPage,
 }: {
   title: string
   basePath: string
   categoryKey: 'categories' | 'worksCategories' | 'newsCategories'
-  categoryName: string
+  currentPage: number
   posts: Post[]
   subtitle: string
   total: number
-  currentPage: number
 }) {
   const totalPages = Math.ceil(total / PAGE_SIZE)
 
@@ -46,13 +44,13 @@ export function RenderPostList({
 
 export function RenderNewsList({
   categoryKey,
-  posts,
   currentPage,
+  posts,
   total,
 }: {
   categoryKey: 'newsCategories'
-  posts: Post[]
   currentPage: number
+  posts: Post[]
   total: number
 }) {
   const totalPages = Math.ceil(total / PAGE_SIZE)
