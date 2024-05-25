@@ -20,7 +20,7 @@ interface ContentListProps {
 }
 
 export default function ContentList({ basePath, categoryKey, categoryName, items, total }: ContentListProps) {
-  const [showMenu, setShowMenu] = useState(false) // メニュー表示状態の管理
+  const [showMenu, setShowMenu] = useState(false)
   const categories = useCategoriesHierarchy(categoryKey)
 
   if (!items || items.length === 0) {

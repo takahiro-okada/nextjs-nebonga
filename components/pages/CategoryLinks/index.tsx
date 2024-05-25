@@ -18,15 +18,19 @@ export default function CategoryLinks({ bathPath, categoryKey, item }: CategoryL
             if (a.parent && !b.parent) return 1
             return 0
           })
-          .map((category) => (
-            <Link
-              key={category.databaseId}
-              href={category.parent ? `/${bathPath}/${category.slug}` : `/${bathPath}/`}
-              className='inline-block rounded-md bg-grayLight px-3 py-1 text-xs'
-            >
-              {category.name}
-            </Link>
-          ))}
+          .map((category) => {
+            // 親カテゴリのスラッグを含める
+            const parentSlug = category.parent ? `${category.parent.node.slug}/` : ''
+            return (
+              <Link
+                key={category.databaseId}
+                href={`/${bathPath}/category/${parentSlug}${category.slug}`}
+                className='inline-block rounded-md bg-grayLight px-3 py-1 text-xs'
+              >
+                {category.name}
+              </Link>
+            )
+          })}
     </>
   )
 }
