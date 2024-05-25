@@ -18,9 +18,7 @@ export default function ClientList() {
             ease: 'easeOut',
           }}
         >
-          <h2 className='text-center font-Montserrat text-2xl font-bold tracking-widest md:text-[28px]'>
-            Our Client
-          </h2>
+          <h2 className='text-center font-Montserrat text-2xl font-bold tracking-widest md:text-[28px]'>Our Client</h2>
         </motion.div>
         <CommonContainer>
           <div className='mx-auto mt-6 grid grid-cols-2 justify-center gap-4 p-5 align-middle md:max-w-4xl md:grid-cols-5'>
@@ -32,7 +30,7 @@ export default function ClientList() {
               { alt: 'キャディ株式会社のロゴ', src: '/images/company-logos/logo-caddi.png' },
               { alt: '株式会社マキノハラボのロゴ', src: '/images/company-logos/logo-makilabo.jpg' },
               { alt: '神戸アスリートタウンクラブのロゴ', src: '/images/company-logos/logo-kobe-athlete.png' },
-              { alt: 'CCCメディアハウスのロゴ', src: '/images/company-logos/logo-ccc.jpg' },
+              { alt: 'CCCメディアハウスのロゴ', src: '/images/company-logos/logo-ccc.png' },
               { alt: '株式カイシャエコリングのロゴ', src: '/images/company-logos/logo-ecoring.png' },
               { alt: '認定NPG法人コクレオの森のロゴ', src: '/images/company-logos/logo-kokureo.png' },
             ].map((logo, index) => (
