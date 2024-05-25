@@ -10,11 +10,6 @@ export const metadata: Metadata = {
   icons: {
     icon: '/favicon.ico',
   },
-  robots: {
-    googleBot: {
-      index: false,
-    },
-  },
 }
 
 export const montserrat = Montserrat({
