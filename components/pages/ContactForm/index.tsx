@@ -95,6 +95,7 @@ export default function ContactForm() {
                 <label className='mb-2 block font-medium text-gray-900'>お名前 Name</label>
                 <input
                   {...register('form-name', { required: 'お名前を入力してください。' })}
+                  name='name'
                   className='block w-full rounded-lg  bg-grayLight p-2.5 text-gray-900'
                 />
                 {errors['form-name']?.message && (
@@ -105,6 +106,7 @@ export default function ContactForm() {
                 <label className='mb-2 block font-medium text-gray-900'>メールアドレス Email</label>
                 <input
                   {...register('email', { required: 'メールアドレスを入力してください。' })}
+                  name='email'
                   className='block w-full rounded-lg  bg-grayLight p-2.5 text-gray-900'
                 />
                 {errors.email?.message && <p className='text-[12px] text-red-500'>{errors.email.message as string}</p>}
@@ -113,6 +115,7 @@ export default function ContactForm() {
                 <label className='mb-2 block font-medium text-gray-900'>ご相談内容 Subject</label>
                 <input
                   {...register('subject', { required: 'ご相談内容を入力してください。' })}
+                  name='subject'
                   className='block w-full rounded-lg  bg-grayLight p-2.5 text-gray-900'
                 />
                 {errors.subject?.message && (
@@ -125,6 +128,7 @@ export default function ContactForm() {
                 </label>
                 <textarea
                   {...register('message', { required: 'ご相談の詳細を入力してください。' })}
+                  name='message'
                   className='block min-h-48 w-full  rounded-lg bg-grayLight p-2.5 text-gray-900'
                 />
                 {errors.message?.message && (
