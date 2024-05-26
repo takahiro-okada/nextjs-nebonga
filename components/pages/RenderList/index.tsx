@@ -11,20 +11,20 @@ export function RenderPostList({
   title,
   basePath,
   categoryKey,
-  slug,
   categoryName,
   currentPage,
   posts,
+  slug,
   subtitle,
   total,
 }: {
   title: string
   basePath: string
-  slug: string
   categoryKey: 'categories' | 'worksCategories' | 'newsCategories'
   categoryName: string
   currentPage: number
   posts: Post[]
+  slug: string
   subtitle: string
   total: number
 }) {

@@ -37,6 +37,7 @@ export default async function CategoryArchive({ params }: { params: { slug: stri
             <div className='flex-auto'>
               <ContentList
                 items={works}
+                slug='hogehoge'
                 basePath={`works/category/${categorySlug.join('/')}`}
                 categoryKey='worksCategories'
                 total={total}

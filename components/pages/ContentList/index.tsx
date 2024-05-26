@@ -14,13 +14,13 @@ import formatDate from '@/utils/formatDate'
 interface ContentListProps {
   basePath: string
   categoryKey: 'categories' | 'worksCategories' | 'newsCategories'
-  slug: string
   categoryName: string
   items: Post[]
+  slug: string
   total: number
 }
 
-export default function ContentList({ basePath, categoryKey, categoryName, slug, items, total }: ContentListProps) {
+export default function ContentList({ basePath, categoryKey, categoryName, items, slug, total }: ContentListProps) {
   const [showMenu, setShowMenu] = useState(false)
   const categories = useCategoriesHierarchy(categoryKey)
 
