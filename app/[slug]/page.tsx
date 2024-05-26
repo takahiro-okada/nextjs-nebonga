@@ -45,6 +45,7 @@ export default async function Archive({ params }: { params: { slug: string } }) 
               <>
                 <RenderPostList
                   posts={posts}
+                  slug={slug}
                   title={context}
                   subtitle={subtitle}
                   basePath={basePath}

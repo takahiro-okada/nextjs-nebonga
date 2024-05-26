@@ -11,6 +11,7 @@ export function RenderPostList({
   title,
   basePath,
   categoryKey,
+  slug,
   categoryName,
   currentPage,
   posts,
@@ -19,6 +20,7 @@ export function RenderPostList({
 }: {
   title: string
   basePath: string
+  slug: string
   categoryKey: 'categories' | 'worksCategories' | 'newsCategories'
   categoryName: string
   currentPage: number
@@ -27,13 +29,19 @@ export function RenderPostList({
   total: number
 }) {
   const totalPages = Math.ceil(total / PAGE_SIZE)
-
   return (
     <>
       <PageTitle title={title} subtitle={subtitle} />
       <div className='mt-8 md:flex'>
         <div className='flex-auto'>
-          <ContentList items={posts} basePath={basePath} categoryKey={categoryKey} total={total} categoryName='ALL' />
+          <ContentList
+            items={posts}
+            basePath={basePath}
+            categoryKey={categoryKey}
+            total={total}
+            slug={slug}
+            categoryName='ALL'
+          />
           <Pagination currentPage={currentPage} totalPages={totalPages} basePath={basePath} />
         </div>
         <div className='mt-16 md:ml-8 md:mt-0 md:w-full md:max-w-xs md:flex-auto'>

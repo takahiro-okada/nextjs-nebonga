@@ -21,10 +21,11 @@ export default function CategoryLinks({ bathPath, categoryKey, item }: CategoryL
           .map((category) => {
             // 親カテゴリのスラッグを含める
             const parentSlug = category.parent ? `${category.parent.node.slug}/` : ''
+            console.log(parentSlug)
             return (
               <Link
                 key={category.databaseId}
-                href={`/${bathPath}/category/${parentSlug}${category.slug}`}
+                href={`/${bathPath}/category/${parentSlug}${category.slug}/`}
                 className='inline-block rounded-md bg-grayLight px-3 py-1 text-xs'
               >
                 {category.name}

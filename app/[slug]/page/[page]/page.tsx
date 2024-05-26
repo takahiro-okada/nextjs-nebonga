@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 import CommonContainer from '@/components/base/CommonContainer'
-import { RenderNewsList,RenderPostList } from '@/components/pages/RenderList'
+import { RenderNewsList, RenderPostList } from '@/components/pages/RenderList'
 import { PAGE_SIZE } from '@/libs/constants'
 import { fetchData } from '@/libs/fetchData'
 import { Post } from '@/typs/types'
@@ -50,6 +50,7 @@ export default async function Archive({ params }: { params: { page: string; slug
             {posts && posts.length > 0 ? (
               <RenderPostList
                 posts={posts}
+                slug={slug}
                 title={context}
                 subtitle={subtitle}
                 basePath={basePath}

@@ -14,12 +14,13 @@ import formatDate from '@/utils/formatDate'
 interface ContentListProps {
   basePath: string
   categoryKey: 'categories' | 'worksCategories' | 'newsCategories'
+  slug: string
   categoryName: string
   items: Post[]
   total: number
 }
 
-export default function ContentList({ basePath, categoryKey, categoryName, items, total }: ContentListProps) {
+export default function ContentList({ basePath, categoryKey, categoryName, slug, items, total }: ContentListProps) {
   const [showMenu, setShowMenu] = useState(false)
   const categories = useCategoriesHierarchy(categoryKey)
 
@@ -72,6 +73,7 @@ export default function ContentList({ basePath, categoryKey, categoryName, items
       </div>
       <ul className='mt-5 grid gap-y-10 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-16'>
         {items?.map((item, index) => {
+          console.log('item', item)
           return (
             <motion.li
               key={item.slug}
@@ -79,7 +81,7 @@ export default function ContentList({ basePath, categoryKey, categoryName, items
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 + index * 0.3, duration: 0.5 }}
             >
-              <Link href={`/${basePath}/${item.slug}/`} className='group'>
+              <Link href={`/${slug}/${item.slug}/`} className='group'>
                 <div className='relative aspect-video h-auto w-full overflow-hidden rounded-md'>
                   <div className='absolute left-0 top-0 z-10 size-full bg-black opacity-30'></div>
                   <Image
