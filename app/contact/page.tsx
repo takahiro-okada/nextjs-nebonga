@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
-import CommonContainer from '@/components/base/CommonContainer'
-import PageTitle from '@/components/ui/PageTItle'
 
+import CommonContainer from '@/components/base/CommonContainer'
 import ContactForm from '@/components/pages/ContactForm'
+import PageTitle from '@/components/ui/PageTItle'
 
 export const metadata: Metadata = {
   title: 'NeBonga | Contact',
