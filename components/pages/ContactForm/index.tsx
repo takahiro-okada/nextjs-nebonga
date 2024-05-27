@@ -99,7 +99,7 @@ export default function ContactForm() {
               netlify-honeypot='bot-field'
               data-netlify='true'
             >
-              <input type='hidden' name='bot-field' />
+              <input type='hidden' name='form-name' value='contact' />
               <div className='form-item'>
                 <span className='form-item-name'>お名前</span>
 
