@@ -7,30 +7,30 @@ import CommonContainer from '@/components/base/CommonContainer'
 import PageTitle from '@/components/ui/PageTItle'
 
 export default function ContactForm() {
-  const {
-    formState: { errors },
-    handleSubmit,
-    register,
-  } = useForm()
+  // const {
+  //   formState: { errors },
+  //   handleSubmit,
+  //   register,
+  // } = useForm()
 
-  const onSubmit = async (data: any) => {
-    const formData = new FormData()
-    formData.append('form-name', 'contact')
-    Object.keys(data).forEach((key) => {
-      formData.append(key, data[key])
-    })
+  // const onSubmit = async (data: any) => {
+  //   const formData = new FormData()
+  //   formData.append('form-name', 'contact')
+  //   Object.keys(data).forEach((key) => {
+  //     formData.append(key, data[key])
+  //   })
 
-    try {
-      const response = await axios.post('/', formData, {
-        headers: { 'Content-Type': 'multipart/form-data' },
-      })
-      if (response.status === 200) {
-        window.location.href = '/thanks'
-      }
-    } catch (error) {
-      console.error('Submission failed:', error)
-    }
-  }
+  //   try {
+  //     const response = await axios.post('/', formData, {
+  //       headers: { 'Content-Type': 'multipart/form-data' },
+  //     })
+  //     if (response.status === 200) {
+  //       window.location.href = '/thanks'
+  //     }
+  //   } catch (error) {
+  //     console.error('Submission failed:', error)
+  //   }
+  // }
 
   return (
     <CommonContainer>
@@ -90,7 +90,7 @@ export default function ContactForm() {
               ease: 'easeOut',
             }}
           >
-            <form onSubmit={handleSubmit(onSubmit)}>
+            {/* <form onSubmit={handleSubmit(onSubmit)}>
               <div className='mb-5'>
                 <label className='mb-2 block font-medium text-gray-900'>お名前 Name</label>
                 <input
@@ -138,6 +138,34 @@ export default function ContactForm() {
               >
                 送信する
               </button>
+            </form> */}
+            <form name='contact' method='POST' data-netlify='true'>
+              <p>
+                <label>
+                  Your Name: <input type='text' name='name' />
+                </label>
+              </p>
+              <p>
+                <label>
+                  Your Email: <input type='email' name='email' />
+                </label>
+              </p>
+              <p>
+                <label>
+                  <select name='role[]' multiple>
+                    <option value='leader'>Leader</option>
+                    <option value='follower'>Follower</option>
+                  </select>
+                </label>
+              </p>
+              <p>
+                <label>
+                  Message: <textarea name='message'></textarea>
+                </label>
+              </p>
+              <p>
+                <button type='submit'>Send</button>
+              </p>
             </form>
           </motion.div>
         </div>
