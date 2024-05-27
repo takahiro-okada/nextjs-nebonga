@@ -12,7 +12,6 @@ export const metadata: Metadata = {
 export default function Contact() {
   return (
     <main className='mt-32'>
-      <ContactForm />
       <CommonContainer>
         <section>
           <PageTitle title='Contact' subtitle='写真撮影、映像制作等のご依頼・ご相談窓口です。' />
