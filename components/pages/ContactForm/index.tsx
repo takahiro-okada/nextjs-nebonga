@@ -1,6 +1,3 @@
-'use client'
-import { motion } from 'framer-motion'
-
 import CommonContainer from '@/components/base/CommonContainer'
 import PageTitle from '@/components/ui/PageTItle'
 
@@ -36,58 +33,14 @@ export default function ContactForm() {
         <PageTitle title='Contact' subtitle='写真撮影、映像制作等のご依頼・ご相談窓口です。' />
         <div className='mt-11 md:mt-28 md:flex'>
           <div className='md:w-1/2'>
-            <motion.h3
-              className='text-2xl font-bold md:text-3xl'
-              viewport={{ once: true }}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{
-                delay: 0.5,
-                duration: 0.8,
-                ease: 'easeOut',
-              }}
-            >
-              フォームからのお問い合わせ
-            </motion.h3>
-            <motion.p
-              className='mt-6'
-              viewport={{ once: true }}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{
-                delay: 0.5,
-                duration: 0.8,
-                ease: 'easeOut',
-              }}
-            >
+            <h3>フォームからのお問い合わせ</h3>
+            <p>
               お手数ですが、右の項目をご記入の上「同意して送信する」ボタンを押してください。
               詳しくご記入いただけますと、ご契約までがスムーズになると思いますので、よろしくお願いいたします。
-            </motion.p>
-            <motion.p
-              className='mt-7 text-sm'
-              viewport={{ once: true }}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{
-                delay: 0.5,
-                duration: 0.8,
-                ease: 'easeOut',
-              }}
-            >
-              ※3営業日以内に担当者よりご連絡させていただきます
-            </motion.p>
+            </p>
+            <p className='mt-7 text-sm'>※3営業日以内に担当者よりご連絡させていただきます</p>
           </div>
-          <motion.div
-            className='mt-8 md:ml-24 md:mt-0 md:w-1/2'
-            viewport={{ once: true }}
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{
-              delay: 0.5,
-              duration: 0.8,
-              ease: 'easeOut',
-            }}
-          >
+          <div className='mt-8 md:ml-24 md:mt-0 md:w-1/2'>
             {/* <form onSubmit={handleSubmit(onSubmit)}>
               <div className='mb-5'>
                 <label className='mb-2 block font-medium text-gray-900'>お名前 Name</label>
@@ -252,7 +205,7 @@ export default function ContactForm() {
                 <input type='submit' name='' value='送信' className='m-btn' />
               </div>
             </form>
-          </motion.div>
+          </div>
         </div>
       </section>
     </CommonContainer>
