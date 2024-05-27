@@ -90,11 +90,12 @@ export default function ContactForm() {
               ease: 'easeOut',
             }}
           >
-            <form onSubmit={handleSubmit(onSubmit)} data-netlify='true' data-netlify-honeypot='bot-field'>
+            <form onSubmit={handleSubmit(onSubmit)}>
               <input type='hidden' name='form-name' value='contact' />
               <div className='mb-5'>
                 <label className='mb-2 block font-medium text-gray-900'>お名前 Name</label>
                 <input
+                  type='text'
                   {...register('name', { required: 'お名前を入力してください。' })}
                   className='block w-full rounded-lg  bg-grayLight p-2.5 text-gray-900'
                 />
@@ -103,6 +104,7 @@ export default function ContactForm() {
               <div className='mb-5'>
                 <label className='mb-2 block font-medium text-gray-900'>メールアドレス Email</label>
                 <input
+                  type='email'
                   {...register('email', { required: 'メールアドレスを入力してください。' })}
                   className='block w-full rounded-lg bg-grayLight p-2.5 text-gray-900'
                 />
@@ -111,6 +113,7 @@ export default function ContactForm() {
               <div className='mb-5'>
                 <label className='mb-2 block font-medium text-gray-900'>ご相談内容 Subject</label>
                 <input
+                  type='text'
                   {...register('subject', { required: 'ご相談内容を入力してください。' })}
                   className='block w-full rounded-lg bg-grayLight p-2.5 text-gray-900'
                 />
