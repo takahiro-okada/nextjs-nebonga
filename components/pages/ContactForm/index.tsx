@@ -91,7 +91,6 @@ export default function ContactForm() {
             }}
           >
             <form onSubmit={handleSubmit(onSubmit)}>
-              <input type='hidden' name='form-name' value='contact' />
               <div className='mb-5'>
                 <label className='mb-2 block font-medium text-gray-900'>お名前 Name</label>
                 <input
