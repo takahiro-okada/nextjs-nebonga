@@ -1,7 +1,5 @@
 'use client'
-import axios from 'axios'
 import { motion } from 'framer-motion'
-import { useForm } from 'react-hook-form'
 
 import CommonContainer from '@/components/base/CommonContainer'
 import PageTitle from '@/components/ui/PageTItle'
