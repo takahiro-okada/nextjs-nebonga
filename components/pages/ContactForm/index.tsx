@@ -1,31 +1,34 @@
+'use client'
+import axios from 'axios'
+import { useForm } from 'react-hook-form'
 import CommonContainer from '@/components/base/CommonContainer'
 import PageTitle from '@/components/ui/PageTItle'
 
 export default function ContactForm() {
-  // const {
-  //   formState: { errors },
-  //   handleSubmit,
-  //   register,
-  // } = useForm()
+  const {
+    formState: { errors },
+    handleSubmit,
+    register,
+  } = useForm()
 
-  // const onSubmit = async (data: any) => {
-  //   const formData = new FormData()
-  //   formData.append('form-name', 'contact')
-  //   Object.keys(data).forEach((key) => {
-  //     formData.append(key, data[key])
-  //   })
+  const onSubmit = async (data: any) => {
+    const formData = new FormData()
+    formData.append('form-name', 'contact')
+    Object.keys(data).forEach((key) => {
+      formData.append(key, data[key])
+    })
 
-  //   try {
-  //     const response = await axios.post('/', formData, {
-  //       headers: { 'Content-Type': 'multipart/form-data' },
-  //     })
-  //     if (response.status === 200) {
-  //       window.location.href = '/thanks'
-  //     }
-  //   } catch (error) {
-  //     console.error('Submission failed:', error)
-  //   }
-  // }
+    try {
+      const response = await axios.post('/__forms.html', formData, {
+        headers: { 'Content-Type': 'multipart/form-data' },
+      })
+      if (response.status === 200) {
+        window.location.href = '/thanks'
+      }
+    } catch (error) {
+      console.error('Submission failed:', error)
+    }
+  }
 
   return (
     <CommonContainer>
@@ -41,7 +44,7 @@ export default function ContactForm() {
             <p className='mt-7 text-sm'>※3営業日以内に担当者よりご連絡させていただきます</p>
           </div>
           <div className='mt-8 md:ml-24 md:mt-0 md:w-1/2'>
-            {/* <form onSubmit={handleSubmit(onSubmit)}>
+            <form onSubmit={handleSubmit(onSubmit)}>
               <div className='mb-5'>
                 <label className='mb-2 block font-medium text-gray-900'>お名前 Name</label>
                 <input
@@ -89,121 +92,6 @@ export default function ContactForm() {
               >
                 送信する
               </button>
-            </form> */}
-
-            <form
-              name='contact'
-              method='POST'
-              action='/thanks'
-              className='form'
-              netlify-honeypot='bot-field'
-              data-netlify='true'
-            >
-              <input type='hidden' name='form-name' value='contact' />
-              <div className='form-item'>
-                <span className='form-item-name'>お名前</span>
-
-                <div className='form-item-body'>
-                  <div className='form-item-text'>
-                    <input type='text' name='name' className='m-form-text' required />
-                  </div>
-                </div>
-              </div>
-
-              <div className='form-item'>
-                <span className='form-item-name'>個人 / 法人</span>
-
-                <div className='form-item-body'>
-                  <div className='m-form-radio'>
-                    <div className=''>
-                      <label>
-                        <input type='radio' name='customer-type' value='個人' required />
-                        <span className='m-form-radio-name'>
-                          <span className='m-form-radio-text'>個人</span>
-                        </span>
-                      </label>
-                    </div>
-
-                    <div className=''>
-                      <label>
-                        <input type='radio' name='customer-type' value='法人' />
-                        <span className='m-form-radio-name'>
-                          <span className='m-form-radio-text'>法人</span>
-                        </span>
-                      </label>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className='form-item'>
-                <span className='form-item-name'>ご依頼内容</span>
-
-                <div className='form-item-body'>
-                  <div className='m-form-checkbox'>
-                    <div className=''>
-                      <label>
-                        <input type='checkbox' name='service-menu[]' value='ウェブサイト制作' />
-                        <span className='m-form-checkbox-name'>
-                          <span className='m-form-checkbox-text'>ウェブサイト制作</span>
-                        </span>
-                      </label>
-                    </div>
-
-                    <div className=''>
-                      <label>
-                        <input type='checkbox' name='service-menu[]' value='ウェブサービス制作' />
-                        <span className='m-form-checkbox-name'>
-                          <span className='m-form-checkbox-text'>ウェブサービス制作</span>
-                        </span>
-                      </label>
-                    </div>
-
-                    <div className=''>
-                      <label>
-                        <input type='checkbox' name='service-menu[]' value='グラフィックデザイン' />
-                        <span className='m-form-checkbox-name'>
-                          <span className='m-form-checkbox-text'>グラフィックデザイン</span>
-                        </span>
-                      </label>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className='form-item'>
-                <span className='form-item-name'>ご希望納期</span>
-
-                <div className='form-item-body'>
-                  <div className='form-item-select'>
-                    <div className='m-form-select'>
-                      <select name='schedule[]' required>
-                        <option value='' disabled selected>
-                          選択してください
-                        </option>
-                        <option value='1ヶ月以内'>1ヶ月以内</option>
-                        <option value='2ヶ月以内'>2ヶ月以内</option>
-                        <option value='3ヶ月以内'>3ヶ月以内</option>
-                        <option value='未定'>未定</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className='form-item'>
-                <span className='form-item-name'>メッセージ</span>
-
-                <div className='form-item-body'>
-                  <div className='form-item-textarea'>
-                    <textarea name='message' className='m-form-textarea' required></textarea>
-                  </div>
-                </div>
-              </div>
-
-              <div className='recaptcha-item'>
-                <div data-netlify-recaptcha='true'></div>
-              </div>
-              <div className='m-btn-wrap'>
-                <input type='submit' name='' value='送信' className='m-btn' />
-              </div>
             </form>
           </div>
         </div>
