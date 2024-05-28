@@ -74,14 +74,7 @@ export default function Contact() {
               </button>
             </form> */}
 
-              <form
-                name='contact'
-                method='POST'
-                action='/thanks'
-                className='form'
-                netlify-honeypot='bot-field'
-                data-netlify='true'
-              >
+              <form name='contact' method='POST' action='/thanks' className='form' netlify-honeypot='bot-field' netlify>
                 <input type='hidden' name='form-name' value='contact' />
                 <div className='form-item'>
                   <span className='form-item-name'>お名前</span>
