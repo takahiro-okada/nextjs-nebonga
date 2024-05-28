@@ -21,7 +21,7 @@ export default function ContactForm() {
     })
 
     try {
-      const response = await axios.post('/', formData, {
+      const response = await axios.post('/__forms.html', formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       })
       console.log('response:', response)
