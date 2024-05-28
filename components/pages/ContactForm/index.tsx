@@ -25,7 +25,6 @@ export default function ContactForm() {
         headers: { 'Content-Type': 'multipart/form-data' },
       })
       console.log('response:', response)
-      return
       if (response.status === 200) {
         window.location.href = '/thanks'
       }
