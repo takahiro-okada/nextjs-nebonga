@@ -70,12 +70,10 @@ export default function ContactForm() {
                 <label className='mb-2 block font-medium text-gray-900'>ご相談内容 Subject</label>
                 <input
                   type='text'
-                  {...register('subject', { required: 'ご相談内容を入力してください。' })}
+                  {...register('title', { required: 'ご相談内容を入力してください。' })}
                   className='block w-full rounded-lg bg-grayLight p-2.5 text-gray-900'
                 />
-                {errors.subject?.message && (
-                  <p className='text-[12px] text-red-500'>{errors.subject.message as string}</p>
-                )}
+                {errors.title?.message && <p className='text-[12px] text-red-500'>{errors.title.message as string}</p>}
               </div>
               <div className='mb-5'>
                 <label className='mb-2 block font-medium text-gray-900'>
