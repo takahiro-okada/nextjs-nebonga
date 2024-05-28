@@ -14,15 +14,18 @@ export default function ContactForm() {
 
   const onSubmit = async (data: any) => {
     const formData = new FormData()
-    formData.append('form-name', 'contact')
+    formData.append('form-name', 'contactform')
     Object.keys(data).forEach((key) => {
       formData.append(key, data[key])
+      console.log(key, data[key])
     })
 
     try {
-      const response = await axios.post('/__forms.html', formData, {
+      const response = await axios.post('/', formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       })
+      console.log('response:', response)
+      return
       if (response.status === 200) {
         window.location.href = '/thanks'
       }
@@ -45,7 +48,7 @@ export default function ContactForm() {
             <p className='mt-7 text-sm'>※3営業日以内に担当者よりご連絡させていただきます</p>
           </div>
           <div className='mt-8 md:ml-24 md:mt-0 md:w-1/2'>
-            <form onSubmit={handleSubmit(onSubmit)}>
+            <form onSubmit={handleSubmit(onSubmit)} name='contactform' data-netlify='true'>
               <div className='mb-5'>
                 <label className='mb-2 block font-medium text-gray-900'>お名前 Name</label>
                 <input
