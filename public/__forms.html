@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Netlify form</title>
+  </head>
+
+  <body>
+    <!-- A little help for the Netlify post-processing bots -->
+    <form name="contactform" data-netlify="true" hidden>
+      <label for="nome">Nome:</label>
+      <input id="nome" type="text" name="nome" />
+
+      <label for="cognome">Cognome:</label>
+      <input id="cognome" type="text" name="cognome" />
+
+      <label for="email">Email:</label>
+      <input id="email" type="email" name="email" />
+
+      <label for="messaggio">Messaggio:</label>
+      <textarea id="messaggio" name="messaggio"></textarea>
+
+      <button type="submit" name="submit"></button>
+    </form>
+  </body>
+</html>
