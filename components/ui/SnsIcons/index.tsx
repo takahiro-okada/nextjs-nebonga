@@ -22,7 +22,11 @@ export default function SnsIcons({ className = 'w-8', open = false }: SnsIconsPr
   return (
     <motion.ul initial={{ opacity: 0, y: 10 }} animate={controls} className='flex justify-center gap-4'>
       {[
-        { alt: 'Youtube', href: 'https://www.youtube.com/@nebongainc', src: '/images/icon-youtube-black.svg' },
+        {
+          alt: 'Youtube',
+          href: 'https://www.youtube.com/channel/UC80XGuPVjUrTey1PAuNYTIA',
+          src: '/images/icon-youtube-black.svg',
+        },
         {
           alt: 'Instagram',
           href: 'https://www.instagram.com/hiro_kawasaki0610',
