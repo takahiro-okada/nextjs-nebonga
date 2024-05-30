@@ -54,7 +54,7 @@ export default function Header() {
             ))}
             <li>
               <Link
-                href='/contact'
+                href='/contact/'
                 className={`font-Montserrat ${textColorClass} ${isTop && !isScrolled ? 'border border-white' : 'border border-black'} rounded-full px-5 py-1 transition-all duration-300 hover:bg-black/10`}
               >
                 Contact

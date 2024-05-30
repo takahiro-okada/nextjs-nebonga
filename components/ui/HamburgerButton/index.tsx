@@ -67,14 +67,14 @@ export default function HamburgerButton({ handleMenuOpen, isScrolled, isTop, ope
         <ul>
           {menuItems.map((item, index) => (
             <motion.li key={item.name} custom={index} initial={{ opacity: 0, y: 20 }} animate={controls}>
-              <a href={item.href} className='inline-block py-3 font-Montserrat text-base text-black'>
+              <a href={item.href} className='inline-block py-3 font-Montserrat text-2xl text-black'>
                 {item.name}
               </a>
             </motion.li>
           ))}
         </ul>
         <div className='mt-8'>
-          <SnsIcons className='w-6' open={openMenu} />
+          <SnsIcons className='w-10' open={openMenu} />
         </div>
       </nav>
     </div>

@@ -48,7 +48,7 @@ export default function PostDetail({ categoryKey, post, relatedPosts, slug }: Po
             </p>
             <h1 className='mt-3 text-4xl font-bold' dangerouslySetInnerHTML={{ __html: post.title }} />
             <ul className='mt-4 flex list-none gap-2 p-0'>
-              <CategoryLinks categoryKey={categoryKey} item={post} bathPath={slug} />
+              <CategoryLinks categoryKey={categoryKey} item={post} slug={slug} />
             </ul>
           </header>
           <div className='prose mx-auto mt-8 max-w-full' dangerouslySetInnerHTML={{ __html: post.content }} />
