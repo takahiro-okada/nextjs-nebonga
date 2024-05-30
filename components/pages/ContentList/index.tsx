@@ -98,7 +98,7 @@ export default function ContentList({ basePath, categoryKey, categoryName, items
                 </div>
               </Link>
               <div className='mt-2 flex gap-2 text-sm'>
-                <CategoryLinks categoryKey={categoryKey} item={item} bathPath={basePath} />
+                <CategoryLinks categoryKey={categoryKey} item={item} slug={slug} />
               </div>
             </motion.li>
           )

@@ -29,8 +29,10 @@ export default async function getPostBySlug(slug: string, postType: string) {
           }
           categories {
             nodes {
+              id
               databaseId
               name
+              slug
               parent {
                 node {
                   name
@@ -75,7 +77,9 @@ export default async function getPostBySlug(slug: string, postType: string) {
         worksCategories {
           nodes {
             databaseId
+            id
             name
+            slug
             parent {
               node {
                 name
