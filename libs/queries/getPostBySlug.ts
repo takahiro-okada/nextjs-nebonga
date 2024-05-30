@@ -4,7 +4,9 @@ import { Post } from '@/typs/types'
 /**
  * Fetch a single blog post, work, or news by slug based on the post type.
  */
-export default async function getPostBySlug(slug: string, postType: string) {
+export default async function getPostBySlug(encodedSlug: string, postType: string) {
+  const slug = decodeURIComponent(encodedSlug)
+
   let query = ''
   let resultField = ''
 
