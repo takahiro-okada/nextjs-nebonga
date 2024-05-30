@@ -11,8 +11,9 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   const title = slug.charAt(0).toUpperCase() + slug.slice(1)
 
   return {
-    title: `NeBonga | ${title}`,
-    description: '株式会社NeBonga | ドキュメンタリー、ショートフィルム、ソーシャルプロジェクトの映像制作会社です。',
+    title: `NeBonga | Videography&Photography - ${title}`,
+    description:
+      '株式会社NeBonga（ネボンガ）は、企業/団体向けのあらゆる企画・撮影・演出・編集をワンストップで行うプロダクションです。',
   }
 }
 

@@ -11,8 +11,9 @@ import getCategoryNameBySlug from '@/libs/queries/getCategoryNameBySlug'
 import { Post } from '@/typs/types'
 
 export const metadata: Metadata = {
-  title: 'NeBonga | News',
-  description: '株式会社NeBonga | ドキュメンタリー、ショートフィルム、ソーシャルプロジェクトの映像制作会社です。',
+  title: 'NeBonga | Videography&Photography - News',
+  description:
+    '株式会社NeBonga（ネボンガ）は、企業/団体向けのあらゆる企画・撮影・演出・編集をワンストップで行うプロダクションです。',
 }
 
 export default async function CategoryArchive({ params }: { params: any }) {

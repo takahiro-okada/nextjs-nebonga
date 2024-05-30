@@ -7,8 +7,9 @@ import MainVisual from '@/components/pages/MainVisual'
 import Cta from '@/components/ui/Cta'
 
 export const metadata: Metadata = {
-  title: 'NeBonga | Documentary Filmmaking',
-  description: '株式会社NeBonga | ドキュメンタリー、ショートフィルム、ソーシャルプロジェクトの映像制作会社です。',
+  title: 'NeBonga | Videography&Photography',
+  description:
+    '株式会社NeBonga（ネボンガ）は、企業/団体向けのあらゆる企画・撮影・演出・編集をワンストップで行うプロダクションです。',
   metadataBase: new URL('https://nebonga.com'),
   openGraph: {
     images: ['./images/ogp.png'],
