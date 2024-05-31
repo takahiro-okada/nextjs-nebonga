@@ -58,6 +58,7 @@ blockquote.wp-block-quote p {
   padding: 1em 1em 1em 4.25em;
   position: relative;
   background-color: #f5f6f7;
+  word-break: break-all;
 }
 
 .is-style-icon-pen::before {
