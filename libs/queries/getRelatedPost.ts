@@ -79,7 +79,7 @@ export default async function getRelatedPost(relatedPosts: string[], categorySlu
             }
             featuredImage {
               node {
-                altTheText
+                altText
                 sourceUrl
                 mediaDetails {
                     height
