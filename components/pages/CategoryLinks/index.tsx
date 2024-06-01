@@ -20,7 +20,6 @@ export default function CategoryLinks({ categoryKey, item, slug }: CategoryLinks
           })
           .map((category) => {
             const parentSlug = category.parent ? `${category.parent.node.slug}/` : ''
-            console.log(parentSlug)
             return (
               <Link
                 key={category.databaseId}
