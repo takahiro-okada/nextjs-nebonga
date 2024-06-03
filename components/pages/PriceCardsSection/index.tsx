@@ -30,7 +30,7 @@ export default function PriceCardsSection() {
         <ul className='mt-16 grid gap-12 md:mt-16 md:grid-cols-2 md:gap-x-6 md:gap-y-12'>
           <PriceCard
             caseNumber='01'
-            title={['個人向け\nプロモーション映像・写真']}
+            title={`個人向け\nプロモーション映像・写真`}
             description='結婚式のオープニング・プロフィール映像など'
             priceRange='15〜35'
             additionalInfo='映像撮影は初めて！という方も大歓迎。アイデア出しや構成もサポートします。写真のみの方もご相談ください。'
@@ -38,7 +38,7 @@ export default function PriceCardsSection() {
           />
           <PriceCard
             caseNumber='02'
-            title='企業・団体向け Web動画'
+            title={`企業・団体向け Web動画`}
             description='ウェビナー動画編集・事業PR映像など'
             priceRange='25〜50'
             additionalInfo='インタビュー映像なども含めた説得力のあるPR映像を撮影させていただきます。 Webサイトのトップページに載せる動画など。'
@@ -46,7 +46,7 @@ export default function PriceCardsSection() {
           />
           <PriceCard
             caseNumber='03'
-            title={['個人企業・団体向け\nWeb動画・CM撮影']}
+            title={`個人企業・団体向け\nWeb動画・CM撮影`}
             description='長尺事業PR映像, 短編ドラマ系など'
             priceRange='50〜250'
             additionalInfo='ストーリー性・作品性の高いインパクトのある映像を撮影いたします。ライティングやカラーで個性を出したい方はこちらへ。'
@@ -54,7 +54,7 @@ export default function PriceCardsSection() {
           />
           <PriceCard
             caseNumber='04'
-            title={['企業・団体向け\nオールインワン']}
+            title={`企業・団体向け\nオールインワン`}
             description='新規事業PR, 新卒採用動画など'
             priceRange='200〜350'
             additionalInfo='映像制作・写真撮影・Webサイト制作やロゴデザインなど、広報におけるコンテンツ作成をセットで承ります。'

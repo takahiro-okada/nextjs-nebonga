@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 
 interface PriceCardProps {
-  title: string | string[]
+  title: string
   additionalInfo: string
   caseNumber: string
   description: string
