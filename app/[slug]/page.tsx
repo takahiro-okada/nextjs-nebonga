@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 
 export default async function Archive({ params }: { params: { slug: string } }) {
   const slug = params.slug
-  const page = 1 // デフォルトで1ページ目を表示
+  const page = 1
 
   const data = await fetchData(slug, (page - 1) * PAGE_SIZE, PAGE_SIZE)
 

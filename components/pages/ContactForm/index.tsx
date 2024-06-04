@@ -17,14 +17,12 @@ export default function ContactForm() {
     formData.append('form-name', 'contactform')
     Object.keys(data).forEach((key) => {
       formData.append(key, data[key])
-      console.log(key, data[key])
     })
 
     try {
       const response = await axios.post('/__forms.html', formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       })
-      console.log('response:', response)
       if (response.status === 200) {
         window.location.href = '/thanks'
       }

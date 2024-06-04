@@ -9,7 +9,7 @@ interface WorkItemsProps {
   posts: Post[]
 }
 
-const WorkItems: React.FC<WorkItemsProps> = ({ posts }) => {
+export default function WorkItems({ posts }: WorkItemsProps) {
   return (
     <>
       {posts.map((work: Post, index) => (
@@ -38,5 +38,3 @@ const WorkItems: React.FC<WorkItemsProps> = ({ posts }) => {
     </>
   )
 }
-
-export default WorkItems

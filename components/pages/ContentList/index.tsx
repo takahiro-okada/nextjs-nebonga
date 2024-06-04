@@ -73,7 +73,6 @@ export default function ContentList({ basePath, categoryKey, categoryName, items
       </div>
       <ul className='mt-5 grid gap-y-10 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-16'>
         {items?.map((item, index) => {
-          console.log('item', item)
           return (
             <motion.li
               key={item.slug}
