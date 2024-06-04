@@ -1,10 +1,9 @@
 'use client'
 import { motion } from 'framer-motion'
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useState } from 'react'
 
-const MainVisual = () => {
+export default function MainVisual() {
   const [videoVisible, setVideoVisible] = useState(false)
-  const videoRef = useRef(null)
 
   const neBongaContainer = {
     hidden: { opacity: 0 },
@@ -22,7 +21,7 @@ const MainVisual = () => {
     show: {
       opacity: 1,
       transition: {
-        delay: 2.4,
+        delay: 2,
         duration: 0.5,
       },
     },
@@ -33,20 +32,11 @@ const MainVisual = () => {
     show: { opacity: 1, y: 0 },
   }
 
-  useEffect(() => {
-    // 確実に1回のみ動画を表示するために useEffect を使用
-    const timer = setTimeout(() => {
-      setVideoVisible(true)
-    }, 2400) // テキストアニメーションの完了後に動画を表示
-    return () => clearTimeout(timer)
-  }, [])
-
   return (
     <section className='relative h-screen bg-black'>
       {videoVisible && (
         <>
           <motion.video
-            ref={videoRef}
             src='./images/top.mp4'
             muted
             loop
@@ -80,7 +70,15 @@ const MainVisual = () => {
             className='mt-3 font-Montserrat text-5xl font-semibold tracking-widest text-white delay-300 md:mt-4 md:text-8xl'
           >
             {'NeBonga'.split('').map((char, index) => (
-              <motion.span key={index} variants={item}>
+              <motion.span
+                key={index}
+                variants={item}
+                onAnimationComplete={() => {
+                  if (index === 'NeBonga'.length - 1) {
+                    setVideoVisible(true)
+                  }
+                }}
+              >
                 {char}
               </motion.span>
             ))}
@@ -89,7 +87,7 @@ const MainVisual = () => {
             variants={textContainer}
             className='mt-3 text-center font-Montserrat text-sm tracking-widest text-white md:mt-4 md:text-lg'
           >
-            {'Create a better world'.split('').map((char, index) => (
+            {'Create a better number'.split('').map((char, index) => (
               <motion.span key={index} variants={item}>
                 {char}
               </motion.span>
@@ -100,5 +98,3 @@ const MainVisual = () => {
     </section>
   )
 }
-
-export default React.memo(MainVisual)
