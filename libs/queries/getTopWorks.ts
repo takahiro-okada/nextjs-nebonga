@@ -61,7 +61,7 @@ export default async function getSelectedWorks() {
   const posts: Post[] = []
   if (response.data && response.data.page) {
     Object.keys(response.data.page).forEach((key) => {
-      const nestedKey = key.replace('top_work_', 'topWork') // This assumes keys like 'topWork01', 'topWork02', etc.
+      const nestedKey = key.replace('top_work_', 'topWork')
       if (response.data.page[key] && response.data.page[key][nestedKey]) {
         posts.push(response.data.page[key][nestedKey])
       }
