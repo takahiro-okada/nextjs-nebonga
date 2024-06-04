@@ -1,9 +1,19 @@
 'use client'
 import { motion } from 'framer-motion'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 export default function MainVisual() {
   const [videoVisible, setVideoVisible] = useState(false)
+
+  useEffect(() => {
+    if (videoVisible) {
+      // ビデオの再生をここで制御する
+      const videoElement = document.querySelector('video')
+      if (videoElement) {
+        videoElement.play()
+      }
+    }
+  }, [videoVisible])
 
   const neBongaContainer = {
     hidden: { opacity: 0 },
