@@ -75,10 +75,7 @@ export default function MainVisual() {
               </motion.span>
             ))}
           </motion.p>
-          <motion.p
-            variants={neBongaContainer}
-            className='mt-3 font-Montserrat text-5xl font-semibold tracking-widest text-white delay-300 md:mt-4 md:text-8xl'
-          >
+          <p className='mt-3 font-Montserrat text-5xl font-semibold tracking-widest text-white delay-300 md:mt-4 md:text-8xl'>
             {'NeBonga'.split('').map((char, index) => (
               <motion.span
                 key={index}
@@ -92,7 +89,7 @@ export default function MainVisual() {
                 {char}
               </motion.span>
             ))}
-          </motion.p>
+          </p>
           <motion.p
             variants={textContainer}
             className='mt-3 text-center font-Montserrat text-sm tracking-widest text-white md:mt-4 md:text-lg'
