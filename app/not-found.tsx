@@ -1,5 +1,5 @@
 import CommonContainer from '@/components/base/CommonContainer'
-import PageTitle from '@/components/ui/PageTitle'
+import PageTitle from '@/components/ui/PageTItle'
 
 export default function Page() {
   return (
