@@ -1,11 +1,5 @@
-import type { Metadata } from 'next'
-
 import CommonContainer from '@/components/base/CommonContainer'
 import PageTitle from '@/components/ui/PageTitle'
-
-export const metadata: Metadata = {
-  title: '404',
-}
 
 export default function Page() {
   return (
