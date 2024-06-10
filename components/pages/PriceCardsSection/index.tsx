@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 
 import CommonContainer from '@/components/base/CommonContainer'
 import PriceCard from '@/components/pages/PriceCard'
-import PageTitle from '@/components/ui/PageTItle'
+import PageTitle from '@/components/ui/PageTitle'
 
 export default function PriceCardsSection() {
   return (

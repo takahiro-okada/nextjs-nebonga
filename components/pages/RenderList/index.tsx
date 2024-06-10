@@ -2,7 +2,7 @@
 import SideNav from '@/components/base/SideNav'
 import ContentList from '@/components/pages/ContentList'
 import NewsArticle from '@/components/pages/NewsArticle'
-import PageTitle from '@/components/ui/PageTItle'
+import PageTitle from '@/components/ui/PageTitle'
 import Pagination from '@/components/ui/Pagination'
 import { PAGE_SIZE } from '@/libs/constants'
 import { Post } from '@/typs/types'
