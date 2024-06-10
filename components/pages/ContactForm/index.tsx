@@ -3,7 +3,7 @@ import axios from 'axios'
 import { useForm } from 'react-hook-form'
 
 import CommonContainer from '@/components/base/CommonContainer'
-import PageTitle from '@/components/ui/PageTItle'
+import PageTitle from '@/components/ui/PageTitle'
 
 export default function ContactForm() {
   const {
