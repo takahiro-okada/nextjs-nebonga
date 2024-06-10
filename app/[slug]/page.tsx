@@ -5,6 +5,7 @@ import { RenderNewsList, RenderPostList } from '@/components/pages/RenderList'
 import { PAGE_SIZE } from '@/libs/constants'
 import { fetchData } from '@/libs/fetchData'
 import { Post } from '@/typs/types'
+import { notFound } from 'next/navigation'
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata | null> {
   const slug = params.slug
@@ -24,6 +25,7 @@ export default async function Archive({ params }: { params: { slug: string } }) 
   const data = await fetchData(slug, (page - 1) * PAGE_SIZE, PAGE_SIZE)
 
   if (!data) {
+    notFound()
     throw new Error('Failed to fetch data')
   }
 

@@ -3,15 +3,14 @@ import type { Metadata } from 'next'
 import PostDetail from '@/components/pages/PostDetail'
 import getPostBySlug from '@/libs/queries/getPostBySlug'
 import getRelatedPost from '@/libs/queries/getRelatedPost'
+import { notFound } from 'next/navigation'
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata | null> {
-  // Get the page.
   const post = await getPostBySlug(params.slug, 'works')
   const imageUrl = post?.featuredImage?.node?.sourceUrl
 
-  // No post? Bail...
   if (!post) {
-    return {}
+    notFound()
   }
 
   return {
