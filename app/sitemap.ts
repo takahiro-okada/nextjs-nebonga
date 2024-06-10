@@ -1,7 +1,8 @@
 import type { MetadataRoute } from 'next'
-import getAllWorks from '@/libs/queries/getAllWorks'
+
 import getAllNews from '@/libs/queries/getAllNews'
 import getAllStories from '@/libs/queries/getAllStories'
+import getAllWorks from '@/libs/queries/getAllWorks'
 
 export default async function sitemap() {
   const baseUrl = 'https://nebonga.com'

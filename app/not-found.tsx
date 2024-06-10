@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+
 import CommonContainer from '@/components/base/CommonContainer'
 import PageTitle from '@/components/ui/PageTitle'
 
