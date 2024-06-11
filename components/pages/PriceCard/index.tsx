@@ -2,7 +2,7 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 
-interface PriceCardProps {
+type PriceCardProps = {
   title: string
   additionalInfo: string
   caseNumber: string

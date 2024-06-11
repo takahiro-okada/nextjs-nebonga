@@ -2,7 +2,7 @@ import PostDetail from '@/components/pages/PostDetail'
 import getPreview from '@/libs/queries/getPreview'
 
 // Types.
-interface PreviewProps {
+type PreviewProps = {
   params: { slug: string }
   searchParams: { [key: string]: string | string[] | undefined }
 }

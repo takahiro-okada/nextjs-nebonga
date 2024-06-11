@@ -5,7 +5,7 @@ import React from 'react'
 
 import { Category } from '@/typs/types'
 
-interface CategoryHierarchyProps {
+type CategoryHierarchyProps = {
   basePath: string
   categories: any[]
 }

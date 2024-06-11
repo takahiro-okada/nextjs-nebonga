@@ -4,12 +4,12 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 import React from 'react'
 
-interface TimelineItem {
+type TimelineItem = {
   event: string
   year: string
 }
 
-interface TimelineProps {
+type TimelineProps = {
   data: TimelineItem[]
 }
 
@@ -28,7 +28,7 @@ export const Timeline: React.FC<TimelineProps> = ({ data }) => {
   )
 }
 
-interface ProfileSectionProps {
+type ProfileSectionProps = {
   name: string
   descriptionEn: string | string[]
   descriptionJa: string | string[]

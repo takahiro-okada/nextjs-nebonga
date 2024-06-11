@@ -2,7 +2,7 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 
-interface FlowCardProps {
+type FlowCardProps = {
   description: string
   iconImageSrc: string
   number: string

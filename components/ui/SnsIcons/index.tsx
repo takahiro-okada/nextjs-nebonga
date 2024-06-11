@@ -3,7 +3,7 @@ import { motion, useAnimation } from 'framer-motion'
 import Image from 'next/image'
 import React, { useEffect } from 'react'
 
-interface SnsIconsProps {
+type SnsIconsProps = {
   className?: string
   open?: boolean
 }
