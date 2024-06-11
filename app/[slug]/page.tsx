@@ -26,7 +26,6 @@ export default async function Archive({ params }: { params: { slug: string } }) 
 
   if (!data) {
     notFound()
-    throw new Error('Failed to fetch data')
   }
 
   const { basePath, categoryKey, context, posts, subtitle, total } = data as {

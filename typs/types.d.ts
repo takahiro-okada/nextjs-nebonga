@@ -1,9 +1,9 @@
-export interface GraphQLResponse<T = any> {
+export type GraphQLResponse<T = any> = {
   data?: T
   errors?: Array<{ message: string }>
 }
 
-export interface Post {
+export type Post = {
   title: string
   author: {
     node: {
@@ -51,7 +51,8 @@ export interface Post {
     youtubeUrl: string
   }
 }
-export interface Category {
+
+export type Category = {
   id: string
   name: string
   databaseId: string
@@ -64,7 +65,11 @@ export interface Category {
   slug: string
 }
 
-export interface FeaturedImage {
+export type Category = {
+  nameId: string
+}
+
+export type FeaturedImage = {
   node: {
     altText: string
     mediaDetails: {

@@ -4,7 +4,7 @@ import React, { useEffect } from 'react'
 
 import SnsIcons from '@/components/ui/SnsIcons'
 
-interface HamburgerButtonProps {
+type HamburgerButtonProps = {
   handleMenuOpen: () => void
   isScrolled: boolean
   isTop: boolean

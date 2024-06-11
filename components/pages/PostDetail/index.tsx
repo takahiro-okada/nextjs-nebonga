@@ -10,7 +10,7 @@ import formatDate from '@/utils/formatDate'
 
 import RelatedPost from '../RelatedPost'
 
-interface PostDetailProps {
+type PostDetailProps = {
   categoryKey: 'newsCategories' | 'categories' | 'worksCategories'
   post: Post
   relatedPosts?: Post[]

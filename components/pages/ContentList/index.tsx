@@ -11,7 +11,7 @@ import useCategoriesHierarchy from '@/hooks/useCategoriesHierachy'
 import { Post } from '@/typs/types'
 import formatDate from '@/utils/formatDate'
 
-interface ContentListProps {
+type ContentListProps = {
   basePath: string
   categoryKey: 'categories' | 'worksCategories' | 'newsCategories'
   categoryName: string

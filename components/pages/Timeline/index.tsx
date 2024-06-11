@@ -1,9 +1,9 @@
-interface TimelineItem {
+type TimelineItem = {
   event: string
   year: string
 }
 
-interface TimelineProps {
+type TimelineProps = {
   data: TimelineItem[]
 }
 

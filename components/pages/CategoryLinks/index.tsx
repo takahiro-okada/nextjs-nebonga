@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 import { Post } from '@/typs/types'
 
-interface CategoryLinksProps {
+type CategoryLinksProps = {
   categoryKey: 'categories' | 'worksCategories' | 'newsCategories'
   item: Post
   slug: string

@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 import { Post } from '@/typs/types'
 
-interface RelatedPostProps {
+type RelatedPostProps = {
   relatedPosts: Post[] | undefined
   slug: string
 }

@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 import { Post } from '@/typs/types'
 
-interface WorkItemsProps {
+type WorkItemsProps = {
   posts: Post[]
 }
 
