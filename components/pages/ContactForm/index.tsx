@@ -4,6 +4,8 @@ import { useForm } from 'react-hook-form'
 
 import CommonContainer from '@/components/base/CommonContainer'
 import PageTitle from '@/components/ui/PageTItle'
+import Link from 'next/link'
+import Image from 'next/image'
 
 export default function ContactForm() {
   const {
@@ -92,6 +94,37 @@ export default function ContactForm() {
                 送信する
               </button>
             </form>
+          </div>
+        </div>
+      </section>
+
+      <section className='mt-24'>
+        <div className='mt-11 md:mt-28 md:flex'>
+          <div className='md:w-1/2'>
+            <h3 className='text-2xl font-bold md:text-3xl'>LINEからのお問い合わせ</h3>
+            <p className='mt-6'>
+              NeBonga公式アカウントからもお問い合わせいただけます。
+              「友だち追加」ボタンもしくは「QRコード」からLINEを開き、友だち追加後にお問合せ内容をメッセージでお送りください。
+            </p>
+            <p className='mt-7 text-sm'>※3営業日以内に担当者よりご連絡させていただきます</p>
+          </div>
+          <div className='mt-8 md:ml-24 md:mt-0 md:w-1/2'>
+            <div className='flex min-h-28 items-center border border-[#EDEFF1] p-4'>
+              <div className='w-1/2 border-r-2 border-[#EDEFF1]  text-center leading-10'>ボタンから友達追加</div>
+              <div className='w-1/2 text-center'>
+                <Link href='#' className='inline-block'>
+                  <Image src='/images/line-button.png' alt='友だちを追加' className='w-full' width={144} height={45} />
+                </Link>
+              </div>
+            </div>
+            <div className='mt-6 flex min-h-28 content-center items-center border border-[#EDEFF1] p-4'>
+              <div className='w-2/3 border-r-2 border-[#EDEFF1]  text-center leading-10 md:w-1/2'>
+                QRコードから友達追加
+              </div>
+              <div className='w-1/3 text-center md:w-1/2'>
+                <Image src='/images/line-qrcode.png' alt='QRコード' width={80} height={80} className='inline-block' />
+              </div>
+            </div>
           </div>
         </div>
       </section>
