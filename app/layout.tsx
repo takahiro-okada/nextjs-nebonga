@@ -1,8 +1,8 @@
 import './globals.css'
 
+import { GoogleAnalytics } from '@next/third-parties/google'
 import type { Metadata } from 'next'
 import { Lato, Montserrat, Zen_Kaku_Gothic_New } from 'next/font/google'
-import { GoogleAnalytics } from '@next/third-parties/google'
 
 import Footer from '@/components/base/Footer'
 import Header from '@/components/base/Header'
