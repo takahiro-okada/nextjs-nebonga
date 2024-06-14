@@ -6,7 +6,7 @@ export default function Page() {
     <main className='mt-32'>
       <CommonContainer>
         <section>
-          <PageTitle title='404' subtitle="The page you're looking for can't be found" />
+          <PageTitle title='404' subtitle="The page you're looking for can't be found." />
         </section>
       </CommonContainer>
     </main>
