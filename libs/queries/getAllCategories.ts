@@ -1,5 +1,5 @@
-import { fetchGraphQL } from '../functions'
 import { Category } from '../../typs/types'
+import { fetchGraphQL } from '../functions'
 
 export default async function getAllCategories(categoryName: string) {
   const query = `query GetAllCategories {
