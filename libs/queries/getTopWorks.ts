@@ -1,5 +1,5 @@
-import { fetchGraphQL } from '../functions'
 import { Post } from '../../typs/types'
+import { fetchGraphQL } from '../functions'
 
 export default async function getSelectedWorks() {
   const query = `query GetSelectedWorks {

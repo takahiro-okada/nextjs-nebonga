@@ -1,5 +1,5 @@
-import { fetchGraphQL } from '../functions'
 import { Post } from '../../typs/types'
+import { fetchGraphQL } from '../functions'
 
 export default async function getAllNews(offset: number = 0, size: number = 3) {
   const query = `query GetAllNews($offsetPagination: OffsetPagination = {offset: ${offset}, size: ${size}}) {

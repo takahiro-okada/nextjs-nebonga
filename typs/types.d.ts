@@ -5,6 +5,9 @@ export type GraphQLResponse<T = any> = {
 
 export type Post = {
   title: string
+  acf_youtube?: {
+    youtubeUrl: string
+  }
   author: {
     node: {
       name: string
@@ -47,9 +50,6 @@ export type Post = {
   worksCategories?: {
     nodes: Category[]
   }
-  acf_youtube?: {
-    youtubeUrl: string
-  }
 }
 
 export type Category = {
@@ -78,4 +78,23 @@ export type FeaturedImage = {
     }
     sourceUrl: string
   }
+}
+
+export interface Page {
+  title: string
+  author: {
+    node: {
+      name: string
+      avatar: {
+        url: string
+      }
+    }
+  }
+  content: string
+  databaseId: string
+  date: string
+  excerpt: string
+  featuredImage: FeaturedImage
+  modified: string
+  slug: string
 }

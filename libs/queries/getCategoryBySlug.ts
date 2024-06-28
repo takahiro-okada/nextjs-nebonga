@@ -1,4 +1,3 @@
-// libs/queries/getCategoryBySlug.ts
 import { fetchGraphQL } from '../functions'
 
 function getBaseFields(): string {
