@@ -44,7 +44,7 @@ export default async function Gallery() {
   return (
     <main className='mt-32'>
       <CommonContainer>
-        <PageTitle title='Gallery' subtitle='写真の一部' />
+        <PageTitle title='Gallery' subtitle='ギャラリー' />
         <GalleryContent post={data.post} />
       </CommonContainer>
     </main>
