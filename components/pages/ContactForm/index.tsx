@@ -47,7 +47,7 @@ export default function ContactForm() {
             <p className='mt-7 text-sm'>※3営業日以内に担当者よりご連絡させていただきます</p>
           </div>
           <div className='mt-8 md:ml-24 md:mt-0 md:w-1/2'>
-            <form onSubmit={handleSubmit(onSubmit)} name='contactform' data-netlify='true'>
+            <form onSubmit={handleSubmit(onSubmit)} name='contactform' data-netlify='true' netlify-honeypot='bot-field'>
               <div className='mb-5'>
                 <label className='mb-2 block font-medium text-gray-900'>お名前 Name</label>
                 <input
