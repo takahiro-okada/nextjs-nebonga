@@ -133,15 +133,8 @@ blockquote.wp-block-quote p {
 /* datatypeがgalleryの時に適用されるスタイル */
 .wp-block-gallery {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 10px;
-}
-
-/* 768px以上の画面幅の時に適用されるスタイル */
-@media (min-width: 768px) {
-  .wp-block-gallery {
-    grid-template-columns: 1fr 1fr;
-  }
 }
 
 @media (min-width: 990px) {
