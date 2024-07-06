@@ -1,17 +1,15 @@
 'use client'
 import { motion } from 'framer-motion'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 export default function MainVisual() {
   const [videoVisible, setVideoVisible] = useState(false)
+  const videoRef = useRef<HTMLVideoElement | null>(null)
+  console.log('videoVisible', videoRef)
 
   useEffect(() => {
-    if (videoVisible) {
-      // ビデオの再生をここで制御する
-      const videoElement = document.querySelector('video')
-      if (videoElement) {
-        videoElement.play()
-      }
+    if (videoVisible && videoRef.current) {
+      videoRef.current.play()
     }
   }, [videoVisible])
 
@@ -47,10 +45,10 @@ export default function MainVisual() {
       {videoVisible && (
         <>
           <motion.video
+            ref={videoRef}
             src='./images/top.mp4'
             muted
             loop
-            autoPlay
             playsInline
             preload='none'
             className='aspect-square h-screen w-full object-cover'
@@ -94,7 +92,7 @@ export default function MainVisual() {
             variants={textContainer}
             className='mt-3 text-center font-Montserrat text-sm tracking-widest text-white md:mt-4 md:text-lg'
           >
-            {'Create a better number'.split('').map((char, index) => (
+            {'Create a better world'.split('').map((char, index) => (
               <motion.span key={index} variants={item}>
                 {char}
               </motion.span>
