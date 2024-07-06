@@ -24,6 +24,8 @@ export default function ContentList({ basePath, categoryKey, categoryName, items
   const [showMenu, setShowMenu] = useState(false)
   const categories = useCategoriesHierarchy(categoryKey)
 
+  const toggleMenu = () => setShowMenu((prev) => !prev)
+
   if (!items || items.length === 0) {
     return (
       <div className='my-16'>
@@ -64,7 +66,7 @@ export default function ContentList({ basePath, categoryKey, categoryName, items
           }}
         >
           <div className='relative md:hidden'>
-            <button className='' onClick={() => setShowMenu(!showMenu)}>
+            <button onClick={toggleMenu}>
               <Image src='/images/icon-category.svg' alt='Category icon' width={26} height={26} className='ml-4' />
             </button>
             {showMenu && <CategoryHierarchy categories={categories} basePath={basePath} />}
