@@ -11,7 +11,7 @@ export default function Footer() {
       <CommonContainer>
         <div className='md:flex md:items-center md:justify-between'>
           <div className='flex justify-center'>
-            <a href='/' className='text-xl font-semibold tracking-tight'>
+            <Link href='/' className='text-xl font-semibold tracking-tight'>
               <Image
                 src='/logo.png'
                 alt='NeBonga'
@@ -19,7 +19,7 @@ export default function Footer() {
                 height={150}
                 className='h-full w-24 rounded-xl  object-cover'
               />
-            </a>
+            </Link>
           </div>
           <div className='mt-10 sm:flex sm:items-center sm:justify-between'>
             <ul className='mb-6 flex flex-wrap items-center justify-center text-sm sm:mb-0'>

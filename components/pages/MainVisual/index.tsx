@@ -4,8 +4,7 @@ import React, { useEffect, useRef, useState } from 'react'
 
 export default function MainVisual() {
   const [videoVisible, setVideoVisible] = useState(false)
-  const videoRef = useRef<HTMLVideoElement | null>(null)
-  console.log('videoVisible', videoRef)
+  const videoRef = useRef<HTMLVideoElement>(null)
 
   useEffect(() => {
     if (videoVisible && videoRef.current) {

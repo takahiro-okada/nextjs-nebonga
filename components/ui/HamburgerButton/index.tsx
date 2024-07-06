@@ -1,5 +1,6 @@
 'use client'
 import { motion, useAnimation } from 'framer-motion'
+import Link from 'next/link'
 import React, { useEffect } from 'react'
 
 import SnsIcons from '@/components/ui/SnsIcons'
@@ -67,9 +68,9 @@ export default function HamburgerButton({ handleMenuOpen, isScrolled, isTop, ope
         <ul>
           {menuItems.map((item, index) => (
             <motion.li key={item.name} custom={index} initial={{ opacity: 0, y: 20 }} animate={controls}>
-              <a href={item.href} className='inline-block py-3 font-Montserrat text-2xl text-black'>
+              <Link href={item.href} className='inline-block py-3 font-Montserrat text-2xl text-black'>
                 {item.name}
-              </a>
+              </Link>
             </motion.li>
           ))}
         </ul>
