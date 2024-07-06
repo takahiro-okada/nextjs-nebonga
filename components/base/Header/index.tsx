@@ -30,7 +30,7 @@ export default function Header() {
     <header className={headerClass}>
       <div className='container relative mx-auto flex items-center justify-center px-3 md:justify-between'>
         <h1>
-          <a href='/' className={`text-xl font-semibold tracking-tight ${textColorClass}`}>
+          <Link href='/' className={`text-xl font-semibold tracking-tight ${textColorClass}`}>
             <Image
               src={logoPath}
               alt='NeBonga'
@@ -38,7 +38,7 @@ export default function Header() {
               height={100}
               className={`h-full object-contain ${isScrolled ? 'w-10 md:w-14' : 'w-12 md:w-16'}`}
             />
-          </a>
+          </Link>
         </h1>
         <nav className='hidden lg:flex'>
           <ul className='gap-10 lg:flex'>
