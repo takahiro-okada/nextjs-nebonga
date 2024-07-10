@@ -42,7 +42,7 @@ export default function Header() {
         </h1>
         <nav className='hidden lg:flex'>
           <ul className='gap-10 lg:flex'>
-            {['about', 'works', 'story', 'news', 'price'].map((item) => (
+            {['about', 'works', 'gallery', 'story', 'news', 'price'].map((item) => (
               <li key={item}>
                 <Link href={`/${item}/`} className={`group relative font-Montserrat ${textColorClass}`}>
                   {item.charAt(0).toUpperCase() + item.slice(1)}

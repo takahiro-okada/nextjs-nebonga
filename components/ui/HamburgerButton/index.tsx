@@ -15,6 +15,7 @@ type HamburgerButtonProps = {
 const menuItems = [
   { name: 'About', href: '/about/' },
   { name: 'Works', href: '/works/' },
+  { name: 'Gallery', href: '/gallery/' },
   { name: 'Story', href: '/story/' },
   { name: 'Price', href: '/price/' },
   { name: 'News', href: '/news/' },
