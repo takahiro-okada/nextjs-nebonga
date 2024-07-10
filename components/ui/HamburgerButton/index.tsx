@@ -33,6 +33,10 @@ export default function HamburgerButton({ handleMenuOpen, isScrolled, isTop, ope
     }
   }, [openMenu, controls])
 
+  const closeMenu = () => {
+    handleMenuOpen()
+  }
+
   return (
     <div className='absolute right-4 flex items-center'>
       <button onClick={handleMenuOpen} type='button' className='z-40 space-y-1.5 lg:hidden'>
@@ -68,7 +72,11 @@ export default function HamburgerButton({ handleMenuOpen, isScrolled, isTop, ope
         <ul>
           {menuItems.map((item, index) => (
             <motion.li key={item.name} custom={index} initial={{ opacity: 0, y: 20 }} animate={controls}>
-              <Link href={item.href} className='inline-block py-3 font-Montserrat text-2xl text-black'>
+              <Link
+                href={item.href}
+                onClick={closeMenu}
+                className='inline-block py-3 font-Montserrat text-2xl text-black'
+              >
                 {item.name}
               </Link>
             </motion.li>
