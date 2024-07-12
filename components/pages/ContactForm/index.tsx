@@ -112,7 +112,7 @@ export default function ContactForm() {
             <div className='flex min-h-28 items-center border border-grayNormal p-4'>
               <div className='w-1/2 border-r-2 border-grayNormal  text-center leading-10'>ボタンから友達追加</div>
               <div className='w-1/2 text-center'>
-                <Link href='#' className='inline-block'>
+                <Link href='https://page.line.me/167gakqf' className='inline-block'>
                   <Image src='/images/line-button.png' alt='友だちを追加' className='w-full' width={144} height={45} />
                 </Link>
               </div>
