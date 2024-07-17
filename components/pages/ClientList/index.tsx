@@ -24,8 +24,8 @@ export default function ClientList() {
           <div className='mx-auto mt-6 grid grid-cols-2 justify-center gap-4 p-5 align-middle md:max-w-4xl md:grid-cols-5'>
             {[
               { alt: 'JICAのロゴ', src: '/images/company-logos/logo-jica.png' },
-              { alt: 'JADAのロゴ', src: '/images/company-logos/logo-jada.png' },
               { alt: '大阪大学のロゴ', src: '/images/company-logos/logo-osakauniv.png' },
+              { alt: 'JICEのロゴ', src: '/images/company-logos/logo-jice.png' },
               { alt: 'かながわ国際交流財団のロゴ', src: '/images/company-logos/logo-kif.png' },
               { alt: 'キャディ株式会社のロゴ', src: '/images/company-logos/logo-caddi.png' },
               { alt: '株式会社マキノハラボのロゴ', src: '/images/company-logos/logo-makilabo.jpg' },
