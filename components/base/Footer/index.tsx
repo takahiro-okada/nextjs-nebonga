@@ -24,12 +24,13 @@ export default function Footer() {
           <div className='mt-10 sm:flex sm:items-center sm:justify-between'>
             <ul className='mb-6 flex flex-wrap items-center justify-center text-sm sm:mb-0'>
               {[
-                { href: '/about', text: 'About' },
-                { href: '/works', text: 'Works' },
-                { href: '/story', text: 'Story' },
-                { href: '/news', text: 'News' },
-                { href: '/price', text: 'Price' },
-                { href: '/contact', text: 'Contact' },
+                { href: '/about/', text: 'About' },
+                { href: '/works/', text: 'Works' },
+                { href: '/gallery/', text: 'Gallery' },
+                { href: '/story/', text: 'Story' },
+                { href: '/news/', text: 'News' },
+                { href: '/price/', text: 'Price' },
+                { href: '/contact/', text: 'Contact' },
               ].map((link, index) => (
                 <li key={index}>
                   <Link className='inline-block w-full px-3 py-2 text-center font-Montserrat' href={link.href}>
