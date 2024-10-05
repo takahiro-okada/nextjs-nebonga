@@ -36,9 +36,10 @@ export default function PostDetail({ categoryKey, post, relatedPosts, slug }: Po
             <Image
               src={post.featuredImage?.node?.sourceUrl || '/images/image-placeholder.jpg'}
               alt={post.featuredImage?.node?.altText || ''}
-              width={640}
-              height={300}
+              width={1280}
+              height={600}
               className='aspect-video w-full object-cover transition-transform duration-300 group-hover:scale-110'
+              unoptimized={true}
             />
           )}
 
