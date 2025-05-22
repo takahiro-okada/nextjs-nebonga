@@ -2,6 +2,9 @@
 
 NeBonga is a production company that provides end-to-end services for planning, filming, directing, and editing for businesses and organizations. This project is built using Next.js and uses WordPress as a headless CMS.
 
+<img src="https://github.com/user-attachments/assets/70ae4a9d-85a9-4319-8f73-0c8257ccbdad" width="500" />
+
+
 ## Overview
 
 This project leverages the power of Next.js for building a fast and scalable frontend, while WordPress serves as the backend CMS for managing content. Key features include:
