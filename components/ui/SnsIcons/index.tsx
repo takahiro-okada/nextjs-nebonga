@@ -29,7 +29,7 @@ export default function SnsIcons({ className = 'w-8', open = false }: SnsIconsPr
         },
         {
           alt: 'Instagram',
-          href: 'https://www.instagram.com/hiro_kawasaki0610',
+          href: 'https://www.instagram.com/hiro_nebonga/',
           src: '/images/icon-instagram-black.svg',
         },
         { alt: 'x', href: 'https://twitter.com/hiro_works0610', src: '/images/icon-x-black.svg' },

@@ -1,34 +1,80 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# NeBonga Project
+
+NeBonga is a production company that provides end-to-end services for planning, filming, directing, and editing for businesses and organizations. This project is built using Next.js and uses WordPress as a headless CMS.
+
+## Overview
+
+This project leverages the power of Next.js for building a fast and scalable frontend, while WordPress serves as the backend CMS for managing content. Key features include:
+
+- Dynamic page generation
+- Category-based content filtering
+- Optimized and lazy-loaded images
+- Mobile-friendly responsive design
+
+## Technologies Used
+
+- Next.js: A React-based framework for building fast and scalable web applications.
+- WordPress: Used as a headless CMS to manage content via its GraphQL API.
+- GraphQL: For fetching data from WordPress.
+- Tailwind CSS: For styling the application.
 
 ## Getting Started
 
-First, run the development server:
+Follow these steps to set up the project locally:
+
+Prerequisites
+Ensure you have the following installed on your system:
+
+- Node.js (v16 or later)
+- pnpm (or npm/yarn)
+
+Installation
+
+1. Clone the repository:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+git clone https://github.com/yourusername/nebonga.git
+cd nebonga
+```
+
+2. Install dependencies:
+
+```bash
+pnpm install
+```
+
+3. Set up environment variables:
+   Create a .env file in the root directory and add the following:
+
+4. Start the development server:
+
+```bash
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000 in your browser to view the application.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Scripts
+The following scripts are available in the package.json file:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- pnpm dev: Starts the development server.
+- pnpm build: Builds the application for production.
+- pnpm start: Starts the production server.
+- pnpm lint: Runs the linter to check for code quality issues.
 
-## Learn More
+Project Structure
+The project is organized as follows:
 
-To learn more about Next.js, take a look at the following resources:
+Environment Variables
+The project requires the following environment variables:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- NEXT_PUBLIC_WORDPRESS_GRAPHQL_URL: The URL of the WordPress GraphQL endpoint.
+- NEXTJS_AUTH_REFRESH_TOKEN: JWT refresh token for authentication.
+- NEXTJS_PREVIEW_SECRET: Secret key for enabling WordPress preview functionality.
+- NEXTJS_REVALIDATION_SECRET: Secret key for triggering ISR (Incremental Static Regeneration).
+- PREVIEW_KEY: Key for secure preview access.
+- NEXT_DISABLE_NETLIFY_EDGE: Disables Netlify Edge for compatibility.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Deployment
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This project can be deployed to platforms like Vercel, Netlify, or any other hosting provider that supports Next.js. Ensure that the required environment variables are set in the hosting platform's environment settings.
