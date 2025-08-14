@@ -33,13 +33,8 @@ Installation
 1. Clone the repository:
 
 ```bash
-<<<<<<< HEAD
-git clone https://github.com/yourusername/nebonga.git
-cd nebonga
-=======
 git clone git@github.com:takahiro-okada/nextjs-nebonga.git
 cd nextjs-nebonga
->>>>>>> f850bd838fb272fde58ca9f9f236fa96160e4371
 ```
 
 2. Install dependencies:
