@@ -3,8 +3,8 @@ import getPreview from '@/libs/queries/getPreview'
 
 // Types.
 type PreviewProps = {
-  params: { slug: string }
-  searchParams: { [key: string]: string | string[] | undefined }
+  params: Promise<{ slug: string }>
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>
 }
 
 /**
@@ -17,7 +17,9 @@ type PreviewProps = {
  *
  * @see https://nextjs.org/docs/app/building-your-application/routing/pages-and-layouts#pages
  */
-export default async function Preview({ params, searchParams }: PreviewProps) {
+export default async function Preview(props: PreviewProps) {
+  const searchParams = await props.searchParams;
+  const params = await props.params;
   // Get the secret from the query parameters.
   const secret = searchParams.secret
 

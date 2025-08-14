@@ -11,7 +11,7 @@ type ImageModalProps = {
 export default function ImageModal(props: ImageModalProps) {
   const { alt, height, onClose, src, width } = props
   return (
-    <div className='fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 p-4' onClick={onClose}>
+    <div className='fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4' onClick={onClose}>
       <div className='w-full max-w-3xl rounded-lg bg-white p-4 shadow-lg' onClick={(e) => e.stopPropagation()}>
         <Image src={src} alt={alt} width={width} height={height} className='rounded-md' />
         <div className='text-center'>

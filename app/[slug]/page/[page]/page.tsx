@@ -6,11 +6,12 @@ import { PAGE_SIZE } from '@/libs/constants'
 import { fetchData } from '@/libs/fetchData'
 import { Post } from '@/typs/types'
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { page: string; slug: string }
-}): Promise<Metadata | null> {
+export async function generateMetadata(
+  props: {
+    params: Promise<{ page: string; slug: string }>
+  }
+): Promise<Metadata | null> {
+  const params = await props.params;
   const slug = params.slug
   const title = slug.charAt(0).toUpperCase() + slug.slice(1)
 
@@ -21,7 +22,8 @@ export async function generateMetadata({
   }
 }
 
-export default async function Archive({ params }: { params: { page: string; slug: string } }) {
+export default async function Archive(props: { params: Promise<{ page: string; slug: string }> }) {
+  const params = await props.params;
   const slug = params.slug
   const page = parseInt(params.page, 10) || 1
 

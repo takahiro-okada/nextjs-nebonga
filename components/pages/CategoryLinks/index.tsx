@@ -22,7 +22,7 @@ export default function CategoryLinks({ categoryKey, item, slug }: CategoryLinks
             const parentSlug = category.parent ? `${category.parent.node.slug}/` : ''
             return (
               <Link
-                key={category.databaseId}
+                key={category.databaseId || category.slug}
                 href={`/${slug}/category/${parentSlug}${category.slug}/`}
                 className='inline-block rounded-md bg-grayLight px-3 py-1 text-xs'
               >

@@ -16,7 +16,8 @@ export const metadata: Metadata = {
     '株式会社NeBonga（ネボンガ）は、企業/団体向けのあらゆる企画・撮影・演出・編集をワンストップで行うプロダクションです。',
 }
 
-export default async function CategoryArchive({ params }: { params: any }) {
+export default async function CategoryArchive(props: { params: Promise<any> }) {
+  const params = await props.params;
   const slugArray = params.slug
   const pageIndex = slugArray.indexOf('page')
   const page = pageIndex !== -1 ? parseInt(slugArray[pageIndex + 1], 10) : 1
