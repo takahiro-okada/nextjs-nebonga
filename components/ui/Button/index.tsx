@@ -1,5 +1,5 @@
 type Props = {
-  buttonColor?: string
+  buttonColor?: 'bg-black' | 'bg-blue-500' | 'bg-red-500'
   children: React.ReactNode
   href?: string
 }
@@ -7,7 +7,7 @@ type Props = {
 export function Button({ buttonColor = 'bg-black', children, href }: Props) {
   return (
     <a
-      className={`inline-block w-full max-w-xs whitespace-nowrap rounded-full px-10 py-3 text-center text-white ${buttonColor}`}
+      className={`inline-block w-full max-w-xs rounded-full px-10 py-3 text-center text-white ${buttonColor}`}
       href={href}
     >
       {children}
