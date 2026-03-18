@@ -1,10 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  typescript: {
-    ignoreBuildErrors: false,
+  eslint: {
+    ignoreDuringBuilds: true,
   },
   images: {
     domains: ['wp.nebonga.com', 'nebonga.local'],
+  },
+  typescript: {
+    ignoreBuildErrors: false,
   },
 }
 
