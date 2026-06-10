@@ -4,7 +4,7 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
   images: {
-    domains: ['wp.nebonga.com', 'nebonga.local'],
+    remotePatterns: [{ hostname: 'wp.nebonga.com' }, { hostname: 'nebonga.local' }],
   },
   typescript: {
     ignoreBuildErrors: false,
