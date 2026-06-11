@@ -6,12 +6,31 @@ import getAllWorks from '@/libs/queries/getAllWorks'
 
 export default async function sitemap() {
   const baseUrl = 'https://nebonga.com'
-  const allWorks = await getAllWorks(0, 999)
-  const allNews = await getAllNews(0, 999)
-  const allStories = await getAllStories(0, 999)
-  const allWorksPath = allWorks.posts
-  const allNewsPath = allNews.posts
-  const allStoriesPath = allStories.posts
+
+  let allWorksPath: { slug: string }[] = []
+  let allNewsPath: { slug: string }[] = []
+  let allStoriesPath: { slug: string }[] = []
+
+  try {
+    const allWorks = await getAllWorks(0, 999)
+    allWorksPath = allWorks.posts
+  } catch (error) {
+    console.error('[sitemap] getAllWorks failed:', error)
+  }
+
+  try {
+    const allNews = await getAllNews(0, 999)
+    allNewsPath = allNews.posts
+  } catch (error) {
+    console.error('[sitemap] getAllNews failed:', error)
+  }
+
+  try {
+    const allStories = await getAllStories(0, 999)
+    allStoriesPath = allStories.posts
+  } catch (error) {
+    console.error('[sitemap] getAllStories failed:', error)
+  }
 
   const staticPaths: MetadataRoute.Sitemap = [
     {
